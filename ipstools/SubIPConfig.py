@@ -113,7 +113,7 @@ class SubIPConfig(object):
         if not ("all" in self.targets or "rtl" in self.targets):
             return "\n"
         if self.ip_name in LEGACY_IPS:
-            print "Skipping %s.%s as it is not supported by the TCSH-based build flow." % (self.ip_name, self.sub_ip_name)
+            print("Skipping %s.%s as it is not supported by the TCSH-based build flow." % (self.ip_name, self.sub_ip_name))
             return "\n"
         vlog_cmd = VSIM_PREAMBLE_SUBIP % (self.sub_ip_name)
         files = self.files

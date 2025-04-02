@@ -1,4 +1,4 @@
-#!/bin/tcsh
+#!/bin/csh
 
 if (! $?VSIM_PATH ) then
   setenv VSIM_PATH      `pwd`

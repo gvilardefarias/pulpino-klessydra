@@ -1,4 +1,4 @@
-#!/bin/tcsh
+#!/bin/csh
 source ${PULP_PATH}/vsim/vcompile/colors.csh
 
 ##############################################################################

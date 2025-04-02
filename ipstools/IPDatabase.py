@@ -73,8 +73,8 @@ def store_ips_list(filename, ips):
         else:
             ips_list[i['path']] = {'commit': i['commit'], 'group': i['group'], 'domain': i['domain']}
     with open(filename, "wb") as f:
-        f.write(IPS_LIST_PREAMBLE)
-        f.write(yaml.dump(ips_list))
+        f.write(IPS_LIST_PREAMBLE.encode())
+        f.write(yaml.dump(ips_list).encode())
 
 class IPDatabase(object):
     rtl_dir  = "./fe/rtl"
@@ -426,14 +426,14 @@ class IPDatabase(object):
             filename = "%s/%s.mk" % (script_path, i)
             makefile = self.ip_dic[i].export_make(abs_path, more_opts, target_tech=target_tech)
             with open(filename, "wb") as f:
-                f.write(makefile)
+                f.write(makefile.encode())
 
     def export_vsim(self, abs_path="${IP_PATH}", script_path="./", more_opts="", target_tech='st28fdsoi'):
         for i in self.ip_dic.keys():
             filename = "%s/vcompile_%s.csh" % (script_path, i)
             vcompile_script = self.ip_dic[i].export_vsim(abs_path, more_opts, target_tech=target_tech)
             with open(filename, "wb") as f:
-                f.write(vcompile_script)
+                f.write(vcompile_script.encode())
                 os.fchmod(f.fileno(), os.fstat(f.fileno()).st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
     def export_synopsys(self, script_path=".", target_tech='st28fdsoi', domain=None):
@@ -442,7 +442,7 @@ class IPDatabase(object):
                 filename = "%s/analyze_%s.tcl" % (script_path, i)
                 analyze_script = self.ip_dic[i].export_synopsys(target_tech=target_tech)
                 with open(filename, "wb") as f:
-                    f.write(analyze_script)
+                    f.write(analyze_script.encode())
 
     def export_vivado(self, abs_path="$IPS", script_path="./src_files.tcl", domain=None, alternatives=[]):
         filename = "%s" % (script_path)
@@ -452,7 +452,7 @@ class IPDatabase(object):
                 if domain==None or domain in self.ip_dic[i].domain:
                     vivado_script += self.ip_dic[i].export_vivado(abs_path)
         with open(filename, "wb") as f:
-            f.write(vivado_script)
+            f.write(vivado_script.encode())
 
     def export_synplify(self, abs_path="$IPS", script_path="./src_files_synplify.tcl"):
         filename = "%s" % (script_path)
@@ -460,7 +460,7 @@ class IPDatabase(object):
         for i in self.ip_dic.keys():
             synplify_script += self.ip_dic[i].export_synplify(abs_path)
         with open(filename, "wb") as f:
-            f.write(synplify_script)
+            f.write(synplify_script.encode())
 
     def export_verilator(self, abs_path="${TOP_PATH}/ips", script_path="./", more_opts=""):
             filename = "%s" % (script_path)
@@ -472,7 +472,7 @@ class IPDatabase(object):
             verilator_script += VERILATOR_INCLUDES % verilator_includes
             verilator_script += VERILATOR_COMMAND % more_opts
             with open(filename, "wb") as f:
-                f.write(verilator_script)
+                f.write(verilator_script.encode())
                 os.fchmod(f.fileno(), os.fstat(f.fileno()).st_mode | stat.S_IXUSR | stat.S_IXGRP | stat.S_IXOTH)
 
     def generate_vsim_tcl(self, filename):
@@ -485,7 +485,7 @@ class IPDatabase(object):
                 vsim_tcl += VSIM_TCL_CMD % prepare(el)
         vsim_tcl += VSIM_TCL_POSTAMBLE
         with open(filename, "wb") as f:
-            f.write(vsim_tcl)
+            f.write(vsim_tcl.encode())
 
     def generate_makefile(self, filename, target_tech=None):
         l = []
@@ -516,7 +516,7 @@ class IPDatabase(object):
         #         vcompile_libs += MK_LIBS_XILINX_CMD % el
         vcompile_libs += "\n"
         with open(filename, "wb") as f:
-            f.write(vcompile_libs)
+            f.write(vcompile_libs.encode())
 
     def generate_vcompile_libs_csh(self, filename, target_tech=None):
         l = []
@@ -530,7 +530,7 @@ class IPDatabase(object):
             for el in l:
                 vcompile_libs += VCOMPILE_LIBS_XILINX_CMD % el
         with open(filename, "wb") as f:
-            f.write(vcompile_libs)
+            f.write(vcompile_libs.encode())
 
     def generate_vivado_add_files(self, filename, domain=None, alternatives=[]):
         l = []
@@ -542,7 +542,7 @@ class IPDatabase(object):
         for el in l:
             vivado_add_files_cmd += VIVADO_ADD_FILES_CMD % el.upper()
         with open(filename, "wb") as f:
-            f.write(vivado_add_files_cmd)
+            f.write(vivado_add_files_cmd.encode())
 
     def generate_vivado_inc_dirs(self, filename, domain=None, alternatives=[]):
         l = []
@@ -559,4 +559,4 @@ class IPDatabase(object):
             vivado_inc_dirs += VIVADO_INC_DIRS_CMD % (self.ips_dir, el)
         vivado_inc_dirs += VIVADO_INC_DIRS_POSTAMBLE
         with open(filename, "wb") as f:
-            f.write(vivado_inc_dirs)
+            f.write(vivado_inc_dirs.encode())

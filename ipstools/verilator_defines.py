@@ -10,7 +10,7 @@
 # of the BSD license.  See the LICENSE file for details.
 #
 
-VERILATOR_PREAMBLE = """#!/bin/tcsh
+VERILATOR_PREAMBLE = """#!/bin/csh
 
 """
 

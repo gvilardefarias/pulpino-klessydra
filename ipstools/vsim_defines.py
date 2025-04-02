@@ -11,7 +11,7 @@
 #
 
 # templates for vcompile.csh scripts
-VSIM_PREAMBLE = """#!/bin/tcsh
+VSIM_PREAMBLE = """#!/bin/csh
 source ${PULP_PATH}/%s/vcompile/setup.csh
 
 ##############################################################################
@@ -92,11 +92,11 @@ VSIM_TCL_POSTAMBLE = """"
 """
 
 # templates for vcompile_libs.tc
-VCOMPILE_LIBS_PREAMBLE = """#!/usr/bin/tcsh
+VCOMPILE_LIBS_PREAMBLE = """#!/usr/bin/csh
 
 echo \"\"
 echo \"${Green}--> Compiling PULP IPs libraries... ${NC}\"
 """
 
-VCOMPILE_LIBS_CMD = "tcsh ${PULP_PATH}/%s/vcompile/ips/vcompile_%s.csh || exit 1\n"
-VCOMPILE_LIBS_XILINX_CMD = "tcsh ${PULP_PATH}/fpga/sim/vcompile/ips/vcompile_%s.csh || exit 1\n"
+VCOMPILE_LIBS_CMD = "csh ${PULP_PATH}/%s/vcompile/ips/vcompile_%s.csh || exit 1\n"
+VCOMPILE_LIBS_XILINX_CMD = "csh ${PULP_PATH}/fpga/sim/vcompile/ips/vcompile_%s.csh || exit 1\n"

@@ -1,4 +1,4 @@
-#!/bin/tcsh
+#!/bin/csh
 
 set Red='\e[0;31m'
 set Black='\e[0;30m'     

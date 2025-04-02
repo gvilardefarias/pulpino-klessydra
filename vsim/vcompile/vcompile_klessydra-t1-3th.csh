@@ -15,9 +15,9 @@ setenv IPS_PATH ${PULP_PATH}/ips
 source ${PULP_PATH}/vsim/vcompile/colors.csh
 
 echo ""
-echo "${Green}--> Compiling riscv core... ${NC}"
+echo "${Green}--> Compiling Klessydra Morph core... ${NC}"
 
-source ${PULP_PATH}/vsim/vcompile/ips/vcompile_riscv.csh || exit 1
+source ${PULP_PATH}/vsim/vcompile/ips/vcompile_T13x.csh || exit 1
 
-echo "${Green}--> RiscV core compilation Complete! ${NC}"
+echo "${Green}--> zero-riscy core compilation Complete! ${NC}"
 echo ""
