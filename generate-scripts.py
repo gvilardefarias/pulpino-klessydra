@@ -1,8 +1,8 @@
 #!/usr/bin/env python
-# Francesco Conti <f.conti@unibo.it>
-#
-# Copyright (C) 2016 ETH Zurich, University of Bologna.
-# All rights reserved.
+    # Francesco Conti <f.conti@unibo.it>
+    #
+    # Copyright (C) 2016 ETH Zurich, University of Bologna.
+    # All rights reserved.
 
 import sys,os,subprocess
 
@@ -59,4 +59,4 @@ ipdb.generate_vivado_inc_dirs("fpga/pulpino/tcl/ips_inc_dirs.tcl", alternatives=
 ipdb.export_verilator(script_path="vsim/verilator/verilator_compile.csh",
     more_opts="${TOP_PATH}/tb/tb_verilator.sv --exe ${TOP_PATH}/tb/tb.cpp ${TOP_PATH}/tb/pulpino.cpp -v ${TOP_PATH}/ips/riscv/include/riscv_defines.sv ${TOP_PATH}/ips/riscv/include/apu_core_package.sv -I${TOP_PATH}/rtl/includes -I${TOP_PATH}/rtl -I${TOP_PATH}/rtl/components")
 
-print tcolors.OK + "Generated new scripts for IPs!" + tcolors.ENDC
+print(tcolors.OK + "Generated new scripts for IPs!" + tcolors.ENDC)

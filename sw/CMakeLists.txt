@@ -173,67 +173,67 @@ set(VSIM "vsim" CACHE FILEPATH "Path to the vsim executable")
 
 
 add_custom_target(vcompile
-  COMMAND tcsh -c "./vcompile/build_rtl_sim.csh" #${kless_configs}"
+  COMMAND csh -c "./vcompile/build_rtl_sim.csh" #${kless_configs}"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.ps
-  COMMAND tcsh -c "env PL_NETLIST=${PL_NETLIST} ./vcompile/vcompile_ps.csh"
+  COMMAND csh -c "env PL_NETLIST=${PL_NETLIST} ./vcompile/vcompile_ps.csh"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.pl
-  COMMAND tcsh -c "env PL_NETLIST=${PL_NETLIST} ./vcompile/vcompile_pl.csh"
+  COMMAND csh -c "env PL_NETLIST=${PL_NETLIST} ./vcompile/vcompile_pl.csh"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.riscy
-  COMMAND tcsh ./vcompile/vcompile_riscv.csh
+  COMMAND csh ./vcompile/vcompile_riscv.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-t0-2th
-  COMMAND tcsh -c ./vcompile/vcompile_klessydra-t0-2th.csh
+  COMMAND csh -c ./vcompile/vcompile_klessydra-t0-2th.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-t0-3th
-  COMMAND tcsh -c ./vcompile/vcompile_klessydra-t0-3th.csh
+  COMMAND csh -c ./vcompile/vcompile_klessydra-t0-3th.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-t1-3th
-  COMMAND tcsh -c "./vcompile/vcompile_klessydra-t1-3th.csh" #${kless_configs}"
+  COMMAND csh -c "./vcompile/vcompile_klessydra-t1-3th.csh" #${kless_configs}"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-m
-  COMMAND tcsh -c "./vcompile/vcompile_klessydra-m.csh" #${kless_configs}"
+  COMMAND csh -c "./vcompile/vcompile_klessydra-m.csh" #${kless_configs}"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-s1
-  COMMAND tcsh -c "./vcompile/vcompile_klessydra-s1.csh" #${kless_configs}"
+  COMMAND csh -c "./vcompile/vcompile_klessydra-s1.csh" #${kless_configs}"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-OoO
-  COMMAND tcsh -c "./vcompile/vcompile_klessydra-OoO.csh" #${kless_configs}"
+  COMMAND csh -c "./vcompile/vcompile_klessydra-OoO.csh" #${kless_configs}"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.klessydra-f0-3th
-  COMMAND tcsh -c ./vcompile/vcompile_klessydra-f0-3th.csh
+  COMMAND csh -c ./vcompile/vcompile_klessydra-f0-3th.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.zero
-  COMMAND tcsh ./vcompile/vcompile_zero-riscy.csh
+  COMMAND csh ./vcompile/vcompile_zero-riscy.csh
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
 add_custom_target(vcompile.core.netlist
-  COMMAND tcsh -c "./vcompile/vcompile_netlist.csh" #${kless_configs}"
+  COMMAND csh -c "./vcompile/vcompile_netlist.csh" #${kless_configs}"
   WORKING_DIRECTORY ${PULP_MODELSIM_DIRECTORY}
   ${USES_TERMINAL})
 
