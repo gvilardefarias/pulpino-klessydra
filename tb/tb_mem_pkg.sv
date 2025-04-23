@@ -105,6 +105,112 @@
 
     end
   endtask
+
+  task save_memory;
+  input string file_name;
+
+  integer addr;
+  integer mem_addr;
+  integer bidx;
+  integer data;
+  integer prev_data;
+  integer instr_size;
+  integer instr_width;
+  integer data_size;
+  integer data_width;
+  integer file;
+  integer Addr_Width;
+  integer ACCL_NUM;
+  integer SIMD;
+  integer SPM_NUM;
+  integer SIMD_BITS;
+  begin
+    instr_size = tb.top_i.core_region_i.instr_mem.mem_gen.sp_ram_wrap_i.RAM_SIZE;
+    instr_width = tb.top_i.core_region_i.instr_mem.mem_gen.sp_ram_wrap_i.DATA_WIDTH;
+
+    data_size = tb.top_i.core_region_i.mem_gen.data_mem.RAM_SIZE;
+    data_width = tb.top_i.core_region_i.mem_gen.data_mem.DATA_WIDTH;
+
+    // open file
+    file = $fopen(file_name, "w");
+    if (file == 0) begin
+      $display("Error: Unable to open file!");
+      $finish;
+    end
+
+    // save data memory
+    prev_data = 32'hx;
+
+    $fwrite(file, "Data Memory:");
+    for(addr = 0; addr < data_size/4; addr = addr) begin
+      $fwrite(file, "\n");
+      //$fwrite(file, "\n%h ", addr);
+      for(bidx = 0; bidx < data_width/8; bidx+=bidx+4, addr++) begin
+        mem_addr = addr / (data_width/32);
+
+        data = {tb.top_i.core_region_i.mem_gen.data_mem.sp_ram_i.mem[mem_addr][bidx+3],
+                tb.top_i.core_region_i.mem_gen.data_mem.sp_ram_i.mem[mem_addr][bidx+2],
+                tb.top_i.core_region_i.mem_gen.data_mem.sp_ram_i.mem[mem_addr][bidx+1],
+                tb.top_i.core_region_i.mem_gen.data_mem.sp_ram_i.mem[mem_addr][bidx]};
+        
+        if(data !== prev_data) begin
+          prev_data = data;
+          $fwrite(file, "%h", data);
+        end else begin
+          $fwrite(file, "-");
+        end
+      end
+    end
+
+    // save instruction memory
+    prev_data = 32'hx;
+
+    $fwrite(file, "\nInst Memory:");
+    for(addr = 0; addr < instr_size/4; addr = addr) begin
+      $fwrite(file, "\n");
+      for(bidx = 0; bidx < instr_width/8; bidx+=4, addr++) begin
+        mem_addr = addr / (instr_width/32);
+
+        data = {tb.top_i.core_region_i.instr_mem.mem_gen.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx+3],
+                tb.top_i.core_region_i.instr_mem.mem_gen.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx+2],
+                tb.top_i.core_region_i.instr_mem.mem_gen.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx+1],
+                tb.top_i.core_region_i.instr_mem.mem_gen.sp_ram_wrap_i.sp_ram_i.mem[mem_addr][bidx]};
+
+        if(data !== prev_data) begin
+          prev_data = data;
+          $fwrite(file, "%h", data);
+        end else begin
+          $fwrite(file, "-");
+        end
+      end
+    end
+
+    ACCL_NUM   = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.ACCL_NUM;
+    SIMD       = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.SIMD;
+    SPM_NUM    = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.SPM_NUM;
+    SIMD_BITS  = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.SIMD_BITS;
+    Addr_Width = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.Addr_Width;
+    // save SPM memory
+    prev_data = 32'hx;
+
+    $fwrite(file, "\nSPM Memory:");
+    for(addr = 0; addr < ACCL_NUM*SIMD*SPM_NUM; addr++) begin
+      $fwrite(file, "\n");
+      for(bidx = 0; bidx < 2**(Addr_Width-(SIMD_BITS+2)); bidx++) begin
+        data = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.mem[addr][bidx];
+        
+        if(data !== prev_data) begin
+          prev_data = data;
+          $fwrite(file, "%h", data);
+        end else begin
+          $fwrite(file, "-");
+        end
+      end
+    end
+
+    $fclose(file);
+  end
+  endtask
 `endif
 
 `ifdef mem_preload_netlist

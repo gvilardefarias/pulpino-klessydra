@@ -444,6 +444,10 @@ module tb;
 
     spi_check_return_codes(exit_status);
 
+    $display("TIME_END %0t ns ", $time);
+
+    save_memory("mem.log");
+
     $fflush();
     $stop();
   end
