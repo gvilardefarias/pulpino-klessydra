@@ -42,6 +42,7 @@ set cmd "vsim -quiet $TB \
   -gKLESS_count_all=$env(KLESS_count_all) \
   -gKLESS_debug_en=$env(KLESS_debug_en) \
   -gKLESS_tracer_en=$env(KLESS_tracer_en) \
+  -gTHREAD_NUM=$env(THREAD_NUM) \
   -t ps \
   -voptargs=\"+acc -suppress 2103\" \
   work.glbl \
@@ -93,6 +94,7 @@ set cmd "vsim -quiet $TB \
   -gKLESS_count_all=$env(KLESS_count_all) \
   -gKLESS_debug_en=$env(KLESS_debug_en) \
   -gKLESS_tracer_en=$env(KLESS_tracer_en) \
+  -gTHREAD_NUM=$env(THREAD_NUM) \
   -t ps \
   -voptargs=\"+acc -suppress 2103\" \
   $VSIM_FLAGS"

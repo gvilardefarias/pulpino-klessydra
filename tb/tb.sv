@@ -69,9 +69,14 @@ module tb;
   parameter KLESS_debug_en				       = 1;
   parameter KLESS_tracer_en              = 0;
 
+  parameter THREAD_NUM                   = 0;
+
   int           exit_status = `EXIT_ERROR; // modelsim exit code, will be overwritten when successful
 
   string        memload;
+
+  string file_name;
+
   logic         s_clk   = 1'b0;
   logic         s_rst_n = 1'b0;
 
@@ -446,7 +451,8 @@ module tb;
 
     $display("TIME_END %0t ns ", $time);
 
-    save_memory("mem.log");
+    file_name = $sformatf("mem%0d.log", THREAD_NUM);
+    save_memory(file_name);
 
     $fflush();
     $stop();

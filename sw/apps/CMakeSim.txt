@@ -115,6 +115,7 @@ macro(add_sim_targets NAME)
   KLESS_count_all=${KLESS_count_all} \
   KLESS_debug_en=${KLESS_debug_en} \
   KLESS_tracer_en=${KLESS_tracer_en} \
+  THREAD_NUM=0 \
   TB_TEST=\"$<TARGET_PROPERTY:${NAME}.elf,TB_TEST>\"")
 
   # generate s19 file

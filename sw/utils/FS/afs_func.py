@@ -133,7 +133,7 @@ def mod_lut(filename, location):
 	inFile.close()
 
 
-def build_cmd(fault_type, location, other_signal, TB_NAME, SIM_TIME, RES, NETLIST, start_point, period, env, vsim_golden):
+def build_cmd(fault_type, location, other_signal, TB_NAME, SIM_TIME, RES, NETLIST, start_point, period, env, vsim_golden, thr_n = 0): 
 #   Period used only for bflip functions:
 
 #	print ("afs: " + fault_type + " " + location + " " + other_signal)
@@ -278,6 +278,8 @@ def build_cmd(fault_type, location, other_signal, TB_NAME, SIM_TIME, RES, NETLIS
 	else:
 		cmd_fault = cmd_fault.replace("(", "\\(")
 		cmd_fault = cmd_fault.replace(")", "\\)")
+
+		env = env.replace("THREAD_NUM=0", f"THREAD_NUM={thr_n}")
 
 		cmd_vsim ="""%s\\ vsim\\ -c\\ -t\\ %s\\ -64\\ -do\\ \'%s\\ %srun\\ %s\\;simstats\\ totaltime\\;simstats\\ totalcpu\\;quit\\ -sim\\;quit\\ -f\\;\'
 		""" %(env, '1ns', vsim_golden, cmd_fault, SIM_TIME)

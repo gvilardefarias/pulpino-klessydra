@@ -10,8 +10,8 @@ module_path = "/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/"
 
 # Parameters
 params = {
-    "fu_range": 3,
-    "accl_range": 3,
+    "fu_range": 1,
+    "accl_range": 1,
     "SIMD_Width": 64
 }
 

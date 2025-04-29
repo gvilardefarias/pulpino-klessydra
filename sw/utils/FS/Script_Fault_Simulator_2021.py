@@ -33,11 +33,12 @@ import os.path
 from os import path
 import random
 
+import threading
+from concurrent.futures import ProcessPoolExecutor, ThreadPoolExecutor, as_completed
+
 # pending the checkpoint... check all
 
-
 def main():
-    
     # Definition of the arguments to considered:
     # Target application.
     # The target fault list.
@@ -62,8 +63,6 @@ def main():
     env = args.env	                            		# Strings
     vsim_golden = args.vsim_golden                 		# Strings
 
-#	total_thread_number = args.thread_number			# Integer   # not need in this version. pending developing a new version to include it.
-
     resume = 1
     cold = 0
     start_type = cold
@@ -79,14 +78,17 @@ def main():
         exit()															# stop the execution of the fault injector by lack of input resources
 
     
+    #max_threads = 112
     Debug_mode = 0														# Change this value to forced debug operations
+    store_data = 0													    # Change this value to store the data in the folder "result_memory_files"
     golden_launch = 0													# With 0 it means that the fault injection is performed, with 1 it means that the fault injection is not performed.
     # select the app to apply the fault injection, parameters of fault type and signals should be stored in a text file.
     
 #-----------------------------------------------------------------------
     print("Starting the Simulator execution...")   							# 257065000 ps partially, check with the step sim.
 
-    os.system("rm mem.log")											# Remove previous simulation results
+    os.system("rm mem0.log")											# Remove previous simulation results
+    os.system("rm check_point_file.txt")											# Remove previous simulation results
     
     if not path.exists("check_point_file.txt"):								# checking if the file storing the check pointing information is present
         new_checker = open("check_point_file.txt", 'w')
@@ -129,14 +131,8 @@ def main():
     cmd_vsim ="""%s\\ vsim\\ -c\\ -t\\ %s\\ -64\\ -do\\ \'%srun\\ -all\\;simstats\\ totaltime\\;simstats\\ totalcpu\\;quit\\ -sim\\;quit\\ -f\\;\' 
     """ %(env, '1ns', vsim_golden)
 
-#    cmd_vsim ="""
-#    vsim -c -do \"vsim -t %s work.%s -novopt;run -all;simstats totaltime;simstats totalcpu;quit -sim;quit -f;\"
-#    """ %('1ns', 'tb_top_level')
-    
-
 
     #if start_type == cold:														# checking that if really needed to generate the golden simulation
-    
     (total_time, totalcpu_time, official_kernel_op_time, official_op_time) = Launch_golden_sim(cmd_vsim, Debug_mode, application_name)
 
 
@@ -197,6 +193,7 @@ def main():
         
             if (actual_value == 0):
                 print ("cold start")
+                os.system("rm final_fault_dictionary_" + str(application_name) + ".txt" )
             else:
                 print ("resume start")
                 print ( str(total_fault_lines) )
@@ -209,208 +206,62 @@ def main():
                 os.system("cp final_fault_dictionary_back_up_" + str(application_name) + ".txt final_fault_dictionary_" + str(application_name) + ".txt" )
 
         # Fault injector execution:
-        
-        for line in inFile:			# main loop for fault simulation app.
-        
-              # check point:
-              # open check file and see if this is a resume mode sim or a cold one:
+        #with ProcessPoolExecutor(max_workers=max_threads) as executor:
+        with ProcessPoolExecutor() as executor:
+            futures = []
 
-              if actual_value == total_fault_lines:
-#				  print("Finished simulation")
-                  fault_injection_counter = total_fault_lines
-                  finished_sim = 1
-              elif actual_value > count:
-            #	  print("do nothing, searching the fault to inject...")
-                  count = count + 1
-                  fault_injection_counter = fault_injection_counter + 1.0
-              else:
-                  # File for fault detection dictionary
-                  os.system("cp final_fault_dictionary_" + str(application_name) + ".txt final_fault_dictionary_back_up_" + str(application_name) + ".txt" )
-                  inFile_dictionary = open("final_fault_dictionary_" + str(application_name) + ".txt", 'a')		# file for fault dictionary	
-
-                  print("Decoding the fault to inject... \n")
-                  lines=lines+1
-
-                  words = line.split()
-                  fault_type = words[0]
-                  location = words[1]
-                  other_signal = words[2]
-                  
-                  if fault_type == "bflip":		# Collect other parameter if the test fault model is bitflip, in other case, it should be SA0 or SA1.						
-                        operative_ranges_low = 2000
-                        operative_ranges_high = int(official_kernel_op_time)
-                        start_point = random.randint(operative_ranges_low, operative_ranges_high)
-
-                        Internal_Gen = open("Internal_gen_fault_injection_list_"+ str(application_name) + ".txt", 'a')						# file for final save test
-                        Internal_Gen.write(fault_type + "_c " + location + " - " + str(start_point)  + " 11\n" )
-                        Internal_Gen.close()
-                  elif fault_type == "bflip_c":			  
-                        start_point = words[3]
-                        perioded = words[4]
-                  elif fault_type == "behave_signal":	# The fault is behavioral and a special case should be considered
-                        start_point = words[3]
-                        perioded = words[4]
+            for line in inFile:
+                  if actual_value == total_fault_lines:
+                      fault_injection_counter = total_fault_lines
+                      finished_sim = 1
+                  elif actual_value > count:
+                      count = count + 1
+                      fault_injection_counter = fault_injection_counter + 1.0
                   else:
-                        start_point = '0'			# SA0 of SA1 or other cases.
-                        perioded = '0'
-                  
-                  os.system("rm mem.log")
-                  inFile_dictionary.write(str(location) + " : ")
+                      future = executor.submit(inject_fault, line, application_name, Debug_mode, official_kernel_op_time, official_op_time, env, vsim_golden, fault_injection_counter, total_fault_lines, store_data)
+                      futures.append(future)
 
+                      fault_injection_counter = fault_injection_counter + 1.0
+            
+            for future in as_completed(futures):
+                (memory, degradation, stall, degradation_in_memory, crashed, degradation_but_mem_ok, not_detected, passed, File_dictionary, File_final) = future.result()
 
-                  # Generation of command according to the fault type in file and location of fault, including the total launh time and the steps length.
-                  cmd_vsim = build_cmd(fault_type, location, other_signal, "tb", int(int(official_op_time) * 1.5), "1ns", "gpgpu_ml605_top_level", start_point, perioded, env, vsim_golden)
-                                                            
-                  if Debug_mode == 1:
-                    print("Printing command to apply: \n")
-                    print(str(cmd_vsim))
-#					print("\n")
+                error_by_memory += memory
+                error_by_degradation += degradation
+                error_by_stall += stall
+                error_by_degradation_in_memory += degradation_in_memory
+                error_by_degradation_but_mem_ok += degradation_but_mem_ok
+                crashed_event += crashed
+                error_not_detected += not_detected
+                passed_event += passed
 
-                  fault_injection_counter = fault_injection_counter + 1.0							# basic definition of the parameter to measure the execution
-                    
-                  print("Appliying the Fault # " +  str( int(fault_injection_counter)) + " of " + str(total_fault_lines) )				
-
-                  # Launching the GPGPU with the selected fault:
-                  (total_time, totalcpu_time, actual_kernel_op_time, actual_op_time, out, num_fault_lines) = Lauch_execution(cmd_vsim, Debug_mode, num_fault_lines)						# not debug mode enabled
-
-                  
-                  print("--------------------------------------------------------------------------------------- \n")
-                  print("Fault Simulator Execution % " + str( 100.0* (fault_injection_counter / (total_fault_lines) ) ) + "  Faults pending: [" + str(num_fault_lines) + "/" + str(total_fault_lines) +"]")
-#				  print("--------------------------------------------------------------------------------------- \n")
-                  print("Fault list file: " + str(fault_list_name) + " applied to the " + str(application_name) + " App." )
-                  print("--------------------------------------------------------------------------------------- \n")
-                  
-                  
-                  
-                  # pending to use the total_time, totalcpu_time performance parameters....
-                  
-                  # At this point the simulation has finished, classified the type of fault: Detected (by stall), not detected (not affect the system), Detected in memory and detected by Degradation in time (good 		answer or bad answer.
-
-
-                  # ---------------------------------------------------------------------------------------------------
-                  # classification (checker and classifier):
-                  # silent: not effect
-                  # time out: (not finished on a selected period of time)
-                  # detected: Memory miss...
-                  # Silent data corruption (SDC) memory results comparison.
-
-                  # Execution ending...	  
-                  check_open=0
-                  check=0
-                  flat_degradation = 0
-                  # check if the sim really finish or it stalls (time out) in some part by efect of the fault.
-                  try:
-                     inFilex = open("mem.log", 'r')		# use the final memory, after the fault generation.
-                                # #inFilex = open("fault1_log.txt", 'r')		# use the test file
-                     if Debug_mode == 1:
-                        print(inFile) 			# description of the file to be processed and contains the fault list.
-                        print("open memory file of test " + str(lines))
-                     inFilex.seek(0) #ensure you're at the start of the file
-                     check_open=1
-                  except IOError:		# there is not file for memory results.
-                     check_open=0
-                     print ("Could not open file!")
-
-                  if (check_open==1):					# the simulation ended and the memory file was created
-                    check=1
-                    print ("open memory file, checking if its empty...")
-
-                    first_char = inFilex.read(1) 			#get the first character
-
-                    if not first_char:
-                         check=0					# there is not mandatory to compare an empty file with the reference memory file
-                         print ("memory file empty")
-                    else: 							# file not empty
-                         check=1					# a comparison of memory files(reference and new) should be carried out.
-                         print ("memory file not empty")
-                    inFilex.close()		#first character is the empty string..
-                    
-                  else: # there is not a memory file for simulation, circuit stalls in sim. due to fault.
-                    # nothing else to do, this means that even the simulation colapsed by timeout
-                    check=0
-
-            # comparison line by line, classify by degradation or good.
-                  if(check==1):					# comparison of files:
-                      check=0																	# memory write
-                      
-                      #check the degradation, probably it finished but with long time.
-#					  print("Checking Degradation in time....")
-                      print("Actual simulation kernel time:    " + str(actual_kernel_op_time))
-                      print("Golden simulation kernel time:    " + str(official_kernel_op_time))
-                      
-                      if(actual_kernel_op_time > official_kernel_op_time):	# there is a degradation by the fault
-                         print("Timeout faulure present (Degradation in performance)")
-                         flat_degradation=1
-                         error_by_degradation += 1
-
-                      # Store memory files in directory
-                      
-                      os.system("mv mem.log result_memory_files/memory_" +  str(application_name) + "_" + str(i) + ".log")
-                      os.system("rm mem.log")
-                         
-                         
-                      # Comparison of memory results (fault memory, golden memory)
-                      # True mean equal files.
-                      if filecmp.cmp("result_memory_files/memory_" + str(application_name) + "_" +  str(i) + ".log", str(application_name) + "_reference_mem.log"):
-                            print("Memory match")
-                            passed_event+=1
-                            error_not_detected+=1								# error in memory not detected
-          
-                            if(flat_degradation == 1):
-                                error_by_degradation_in_memory+= 1				# there is presence of performance degradation.
-                                flat_degradation=0
-                                inFile_dictionary.write("	D	Time out (Degradation by Performance)	" + str(fault_type) + "\n")
-                                inFile_final.write("signal failed	D	Time out	: " + str(cmd_vsim) + "Log #: " + str(count) + "\n")
-                            else:
-                                inFile_dictionary.write("	ND	"+ str(fault_type) +"\n")			# not detection of fault, silent fault		
-                      else:
-                            print("No Memory match (SDC)")
-                            inFile_dictionary.write("	D	(SDC)"+ str(fault_type) +"\n")
-                            
-                            crashed_event+=1
-                            fault_memory_count+=1
-                            error_by_memory+=1
-
-                            inFile_final.write("signal failed	D	(SDC)	: " + str(location) + "\n" + "Injection time:  ("+ str(start_point) + ")"+ "\n" + "Log #: " + str(count) + "\n")
-
-                            error_by_degradation_but_mem_ok+= 1				# In time
-                      
-                            os.system("mv result_memory_files/memory_" + str(application_name) + "_" +  str(i) + ".log result_memory_files/memory_" + str(application_name) + "_" + datetime.now().strftime('%d-%m-%Y-%H:%M:%S') + "_" + str(i) + ".log" )
-
-                      fault_memory_count=0
-                      
-                  else:							# memory didnt write, stall
-                    # second chance: run again with the double time, probably was degradation in time: (double time)
-                    print ("error! halt")
-                    error_by_stall += 1
-                    inFile_dictionary.write("	D	Halted"+ str(fault_type) +"\n")
-                  count =count+1
-                  i+=1
-
-                  print(application_name + " :   " + str(application_name))
-
-
-                  print("Fault list employed:  " + str(fault_list_name))
+                print("Fault list employed:  " + str(fault_list_name))
 #				  print("Simulating the configuration of : " + str(total_thread_number) + " Threads")
-                  print("Error_by_halt:..................................." + str(error_by_stall))   												# initial parameter to observe
-                  print("Error_by_Silent_data_corruption(SDC):............" + str(error_by_memory))   												# initial parameter to observe
-                  print("Error_by_time_out:..............................." + str(error_by_degradation_in_memory))   								# initial parameter to observe
-                  print("Error_not_detected( silent):....................." + str(error_not_detected - error_by_degradation_in_memory))  	 		# initial parameter to observe
+                print("Error_by_halt:..................................." + str(error_by_stall))   												# initial parameter to observe
+                print("Error_by_Silent_data_corruption(SDC):............" + str(error_by_memory))   												# initial parameter to observe
+                print("Error_by_time_out:..............................." + str(error_by_degradation_in_memory))   								# initial parameter to observe
+                print("Error_not_detected( silent):....................." + str(error_not_detected - error_by_degradation_in_memory))  	 		# initial parameter to observe
             #	  print("Error_by_time_out_(Error in memory not detected):" + str(error_by_degradation_in_memory))   								# initial parameter to observe
             #	  print("Error_by_time_out_(Error in memory detected)....." + str(error_by_degradation_but_mem_ok))   								# initial parameter to observe
-                  print("----------------------------------------------------------------------------------- \n")
+                print("----------------------------------------------------------------------------------- \n")
                   
-                  # Updating checkpoint:
-                  input_check_file = open("check_point_file.txt", "w").close()						# Clearing the content of the checkpoint file
-                  input_check_file = open("check_point_file.txt", "w")
-                  input_check_file.write(str(count)+"\n")
-                  input_check_file.write(str(error_by_stall)+"\n")
-                  input_check_file.write(str(error_by_memory)+"\n")
-                  input_check_file.write(str(error_by_degradation_in_memory)+"\n")
-                  input_check_file.write(str(error_not_detected)+"\n")
-                  input_check_file.write(str(error_by_degradation_but_mem_ok)+"\n")
-                  input_check_file.close()
-                  inFile_dictionary.close()
+                # Updating checkpoint:
+                input_check_file = open("check_point_file.txt", "w").close()						# Clearing the content of the checkpoint file
+                input_check_file = open("check_point_file.txt", "w")
+                input_check_file.write(str(count)+"\n")
+                input_check_file.write(str(error_by_stall)+"\n")
+                input_check_file.write(str(error_by_memory)+"\n")
+                input_check_file.write(str(error_by_degradation_in_memory)+"\n")
+                input_check_file.write(str(error_not_detected)+"\n")
+                input_check_file.write(str(error_by_degradation_but_mem_ok)+"\n")
+                input_check_file.close()
+
+                inFile_dictionary = open("final_fault_dictionary_" + str(application_name) + ".txt", 'a')
+                inFile_dictionary.write(File_dictionary)
+                inFile_dictionary.close()
+                os.system("cp final_fault_dictionary_" + str(application_name) + ".txt final_fault_dictionary_back_up_" + str(application_name) + ".txt" )
+
+                inFile_final.write(File_final)
                   
     inFile_final.write("Total # Faults evaluated :\t\t" + str(count) +"\n")
     inFile_final.write("Total # Faults detected :\t\t"   +   str( error_by_stall + error_by_memory + error_by_degradation - error_by_degradation_but_mem_ok )  +   "\n")
@@ -423,8 +274,8 @@ def main():
     inFile_final.write("Error_by_time_out_(Error in memory not detected):" + str(error_by_degradation_in_memory)+"\n")   						# initial parameter to observe
     inFile_final.write("Error_by_time_out_(Error in memory detected)....." + str(error_by_degradation_but_mem_ok)+"\n")   						# initial parameter to observe											
 
-    inFile_final.write("(SDC) Detected events: " + str(crashed_event)+"\n")  	 																# initial parameter to observe
-    inFile_final.write("(SDC) Not Detected events: " + str(passed_event)+"\n")
+    inFile_final.write("(SDC) Detected events: " + str(crashed_event)+f" ({100*(crashed_event)/(crashed_event+passed_event):.2f}%)\n")  	 																# initial parameter to observe
+    inFile_final.write("(SDC) Not Detected events: " + str(passed_event)+f" ({100*(passed_event)/(crashed_event+passed_event):.2f}%)\n")
 
 
     if finished_sim == 1:
@@ -447,10 +298,10 @@ def main():
     print("--------------------------------------------------------------------------------------- \n")
     print("                                 Fault injection finished ")
     print("--------------------------------------------------------------------------------------- \n")
-    print("Total Faults by Halt:.........................." + str(error_by_stall))  	 														# initial parameter to observe
-    print("Total Faults by Silent Data Corruption (SDC):.." + str(error_by_memory))   															# initial parameter to observe
-    print("Total Faults by Time Out(100%):................" + str(error_by_degradation_in_memory))   											# initial parameter to observe
-    print("Total Faults not detected (Silent Faults):....." + str(error_not_detected - error_by_degradation_in_memory))   						# initial parameter to observe
+    print("Total Faults by Halt:.........................." + str(error_by_stall) + f" ({100*error_by_stall/fault_injection_counter:.2f}%)")  	 														# initial parameter to observe
+    print("Total Faults by Silent Data Corruption (SDC):.." + str(error_by_memory) + f" ({100*error_by_memory/fault_injection_counter:.2f}%)")   															# initial parameter to observe
+    print("Total Faults by Time Out(100%):................" + str(error_by_degradation_in_memory) + f" ({100*error_by_degradation_in_memory/fault_injection_counter:.2f}%)")   											# initial parameter to observe
+    print("Total Faults not detected (Silent Faults):....." + str(error_not_detected - error_by_degradation_in_memory) + f" ({100*(error_not_detected - error_by_degradation_in_memory)/fault_injection_counter:.2f}%)")   						# initial parameter to observe
     print("--------------------------------------------------------------------------------------- \n")
 
     inFile_final.close()
