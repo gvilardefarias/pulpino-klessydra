@@ -78,7 +78,7 @@ def main():
         exit()															# stop the execution of the fault injector by lack of input resources
 
     
-    #max_threads = 112
+    max_threads = 55
     Debug_mode = 0														# Change this value to forced debug operations
     store_data = 0													    # Change this value to store the data in the folder "result_memory_files"
     golden_launch = 0													# With 0 it means that the fault injection is performed, with 1 it means that the fault injection is not performed.
@@ -206,8 +206,8 @@ def main():
                 os.system("cp final_fault_dictionary_back_up_" + str(application_name) + ".txt final_fault_dictionary_" + str(application_name) + ".txt" )
 
         # Fault injector execution:
-        #with ProcessPoolExecutor(max_workers=max_threads) as executor:
-        with ProcessPoolExecutor() as executor:
+        with ProcessPoolExecutor(max_workers=max_threads) as executor:
+        #with ProcessPoolExecutor() as executor:
             futures = []
 
             for line in inFile:
@@ -224,7 +224,13 @@ def main():
                       fault_injection_counter = fault_injection_counter + 1.0
             
             for future in as_completed(futures):
-                (memory, degradation, stall, degradation_in_memory, crashed, degradation_but_mem_ok, not_detected, passed, File_dictionary, File_final) = future.result()
+                try:
+                    (memory, degradation, stall, degradation_in_memory, crashed, degradation_but_mem_ok, not_detected, passed, File_dictionary, File_final) = future.result()
+                except Exception as e:
+                    print(f"Error: {e}")
+                    for f in futures:
+                        f.cancel()
+                    break
 
                 error_by_memory += memory
                 error_by_degradation += degradation
@@ -305,6 +311,8 @@ def main():
     print("--------------------------------------------------------------------------------------- \n")
 
     inFile_final.close()
+    os.system("mv final_result_" + str(application_name) + ".txt result_memory_files/final_result_" + str(application_name) + ".txt" )
+    os.system("mv final_fault_dictionary_" + str(application_name) + ".txt result_memory_files/final_fault_dictionary_" + str(application_name) + ".txt" )
     
     #os.system("python redable_report_top.py")
     os.system("rm check_point_file.txt")

@@ -161,7 +161,7 @@ def inject_fault(line, application_name, Debug_mode, official_kernel_op_time, of
   inFile_dictionary+=str(location) + " : "
 
   # Generation of command according to the fault type in file and location of fault, including the total launh time and the steps length.
-  cmd_vsim = build_cmd(fault_type, location, other_signal, "tb", int(int(official_op_time) * 1.5), "1ns", "gpgpu_ml605_top_level", start_point, perioded, env, vsim_golden, thr_n)
+  cmd_vsim = build_cmd(fault_type, location, other_signal, "tb", int(int(official_op_time) * 1.8), "1ns", "gpgpu_ml605_top_level", start_point, perioded, env, vsim_golden, thr_n)
                                             
   if Debug_mode == 1:
     print("Printing command to apply: \n")

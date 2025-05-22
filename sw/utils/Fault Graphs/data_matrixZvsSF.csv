@@ -1,0 +1,19 @@
+Matrix,Seed,Value
+64x64 Matrix,Seed 0,1
+64x64 Matrix,Seed 1,1
+64x64 Matrix,Seed 2,1
+16x16 Matrix,Seed 0,1
+16x16 Matrix,Seed 1,1
+16x16 Matrix,Seed 2,1
+8x8 Matrix,Seed 0,1
+8x8 Matrix,Seed 1,1
+8x8 Matrix,Seed 2,4
+4x4 Matrix,Seed 0,386
+4x4 Matrix,Seed 1,390
+4x4 Matrix,Seed 2,386
+2x4 Matrix,Seed 0,430
+2x4 Matrix,Seed 1,436
+2x4 Matrix,Seed 2,455
+2x2 Matrix,Seed 0,605
+2x2 Matrix,Seed 1,603
+2x2 Matrix,Seed 2,607
