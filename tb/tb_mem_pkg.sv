@@ -185,6 +185,7 @@
       end
     end
 
+    /*
     ACCL_NUM   = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.ACCL_NUM;
     SIMD       = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.SIMD;
     SPM_NUM    = tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.SCI.SC.SPM_NUM;
@@ -207,6 +208,7 @@
         end
       end
     end
+    */
 
     $fclose(file);
   end

@@ -1,0 +1,13 @@
+Matrix,Seed,Value
+32x32 Image,seed 0,239
+32x32 Image,seed 1,239
+32x32 Image,seed 2,239
+16x16 Image,seed 0,239
+16x16 Image,seed 1,239
+16x16 Image,Seed 2,240
+8x8 Image,Seed 0,241
+8x8 Image,Seed 1,241
+8x8 Image,Seed 2,242
+4x4 Image,Seed 0,245
+4x4 Image,seed 1,248
+4x4 Image,Seed 2,247

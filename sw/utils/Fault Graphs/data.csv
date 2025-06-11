@@ -1,3 +1,7 @@
 Name,Halt,DC,TO,FSF,SF
-64x64 (Original Matrix), 3, 202, 0, 70, 185
-64x64 (Random Data), 3, 386, 0, 70, 1
+64x64 Matrix,3,386,0,70,1
+16x16 Matrix,3,386,0,70,1
+8x8 Matrix,3,386,0,70,1
+4x4 Matrix,3,384,0,70,3
+2x4 Matrix,3,379,0,70,8
+2x2 Matrix,3,356,0,70,31

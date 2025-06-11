@@ -43,6 +43,7 @@ set cmd "vsim -quiet $TB \
   -gKLESS_debug_en=$env(KLESS_debug_en) \
   -gKLESS_tracer_en=$env(KLESS_tracer_en) \
   -gTHREAD_NUM=$env(THREAD_NUM) \
+  -do vcd.tcl \
   -t ps \
   -voptargs=\"+acc -suppress 2103\" \
   work.glbl \
@@ -99,6 +100,9 @@ set cmd "vsim -quiet $TB \
   -voptargs=\"+acc -suppress 2103\" \
   $VSIM_FLAGS"
 }
+# TO generate VCD
+#  -do \"vcd file accl_dump.vcd\" \
+#  -do \"vcd add -ports sim:/tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/*\" \
 
 # set cmd "$cmd -sv_lib ./work/libri5cyv2sim"
 eval $cmd

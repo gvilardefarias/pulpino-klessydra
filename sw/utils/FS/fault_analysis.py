@@ -71,7 +71,9 @@ for class_name in faults:
         if sig_name == 'count':
             continue
 
-        print(f"  {sig_name} - {class_name} Fault List:")
+        faults[class_name][sig_name].sort()
+
+        print(f"  {sig_name} - {class_name} Fault List ({len(faults[class_name][sig_name])}):")
         for fault in faults[class_name][sig_name]:
             print(f"    {fault.strip()}")
     print()
