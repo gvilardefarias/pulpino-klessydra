@@ -1,0 +1,7 @@
+include_directories(data)
+
+add_subdirectory(mul_1th_1accl)
+add_subdirectory(mul_3th_1accl)
+add_subdirectory(mul_3th_3accl)
+
+add_subdirectory(conv_1th_1accl)

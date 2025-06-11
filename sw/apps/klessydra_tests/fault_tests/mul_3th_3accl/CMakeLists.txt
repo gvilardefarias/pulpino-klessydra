@@ -1,0 +1,1 @@
+add_application(mul_3t_3a matmul_3th_3accl.c LABELS "klessydra_tests")
