@@ -17,6 +17,7 @@ entity SHIFTER is
     --------------------------------
     ACCL_NUM              : natural;
     FU_NUM                : natural;
+    Data_Width            : natural;
     SIMD_Width            : natural
   );
   port(
@@ -158,34 +159,66 @@ begin
       dsp_shift_enabler(((h+1)*(16))-1 downto 16*h) <= (others => '0');
       if shift_en(h) = '1' and halt_dsp_lat(h) = '0' then
         if MVTYPE_DSP(((h+1)*(2))-1 downto 2*h) = "01" then
-          for idx in 0 to (15 - to_integer(unsigned(dsp_in_shift_amount(3  + (h)*(5) downto  0 + (h)*(5))))) loop
-            dsp_shift_enabler((h)*(16) + idx) <= '1';
+          for idx in 0 to 15 loop
+            if idx <= (15 - to_integer(unsigned(dsp_in_shift_amount(3  + (h)*(5) downto  0 + (h)*(5))))) then
+              dsp_shift_enabler((h)*(16) + idx) <= '1';
+            else
+              dsp_shift_enabler((h)*(16) + idx) <= '0';
+            end if;
           end loop;
           --dsp_shift_enabler(h)(15 - to_integer(unsigned(dsp_in_shift_amount(h)(3 downto 0))) downto 0) <= (others => '1');
         elsif MVTYPE_DSP(((h+1)*(2))-1 downto 2*h) = "00" then
           -- TODO do the same thing as for 16b
-          dsp_shift_enabler(7 -  to_integer(unsigned(dsp_in_shift_amount(2  + (h)*(5)  + (h)*(16) downto   0 + (h)*(5)))) downto 0 + (h)*(16)) <= (others => '1');
+          for idx in 0 to 7 loop
+            if idx <= (7 - to_integer(unsigned(dsp_in_shift_amount(2  + (h)*(5) downto  0 + (h)*(5))))) then
+              dsp_shift_enabler((h)*(16) + idx) <= '1';
+            else
+              dsp_shift_enabler((h)*(16) + idx) <= '0';
+            end if;
+          end loop;
+          --dsp_shift_enabler(7 -  to_integer(unsigned(dsp_in_shift_amount(2  + (h)*(5)  + (h)*(16) downto   0 + (h)*(5)))) downto 0 + (h)*(16)) <= (others => '1');
         end if;
         if (decoded_instruction_DSP_lat((h)*(DSP_UNIT_INSTR_SET_SIZE) + KSRAV_bit_position) = '1' or decoded_instruction_DSP_lat((h)*(DSP_UNIT_INSTR_SET_SIZE) + KDOTPPS_bit_position) = '1') and
             MVTYPE_DSP(((h+1)*(2))-1 downto 2*h) = "10" then    -- 32-bit sign extension for for srl in stage 1
           for i in 0 to SIMD-1 loop
             --dsp_in_shifter_operand_lat(f)(31+32*(i) downto 31 - to_integer(unsigned(dsp_in_shift_amount(h)(4 downto 0)))+32*(i))   <= (others => dsp_in_sign_bits(h)(3+4*(i)));
-            dsp_in_shifter_operand_lat_wire(31+32*(i)  + (f)*(SIMD_Width) downto  31 - to_integer(unsigned(dsp_in_shift_amount(4  + (f)*(5) downto  0 + (f)*(5))))+32*(i) + (f)*(SIMD_Width)) <= 
-            dsp_in_shifter_operand_lat(     31+32*(i)  + (f)*(SIMD_Width) downto  31 - to_integer(unsigned(dsp_in_shift_amount(4  + (f)*(5) downto  0 + (f)*(5))))+32*(i) + (f)*(SIMD_Width));
+            for idx in 0 to 31 loop
+              if idx = (31 - to_integer(unsigned(dsp_in_shift_amount(4  + (f)*(5) downto  0 + (f)*(5))))) then
+                dsp_in_shifter_operand_lat_wire(31+32*(i)  + (f)*(SIMD_Width) downto idx +32*(i) + (f)*(SIMD_Width)) <= 
+                dsp_in_shifter_operand_lat(     31+32*(i)  + (f)*(SIMD_Width) downto idx +32*(i) + (f)*(SIMD_Width));
+              end if;
+            end loop;
+
+           -- dsp_in_shifter_operand_lat_wire(31+32*(i)  + (f)*(SIMD_Width) downto  31 - to_integer(unsigned(dsp_in_shift_amount(4  + (f)*(5) downto  0 + (f)*(5))))+32*(i) + (f)*(SIMD_Width)) <= 
+           -- dsp_in_shifter_operand_lat(     31+32*(i)  + (f)*(SIMD_Width) downto  31 - to_integer(unsigned(dsp_in_shift_amount(4  + (f)*(5) downto  0 + (f)*(5))))+32*(i) + (f)*(SIMD_Width));
           end loop;
         elsif (decoded_instruction_DSP_lat((h)*(DSP_UNIT_INSTR_SET_SIZE) + KSRAV_bit_position) = '1' or decoded_instruction_DSP_lat((h)*(DSP_UNIT_INSTR_SET_SIZE) + KDOTPPS_bit_position) = '1') and
                MVTYPE_DSP(((h+1)*(2))-1 downto 2*h) = "01" then -- 16-bit sign extension for for srl in stage 1
           for i in 0 to 2*SIMD-1 loop
             --dsp_in_shifter_operand_lat(f)(15+16*(i) downto 15 - to_integer(unsigned(dsp_in_shift_amount(h)(3 downto 0)))+16*(i))   <= (others => dsp_in_sign_bits(h)(1+2*(i)));
-            dsp_in_shifter_operand_lat_wire(15+16*(i)  + (f)*(SIMD_Width) downto  15 - to_integer(unsigned(dsp_in_shift_amount(3  + (f)*(5) downto  0 + (f)*(5))))+16*(i) + (f)*(SIMD_Width)) <= 
-            dsp_in_shifter_operand_lat(     15+16*(i)  + (f)*(SIMD_Width) downto  15 - to_integer(unsigned(dsp_in_shift_amount(3  + (f)*(5) downto  0 + (f)*(5))))+16*(i) + (f)*(SIMD_Width));
+            for idx in 0 to 15 loop
+              if idx = (15 - to_integer(unsigned(dsp_in_shift_amount(3  + (f)*(5) downto  0 + (f)*(5))))) then
+                dsp_in_shifter_operand_lat_wire(15+16*(i)  + (f)*(SIMD_Width) downto idx +16*(i) + (f)*(SIMD_Width)) <= 
+                dsp_in_shifter_operand_lat(     15+16*(i)  + (f)*(SIMD_Width) downto idx +16*(i) + (f)*(SIMD_Width));
+              end if;
+            end loop;
+
+            --dsp_in_shifter_operand_lat_wire(15+16*(i)  + (f)*(SIMD_Width) downto  15 - to_integer(unsigned(dsp_in_shift_amount(3  + (f)*(5) downto  0 + (f)*(5))))+16*(i) + (f)*(SIMD_Width)) <= 
+            --dsp_in_shifter_operand_lat(     15+16*(i)  + (f)*(SIMD_Width) downto  15 - to_integer(unsigned(dsp_in_shift_amount(3  + (f)*(5) downto  0 + (f)*(5))))+16*(i) + (f)*(SIMD_Width));
           end loop;
         elsif (decoded_instruction_DSP_lat((h)*(DSP_UNIT_INSTR_SET_SIZE) + KSRAV_bit_position) = '1'  or decoded_instruction_DSP_lat((h)*(DSP_UNIT_INSTR_SET_SIZE) + KDOTPPS_bit_position) = '1') and
                MVTYPE_DSP(((h+1)*(2))-1 downto 2*h) = "00" then  -- 8-bit  sign extension for for srl in stage 1
           for i in 0 to 4*SIMD-1 loop
             --dsp_in_shifter_operand_lat(f)(7+8*(i) downto 7 - to_integer(unsigned(dsp_in_shift_amount(h)(2 downto 0)))+8*(i))    <= (others => dsp_in_sign_bits(h)(i));
-            dsp_in_shifter_operand_lat_wire(7+8*(i)  + (f)*(SIMD_Width) downto  7 - to_integer(unsigned(dsp_in_shift_amount(2  + (f)*(5) downto  0 + (f)*(5))))+8*(i) + (f)*(SIMD_Width)) <= 
-            dsp_in_shifter_operand_lat(     7+8*(i)  + (f)*(SIMD_Width) downto  7 - to_integer(unsigned(dsp_in_shift_amount(2  + (f)*(5) downto  0 + (f)*(5))))+8*(i) + (f)*(SIMD_Width));
+            for idx in 0 to 7 loop
+              if idx = (7 - to_integer(unsigned(dsp_in_shift_amount(2  + (f)*(5) downto  0 + (f)*(5))))) then
+                dsp_in_shifter_operand_lat_wire(7+8*(i)  + (f)*(SIMD_Width) downto idx +8*(i) + (f)*(SIMD_Width)) <= 
+                dsp_in_shifter_operand_lat(     7+8*(i)  + (f)*(SIMD_Width) downto idx +8*(i) + (f)*(SIMD_Width));
+              end if;
+            end loop;
+
+            --dsp_in_shifter_operand_lat_wire(7+8*(i)  + (f)*(SIMD_Width) downto  7 - to_integer(unsigned(dsp_in_shift_amount(2  + (f)*(5) downto  0 + (f)*(5))))+8*(i) + (f)*(SIMD_Width)) <= 
+            --dsp_in_shifter_operand_lat(     7+8*(i)  + (f)*(SIMD_Width) downto  7 - to_integer(unsigned(dsp_in_shift_amount(2  + (f)*(5) downto  0 + (f)*(5))))+8*(i) + (f)*(SIMD_Width));
           end loop;
         end if;
       end if;

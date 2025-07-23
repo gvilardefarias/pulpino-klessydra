@@ -266,6 +266,7 @@ architecture DSP of DSP_Unit is
     --------------------------------
     ACCL_NUM              : natural;
     FU_NUM                : natural;
+    Data_Width            : natural;
     SIMD_Width            : natural
   );
   port(
@@ -298,6 +299,7 @@ architecture DSP of DSP_Unit is
     --------------------------------
     ACCL_NUM              : natural;
     FU_NUM                : natural;
+    Data_Width            : natural;
     SIMD_Width            : natural
   );
   port(
@@ -1984,6 +1986,7 @@ end process;
       --------------------------------
       ACCL_NUM              => ACCL_NUM,
       FU_NUM                => FU_NUM,
+      Data_Width            => Data_Width,
       SIMD_Width            => SIMD_Width
     )
     port map(
@@ -2010,6 +2013,7 @@ end process;
       --------------------------------
       ACCL_NUM              => ACCL_NUM,
       FU_NUM                => FU_NUM,
+      Data_Width            => Data_Width,
       SIMD_Width            => SIMD_Width
     )
     port map(
