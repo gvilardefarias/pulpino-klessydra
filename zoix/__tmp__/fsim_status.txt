@@ -1,0 +1,30 @@
+#                                Prime                  Total
+# Test: ACCUMULATOR
+# Total Faults:                   3032                   5250
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1658    54.68%         3208    61.10%
+# Dropped Potential Faults:        235     7.75%          243     4.63%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             306    10.09%          405     7.71%
+# Not Observed:                    756    24.93%         1223    23.30%
+# Not Controlled:                   77     2.54%          171     3.26%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:05
+#   Fault Wall Clock:         00:00:04
+#
+# Cumulative Test Results
+# Total Faults:                   3032                   5250
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1658    54.68%         3208    61.10%
+# Dropped Potential Faults:        235     7.75%          243     4.63%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             306    10.09%          405     7.71%
+# Not Observed:                    756    24.93%         1223    23.30%
+# Not Controlled:                   77     2.54%          171     3.26%
+#
+# Untestable Tied:                  64                     64
+#
+# Test Coverage:                          58.56%                 63.42%
+# Fault Coverage:                         57.35%                 62.66%
+#

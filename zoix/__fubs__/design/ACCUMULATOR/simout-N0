@@ -1,0 +1,102 @@
+Simulating, pass 1...
+
+                                   Z01X (TM)
+
+                 Version V-2023.12 for linux64 - Nov 19, 2023 
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+Command: zoix.sim -dictout __fubs__/design/ACCUMULATOR/cdfout.P1 -fault +vcd+file+__tests__/ACCUMULATOR/accum.vcd +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -testdir __fubs__/design/ACCUMULATOR/ -fdef __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -xfidlistout __fubs__/design/ACCUMULATOR/diagnostics/fidlist.0.1 -l __fubs__/design/ACCUMULATOR/simout-N0-1 
+
+Info:    Simulation Started Fri Jul 25 12:19:51 2025
+Info:    Fault Simulation Pass 1  Host monviso
+
+Info:    Loading ...      (12:19:51)
+Info:    Initializing ... (12:19:51)
+Info:    Fault simulating 2048 faults, starting at fault: 0
+Info:    Pending user defined fault injection.
+Info:    Simulating ...   (12:19:51)
+Info:    Injecting 2048 faults at simulation time 0 ns
+
+Info:    Fault Simulation Summary       Prime               Total
+Info:        Faults Simulated            2048                3592
+Info:        Detected Faults                0   (   0%)         0   (   0%)
+Info:        Dropped Detected Faults     1538   (75.1%)      2979   (82.9%)
+Info:        Potential Faults               0   (   0%)         0   (   0%)
+Info:        Dropped Potential Faults     222   (10.8%)       230   ( 6.4%)
+
+Info:    Last simulation time was at 835545000 ns
+Info:    Logic Events 648524
+Info:    Fault Events 602466
+Info:    Diverge Event Count 503447
+Info:    Peak Diverged Devices 9985
+Info:    Peak Diverged Memory 0 (bytes)
+Info:    CPU Time: 2.5s ; Elapsed Time: 2.6s ; Data Size: 94.1MB 
+Info:    Simulation Completed Fri Jul 25 12:19:54 2025
+Simulating, pass 2...
+
+                                   Z01X (TM)
+
+                 Version V-2023.12 for linux64 - Nov 19, 2023 
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+Command: zoix.sim -xcode 1 -dictout __fubs__/design/ACCUMULATOR/cdfout.P2 -fault +vcd+file+__tests__/ACCUMULATOR/accum.vcd +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -testdir __fubs__/design/ACCUMULATOR/ -fdef __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -xfidlistout __fubs__/design/ACCUMULATOR/diagnostics/fidlist.0.2 -l __fubs__/design/ACCUMULATOR/simout-N0-2 
+
+Info:    Simulation Started Fri Jul 25 12:19:54 2025
+Info:    Fault Simulation Pass 2  Host monviso
+
+Info:    Loading ...      (12:19:54)
+Info:    Initializing ... (12:19:54)
+Info:    Fault simulating 151 faults, starting at fault: 2048
+Info:    Pending user defined fault injection.
+Info:    Simulating ...   (12:19:54)
+Info:    Injecting 151 faults at simulation time 0 ns
+
+Info:    Fault Simulation Summary       Prime               Total
+Info:        Faults Simulated             151                 264
+Info:        Detected Faults                0   (   0%)         0   (   0%)
+Info:        Dropped Detected Faults      120   (79.5%)       229   (86.7%)
+Info:        Potential Faults               0   (   0%)         0   (   0%)
+Info:        Dropped Potential Faults      13   (8.61%)        13   (4.92%)
+
+Info:    Last simulation time was at 835545000 ns
+Info:    Logic Events 648524
+Info:    Fault Events 304924
+Info:    Diverge Event Count 61910
+Info:    Peak Diverged Devices 874
+Info:    Peak Diverged Memory 0 (bytes)
+Info:    CPU Time: 1.3s ; Elapsed Time: 1.5s ; Data Size: 92.1MB 
+Info:    Simulation Completed Fri Jul 25 12:19:55 2025

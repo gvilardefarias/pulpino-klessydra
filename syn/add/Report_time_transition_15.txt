@@ -1,0 +1,129 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : ADDER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:50:12 2025
+****************************************
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: carry_16_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: dsp_out_adder_results_reg[63]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                Fanout     Trans      Incr       Path      Attributes
+  --------------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                    0.00       0.00
+  clock network delay (ideal)                                0.00       0.00
+  carry_16_reg[1]/CLK (DFFRNQ_X1)                  0.00      0.00       0.00 r
+  carry_16_reg[1]/Q (DFFRNQ_X1)                    6.18     13.06      13.06 r
+  carry_16[1] (net)                      3                   0.00      13.06 r
+  U846/Z (AND2_X1)                                 5.13      6.62      19.68 r
+  n690 (net)                             3                   0.00      19.68 r
+  U848/ZN (NOR2_X1)                                2.96      2.55      22.23 f
+  n688 (net)                             1                   0.00      22.23 f
+  U861/CO (FA_X1)                                  4.57      8.09      30.32 f
+  n689 (net)                             2                   0.00      30.32 f
+  U862/ZN (NOR2_X1)                                6.03      4.45      34.77 r
+  n695 (net)                             2                   0.00      34.77 r
+  U871/ZN (OAI21_X1)                               5.36      3.37      38.14 f
+  n696 (net)                             1                   0.00      38.14 f
+  U872/ZN (NOR2_X1)                                6.13      4.58      42.72 r
+  n713 (net)                             2                   0.00      42.72 r
+  U889/ZN (OAI21_X1)                               5.36      3.39      46.12 f
+  n714 (net)                             1                   0.00      46.12 f
+  U890/ZN (NOR2_X1)                                6.13      4.58      50.70 r
+  n731 (net)                             2                   0.00      50.70 r
+  U910/ZN (OAI21_X1)                               5.36      3.39      54.09 f
+  n732 (net)                             1                   0.00      54.09 f
+  U911/ZN (NOR2_X1)                                6.13      4.58      58.67 r
+  n749 (net)                             2                   0.00      58.67 r
+  U929/ZN (OAI21_X1)                               5.36      3.39      62.07 f
+  n750 (net)                             1                   0.00      62.07 f
+  U930/ZN (NOR2_X1)                                6.13      4.58      66.65 r
+  n767 (net)                             2                   0.00      66.65 r
+  U950/ZN (OAI21_X1)                               5.36      3.39      70.04 f
+  n768 (net)                             1                   0.00      70.04 f
+  U951/ZN (NOR2_X1)                                6.28      4.66      74.70 r
+  n794 (net)                             2                   0.00      74.70 r
+  U981/ZN (NOR2_X1)                                3.84      2.49      77.19 f
+  n795 (net)                             1                   0.00      77.19 f
+  U982/ZN (NOR2_X1)                                4.42      3.54      80.74 r
+  n809 (net)                             1                   0.00      80.74 r
+  U995/CO (FA_X1)                                  4.96      9.60      90.33 r
+  n814 (net)                             2                   0.00      90.33 r
+  U996/ZN (OAI21_X1)                               4.77      3.17      93.50 f
+  n812 (net)                             1                   0.00      93.50 f
+  U997/ZN (AOI21_X1)                               8.73      6.01      99.51 r
+  n836 (net)                             2                   0.00      99.51 r
+  U998/Z (XOR2_X1)                                 9.46      6.71     106.22 f
+  n842 (net)                             3                   0.00     106.22 f
+  U1026/ZN (OAI21_X1)                              4.93      4.19     110.41 r
+  n839 (net)                             1                   0.00     110.41 r
+  U1027/ZN (NAND2_X1)                              3.60      3.06     113.47 f
+  n841 (net)                             1                   0.00     113.47 f
+  U1028/ZN (AOI21_X1)                              7.97      5.14     118.60 r
+  n857 (net)                             2                   0.00     118.60 r
+  U1049/ZN (OAI21_X1)                              5.30      4.20     122.80 f
+  n859 (net)                             1                   0.00     122.80 f
+  U1050/ZN (NOR2_X1)                               6.05      4.53     127.33 r
+  n875 (net)                             2                   0.00     127.33 r
+  U1067/ZN (OAI21_X1)                              4.90      3.83     131.16 f
+  n877 (net)                             1                   0.00     131.16 f
+  U1068/ZN (NOR2_X1)                               5.99      4.46     135.62 r
+  n893 (net)                             2                   0.00     135.62 r
+  U1088/ZN (OAI21_X1)                              4.88      3.82     139.44 f
+  n895 (net)                             1                   0.00     139.44 f
+  U1089/ZN (NOR2_X1)                               5.99      4.46     143.90 r
+  n911 (net)                             2                   0.00     143.90 r
+  U1107/ZN (OAI21_X1)                              4.88      3.82     147.72 f
+  n913 (net)                             1                   0.00     147.72 f
+  U1108/ZN (NOR2_X1)                               5.99      4.46     152.18 r
+  n931 (net)                             2                   0.00     152.18 r
+  U1126/ZN (OAI21_X1)                              4.88      3.82     156.00 f
+  n933 (net)                             1                   0.00     156.00 f
+  U1127/ZN (NOR2_X1)                               6.13      4.53     160.53 r
+  n939 (net)                             2                   0.00     160.53 r
+  U1135/ZN (NOR2_X1)                               3.29      2.75     163.28 f
+  n944 (net)                             1                   0.00     163.28 f
+  U1137/ZN (OAI22_X1)                              8.84      4.30     167.58 r
+  n945 (net)                             1                   0.00     167.58 r
+  U1138/Z (XOR2_X1)                                5.44      6.12     173.70 r
+  n948 (net)                             1                   0.00     173.70 r
+  U1140/ZN (AOI22_X1)                             25.89      2.98     176.68 f
+  n219 (net)                             1                   0.00     176.68 f
+  dsp_out_adder_results_reg[63]/D (DFFRNQ_X1)     25.89      0.00     176.68 f
+  data arrival time                                                   176.68
+
+  clock clk_i (rise edge)                                 2000.00    2000.00
+  clock network delay (ideal)                                0.00    2000.00
+  dsp_out_adder_results_reg[63]/CLK (DFFRNQ_X1)              0.00    2000.00 r
+  library setup time                                       -10.63    1989.37
+  data required time                                                 1989.37
+  --------------------------------------------------------------------------------------------------
+  data required time                                                 1989.37
+  data arrival time                                                  -176.68
+  --------------------------------------------------------------------------------------------------
+  slack (MET)                                                        1812.68
+
+
+1

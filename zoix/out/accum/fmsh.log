@@ -1,0 +1,185 @@
+
+                                   Z01X (TM)
+
+       Version V-2023.12 for linux64 - Nov 19, 2023      
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Fri Jul 25 12:19:45 CEST 2025
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+25/07/25 12:19:45  Note:    Reading load file:bin/permanent_faults_gen.fmsh
+>  
+>  
+> set(var=[resources], messages=[all]) 
+25/07/25 12:19:45  Note:    Set resources[messages] to "all".
+> set(var=[defines], format=[standard]) 
+25/07/25 12:19:45  Note:    Set defines[format] to "standard".
+> set(var=[defines], dictionary.enable=[1]) 
+25/07/25 12:19:45  Note:    Set defines[dictionary.enable] to 1.
+25/07/25 12:19:45  Warning: Options will be saved when a design is opened
+> set(var=[fsim], dictionary.values=[all]) 
+25/07/25 12:19:45  Note:    Set fsim[dictionary.values] to "all".
+>  
+> # the next line defines if using the file "fault_list.sff" for defining the fault list for fault simulation. Otherwise, in stroves.v the faults can be defined, e.g., from an external file. 
+> #set(var=[fdef], method=[fr], fr.fr=[bin/fault_list.sff],abort=[error]) 
+>  
+> # set (var=[coats],status=[NA,NX,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX]) 
+> # set (var=[coats],status=[DD, ND]) 
+>  
+> set (var=[fsim],hyperfault=[0]) 
+25/07/25 12:19:45  Note:    Set fsim[hyperfault] to 0.
+> design() 
+25/07/25 12:19:45  Note:    Generating design fault universe file
+25/07/25 12:19:45  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_generate -l fgen.log
+25/07/25 12:19:45  Note:    Job fault_generate begun
+25/07/25 12:19:45  Note:    Job fault_generate completed: Host: monviso
+25/07/25 12:19:45  Note:    Total: 5250 Prime: 3032 Collapsed: 2218 Untestable: 64
+25/07/25 12:19:45  Note:    Fault Generation Completed 0 Errors 0 Warnings
+25/07/25 12:19:45  Note:    Created design, directory=/home/g.vilarde/Klessydra/pulpino-klessydra/zoix
+25/07/25 12:19:45  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -func __fubs__/design/__path__ -genfub +job_id+862ceecb17e5efe5 -l __fubs__/design/design.log
+25/07/25 12:19:45  Note:    Job coats begun
+25/07/25 12:19:45  Note:    Job coats completed: Host: monviso
+>  
+> addtst(test=[ACCUMULATOR], stimtype=[vcd], dictionary.enable=[1], stim=[vcd/accum.vcd],dut.stim=[ACCUMULATOR,tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR],stim_options=[+TESTNAME=ACCUMULATOR] ) 
+25/07/25 12:19:46  Note:    Adding test: ACCUMULATOR
+25/07/25 12:19:46  CMD: ln -s ../../sim.zdb __tests__/ACCUMULATOR/sim.zdb
+25/07/25 12:19:46  CMD: ln -s ../../zoix.sim __tests__/ACCUMULATOR/zoix.sim
+25/07/25 12:19:46  CMD: cp vcd/accum.vcd __tests__/ACCUMULATOR/accum.vcd
+25/07/25 12:19:46  CMD: ln -s ../../../__tests__/ACCUMULATOR/accum.vcd __fubs__/design/ACCUMULATOR/accum.vcd
+25/07/25 12:19:46  CMD: ln -s ../../../sim.zdb __fubs__/design/ACCUMULATOR/sim.zdb
+25/07/25 12:19:46  CMD: ln -s ../../../zoix.sim __fubs__/design/ACCUMULATOR/zoix.sim
+>  
+> #addtst(test=[RCA], stimtype=[vcd], dictionary.enable=[1], stim=[../tmax/dumpports_rtl.riscv_core.vcde],stim_options=[+TESTNAME=riscv_core] ) 
+>  
+> fsim() 
+25/07/25 12:19:46  Note:    Performing testability analysis
+25/07/25 12:19:46  CMD: ./zoix.sim -toggle __tests__/ACCUMULATOR/ACCUMULATOR.vtog -fstrobe __tests__/ACCUMULATOR/__fstrobes__ -l __tests__/ACCUMULATOR/zoix_rt.log +vcd+file+__tests__/ACCUMULATOR/accum.vcd +progress -testdir __tests__/ACCUMULATOR/ +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR -testname ACCUMULATOR +job_id+463c9e7b8705ffe5
+25/07/25 12:19:46  Note:    Toggle simulation for test: ACCUMULATOR
+25/07/25 12:19:46  Note:    Job toggle Test: ACCUMULATOR begun
+25/07/25 12:19:47  Note:    Job toggle completed: Host: monviso Test: ACCUMULATOR
+25/07/25 12:19:47  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test ACCUMULATOR -seltyp observe +job_id+862ceecb17e5efe5 -fstrobe __tests__/ACCUMULATOR/__fstrobes__ -testid 65537 -l __fubs__/design/ACCUMULATOR/coats.log
+25/07/25 12:19:47  Note:    Testability analysis for Test: ACCUMULATOR
+25/07/25 12:19:47  Note:    Job coats Test: ACCUMULATOR begun
+25/07/25 12:19:47  Note:    Job coats completed: Host: monviso Test: ACCUMULATOR
+25/07/25 12:19:51  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -fdeffiles __fubs__/design/fdeffiles.txt -record -dir ./ -fub design -fdef sim.fdef -l __fubs__/design/boots.log
+25/07/25 12:19:51  Note:    Job boots Test: All begun
+25/07/25 12:19:51  Note:    Job boots completed: Host: monviso Test: All
+25/07/25 12:19:51  Note:    Updating Testability Report
+25/07/25 12:19:51  Note:    Simulating Test: ACCUMULATOR
+25/07/25 12:19:51  Note:    Fault simulation on Test: ACCUMULATOR starting
+25/07/25 12:19:51  Note:    Generate fault origins for Test: ACCUMULATOR
+25/07/25 12:19:51  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test ACCUMULATOR -recalc -m -l __fubs__/design/ACCUMULATOR/fdef.log
+25/07/25 12:19:51  Note:    Job coats Test: ACCUMULATOR begun
+25/07/25 12:19:51  Note:    Job coats completed: Host: monviso Test: ACCUMULATOR
+25/07/25 12:19:51  Note:    Test: ACCUMULATOR selected 2199 out of 3032 remaining faults to simulate
+25/07/25 12:19:51  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_sim -fdef __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -q +vcd+file+__tests__/ACCUMULATOR/accum.vcd +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR -cdfout __fubs__/design/ACCUMULATOR/cdfout +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -fmsh -testdir __fubs__/design/ACCUMULATOR/ -l __fubs__/design/ACCUMULATOR/simout-N0
+25/07/25 12:19:51  Note:    Fault simulation for Test: ACCUMULATOR
+25/07/25 12:19:51  Note:    Job fault_sim Test: ACCUMULATOR begun
+25/07/25 12:19:55  Note:    Job fault_sim completed: Host: monviso Test: ACCUMULATOR
+25/07/25 12:19:55  Note:    Record simulation results for Test: ACCUMULATOR
+25/07/25 12:19:55  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -record -dir ./ -fub design -test ACCUMULATOR -fdef sim.fdef -fntn 65537 __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -l __fubs__/design/ACCUMULATOR/boots.log
+25/07/25 12:19:55  Note:    Job boots Test: ACCUMULATOR begun
+25/07/25 12:19:55  Note:    Job boots completed: Host: monviso Test: ACCUMULATOR
+25/07/25 12:19:56  Note:    Simulation of test ACCUMULATOR complete
+#                                Prime                  Total
+# Test: ACCUMULATOR
+# Total Faults:                   3032                   5250
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1658    54.68%         3208    61.10%
+# Dropped Potential Faults:        235     7.75%          243     4.63%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             306    10.09%          405     7.71%
+# Not Observed:                    756    24.93%         1223    23.30%
+# Not Controlled:                   77     2.54%          171     3.26%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:05
+#   Fault Wall Clock:         00:00:04
+#
+# Cumulative Test Results
+# Total Faults:                   3032                   5250
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1658    54.68%         3208    61.10%
+# Dropped Potential Faults:        235     7.75%          243     4.63%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             306    10.09%          405     7.71%
+# Not Observed:                    756    24.93%         1223    23.30%
+# Not Controlled:                   77     2.54%          171     3.26%
+#
+# Untestable Tied:                  64                     64
+#
+25/07/25 12:19:56  Note:    Simulation Completed.
+25/07/25 12:19:56  Note:    Updating Testability Report
+
+# Tests simulated in this session:
+#                                Prime                  Total
+# Test: ACCUMULATOR
+# Total Faults:                   3032                   5250
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1658    54.68%         3208    61.10%
+# Dropped Potential Faults:        235     7.75%          243     4.63%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             306    10.09%          405     7.71%
+# Not Observed:                    756    24.93%         1223    23.30%
+# Not Controlled:                   77     2.54%          171     3.26%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:05
+#   Fault Wall Clock:         00:00:04
+#
+# Cumulative Test Results
+# Total Faults:                   3032                   5250
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1658    54.68%         3208    61.10%
+# Dropped Potential Faults:        235     7.75%          243     4.63%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             306    10.09%          405     7.71%
+# Not Observed:                    756    24.93%         1223    23.30%
+# Not Controlled:                   77     2.54%          171     3.26%
+#
+# Untestable Tied:                  64                     64
+#
+# Test Coverage:                          58.56%                 63.42%
+# Fault Coverage:                         57.35%                 62.66%
+#
+>  
+> coverage(file=[SAF_coverage.sff]) 
+25/07/25 12:19:56  Note:    Running coverage analysis
+25/07/25 12:19:56  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report +fm -dir ./ +format+standard -out ./SAF_coverage.sff -testinfo __fubs__/testid.txt -l fault_report.log
+25/07/25 12:19:56  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:19:56  Note:    Fault report file is SAF_coverage.sff
+> # coverage (type=[dictionary],file=[saf_dic_short.txt],test=[RCA], style=[short]) 
+>  
+> #coverage(type=[dictionary],test=[RCA],file=[saf_dic.txt])   
+> coverage (type=[dictionary],file=[saf_dic_long.txt],test=[ACCUMULATOR]) 
+25/07/25 12:19:56  Note:    Creating coverage dictionary
+25/07/25 12:19:56  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report -dict __fubs__/design/ACCUMULATOR/cdfout -dictout saf_dic_long.txt +format+standard -l __fubs__/design/ACCUMULATOR/ACCUMULATOR_cdf.log -fdef __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef
+25/07/25 12:19:57  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:19:57  Note:    Coverage dictionary file is 'saf_dic_long.txt'
+>  
+25/07/25 12:19:57  Note:    Script file complete
+25/07/25 12:19:57  Note:    Fri Jul 25 12:19:57 CEST 2025
+#                                Total Run Times                                 
+#
+#                              Queued             CPU               Wall  
+# Fault simulation            00:00:00          00:00:05          00:00:05
+# Toggle simulation           00:00:00          00:00:01          00:00:04
+#
+#
+#                            Time Allocation Per Tool                            
+#
+#                                   Queued                Running      
+# Fault simulation            00:00:00     0.00%     00:00:04    54.94%
+# Fault results recording     00:00:00     0.00%     00:00:00     4.65%
+# Testability                 00:00:00     0.00%     00:00:00     5.91%
+# Toggle simulation           00:00:00     0.00%     00:00:01    11.76%
+# Fault creation              00:00:00     0.00%     00:00:00     1.96%
+# Fault coverage              00:00:00     0.00%     00:00:02    20.78%
+#----------------------------------------------------------------------
+# Total                       00:00:00     0.00%     00:00:08   100.00%
+CPU Time: 8.6s ; Elapsed Time: 12.4s ; Data Size: 95.8MB

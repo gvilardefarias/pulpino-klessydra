@@ -1,0 +1,80 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : ADDER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:50:12 2025
+****************************************
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: carry_16_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: dsp_out_adder_results_reg[63]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                            Incr       Path
+  -------------------------------------------------------------------
+  clock clk_i (rise edge)                          0.00       0.00
+  clock network delay (ideal)                      0.00       0.00
+  carry_16_reg[1]/CLK (DFFRNQ_X1)                  0.00       0.00 r
+  carry_16_reg[1]/Q (DFFRNQ_X1)                   13.06      13.06 r
+  U846/Z (AND2_X1)                                 6.62      19.68 r
+  U848/ZN (NOR2_X1)                                2.55      22.23 f
+  U861/CO (FA_X1)                                  8.09      30.32 f
+  U862/ZN (NOR2_X1)                                4.45      34.77 r
+  U871/ZN (OAI21_X1)                               3.37      38.14 f
+  U872/ZN (NOR2_X1)                                4.58      42.72 r
+  U889/ZN (OAI21_X1)                               3.39      46.12 f
+  U890/ZN (NOR2_X1)                                4.58      50.70 r
+  U910/ZN (OAI21_X1)                               3.39      54.09 f
+  U911/ZN (NOR2_X1)                                4.58      58.67 r
+  U929/ZN (OAI21_X1)                               3.39      62.07 f
+  U930/ZN (NOR2_X1)                                4.58      66.65 r
+  U950/ZN (OAI21_X1)                               3.39      70.04 f
+  U951/ZN (NOR2_X1)                                4.66      74.70 r
+  U981/ZN (NOR2_X1)                                2.49      77.19 f
+  U982/ZN (NOR2_X1)                                3.54      80.74 r
+  U995/CO (FA_X1)                                  9.60      90.33 r
+  U996/ZN (OAI21_X1)                               3.17      93.50 f
+  U997/ZN (AOI21_X1)                               6.01      99.51 r
+  U998/Z (XOR2_X1)                                 6.71     106.22 f
+  U1026/ZN (OAI21_X1)                              4.19     110.41 r
+  U1027/ZN (NAND2_X1)                              3.06     113.47 f
+  U1028/ZN (AOI21_X1)                              5.14     118.60 r
+  U1049/ZN (OAI21_X1)                              4.20     122.80 f
+  U1050/ZN (NOR2_X1)                               4.53     127.33 r
+  U1067/ZN (OAI21_X1)                              3.83     131.16 f
+  U1068/ZN (NOR2_X1)                               4.46     135.62 r
+  U1088/ZN (OAI21_X1)                              3.82     139.44 f
+  U1089/ZN (NOR2_X1)                               4.46     143.90 r
+  U1107/ZN (OAI21_X1)                              3.82     147.72 f
+  U1108/ZN (NOR2_X1)                               4.46     152.18 r
+  U1126/ZN (OAI21_X1)                              3.82     156.00 f
+  U1127/ZN (NOR2_X1)                               4.53     160.53 r
+  U1135/ZN (NOR2_X1)                               2.75     163.28 f
+  U1137/ZN (OAI22_X1)                              4.30     167.58 r
+  U1138/Z (XOR2_X1)                                6.12     173.70 r
+  U1140/ZN (AOI22_X1)                              2.98     176.68 f
+  dsp_out_adder_results_reg[63]/D (DFFRNQ_X1)      0.00     176.68 f
+  data arrival time                                         176.68
+
+  clock clk_i (rise edge)                       2000.00    2000.00
+  clock network delay (ideal)                      0.00    2000.00
+  dsp_out_adder_results_reg[63]/CLK (DFFRNQ_X1)     0.00   2000.00 r
+  library setup time                             -10.63    1989.37
+  data required time                                       1989.37
+  -------------------------------------------------------------------
+  data required time                                       1989.37
+  data arrival time                                        -176.68
+  -------------------------------------------------------------------
+  slack (MET)                                              1812.68
+
+
+1

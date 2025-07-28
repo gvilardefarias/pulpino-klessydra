@@ -1,0 +1,59 @@
+ 
+****************************************
+Report : resources
+Design : ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:53:18 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Accumulator_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_add       | width=32   | add_123 (RTL-Accumulator_syn.vhd:123) |
+| add_x_2        | DW01_add       | width=16   | add_134 (RTL-Accumulator_syn.vhd:134) |
+| add_x_3        | DW01_add       | width=16   | add_135 (RTL-Accumulator_syn.vhd:135) |
+| add_x_4        | DW01_add       | width=16   | add_138 (RTL-Accumulator_syn.vhd:138) |
+| DP_OP_59J1_122_4437             |            |                            |
+|                | DP_OP_59J1_122_4437 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_59J1_122_4437
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_59J1_122_4437  | add_138_2 (RTL-Accumulator_syn.vhd:138)             |
+|                      | add_126 (RTL-Accumulator_syn.vhd:126)               |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 ( RTL-Accumulator_syn.vhd:126 RTL-Accumulator_syn.vhd:138 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_138 (RTL-Accumulator_syn.vhd:138)' in design 'ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'add_138_2 (RTL-Accumulator_syn.vhd:138)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_add         | apparch (area)     |                |
+| add_x_2            | DW01_add         | apparch (area)     |                |
+| add_x_3            | DW01_add         | apparch (area)     |                |
+| add_x_4            | DW01_add         | apparch (area)     |                |
+| DP_OP_59J1_122_4437                   |                    |                |
+|                    | DP_OP_59J1_122_4437 | str (area)      |                |
+===============================================================================
+
+1

@@ -1,0 +1,38 @@
+ 
+****************************************
+Report : reference
+Design : SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:42:34 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912       6     1.769472
+AOI21_X1           NanGate_15nm_OCL     0.294912      53    15.630337
+AOI22_X1           NanGate_15nm_OCL     0.344064     317   109.068287
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952      64    81.788925 n
+DFFSNQ_X1          NanGate_15nm_OCL     1.277952      72    92.012541 n
+INV_X1             NanGate_15nm_OCL     0.147456     123    18.137089
+NAND2_X1           NanGate_15nm_OCL     0.196608     124    24.379393
+NAND3_X1           NanGate_15nm_OCL     0.294912      25     7.372800
+NOR2_X1            NanGate_15nm_OCL     0.196608      65    12.779520
+NOR3_X1            NanGate_15nm_OCL     0.294912       4     1.179648
+OAI21_X1           NanGate_15nm_OCL     0.294912      85    25.067521
+OAI22_X1           NanGate_15nm_OCL     0.344064      48    16.515072
+OR2_X1             NanGate_15nm_OCL     0.294912       6     1.769472
+OR3_X1             NanGate_15nm_OCL     0.393216       1     0.393216
+-----------------------------------------------------------------------------
+Total 14 references                                   407.863293
+1

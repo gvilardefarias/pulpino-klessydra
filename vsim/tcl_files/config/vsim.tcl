@@ -98,11 +98,11 @@ set cmd "vsim -quiet $TB \
   -gTHREAD_NUM=$env(THREAD_NUM) \
   -t ps \
   -voptargs=\"+acc -suppress 2103\" \
+  -do \"vcd dumpports -file accum.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/ACCUM_STG/*\" \
   $VSIM_FLAGS"
 }
 # TO generate VCD
-#  -do \"vcd file accl_dump.vcd\" \
-#  -do \"vcd add -ports sim:/tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/*\" \
+  #-do \"vcd add -ports sim:/tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/MULT_STG/*\" \
 
 # set cmd "$cmd -sv_lib ./work/libri5cyv2sim"
 eval $cmd

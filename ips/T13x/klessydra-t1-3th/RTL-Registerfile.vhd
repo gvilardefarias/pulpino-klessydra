@@ -127,8 +127,14 @@ begin
   begin
     if rst_ni = '0' then
       for h in harc_range loop
-        regfile(h)(0) <= (others => '0');
+        for r in 0 to RF_SIZE-1 loop
+          regfile(h)(r) <= (others => '0');
+        end loop;
+--        regfile(h)(0) <= (others => '0');
       end loop;
+      RS1_Data_IE <= (others => '0');
+      RS2_Data_IE <= (others => '0');
+      RD_Data_IE  <= (others => '0');
     elsif rising_edge(clk_i) then
       if core_busy_IE = '1' or core_busy_LS = '1' or ls_parallel_exec = '0'  or dsp_parallel_exec = '0' then -- the instruction pipeline is halted
       elsif instr_rvalid_ID = '0' then -- wait for a valid instruction

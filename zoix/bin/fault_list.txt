@@ -1,0 +1,3 @@
+fault port sa0 RCA.U8.A undetected 0
+fault port sa1 RCA.U8.A undetected 1
+

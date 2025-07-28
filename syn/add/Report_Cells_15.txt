@@ -1,0 +1,2047 @@
+ 
+****************************************
+Report : cell
+Design : ADDER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:50:12 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+    h - hierarchical
+   mo - map_only
+    n - noncombinational
+    r - removable
+    u - contains unmapped logic
+
+Cell                      Reference       Library             Area  Attributes
+--------------------------------------------------------------------------------
+MSB_stage_2_reg[0]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[1]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[2]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[3]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[4]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[5]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[6]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[7]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[8]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[9]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[10]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[11]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[12]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[13]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[14]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+MSB_stage_2_reg[15]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+U394                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U395                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U396                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U397                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U398                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U399                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U400                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U401                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U402                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U403                      AND2_X1         NanGate_15nm_OCL
+                                                          0.294912  
+U404                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U405                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U406                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U407                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U408                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U409                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U410                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U411                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U412                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U413                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U414                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U415                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U416                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U417                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U418                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U419                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U420                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U421                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U422                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U423                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U424                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U425                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U426                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U427                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U428                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U429                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U430                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U431                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U432                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U433                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U434                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U435                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U436                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U437                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U438                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U439                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U440                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U441                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U442                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U443                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U444                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U445                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U446                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U447                      OAI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U448                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U449                      AOI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U450                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U451                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U452                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U453                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U454                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U455                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U456                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U457                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U458                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U459                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U460                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U461                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U462                      AND2_X1         NanGate_15nm_OCL
+                                                          0.294912  
+U463                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U464                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U465                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U466                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U467                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U468                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U469                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U470                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U471                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U472                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U473                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U474                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U475                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U476                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U477                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U478                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U479                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U480                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U481                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U482                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U483                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U484                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U485                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U486                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U487                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U488                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U489                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U490                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U491                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U492                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U493                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U494                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U495                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U496                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U497                      OAI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U498                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U499                      AOI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U500                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U501                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U502                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U503                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U504                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U505                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U506                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U507                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U508                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U509                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U510                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U511                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U512                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U513                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U514                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U515                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U516                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U517                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U518                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U519                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U520                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U521                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U522                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U523                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U524                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U525                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U526                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U527                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U528                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U529                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U530                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U531                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U532                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U533                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U534                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U535                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U536                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U537                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U538                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U539                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U540                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U541                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U542                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U543                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U544                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U545                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U546                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U547                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U548                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U549                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U550                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U551                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U552                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U553                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U554                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U555                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U556                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U557                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U558                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U559                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U560                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U561                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U562                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U563                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U564                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U565                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U566                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U567                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U568                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U569                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U570                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U571                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U572                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U573                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U574                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U575                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U576                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U577                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U578                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U579                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U580                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U581                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U582                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U583                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U584                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U585                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U586                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U587                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U588                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U589                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U590                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U591                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U592                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U593                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U594                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U595                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U596                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U597                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U598                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U599                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U600                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U601                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U602                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U603                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U604                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U605                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U606                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U607                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U608                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U609                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U610                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U611                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U612                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U613                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U614                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U615                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U616                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U617                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U618                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U619                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U620                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U621                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U622                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U623                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U624                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U625                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U626                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U627                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U628                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U629                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U630                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U631                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U632                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U633                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U634                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U635                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U636                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U637                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U638                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U639                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U640                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U641                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U642                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U643                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U644                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U645                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U646                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U647                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U648                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U649                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U650                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U651                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U652                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U653                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U654                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U655                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U656                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U657                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U658                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U659                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U660                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U661                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U662                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U663                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U664                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U665                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U666                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U667                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U668                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U669                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U670                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U671                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U672                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U673                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U674                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U675                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U676                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U677                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U678                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U679                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U680                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U681                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U682                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U683                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U684                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U685                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U686                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U687                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U688                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U689                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U690                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U691                      FA_X1           NanGate_15nm_OCL
+                                                          1.179648  r
+U692                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U693                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U694                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U695                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U696                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U697                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U698                      FA_X1           NanGate_15nm_OCL
+                                                          1.179648  r
+U699                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U700                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U701                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U702                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U703                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U704                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U705                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U706                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U707                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U708                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U709                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U710                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U711                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U712                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U713                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U714                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U715                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U716                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U717                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U718                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U719                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U720                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U721                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U722                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U723                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U724                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U725                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U726                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U727                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U728                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U729                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U730                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U731                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U732                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U733                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U734                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U735                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U736                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U737                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U738                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U739                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U740                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U741                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U742                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U743                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U744                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U745                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U746                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U747                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U748                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U749                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U750                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U751                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U752                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U753                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U754                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U755                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U756                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U757                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U758                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U759                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U760                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U761                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U762                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U763                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U764                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U765                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U766                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U767                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U768                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U769                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U770                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U771                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U772                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U773                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U774                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U775                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U776                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U777                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U778                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U779                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U780                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U781                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U782                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U783                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U784                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U785                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U786                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U787                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U788                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U789                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U790                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U791                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U792                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U793                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U794                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U795                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U796                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U797                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U798                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U799                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U800                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U801                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U802                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U803                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U804                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U805                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U806                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U807                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U808                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U809                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U810                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U811                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U812                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U813                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U814                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U815                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U816                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U817                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U818                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U819                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U820                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U821                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U822                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U823                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U824                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U825                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U826                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U827                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U828                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U829                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U830                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U831                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U832                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U833                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U834                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U835                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U836                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U837                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U838                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U839                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U840                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U841                      AND2_X1         NanGate_15nm_OCL
+                                                          0.294912  
+U842                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U843                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U844                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U845                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U846                      AND2_X1         NanGate_15nm_OCL
+                                                          0.294912  
+U847                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U848                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U849                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U850                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U851                      FA_X1           NanGate_15nm_OCL
+                                                          1.179648  r
+U852                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U853                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U854                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U855                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U856                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U857                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U858                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U859                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U860                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U861                      FA_X1           NanGate_15nm_OCL
+                                                          1.179648  r
+U862                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U863                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U864                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U865                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U866                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U867                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U868                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U869                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U870                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U871                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U872                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U873                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U874                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U875                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U876                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U877                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U878                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U879                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U880                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U881                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U882                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U883                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U884                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U885                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U886                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U887                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U888                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U889                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U890                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U891                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U892                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U893                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U894                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U895                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U896                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U897                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U898                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U899                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U900                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U901                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U902                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U903                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U904                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U905                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U906                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U907                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U908                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U909                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U910                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U911                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U912                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U913                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U914                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U915                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U916                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U917                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U918                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U919                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U920                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U921                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U922                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U923                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U924                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U925                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U926                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U927                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U928                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U929                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U930                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U931                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U932                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U933                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U934                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U935                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U936                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U937                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U938                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U939                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U940                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U941                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U942                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U943                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U944                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U945                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U946                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U947                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U948                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U949                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U950                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U951                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U952                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U953                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U954                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U955                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U956                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U957                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U958                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U959                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U960                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U961                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U962                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U963                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U964                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U965                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U966                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U967                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U968                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U969                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U970                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U971                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U972                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U973                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U974                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U975                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U976                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U977                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U978                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U979                      NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U980                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U981                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U982                      NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U983                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U984                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U985                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U986                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U987                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U988                      AOI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U989                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U990                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U991                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U992                      XNOR2_X1        NanGate_15nm_OCL
+                                                          0.442368  
+U993                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U994                      AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U995                      FA_X1           NanGate_15nm_OCL
+                                                          1.179648  r
+U996                      OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U997                      AOI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U998                      XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U999                      INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1000                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1001                     XNOR2_X1        NanGate_15nm_OCL
+                                                          0.442368  
+U1002                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1003                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1004                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1005                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1006                     OR3_X1          NanGate_15nm_OCL
+                                                          0.393216  
+U1007                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1008                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1009                     NAND3_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1010                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1011                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1012                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1013                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1014                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1015                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1016                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1017                     AOI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1018                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1019                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1020                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1021                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1022                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1023                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1024                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1025                     NOR3_X1         NanGate_15nm_OCL
+                                                          0.294912  
+U1026                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1027                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1028                     AOI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1029                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1030                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1031                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1032                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1033                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1034                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1035                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1036                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1037                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1038                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1039                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1040                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1041                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1042                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1043                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1044                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1045                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1046                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1047                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1048                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1049                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1050                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1051                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1052                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1053                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1054                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1055                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1056                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1057                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1058                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1059                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1060                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1061                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1062                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1063                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1064                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1065                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1066                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1067                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1068                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1069                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1070                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1071                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1072                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1073                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1074                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1075                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1076                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1077                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1078                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1079                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1080                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1081                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1082                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1083                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1084                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1085                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1086                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1087                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1088                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1089                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1090                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1091                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1092                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1093                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1094                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1095                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1096                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1097                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1098                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1099                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1100                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1101                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1102                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1103                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1104                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1105                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1106                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1107                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1108                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1109                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1110                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1111                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1112                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1113                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1114                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1115                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1116                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1117                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1118                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1119                     OAI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1120                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1121                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1122                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1123                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1124                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1125                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1126                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1127                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1128                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1129                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1130                     OAI21_X1        NanGate_15nm_OCL
+                                                          0.294912  
+U1131                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1132                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1133                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1134                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1135                     NOR2_X1         NanGate_15nm_OCL
+                                                          0.196608  
+U1136                     NAND2_X1        NanGate_15nm_OCL
+                                                          0.196608  
+U1137                     OAI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+U1138                     XOR2_X1         NanGate_15nm_OCL
+                                                          0.442368  
+U1139                     INV_X1          NanGate_15nm_OCL
+                                                          0.147456  
+U1140                     AOI22_X1        NanGate_15nm_OCL
+                                                          0.344064  
+carry_8_wire_reg[0]       LHQ_X1          NanGate_15nm_OCL
+                                                          0.688128  n
+carry_8_wire_reg[1]       LHQ_X1          NanGate_15nm_OCL
+                                                          0.688128  n
+carry_16_reg[0]           DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+carry_16_reg[1]           DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+carry_16_wire_reg[0]      LHQ_X1          NanGate_15nm_OCL
+                                                          0.688128  n
+carry_16_wire_reg[1]      LHQ_X1          NanGate_15nm_OCL
+                                                          0.688128  n
+dsp_add_8_0_reg[0]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[1]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[2]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[3]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[4]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[5]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[6]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[7]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[8]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[9]        DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[10]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[11]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[12]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[13]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[14]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[15]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[16]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_8_0_reg[17]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[0]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[1]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[2]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[3]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[4]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[5]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[6]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[7]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[8]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[9]       DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[10]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[11]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[12]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[13]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[14]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[15]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[16]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_add_16_8_reg[17]      DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[0]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[1]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[2]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[3]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[4]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[5]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[6]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[7]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[8]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[9]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[10]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[11]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[12]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[13]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[14]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[15]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[16]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[17]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[18]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[19]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[20]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[21]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[22]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[23]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[24]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[25]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[26]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[27]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[28]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[29]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[30]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[31]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[32]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[33]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[34]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[35]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[36]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[37]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[38]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[39]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[40]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[41]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[42]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[43]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[44]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[45]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[46]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[47]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[48]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[49]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[50]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[51]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[52]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[53]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[54]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[55]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[56]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[57]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[58]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[59]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[60]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[61]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[62]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_in_adder_operands_lat_reg[63]
+                          DFFSNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[0]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[1]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[2]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[3]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[4]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[5]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[6]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[7]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[8]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[9]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[10]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[11]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[12]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[13]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[14]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[15]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[16]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[17]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[18]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[19]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[20]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[21]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[22]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[23]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[24]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[25]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[26]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[27]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[28]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[29]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[30]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[31]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[32]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[33]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[34]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[35]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[36]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[37]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[38]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[39]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[40]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[41]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[42]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[43]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[44]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[45]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[46]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[47]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[48]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[49]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[50]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[51]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[52]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[53]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[54]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[55]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[56]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[57]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[58]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[59]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[60]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[61]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[62]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+dsp_out_adder_results_reg[63]
+                          DFFRNQ_X1       NanGate_15nm_OCL
+                                                          1.277952  n
+intadd_0/U2               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U3               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U4               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U5               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U6               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U7               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U8               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_0/U9               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U2               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U3               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U4               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U5               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U6               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U7               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U8               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+intadd_1/U9               FA_X1           NanGate_15nm_OCL
+                                                          1.179648  mo, r
+--------------------------------------------------------------------------------
+Total 949 cells                                           443.547644
+1

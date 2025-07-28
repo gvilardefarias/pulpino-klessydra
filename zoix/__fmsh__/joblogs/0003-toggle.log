@@ -1,0 +1,41 @@
+CMD: ./zoix.sim -toggle __tests__/ACCUMULATOR/ACCUMULATOR.vtog -fstrobe __tests__/ACCUMULATOR/__fstrobes__ -l __tests__/ACCUMULATOR/zoix_rt.log +vcd+file+__tests__/ACCUMULATOR/accum.vcd +progress -testdir __tests__/ACCUMULATOR/ +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR -testname ACCUMULATOR +job_id+463c9e7b8705ffe5
+
+
+                                   Z01X (TM)
+
+                 Version V-2023.12 for linux64 - Nov 19, 2023 
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+Command: zoix.sim -toggle __tests__/ACCUMULATOR/ACCUMULATOR.vtog -fstrobe __tests__/ACCUMULATOR/__fstrobes__ -l __tests__/ACCUMULATOR/zoix_rt.log +vcd+file+__tests__/ACCUMULATOR/accum.vcd +progress -testdir __tests__/ACCUMULATOR/ +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR -testname ACCUMULATOR +job_id+463c9e7b8705ffe5 
+
+Info:    Simulation Started Fri Jul 25 12:19:46 2025
+Info:    Logic Simulation  Host monviso
+
+Info:    Loading ...      (12:19:47)
+Info:    Initializing ... (12:19:47)
+Info:    Simulating ...   (12:19:47)
+ZOIX INJECTION
+Info:    2500             (12:19:47)
+
+Info:    Last simulation time was at 835545000 ns
+Info:    Logic Events: 648524
+Info:    Writing toggle data...
+Info:    CPU Time: 0.8s ; Elapsed Time: 0.9s ; Data Size: 59.1MB 
+Info:    Simulation Completed Fri Jul 25 12:19:47 2025

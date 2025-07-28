@@ -1,0 +1,131 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:53:18 2025
+****************************************
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: accum_partial_results_stg_1_reg[16]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: accum_results_reg[31]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                        Fanout     Trans      Incr       Path      Attributes
+  ----------------------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                            0.00       0.00
+  clock network delay (ideal)                                        0.00       0.00
+  accum_partial_results_stg_1_reg[16]/CLK (DFFSNQ_X1)      0.00      0.00       0.00 r
+  accum_partial_results_stg_1_reg[16]/Q (DFFSNQ_X1)        4.75     12.32      12.32 f
+  accum_partial_results_stg_1[16] (net)          2                   0.00      12.32 f
+  U701/ZN (INV_X1)                                         4.83      3.82      16.14 r
+  n719 (net)                                     3                   0.00      16.14 r
+  U817/ZN (NOR2_X1)                                        3.16      2.78      18.92 f
+  intadd_0/CI (net)                              1                   0.00      18.92 f
+  intadd_0/U15/S (FA_X1)                                   3.82     13.80      32.73 r    mo 
+  N177 (net)                                     1                   0.00      32.73 r
+  U786/ZN (AOI22_X1)                                      12.83      3.05      35.78 f
+  n698 (net)                                     1                   0.00      35.78 f
+  U787/ZN (INV_X1)                                         5.30      4.36      40.14 r
+  DP_OP_59J1_122_4437/n102 (net)                 1                   0.00      40.14 r
+  DP_OP_59J1_122_4437/U32/CO (FA_X1)                       4.07      9.27      49.42 r    mo 
+  DP_OP_59J1_122_4437/n31 (net)                  1                   0.00      49.42 r
+  DP_OP_59J1_122_4437/U31/CO (FA_X1)                       4.07      8.90      58.31 r    mo 
+  DP_OP_59J1_122_4437/n30 (net)                  1                   0.00      58.31 r
+  DP_OP_59J1_122_4437/U30/CO (FA_X1)                       4.07      8.90      67.21 r    mo 
+  DP_OP_59J1_122_4437/n29 (net)                  1                   0.00      67.21 r
+  DP_OP_59J1_122_4437/U29/CO (FA_X1)                       4.07      8.90      76.11 r    mo 
+  DP_OP_59J1_122_4437/n28 (net)                  1                   0.00      76.11 r
+  DP_OP_59J1_122_4437/U28/CO (FA_X1)                       4.07      8.90      85.01 r    mo 
+  DP_OP_59J1_122_4437/n27 (net)                  1                   0.00      85.01 r
+  DP_OP_59J1_122_4437/U27/CO (FA_X1)                       4.07      8.90      93.90 r    mo 
+  DP_OP_59J1_122_4437/n26 (net)                  1                   0.00      93.90 r
+  DP_OP_59J1_122_4437/U26/CO (FA_X1)                       4.07      8.90     102.80 r    mo 
+  DP_OP_59J1_122_4437/n25 (net)                  1                   0.00     102.80 r
+  DP_OP_59J1_122_4437/U25/CO (FA_X1)                       4.07      8.90     111.70 r    mo 
+  DP_OP_59J1_122_4437/n24 (net)                  1                   0.00     111.70 r
+  DP_OP_59J1_122_4437/U24/CO (FA_X1)                       4.07      8.90     120.59 r    mo 
+  DP_OP_59J1_122_4437/n23 (net)                  1                   0.00     120.59 r
+  DP_OP_59J1_122_4437/U23/CO (FA_X1)                       4.07      8.90     129.49 r    mo 
+  DP_OP_59J1_122_4437/n22 (net)                  1                   0.00     129.49 r
+  DP_OP_59J1_122_4437/U22/CO (FA_X1)                       4.07      8.90     138.39 r    mo 
+  DP_OP_59J1_122_4437/n21 (net)                  1                   0.00     138.39 r
+  DP_OP_59J1_122_4437/U21/CO (FA_X1)                       4.07      8.90     147.29 r    mo 
+  DP_OP_59J1_122_4437/n20 (net)                  1                   0.00     147.29 r
+  DP_OP_59J1_122_4437/U20/CO (FA_X1)                       4.07      8.90     156.18 r    mo 
+  DP_OP_59J1_122_4437/n19 (net)                  1                   0.00     156.18 r
+  DP_OP_59J1_122_4437/U19/CO (FA_X1)                       4.07      8.90     165.08 r    mo 
+  DP_OP_59J1_122_4437/n18 (net)                  1                   0.00     165.08 r
+  DP_OP_59J1_122_4437/U18/CO (FA_X1)                       4.09      8.90     173.98 r    mo 
+  DP_OP_59J1_122_4437/n17 (net)                  1                   0.00     173.98 r
+  DP_OP_59J1_122_4437/U17/CO (FA_X1)                       4.07      8.90     182.88 r    mo 
+  DP_OP_59J1_122_4437/n16 (net)                  1                   0.00     182.88 r
+  DP_OP_59J1_122_4437/U16/CO (FA_X1)                       4.07      8.90     191.78 r    mo 
+  DP_OP_59J1_122_4437/n15 (net)                  1                   0.00     191.78 r
+  DP_OP_59J1_122_4437/U15/CO (FA_X1)                       4.07      8.90     200.68 r    mo 
+  DP_OP_59J1_122_4437/n14 (net)                  1                   0.00     200.68 r
+  DP_OP_59J1_122_4437/U14/CO (FA_X1)                       4.07      8.90     209.58 r    mo 
+  DP_OP_59J1_122_4437/n13 (net)                  1                   0.00     209.58 r
+  DP_OP_59J1_122_4437/U13/CO (FA_X1)                       4.07      8.90     218.48 r    mo 
+  DP_OP_59J1_122_4437/n12 (net)                  1                   0.00     218.48 r
+  DP_OP_59J1_122_4437/U12/CO (FA_X1)                       4.07      8.90     227.37 r    mo 
+  DP_OP_59J1_122_4437/n11 (net)                  1                   0.00     227.37 r
+  DP_OP_59J1_122_4437/U11/CO (FA_X1)                       4.07      8.90     236.27 r    mo 
+  DP_OP_59J1_122_4437/n10 (net)                  1                   0.00     236.27 r
+  DP_OP_59J1_122_4437/U10/CO (FA_X1)                       4.07      8.90     245.17 r    mo 
+  DP_OP_59J1_122_4437/n9 (net)                   1                   0.00     245.17 r
+  DP_OP_59J1_122_4437/U9/CO (FA_X1)                        4.07      8.90     254.07 r    mo 
+  DP_OP_59J1_122_4437/n8 (net)                   1                   0.00     254.07 r
+  DP_OP_59J1_122_4437/U8/CO (FA_X1)                        4.07      8.90     262.97 r    mo 
+  DP_OP_59J1_122_4437/n7 (net)                   1                   0.00     262.97 r
+  DP_OP_59J1_122_4437/U7/CO (FA_X1)                        4.07      8.90     271.87 r    mo 
+  DP_OP_59J1_122_4437/n6 (net)                   1                   0.00     271.87 r
+  DP_OP_59J1_122_4437/U6/CO (FA_X1)                        4.07      8.90     280.77 r    mo 
+  DP_OP_59J1_122_4437/n5 (net)                   1                   0.00     280.77 r
+  DP_OP_59J1_122_4437/U5/CO (FA_X1)                        4.07      8.90     289.66 r    mo 
+  DP_OP_59J1_122_4437/n4 (net)                   1                   0.00     289.66 r
+  DP_OP_59J1_122_4437/U4/CO (FA_X1)                        4.07      8.90     298.56 r    mo 
+  DP_OP_59J1_122_4437/n3 (net)                   1                   0.00     298.56 r
+  DP_OP_59J1_122_4437/U3/CO (FA_X1)                        4.46      9.18     307.74 r    mo 
+  DP_OP_59J1_122_4437/n2 (net)                   1                   0.00     307.74 r
+  U780/Z (XOR2_X1)                                         5.18      5.30     313.05 r
+  n695 (net)                                     1                   0.00     313.05 r
+  U781/ZN (AOI22_X1)                                      21.78      3.34     316.39 f
+  n696 (net)                                     1                   0.00     316.39 f
+  U782/ZN (INV_X1)                                         4.68      3.40     319.79 r
+  n148 (net)                                     1                   0.00     319.79 r
+  accum_results_reg[31]/D (DFFSNQ_X1)                      4.68      0.00     319.79 r
+  data arrival time                                                           319.79
+
+  clock clk_i (rise edge)                                         2000.00    2000.00
+  clock network delay (ideal)                                        0.00    2000.00
+  accum_results_reg[31]/CLK (DFFSNQ_X1)                              0.00    2000.00 r
+  library setup time                                                -8.10    1991.90
+  data required time                                                         1991.90
+  ----------------------------------------------------------------------------------------------------------
+  data required time                                                         1991.90
+  data arrival time                                                          -319.79
+  ----------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                1672.12
+
+
+1

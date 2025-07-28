@@ -1,0 +1,2437 @@
+[<embedded>] % help get_design_info 
+----------------------------------------
+Syntax: 	get_design_info Top-Instance Scope
+        	------------------
+        	get_design_info (no arguments)
+        	
+        	get_design_info -list
+        	                     ([parameter [-transitive]] [local_parameter] [constant] [enum]
+        	                      [output] [input] [inout] [stopat]
+        	                      [undriven] [undriven_internal] [loop_index] [multiple_driven]
+        	                      [bbox_mod] [bbox_inst] [bbox_in] [bbox_out] [bbox_inout]
+        	                      [bbox_in_instance_port] [bbox_out_instance_port]
+        	                      [bbox_inout_instance_port]
+        	                      [basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+        	                      [register] [flop] [latch] [gate]
+        	                      [multiplier] [divider] [modulus]
+        	                      [module] [module_no_param] [module_name] [module_name_no_param]
+        	                      [instance [-depth <N>]]
+        	                      [bind_instance [-depth <N>]]
+        	                      [interface] [interface_no_param] [interface_instance] [interface_port]
+        	                      [prim_inst] [prim_mod]
+        	                      [celldefine]
+        	                      [package] [compilation_unit]
+        	                      [architecture] [signal] [wire] [property]
+        	                      [assert] [assume] [cover] [macro]
+        	                     )+
+        	                     [-verbosity (high | low | silent)]
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	                     [-gui]
+        	                     [-include_hier_path]
+        	
+        	get_design_info -include_config [-instance <instance_name>]
+        	
+        	get_design_info -enum <enum_name>
+        	                 [ -module <module_name>
+        	                  |-instance <instance_name>
+        	                  |-package <package_name>]
+        	
+        	"-instance" Scope
+        	-----------------
+        	get_design_info -instance <instance_name>
+        	               [-list
+        	                     ([parameter [-transitive]] [local_parameter] [constant] [enum]
+        	                      [output] [input] [inout] [stopat]
+        	                      [undriven] [undriven_internal] [multiple_driven]
+        	                      [bbox_mod] [bbox_inst] [bbox_in] [bbox_out] [bbox_inout]
+        	                      [bbox_in_instance_port] [bbox_out_instance_port]
+        	                      [bbox_inout_instance_port]]
+        	                      [basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+        	                      [register [-depth <N>]] [flop [-depth <N>]] [latch [-depth <N>]]
+        	                      [gate]
+        	                      [multiplier] [divider] [modulus]
+        	                      [module] [module_no_param] [module_name] [module_name_no_param]
+        	                      [instance [-depth <N>]]
+        	                      [bind_instance [-depth <N>]]
+        	                      [interface] [interface_no_param] [interface_instance] [interface_port]
+        	                      [prim_inst] [prim_mod]
+        	                      [celldefine]
+        	                      [architecture] [signal]
+        	                      [wire] [property] [assert] [assume] [cover]
+        	                      [parent] [empty_inst]
+        	                     )+
+        	               ]
+        	                     [-verbosity (high | low | silent)]
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	                     [-gui]
+        	                     [-include_hier_path]
+        	
+        	"-module" Scope
+        	---------------
+        	get_design_info -module <module_name>
+        	               [-list
+        	                     ([parameter] [constant] [enum]
+        	                      [output] [input] [inout] [stopat]
+        	                      [undriven] [undriven_internal] [loop_index] [multiple_driven]
+        	                      [bbox_mod] [bbox_inst] [bbox_in] [bbox_out] [bbox_inout]
+        	                      [bbox_in_instance_port] [bbox_out_instance_port]
+        	                      [bbox_inout_instance_port]]
+        	                      [basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+        	                      [register] [flop] [latch] [gate]
+        	                      [multiplier] [divider] [modulus]
+        	                      [module] [module_no_param] [module_name] [module_name_no_param]
+        	                      [instance [-no_param_match_default_only]]
+        	                      [instance_include_bbox [-no_param_match_default_only]]
+        	                      [bind_instance]
+        	                      [interface] [interface_no_param] [interface_instance] [interface_port]
+        	                      [prim_inst] [prim_mod]
+        	                      [celldefine]
+        	                      [architecture] [signal] [wire]
+        	                      [property] [assert] [assume] [cover]
+        	                     )+
+        	               ]
+        	                     [-verbosity (high | low | silent)]
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	                     [-gui]
+        	                     [-include_hier_path]
+        	
+        	"-interface_instance" Scope
+        	---------------------------
+        	get_design_info -interface_instance <interface_instance_name>
+        	                -list ([interface_name] [interface_name_no_param]
+        	                                [parameter [-transitive]] [local_parameter]
+        	                               )+
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	
+        	"-interface_port" Scope
+        	-----------------------
+        	get_design_info -interface_port <interface_port_name>
+        	                -list ([interface_name] [interface_name_no_param]
+        	                                [parameter [-transitive]] [local_parameter]
+        	                               )+
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	
+        	"-interface" Scope
+        	------------------
+        	get_design_info -interface <interface_name>
+        	                -list
+        	                     ([interface_instance] [interface_port]
+        	                      [parameter]
+        	                     )+
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	"-package" Scope
+        	----------------
+        	get_design_info -package <package_name>
+        	               [-list
+        	                     ([constant] [enum] [local_parameter] [signal]
+        	                     )+
+        	               ]
+        	                     [-silent]
+        	
+        	"-compilation_unit" Scope
+        	-------------------------
+        	get_design_info -compilation_unit <compilation_unit_name>
+        	               -list
+        	                     ([parameter] [local_parameter])+
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	
+        	"-signal" Scope
+        	---------------
+        	get_design_info -signal <signal_list>
+        	               [-list
+        	                     ([basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+        	                      [register [-fanout]] [flop [-fanout]] [latch [-fanout]]
+        	                      [gate] [input]
+        	                      [undriven] [undriven_internal] [loop_index]
+        	                      [bbox_inout] [bbox_out]
+        	                      [special_values] [multiple_driven]
+        	                      [module] [instance] [bind_instance] [signal] [wire]
+        	                      [parent]
+        	                     )+
+        	               ]
+        	                     [-verbosity (high | low | silent)]
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	                     [-gui]
+        	
+        	"-property" Scope
+        	-----------------
+        	get_design_info -property <property_name>+ [-regexp]
+        	               [-list
+        	                     ([basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+        	                      [register] [flop] [latch] [gate] [input]
+        	                      [undriven] [undriven_internal] [loop_index]
+        	                      [multiplier] [divider] [modulus]
+        	                      [bbox_inout] [bbox_out] [multiple_driven]
+        	                      [module] [instance] [signal] [wire]
+        	                      [property] [assert] [assume] [cover] [stopat]
+        	                     )+
+        	               ]
+        	                     [-verbosity (high | low | silent)]
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	                     [-gui]
+        	
+        	"-task" Scope
+        	-------------
+        	get_design_info -task <task_name>+ [-compute_all]
+        	               [-list
+        	                     ([basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+        	                      [register] [flop] [latch] [gate] [input]
+        	                      [undriven] [undriven_internal] [loop_index]
+        	                      [module] [instance] [signal] [wire]
+        	                      [property] [assert] [assume] [cover]
+        	                     )+
+        	               ]
+        	                     [-verbosity (high | low | silent)]
+        	                     [-typed_list]
+        	                     [-silent]
+        	                     [-file <file_name> [-force]]
+        	                     [-filter <filter_expression> [-regexp] [-case_sensitive]]
+        	                     [-gui]
+        	
+        	Counter, FSM, and FIFO Detection
+        	--------------------------------
+        	get_design_info -signal <signal_list>
+        	                -is_counter | -is_fsm | -is_fifo
+        	                [-verbosity high]
+        	
+        	Cached-Info Clearing
+        	--------------------
+        	get_design_info -clear
+        	
+        	Depth Calculation
+        	-----------------
+        	get_design_info (-signal <name>+ |-property <name>+)
+        	                 -list (flop | latch | register)
+        	                 -depth <N>
+        	                 [-boundary]
+        	                 [-silent]
+
+Summary:	Prints out design information.
+Returns:	An integer, signal list, or true/false.
+See also:	get_flop_info,
+get_latch_info,
+get_signal_info,
+get_property_list,
+jforeach,
+set_design_exploration_include_clock_logic,
+set_use_low_power_port_definition
+
+Detailed description:
+Design information is a feature that gives insight into the formal
+computational complexity of the design. Access this feature through the GUI
+interface or the "get_design_info" Tcl command.
+
+This command provides various structural and functional information for a
+specific scope within the given design. It provides:
+
+- Structural metrics - Including the number of gates, flops, and so forth
+
+- Functional metrics - Including the set of counters, any special values of the
+  counters, the set of finite-state machines, and so forth
+
+In addition, for modules and instances, this command provides:
+
+- Module source information - Including the number of RTL lines, instances, and
+  embedded properties.
+
+- Current task information - Including the number of stopats in the current
+  task.
+
+See the command reference manual appendix "get_design_info Transitivity" for a
+list of the transitivity of "get_design_info" scopes: top instance (no scope
+switch), "-instance", and "-module". This appendix also identifies limitations
+and exceptions. Access the manual from the menu option Help - Command Reference.
+
+  NOTE: This command reports stopats that meet these requirements:
+  . In the current task
+  . In the specified scope
+  . In the COI of properties in the current task and scope
+  For a more general list of stopats, use the "stopat -list" command (help
+  stopat).
+
+Important information about this command:
+. You can specify the scope (focus) for which this information is provided. For
+  example, you might want to get the list of flops in the transitive fanin of
+  all the properties in a task or the list of counters feeding to an output of
+  the design. You can also control the exact set of information provided
+  through options.
+. If you do not specify arguments, this command returns information for the top
+  instance.
+. The "-list" switch supports multiple enum types in a single Tcl command, but
+  you must supply at least one enum. For example, you can specify:
+  get_design_info -instance myInstance -list output input
+  In this example, the command returns the analysis information for outputs and
+  inputs. And the return value (the single line at the end) is a list of output
+  names followed by input names. Use "-typed_list" to add a type element before
+  each of the requested lists.
+. Use the command "set_design_exploration_include_clock_logic" to control the
+  logic the tool traverses when gathering information.
+. See the section "Customizing Lists" for switches that refine your list, for
+  example, for scripting.
+
+
+Top-Instance Scope
+==================
+no arguments
+    If you do not specify arguments, this command returns the following
+    statistics for the top instance:
+    . Instance source info, such as the number of RTL instances, embedded
+      properties by type, and the number of lines of code
+    . Instance structural metrics such as the number of ports, registers, and
+      gates
+    The output of this command is the sum of all registers (flops and
+    latches).
+
+-list ([parameter [-transitive]] [local_parameter] [constant] [enum]
+       [output] [input] [inout] [stopat]
+       [undriven] [undriven_internal] [loop_index] [multiple_driven]
+       [bbox_mod] [bbox_inst] [bbox_in] [bbox_out] [bbox_inout]
+       [bbox_in_instance_port] [bbox_out_instance_port]
+       [bbox_inout_instance_port]
+       [basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+       [register] [flop] [latch] [gate]
+       [multiplier] [divider] [modulus]
+       [module] [module_no_param] [module_name] [module_name_no_param]
+       [instance [-depth N]]
+       [bind_instance [-depth N]]
+       [interface] [interface_no_param] [interface_instance] [interface_port]
+       [prim_inst] [prim_mod]
+       [celldefine]
+       [package] [compilation_unit]
+       [architecture] [signal] [wire] [property]
+       [assert] [assume] [cover] [macro])+
+          [-verbosity (high | low | silent)]
+          [-typed_list]
+          [-silent]
+          [-file file_name [-force]]
+          [-filter filter_expression [-regexp] [-case_sensitive]]
+          [-gui]
+    Get design information for the top instance.
+
+    Important things to know:
+    . This analysis ignores hard stopats and instance stopats.
+    . Below you will find definitions of the supported "-list" enums for the
+      top-instance scope.
+    . The top-instance scope includes the top-instance itself or the top
+      instance's hierarchy (the top instance and its subinstances) depending on
+      the selected enum.
+    . See the section "Customizing Lists" for switches that refine your list,
+      for example, for scripting.
+
+    Supported "-list" Enums for the Top-Instance Scope
+    --------------------------------------------------
+    . parameter: Get the parameters listed in the top instance.
+        This command returns a string of parameter-value pairs.
+        Example: [param1] [value1] [param2] [value2].
+        Use "-transitive" to return parameters listed under the top instance
+        hierarchy. The parameter names will display their hierarchical path.
+
+    . local_parameter: List the local parameters in the top instance. The
+        tool returns a string of parameter-value pairs. Example:
+        [param1] [value1] [param2] [value2].
+
+    . constant: Get the VHDL constants declared in the top instance. The tool
+        returns a string of constant-value pairs. Example:
+        [const1] [value1] [const2] [value2].
+
+    . enum: List the enum variables declared under the top instance's hierarchy,
+        displaying their names followed by their mnemonics and their values.
+        This command returns a list of space-separated enum names.
+        Example: [enum1] [enum2] [enum3].
+
+    . output: List the names of outputs of the top instance and their sizes.
+        . This command returns a list of space-separated output names.
+        . Use "-verbosity high" to also list the number of flops and gates in
+          their COI and minimum and maximum depth. (For this command, depth
+          means the number of visible gates the tool must traverse to arrive
+          from the output into a primary input.)
+
+    . input: List the names of inputs of the top instance and their sizes.
+        . Inputs can be PIs, signals with hard stopats, or output
+          signals of instance stopats.
+        . This command returns a list of space-separated input names.
+
+    . inout: List the names of inouts of the top instance and their sizes.
+        This command returns a list of space-separated inout names.
+
+    . stopat: List all the stopats under the top instance hierarchy and in
+        the current task.
+        NOTE: This command reports stopats that meet these requirements:
+        . In the current task
+        . In the COI of properties in the current task and under the top
+          instance scope
+        For a more general list of stopats, use the "stopat -list" command
+        (help stopat -gui).
+
+    . undriven: List the names and sizes of all undriven signals under the top
+        instance's hierarchy.
+
+        This command returns a list of space-separated names of undriven
+        signals.
+
+    . undriven_internal: List the names and sizes of all undriven signals under
+        the top instance's hierarchy that are not primary inputs.
+
+        This command returns a list of space-separated names of undriven
+        internal signals.
+
+    . loop_index: List the names and sizes of all indexes of generate for loops
+        under the top instance's hierarchy.
+
+        This command returns a list of space-separated names of loop index
+        signals.
+
+    . multiple_driven: List the names and sizes of all multiple-driven signals
+        or high impedance sources that are under the top instance's hierarchy.
+
+        Not all signals returned by this command have more than one driver.
+        They can be a source of high impedance such as z-assignments (1'bz),
+        tri-states, bufifs, and mos gates (nmos, pmos, cmos).
+
+        This command returns a list of space-separated names of multiple-driven
+        or high impedance source signals.
+
+    . bbox_mod: List all modules that have been blackboxed under the top
+        instance's hierarchy.
+
+    . bbox_inst: List all instances that have been blackboxed under the top
+        instance's hierarchy.
+
+        NOTE: The list contains other blackboxed types, for example, arrays
+        and multipliers, but it does not identify the instance type.
+
+    . bbox_in
+      bbox_out
+      bbox_inout
+        List the names and sizes of the signals connected to the specified kind
+        of port (input, output, or inout) of blackboxed modules under the top
+        instance's hierarchy.
+        (Ports that behave as both input and output ports are inout ports.)
+        This command returns a list of space-separated signal names.
+
+    . bbox_in_instance_port
+      bbox_out_instance_port
+      bbox_inout_instance_port
+        List triples of signals connected to the specified kind of blackboxed
+        ports (input, output, or inout), blackboxed instance names, and
+        blackboxed connection ports for blackboxed modules under the top
+        instance's hierarchy.
+        This command returns a list of triples.
+
+    . basic: List the "default" set of information for the top-instance scope.
+        . The Tcl command returns the number of flops in the top-instance
+          scope.
+        . The command "get_design_info -list basic" has the same effect as
+          "get_design_info" with no additional switches.
+
+    . counter: Identify counters in the vector of flops detected under the top
+        instance's hierarchy.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the counter.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list contains flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated counter names.
+
+    . fsm: Identify FSMs in the vector of flops detected under the top
+        instance's hierarchy.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the FSM.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list contains flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FSM names.
+
+    . fifo: Identify FIFO memories (multidimensional arrays) under the top
+        instance's hierarchy.
+        . In addition to listing the names of FIFO memories, this command can
+          print the following information when you use the "-verbosity high"
+          switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . FIFO interface - clocks, resets, enables, access pointers, and data
+            signals on input (write) and output (read) sides of the FIFO,
+            in addition to associated full and empty signals.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list contains flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FIFO memory names.
+
+    . array [-no_aggregate]: Identify multidimensional arrays (including FIFOs)
+        in the vector of flops detected under the top instance's hierarchy.
+        . Use "-no_aggregate" to get a bit-blasted list.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list contains flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated array names.
+
+    . register: List all flops and latches under the top instance's hierarchy,
+        displaying their names and sizes (in bits).
+        This command returns a list of space-separated flop and latch names.
+
+    . flop: List all flops under the top instance's hierarchy, displaying their
+        names and sizes (in bits).
+        . The list contains flop numbers shown as x(y)(z property flop bits).
+          . x is the total number of flops.
+          . y is the sum of bits of the flops, not including property flop
+            bits.
+          . z is the sum of bits of property flops, which are generated as
+            observers for SVA and PSL properties.
+        . This command returns a list of space-separated flop names.
+
+    . latch: List all latches under the top instance's hierarchy, displaying
+        their names and sizes (in bits).
+        This command returns a list of space-separated latch names.
+
+    . gate: List the number of gates and gate bits under the top instance's
+        hierarchy.
+        This command returns the number of gates.
+
+        Extended information:
+        Gate count relates to combinational logic. Flops and latches are not
+        included in the gate count. The count is signal level, and it takes
+        into account wide gates.
+
+        Gate bits are bit level, and it is the sum of all bits of all
+        combinational gates.
+
+        Usually, for estimating size, you will be interested in bit level
+        because it is a better way to estimate proof complexity, and it is
+        closer to the real synthesis size (bitwise).
+
+        Example:
+        In the example below, we have 1 flop, width 3 bits. Also, we have 2
+        combinational gates, width 2. In this case, the sum is 4 bits:
+
+        Gates = 2 and Gate bits = 4
+
+        module reg_example(input wire clk,
+                 input wire rst,
+                 input wire [2:0] d,
+                 output reg [2:0] q);
+
+          always @ (posedge clk or negedge rst)
+          begin
+            if (~rst) begin
+                q <= 3'b0;
+            end
+            else begin
+                q <= d;
+            end
+          end
+
+        endmodule
+
+        [<embedded>] % get_design_info
+        Statistics [for instance "reg_example"]
+        ---------------------------
+        # Flops:         1 (3) (0 property flop bits)
+        # Latches:       0 (0)
+        # Gates:         2 (4)
+        # Nets:          13
+        # Ports:         4
+        # RTL Lines:     16
+        # RTL Instances: 1
+        # Embedded Assumptions: 0
+        # Embedded Assertions:  0
+        # Embedded Covers:      0
+
+    . multiplier
+      divider
+      modulus
+        List all multipliers, dividers, or modulus under the top instance's
+        hierarchy.
+        This command lists two kinds of multipliers, dividers, or modulus:
+        1. Blackboxed - each multiplier, divider, or modulus is described by
+           three signals:
+           {out_internal left_internal right_internal}
+           The right and left internal signals are the operands, and
+           "out_internal" is the resulting signal.
+        2. Cell-defined - each multiplier, divider, or modulus that has not
+           been blackboxed is cell defined. By default, all multipliers,
+           dividers, and modulus are blackboxed; however, you can use
+           "elaborate -bbox_mul", "-bbox_div", and "-bbox_mod" to avoid black
+           boxing them.
+        . Each multiplier, divider, and modulus is described by three signals:
+          {out_internal left_internal right_internal}
+        . The right and left internal signals are the operands, and
+          "out_internal" is the resulting signal.
+        . This functionality is useful for manual abstraction.
+        . This command returns a list of space-separated triples of signals.
+
+    . module: List all non-blackboxed modules under the top instance's
+        hierarchy, displaying their names. This command returns a list of
+        space-separated module names.
+
+    . module_no_param: List all non-blackboxed modules under the top instance's
+        hierarchy, displaying their names without the non-default parameter
+        values. This command returns a list of space-separated module names.
+
+    . module_name: Return the module name for the top instance.
+
+    . module_name_no_param: Return the module name for the top instance without
+        the non-default parameter values.
+
+    . instance: List all instances under the top instance's hierarchy,
+        displaying their names. This command returns a list of space-separated
+        instance names. The list does not contain blackboxed instances
+        (see "bbox_inst").
+
+        Use "-depth" to filter the list of instances using the depth level,
+        listing the instances until the chosen depth. Depth 0 is the top
+        instance.
+
+    . bind_instance: List all bind instances under the top instance's hierarchy,
+        displaying their names. This command returns a list of space-separated
+        bind instance names. The list does not contain blackboxed instances
+        (see "bbox_inst").
+
+        Use "-depth" to filter the list of bind instances using the depth
+        level, listing the bind instances until the chosen depth. Depth 0 is
+        the top bind instance.
+
+    . interface: Use this command to list all SystemVerilog Interfaces used
+        under the top instance's hierarchy, displaying their names. This command
+        returns a list of space-separated interface identifier names.
+
+    . interface_no_param: Use this command to list all SystemVerilog Interfaces
+        used under the top instance's hierarchy, displaying their names without
+        the non-default parameter values. This command returns a list of
+        space-separated interface identifier names.
+
+    . interface_instance: Use this command to list all SystemVerilog Interface
+        instances under the top instance's hierarchy, displaying their names.
+        This command returns a list of space-separated interface instance names.
+
+    . interface_port: Use this command to list all SystemVerilog Interfaces used
+        as ports under the top instance's hierarchy, displaying their names.
+        This command returns a list of space-separated interface port names.
+
+    . prim_inst: List all user-declared primitive instances under the top
+        instance's hierarchy, displaying their names. This command returns a
+        list of space-separated instance names.
+
+        NOTE: This enum requires "set_library_cell_detection 0".
+
+    . prim_mod: List all user-declared primitive modules under the top
+        instance's hierarchy, displaying their names. This command returns a
+        list of space-separated module names.
+
+        NOTE: This enum requires "set_library_cell_detection 0".
+
+    . celldefine: List all modules declared as "celldefine" under  the top
+        instance's hierarchy, displaying their names. This command returns a
+        list of space-separated module names.
+
+    . package: List used packages, displaying their names.
+        This command returns a list of space-separated package names.
+
+    . compilation_unit: List all compilation units, displaying their names.
+        This command returns a list of space-separated compilation unit names.
+
+        IMPORTANT: This command does not return compilation units that only
+        contain module declarations.
+
+    . architecture: List all architectures under the top instance's hierarchy,
+        displaying their names. This command returns a list of space-separated
+        architecture names.
+
+    . signal: List all signals under the top instance's hierarchy, displaying
+        their names and sizes in bits.
+        . Signals are the set of all registers, primary inputs, primary
+          outputs, and wires (signals = registers + PIs + POs + wires).
+        . This command returns a list of space-separated signal names.
+
+    . wire: List all wires under the top instance's hierarchy, displaying their
+        names and sizes in bits.
+        . Wires are all the signals not classified as registers, primary
+          inputs, or primary outputs (wires = signals - registers - PIs - POs).
+        . This command returns a list of space-separated signal names.
+
+    . property
+      assert
+      assume
+      cover
+        List the current task's embedded and Tcl properties of the specified
+        type.
+
+        NOTE:
+        . The list includes embedded and Tcl properties, embedded and
+          Tcl assertions, embedded and Tcl assumptions, or embedded and Tcl
+          cover directives in the top-instance scope.
+        . The list does not include assertions extracted by the apps, for
+          example, X-Prop and Connectivity assertions.
+        . The list does not include global assumptions specified with "assume
+          -env".
+
+        This command lists the number and names of properties and returns a
+        list of space-separated property names.
+
+    . macro: List macros in the elaborated design.
+
+        NOTE: This enum includes macros defined outside of the top instance.
+
+        This command returns a list of space-separated macro names with their
+        values.
+
+-include_config [-instance instance_name]
+    Get design information, taking into account changes made to the design
+    such as hard stopats and instance stopats.
+
+    Use "-instance" to filter the statistics for the specified instance.
+
+    The output of this command is the sum of all registers (flops and
+    latches) not disabled by stopats.
+
+    NOTE:
+    . This command traverses clock logic by default, even without running
+      "set_design_exploration_include_clock_logic on".
+    . This command takes into account instances connected to the main design
+      using "connect".
+
+-enum enum_name
+    [-module module_name |-instance instance_name |-package package_name]
+    Get a list of all labels and values for the specified enum variable. This
+    command lists labels and their values in pairs with single-space separation
+    as shown below:
+
+    label_1 value_1 ... label_n value_n
+
+    Use "-module", "-instance", or "-package" to filter the result by the
+    specified scope.
+
+"-instance" Scope
+=================
+-instance instance_name
+               [-list
+                     ([parameter [-transitive]] [local_parameter] [constant] [enum]
+                      [output] [input] [inout] [stopat]
+                      [undriven] [undriven_internal] [loop_index] [multiple_driven]
+                      [bbox_mod] [bbox_inst] [bbox_in] [bbox_out] [bbox_inout]
+                      [bbox_in_instance_port] [bbox_out_instance_port]
+                      [bbox_inout_instance_port]]
+                      [basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+                      [register [-depth N]] [flop [-depth N]] [latch [-depth N]]
+                      [gate]
+                      [multiplier] [divider] [modulus]
+                      [module] [module_no_param] [module_name] [module_name_no_param]
+                      [instance [-depth N]] [bind_instance [-depth N]]
+                      [interface] [interface_no_param] [interface_instance] [interface_port]
+                      [prim_inst] [prim_mod]
+                      [celldefine]
+                      [architecture] [signal]
+                      [wire] [property] [assert] [assume] [cover]
+                      [parent] [empty_inst]
+                     )+
+               ]
+                     [-verbosity (high | low | silent)]
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+                     [-gui]
+    Get design information for the specified instance.
+
+    Important things to know:
+    . This analysis ignores hard stopats and instance stopats.
+    . Below you will find definitions of the supported "-list" enums for the
+      "-instance" scope.
+    . The "-instance" scope includes the selected instance itself or the
+      selected instance's hierarchy (the instance and its subinstances)
+      depending on the selected enum.
+    . See the section "Customizing Lists" for switches that refine your list,
+      for example, for scripting.
+
+    Supported "-list" Enums for the "-instance" Scope
+    -------------------------------------------------
+    . parameter: Get the parameters listed in the specified instance.
+        This command returns a string of parameter-value pairs.
+        Example: [param1] [value1] [param2] [value2].
+        Use "-transitive" to return the parameters listed under the specified
+        instance's hierarchy. The parameter names will display their
+        hierarchical path.
+
+    . local_parameter: Get the local parameters listed in the specified instance.
+        The tool returns a string of parameter-value pairs.
+        Example: [param1] [value1] [param2] [value2].
+
+    . constant: Get the VHDL constants declared in the specified instance. The
+        tool returns a string of constant-value pairs. Example:
+        [const1] [value1] [const2] [value2].
+
+    . enum: List the enum variables declared in the specified instance's scope,
+        displaying their names followed by their mnemonics and their values.
+        This command returns a list of space-separated enum names.
+        Example: [enum1] [enum2] [enum3].
+
+    . output: List the names of outputs of the selected instance and their sizes.
+        . This command returns a list of space-separated output names.
+        . Use "-verbosity high" to also list the number of flops and gates in
+          their COI and minimum and maximum depth. (For this command, depth
+          means the number of visible gates the tool must traverse to arrive
+          from the output into a primary input.)
+
+    . input: List the names of inputs of the selected instance and their sizes.
+        . Inputs can be PIs, signals with hard stopats, or output
+          signals of instance stopats.
+        . This command returns a list of space-separated input names.
+
+    . inout: List the names of inouts of the selected instance and their sizes.
+        This command returns a list of space-separated inout names.
+
+    . stopat: List all the stopats that are under the selected instance's
+        hierarchy and in the current task.
+        NOTE: This command reports stopats that meet these requirements:
+        . In the current task
+        . In the COI of properties in the current task and under the selected
+          instance's scope
+        For a more general list of stopats, use the "stopat -list" command
+        (help stopat -gui).
+
+    . undriven: List the names and sizes of all undriven signals under the
+        specified instance's hierarchy.
+
+        This command returns a list of space-separated names of undriven
+        signals.
+
+    . undriven_internal: List the names and sizes of all undriven signals under
+        the specified instance's hierarchy that are not primary inputs.
+
+        This command returns a list of space-separated names of undriven
+        internal signals.
+
+    . loop_index: List the names and sizes of all indexes of generate for loops
+        under the specified instance's hierarchy.
+
+        This command returns a list of space-separated names of loop index
+        signals.
+
+    . multiple_driven: List the names and sizes of all multiple-driven signals
+        or high impedance sources under the specified instance's hierarchy.
+
+        Not all signals returned by this command have more than one driver.
+        They can be a source of high impedance such as z-assignments (1'bz),
+        tri-states, bufifs, and mos gates (nmos, pmos, cmos).
+
+        This command returns a list of space-separated names of multiple-driven
+        or high impedance source signals.
+
+    . bbox_mod: List all modules that have been blackboxed under the
+        specified instance's hierarchy.
+
+    . bbox_inst: List all instances that have been blackboxed under the
+        specified instance's hierarchy.
+
+        NOTE: The list includes other blackboxed types, for example, arrays
+        and multipliers, but it does not identify the instance type.
+
+    . bbox_in
+      bbox_out
+      bbox_inout
+        List the names and sizes of the signals under the specified instance's
+        hierarchy connected to the specified kind of port (input, output, or
+        inout) of blackboxed modules.
+        (Ports that behave as both input and output ports are inout ports.)
+        . This command returns a list of space-separated signal names.
+        . This analysis ignores hard stopats and instance stopats.
+
+    . bbox_in_instance_port
+      bbox_out_instance_port
+      bbox_inout_instance_port
+        List triples of signals connected to the specified kind of blackboxed
+        ports (input, output, or inout), blackboxed instance names, and
+        blackboxed connection ports for blackboxed modules under the specified
+        instance's hierarchy.
+        This command returns a list of triples.
+
+    . basic: List the "default" set of information for the "-instance" scope.
+        . The Tcl command returns the number of flops in the "-instance"
+          scope.
+        . The command "get_design_info -instance instance_name -list basic" has
+          the same effect as "get_design_info -instance instance_name" with no
+          additional switches.
+
+    . counter: Identify counters in the vector of flops detected under the
+        selected instance's hierarchy.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the counter.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . The Tcl command returns a list of space-separated counter names.
+
+    . fsm: Identify FSMs in the vector of flops detected under the selected
+        instance's hierarchy.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the FSM.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FSM names.
+
+    . fifo: Identify FIFO memories (multidimensional arrays) under the selected
+        instance's hierarchy.
+        . In addition to listing the names of FIFO memories, this command can
+          print the following information when you use the "-verbosity high"
+          switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . FIFO interface - clocks, resets, enables, access pointers, and data
+            signals on input (write) and output (read) sides of the FIFO,
+            in addition to associated full and empty signals.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FIFO memory names.
+
+    . array [-no_aggregate]: Identify multidimensional arrays (including FIFOs)
+        in the vector of flops detected under the selected instance's hierarchy.
+        . Use "-no_aggregate" to get a bit-blasted list.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated array names.
+
+    . register [-depth N]: List all flops and latches under the selected
+        instance's hierarchy, displaying their names and sizes (in bits).
+
+        Use "-depth" to filter the list of registers using the instance depth
+        level, listing the registers until the chosen depth. Depth 0 is the top
+        instance, and depth $ means all levels.
+
+        This command returns a list of space-separated flop and latch names.
+
+    . flop: List all flops under the selected instance's hierarchy, displaying
+        their names and sizes (in bits).
+
+        Use "-depth" to filter the list of flops using the instance depth
+        level, listing the flops until the chosen depth. Depth 0 is the top
+        instance, and depth $ means all levels.
+
+        . The list includes flop numbers shown as x(y)(z property flop bits).
+          . x is the total number of flops.
+          . y is the sum of bits of the flops, not including property flop
+            bits.
+          . z is the sum of bits of property flops, which are generated as
+            observers for SVA and PSL properties.
+        . This command returns a list of space-separated flop names.
+
+    . latch: List all latches under the selected instance's hierarchy,
+        displaying their names and sizes (in bits).
+
+        Use "-depth" to filter the list of latches using the instance depth
+        level, listing the latches until the chosen depth. Depth 0 is the top
+        instance, and depth $ means all levels.
+
+        This command returns a list of space-separated latch names.
+
+    . gate: List the number of gates and gate bits under the selected instance's
+        hierarchy. This command returns the number of gates.
+
+    . multiplier
+      divider
+      modulus
+        List all multipliers, dividers, or modulus under the selected instance's
+        hierarchy.
+        This command lists two kinds of multipliers, dividers, or modulus:
+        1. Blackboxed - each multiplier, dividers, or modulus is described by
+           three signals:
+           {out_internal left_internal right_internal}
+           The right and left internal signals are the operands, and
+           "out_internal" is the resulting signal.
+        2. Cell-defined - each multiplier, divider, or modulus that has not
+           been blackboxed is cell defined. By default, all multipliers,
+           dividers, and modulus are blackboxed; however, you can use
+           "elaborate -bbox_mul", "-bbox_div", and "-bbox_mod" to avoid black
+           boxing them.
+        . Each multiplier, divider, and modulus is described by three signals:
+          {out_internal left_internal right_internal}
+        . The right and left internal signals are the operands, and
+          "out_internal" is the resulting signal.
+        . This functionality is useful for manual abstraction.
+        . This command returns a list of space-separated triples of signals.
+
+    . module: List all non-blackboxed modules under the selected instance's
+        hierarchy, displaying their names. This command returns a list of
+        space-separated module names.
+
+    . module_no_param: List all non-blackboxed modules under the selected
+        instance's hierarchy, displaying their names without the non-default
+        parameter values. This command returns a list of space-separated module
+        names.
+
+    . module_name: Return the module name for the specified instance.
+
+    . module_name_no_param: Return the module name for the specified instance
+        without the non-default parameter values.
+
+    . instance: List all instances under the selected instance's hierarchy,
+        displaying their names.
+
+        This command returns a list of space-separated
+        instance names. The list does not include blackboxed instances
+        (see "bbox_inst").
+
+        Use "-depth" to filter the list of instances using the depth level,
+        listing the instances until the chosen depth. Depth 0 is the selected
+        instance.
+
+    . bind_instance: List all bind instances under the selected instance's
+        hierarchy, displaying their names.
+
+        This command returns a list of space-separated bind instance names.
+        The list does not include blackboxed instances (see "bbox_inst").
+
+        Use "-depth" to filter the list of bind instances using the depth
+        level, listing the bind instances until the chosen depth. Depth 0 is
+        the top bind instance.
+
+    . interface: Use this command to list all SystemVerilog Interfaces used
+        under the selected instance's hierarchy, displaying their names. This
+        command returns a list of space-separated interface identifier names.
+
+    . interface_no_param: Use this command to list all SystemVerilog Interfaces
+        used under the selected instance's hierarchy, displaying their names
+        without the non-default parameter values. This command returns a list of
+        space-separated interface identifier names.
+
+    . interface_instance: Use this command to list all SystemVerilog Interface
+        instances under the selected instance's hierarchy, displaying their names.
+        This command returns a list of space-separated interface instance names.
+
+    . interface_port: Use this command to list all SystemVerilog Interfaces used
+        as ports under the selected instance's hierarchy, displaying their names.
+        This command returns a list of space-separated interface port names.
+
+    . prim_inst: List all user-declared primitive instances under the selected
+        instance's hierarchy, displaying their names. This command returns a
+        list of space-separated instance names.
+
+        NOTE: This enum requires "set_library_cell_detection 0".
+
+    . prim_mod: List all user-declared primitive modules under the selected
+        instance's hierarchy, displaying their names. This command returns a
+        list of space-separated module names.
+
+        NOTE: This enum requires "set_library_cell_detection 0".
+
+    . celldefine: List all modules declared as "celldefine" under the selected
+        instance's hierarchy, displaying their names. This command returns a
+        list of space-separated module names.
+
+    . architecture: List all architectures under the selected instance's
+        hierarchy, displaying their names. This command returns a list of
+        space-separated architecture names.
+
+    . signal: List all signals under the selected instance's hierarchy,
+        displaying their names and sizes in bits.
+        . Signals are the set of all registers, primary inputs, primary
+          outputs, and wires (signals = registers + PIs + POs + wires).
+        . This command returns a list of space-separated signal names.
+
+    . wire: List all wires under the selected instance's hierarchy, displaying
+        their names and sizes in bits.
+        . Wires are all the signals not classified as registers, primary
+          inputs, or primary outputs (wires = signals - registers - PIs - POs).
+        . This command returns a list of space-separated signal names.
+
+    . property
+      assert
+      assume
+      cover
+        List the current task's embedded and Tcl properties of the specified
+        type in the "-instance" scope.
+
+        NOTE:
+        . The list includes embedded and Tcl properties, embedded and
+          Tcl assertions, embedded and Tcl assumptions, or embedded and Tcl
+          cover directives in the "-instance" scope.
+        . The list does not include assertions extracted by the apps, for
+          example, X-Prop and Connectivity assertions.
+        . The list does not include global assumptions specified with "assume
+          -env".
+
+        This command lists the number and names of properties and returns a
+        list of space-separated property names.
+
+    . parent: List the parent of the specified instance.
+
+    . empty_inst: List the subinstances of the specified instance that have no
+        internal logic, just ports.
+
+"-module" Scope
+===============
+-module module_name
+               [-list
+                     ([parameter] [constant] [enum]
+                      [output] [input] [inout] [stopat]
+                      [undriven] [undriven_internal] [loop_index] [multiple_driven]
+                      [bbox_mod] [bbox_inst] [bbox_in] [bbox_out] [bbox_inout]
+                      [bbox_in_instance_port] [bbox_out_instance_port]
+                      [bbox_inout_instance_port]]
+                      [basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+                      [register] [flop] [latch] [gate]
+                      [multiplier] [divider] [modulus]
+                      [module] [module_no_param] [module_name] [module_name_no_param]
+                      [instance [-no_param_match_default_only]]
+                      [instance_include_bbox [-no_param_match_default_only]]
+                      [bind_instance]
+                      [interface] [interface_no_param] [interface_instance] [interface_port]
+                      [prim_inst] [prim_mod]
+                      [celldefine]
+                      [architecture] [signal] [wire]
+                      [property] [assert] [assume] [cover]
+                     )+
+               ]
+                     [-verbosity (high | low | silent)]
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+                     [-gui]
+    Get design information for the specified module.
+
+    Important things to know:
+    . This analysis ignores hard stopats and instance stopats.
+    . Below you will find definitions of the supported "-list" enums for the
+      "-module" switch.
+    . See the section "Customizing Lists" for switches that refine your list,
+      for example, for scripting.
+
+    Supported "-list" Enums for the "-module" Switch
+    ------------------------------------------------
+    . parameter: Get the parameters of the specified module. The tool returns
+        a string of parameter-value pairs. If you pass the module's name to
+        "-module" without parameters, the tool returns default values.
+        Example: [param1] [value1] [param2] [value2].
+
+    . constant: Get the VHDL constants declared in the specified module. The
+        tool returns a string of constant-value pairs. Example:
+        [const1] [value1] [const2] [value2].
+
+    . enum: List all enum variables declared in an instance of the specified
+        module, displaying their names followed by their mnemonics and their
+        values. This command returns a list of space-separated enum names.
+        Example: [enum1] [enum2] [enum3].
+
+    . output: List the names of outputs and their sizes.
+        . This command returns a list of space-separated output names.
+        . Use "-verbosity high" to also list the number of flops and gates in
+          their COI and minimum and maximum depth. (For this command, depth
+          means the number of visible gates the tool must traverse to arrive
+          from the output into a primary input.)
+
+    . input: List the number of inputs followed by their names and
+        sizes.
+        . Inputs can be PIs, signals with hard stopats, or output
+          signals of instance stopats.
+        . This command returns a list of space-separated input names.
+
+    . inout: List the number of inouts followed by their names and
+        sizes.
+        This command returns a list of space-separated inout names.
+
+    . stopat: List all the stopats that are in an instance of the specified
+      module.
+        NOTE: This command reports stopats that meet these requirements:
+        . In the current task
+        . In the specified module scope
+        . In the COI of properties in the current task and in the specified
+          module
+        For a more general list of stopats, use the "stopat -list" command
+        (help stopat -gui).
+
+    . undriven: List the names and sizes of all undriven signals in the scope
+        of an instance of the specified module, including its subinstances.
+
+        This command returns a list of space-separated names of undriven
+        signals.
+
+    . undriven_internal: List the names and sizes of all undriven signals that
+        are not primary inputs and that are under the hierarchy of an instance
+        of the specified module.
+
+        This command returns a list of space-separated names of undriven
+        internal signals.
+
+    . loop_index: List the names and sizes of all indexes of generate for loops
+        under the hierarchy of an instance of the specified module.
+
+        This command returns a list of space-separated names of loop index
+        signals.
+
+    . multiple_driven: List the names and sizes of all multiple-driven signals
+        or high impedance sources under the hierarchy of an instance of the
+        specified module.
+
+        Not all signals returned by this command have more than one driver.
+        They can be a source of high impedance such as z-assignments (1'bz),
+        tri-states, bufifs, and mos gates (nmos, pmos, cmos).
+
+        This command returns a list of space-separated names of multiple-driven
+        or high impedance source signals.
+
+    . bbox_mod: List all modules that have been blackboxed under instances of
+        the specified module.
+
+    . bbox_inst: List all instances that have been blackboxed under instances
+        of the specified module.
+
+        NOTE: The list includes other blackboxed types, for example, arrays
+        and multipliers, but it does not identify the instance type.
+
+    . bbox_in
+      bbox_out
+      bbox_inout
+        List the names and sizes of the signals connected to the specified kind
+        of port (input, output, or inout) of blackboxed modules under instances
+        of the specified module. (Ports that behave as both input and
+        output ports are inout ports.)
+        This command returns a list of space-separated signal names.
+
+    . bbox_in_instance_port
+      bbox_out_instance_port
+      bbox_inout_instance_port
+        List triples of signals connected to the specified kind of blackboxed
+        ports (input, output, or inout), blackboxed instance names, and
+        blackboxed connection ports for blackboxed modules under instances of
+        the specified module.
+        This command returns a list of triples
+
+    . basic: List the "default" set of information for the specified module.
+        . The Tcl command returns the number of flops in the specified module.
+        . The command "get_design_info -module module_name -list basic" has the
+          same effect as "get_design_info -module module_name" with no
+          additional switches.
+
+    . counter: Identify counters in the vector of flops detected under an
+        instance of the specified module.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the counter.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . The Tcl command returns a list of space-separated counter names.
+
+    . fsm: Identify FSMs in the vector of flops detected under an instance of
+        the specified module.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the FSM.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . The Tcl command returns a list of space-separated FSM names.
+
+    . fifo: Identify FIFO memories (multidimensional arrays) under an instance
+        of the specified module.
+        . In addition to listing the names of FIFO memories, this command can
+          print the following information when you use the "-verbosity high"
+          switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . FIFO interface - clocks, resets, enables, access pointers, and data
+            signals on input (write) and output (read) sides of the FIFO,
+            in addition to associated full and empty signals.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FIFO memory names.
+
+    . array [-no_aggregate]: Identify multidimensional arrays (including FIFOs)
+        in the vector of flops detected under an instance of the specified
+        module.
+        . Use "-no_aggregate" to get a bit-blasted list.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . The Tcl command returns a list of space-separated array names.
+
+    . register: List all flops and latches under an instance of the specified
+        module, displaying their names and sizes (in bits).
+        The Tcl command returns a list of space-separated flop and latch names.
+
+    . flop: List all flops under an instance of the specified module, displaying
+        their names and sizes (in bits).
+        . The list includes flop numbers shown as x(y)(z property flop bits).
+          . x is the total number of flops.
+          . y is the sum of bits of the flops, not including property flop
+            bits.
+          . z is the sum of bits of property flops, which are generated as
+            observers for SVA and PSL properties.
+        . The Tcl command returns a list of space-separated flop names.
+
+    . latch: List all latches under an instance of the specified module,
+        displaying their names and sizes (in bits).
+        The Tcl command returns a list of space-separated latch names.
+
+    . gate: List the number of gates and gate bits under an instance of the
+        specified module.
+        This command returns the number of gates.
+
+    . multiplier
+      divider
+      modulus
+        List all multipliers, dividers, or modulus in the specified module.
+        This command lists two kinds of multipliers, dividers, or modulus:
+        1. Blackboxed - each multiplier, dividers, or modulus is described by
+           three signals:
+           {out_internal left_internal right_internal}
+           The right and left internal signals are the operands, and
+           "out_internal" is the resulting signal.
+        2. Cell-defined - each multiplier, divider, or modulus that has not
+           been blackboxed is cell defined. By default, all multipliers,
+           dividers, and modulus are blackboxed; however, you can use
+           "elaborate -bbox_mul", "-bbox_div", and "-bbox_mod" to avoid black
+           boxing them.
+        . Each multiplier, divider, and modulus is described by three signals:
+          {out_internal left_internal right_internal}
+        . The right and left internal signals are the operands, and
+          "out_internal" is the resulting signal.
+        . This functionality is useful for manual abstraction.
+        . This command returns a list of space-separated triples of signals.
+
+    . module: List all non-blackboxed modules under the instances of the
+        specified module, displaying their names. This command returns a list of
+        space-separated module names.
+
+    . module_no_param: List all non-blackboxed modules under the instances of
+        the specified module, displaying their names without the non-default
+        parameter values. This command returns a list of space-separated module
+        names.
+
+    . module_name: Return the specified module name.
+
+    . module_name_no_param: Return the specified module name without the
+        non-default parameter values.
+
+    . instance [-no_param_match_default_only]: List all non-blackboxed
+        instances of the specified module, displaying their names.
+        . If you use the switch "-no_param_match_default_only", the argument
+          to the "-module" switch cannot have parameters, and the command matches
+          only the instantiations of the given module in which parameters were not
+          redefined.
+        . The default behavior for a module name without parameters is to match
+          all the instantiations of the given module.
+        . This switch has no effect if the argument for "get_design_info
+          -module" has parameters.
+        . This command returns a list of space-separated instance names.
+        . The list does not include blackboxed instances
+          (see "instance_include_bbox").
+
+    . instance_include_bbox [-no_param_match_default_only]: List all instances
+        of the specified module whether they are blackboxed or not, displaying
+        their names.
+        . If you use the switch "-no_param_match_default_only", the argument
+          to the "-module" switch cannot have parameters, and the command matches
+          only the instantiations of the given module in which parameters were not
+          redefined.
+        . The default behavior for a module name without parameters is to match
+          all the instantiations of the given module.
+        . This switch has no effect if the argument for "get_design_info
+          -module" has parameters.
+        . This command returns a list of space-separated instance names.
+
+    . bind_instance: List all bind instances of the specified module,
+        displaying their names. This command returns a list of space-separated
+        bind instance names. The list does not include blackboxed bind
+        instances.
+
+    . interface: Use this command to list all SystemVerilog Interfaces used
+        under the specified module, displaying their names. This command
+        returns a list of space-separated interface identifier names.
+
+    . interface_no_param: Use this command to list all SystemVerilog Interfaces
+        used under the specified module, displaying their names without the
+        non-default parameter values. This command returns a list of
+        space-separated interface identifier names.
+
+    . interface_instance: Use this command to list all SystemVerilog Interface
+        instances under the specified module, displaying their names.
+        This command returns a list of space-separated interface instance names.
+
+    . interface_port: Use this command to list all SystemVerilog Interfaces used
+        as ports under the specified module, displaying their names.
+        This command returns a list of space-separated interface port names.
+
+    . prim_inst: List all user-declared primitive instances under the instances
+        of the specified module, displaying their names. This command returns a
+        list of space-separated instance names.
+
+        NOTE: This enum requires "set_library_cell_detection 0".
+
+    . prim_mod: List all user-declared primitive modules under the instances of
+        the specified module, displaying their names. This command returns a
+        list of space-separated module names.
+
+        NOTE: This enum requires "set_library_cell_detection 0".
+
+    . celldefine: List all modules declared as "celldefine" under the instances
+        of the specified module, displaying their names. This command returns a
+        list of space-separated module names.
+
+    . architecture: List all architectures of the specified entity, displaying
+        their names. This command returns a list of space-separated
+        architecture names.
+
+    . signal: List all signals under an instance of the specified module,
+         displaying their names and sizes in bits.
+        . Signals are the set of all registers, primary inputs, primary
+          outputs, and wires (signals = registers + PIs + POs + wires).
+        . This command returns a list of space-separated signal names.
+
+    . wire: List all wires under an instance of the specified module, displaying
+         their names and sizes in bits.
+        . Wires are all the signals not classified as registers, primary
+          inputs, or primary outputs (wires = signals - registers - PIs - POs).
+        . This command returns a list of space-separated signal names.
+
+    . property
+      assert
+      assume
+      cover
+        List the current task's embedded properties of the specified type in
+        the specified module.
+
+        NOTE:
+        . The list includes embedded and Tcl properties, embedded and
+          Tcl assertions, embedded and Tcl assumptions, or embedded and Tcl
+          cover directives in the "-module" scope.
+        . The list does not include assertions extracted by the apps, for
+          example, X-Prop and Connectivity assertions.
+        . The list does not include global assumptions specified with "assume
+          -env".
+
+        This command lists the number and names of properties and returns a
+        list of space-separated property names.
+
+"-interface_instance" Scope
+===========================
+-interface_instance interface_instance_name
+                -list ([interface_name] [interface_name_no_param]
+                       [parameter [-transitive]] [local_parameter]
+                      )+
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+
+    Get design information for the specified SystemVerilog Interface instance.
+
+    Supported "-list" Enums for the "-interface_instance" Scope
+    -----------------------------------------------------------
+    . interface_name: Return the interface name for the specified SystemVerilog
+        Interface instance.
+
+    . interface_name_no_param: Return the interface name for the specified
+        SystemVerilog Interface instance without the non-default parameter
+        values.
+
+    . parameter: Get the parameters listed in the specified SystemVerilog
+        Interface instance. This command returns a string of parameter-value
+        pairs.
+        Example: [param1] [value1] [param2] [value2].
+        Use "-transitive" to return the parameters listed under the specified
+        interface instance's hierarchy. The parameter names display their
+        hierarchical path.
+
+    . local_parameter: Get the local parameters listed in the specified
+        SystemVerilog Interface instance. This command returns a string of
+        parameter-value pairs.
+        Example: [param1] [value1] [param2] [value2].
+
+"-interface_port" Scope
+=======================
+-interface_port interface_port_name
+                -list ([interface_name] [interface_name_no_param]
+                       [parameter [-transitive]] [local_parameter]
+                      )+
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+
+    Get design information for the specified SystemVerilog Interface port.
+
+    Supported "-list" Enums for the "-interface_port" Scope
+    -----------------------------------------------------------
+    . interface_name: Return the interface name for the specified SystemVerilog
+        Interface port.
+
+    . interface_name_no_param: Return the interface name for the specified
+        SystemVerilog Interface port without the non-default parameter
+        values.
+
+    . parameter: Get the parameters listed in the specified SystemVerilog
+        Interface port. This command returns a string of parameter-value pairs.
+        Example: [param1] [value1] [param2] [value2].
+        Use "-transitive" to return the parameters listed under the specified
+        interface port's hierarchy. The parameter names display their
+        hierarchical path.
+
+    . local_parameter: Get the local parameters listed in the specified
+        SystemVerilog Interface port. This command returns a string of
+        parameter-value pairs.
+        Example: [param1] [value1] [param2] [value2].
+
+"-interface" Scope
+==================
+-interface interface_name
+                -list
+                     ([interface_instance] [interface_port]
+                      [parameter]
+                     )+
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+
+    Get design information for the specified SystemVerilog Interface.
+
+    NOTE: The tool supports SystemVerilog Interfaces that are only used as a
+    top instance's port. However, unlike interfaces that are explicitly
+    instantiated, in this context, the interface has no interface_instance.
+
+    Supported "-list" Enums for the "-interface" Scope
+    --------------------------------------------------
+    . interface_instance: List all instances of the specified SystemVerilog
+        Interface that were created by explicit instantiation, displaying their
+        names.
+        This command returns a list of space-separated interface instance names.
+
+    . interface_port: List all instances of the specified SystemVerilog
+        Interface that were created by using an interface instance as a port,
+        displaying their names.
+        This command returns a list of space-separated interface port names.
+
+    . parameter: Get the parameters of the specified SystemVerilog Interface.
+        This command returns a string of parameter-value pairs. If you pass the
+        interface's name to "-interface" without parameters, the tool returns
+        default values.
+        Example: [param1] [value1] [param2] [value2].
+
+"-package" Scope
+================
+-package package_name
+               [-list
+                     ([constant] [enum] [local_parameter] [signal]
+                     )+
+               ]
+                     [-silent]
+    Get design information for the specified package.
+
+    NOTE: By default, for all apps except SPV and SEC, design compilation
+    supports signals in packages and the global area (that is, outside modules
+    in SystemVerilog). SPV and SEC remove packages by default.
+
+    Naming Rules:
+    . Packages are named just as they are declared in the RTL.
+    . If a package is inside a library, its name is prefixed with the library
+      name (lib.pkg). Since this is not a valid design unit name, the tool
+      escapes it according to the language mode ("\lib.pkg " for Verilog and
+      "\lib.pkg\" for VHDL).
+    . If the package name collides with an instance name under the "top" unit,
+      the tool renames it with an incremental natural positive integer suffix
+      (_1, _2, _3, and so forth).
+
+    Supported "-list" Enums for the Package Scope
+    ---------------------------------------------
+    . constant: Get the VHDL constants declared in the specified package. The
+        tool returns a string of constant-value pairs. Example:
+        [const1] [value1] [const2] [value2].
+
+    . enum: List all enum variables declared in the specified package's scope,
+        displaying their names followed by their mnemonics and their values.
+        This command returns a list of space-separated enum names.
+        Example: [enum1] [enum2] [enum3].
+
+    . local_parameter: Get the local parameters listed in the specified
+        package. The tool returns a string of parameter-value pairs. Example:
+        [param1] [value1] [param2] [value2].
+
+    . signal: List all signals in the "-package" scope, displaying their names
+        and sizes in bits.
+        . Signals are the set of all registers, primary inputs, primary
+          outputs, and wires (signals = registers + PIs + POs + wires).
+        . This command returns a list of space-separated signal names.
+
+"-compilation_unit" Scope
+-------------------------
+-compilation_unit compilation_unit_name
+               -list
+                     ([parameter] [local_parameter])+
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+
+    Get design information for the specified compilation unit.
+
+    Supported "-list" Enums for the "-compilation_unit" Scope
+    ---------------------------------------------------------
+    . parameter: Get the local parameters listed in the specified compilation
+        unit. This command returns a string of parameter-value pairs. Example:
+        [param1] [value1] [param2] [value2].
+
+        NOTE: The compilation unit scope cannot have non-local parameters.
+        That is, all parameters declared in this scope are local regardless of
+        the use of the keyword "parameter" or "localparam". You can use this
+        enum interchangeably with "local_parameter".
+
+    . local_parameter: Get the local parameters listed in the specified
+        compilation unit. This command returns a string of parameter-value
+        pairs. Example:
+        [param1] [value1] [param2] [value2].
+
+"-signal" Scope
+===============
+-signal signal_list
+               [-list
+                     ([basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+                      [register [-fanout]] [flop] [-fanout]] [latch [-fanout]]
+                      [gate] [input]
+                      [undriven] [undriven_internal] [loop_index]
+                      [bbox_inout] [bbox_out]
+                      [special_values] [multiple_driven] [module]
+                      [instance] [bind_instance] [signal] [wire]
+                      [parent]
+                     )+
+               ]
+                     [-verbosity (high | low | silent)]
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+                     [-gui]
+    Get design information for one or more specified signals.
+
+    Important things to know:
+    . Below you will find definitions of the supported "-list" enums for the
+      "-signal" scope.
+    . See the section "Customizing Lists" for switches that refine your list,
+      for example, for scripting.
+    . This scope supports multiple signals except in the case of
+      "special_values", which supports a single signal.
+
+    Supported "-list" Enums for the "-signal" Scope
+    -----------------------------------------------
+    . basic: List the "default" set of information for the "-signal" scope.
+        . The Tcl command returns the number of flops in the "-signal"
+          scope.
+        . The command "get_design_info -signal signal_list -list basic" has the
+          same effect as "get_design_info -signal signal_list" with no
+          additional switches.
+
+    . counter: Identify counters in the vector of flops detected in the
+        "-signal" scope.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the counter.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated counter names.
+
+    . fsm: Identify FSMs in the vector of flops detected in the "-signal"
+        scope.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the FSM.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FSM names.
+
+    . fifo: Identify FIFO memories (multidimensional arrays) in the "-signal"
+        scope.
+        . In addition to listing the names of FIFO memories, this command can
+          print the following information when you use the "-verbosity high"
+          switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . FIFO interface - clocks, resets, enables, access pointers, and data
+            signals on input (write) and output (read) sides of the FIFO,
+            in addition to associated full and empty signals.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FIFO memory names.
+
+    . array [-no_aggregate]: Identify multidimensional arrays (including FIFOs)
+        in the vector of flops detected in the "-signal" scope.
+        . Use "-no_aggregate" to get a bit-blasted list.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated array names.
+
+    . register: List all flops and latches in the "-signal" scope,
+        displaying their names and sizes (in bits).
+        . Use the "-fanout" switch with this argument to list all flops and
+          latches in the fanout of the specified signal.
+        . This command returns a list of space-separated flop and latch names.
+
+    . flop: List all flops in the "-signal" scope, displaying their names
+        and sizes (in bits).
+        . The list includes flop numbers shown as x(y)(z property flop bits).
+          . x is the total number of flops.
+          . y is the sum of flop bits connected to the specified signals,
+            not including property flop bits.
+          . z is the sum of bits of property flops, which are generated as
+            observers for SVA and PSL properties.
+        . Use the "-fanout" switch with this argument to list all flops in the
+          fanout of the specified signal.
+        . The list includes flop numbers shown as x(y).
+          . x is the total number of flops.
+          . y is the sum of bits connected to the specified signals.
+        . This command returns a list of space-separated flop names.
+
+    . latch: List all latches in the "-signal" scope, displaying their
+        names and sizes (in bits).
+        . Use the "-fanout" switch with this argument to list all latches in
+          the fanout of the specified signal.
+        . This command returns a list of space-separated latch names.
+
+    . gate: List the number of gates and gate bits for the specified signal.
+        This command returns the number of gates.
+
+    . input: List the number of inputs followed by their names and
+        sizes.
+        . Inputs can be PIs, signals with hard stopats, or output
+          signals of instance stopats.
+        . This command returns a list of space-separated input names.
+
+    . undriven: List the names and sizes of all undriven signals in the scope
+        of the specified signals.
+
+        This command returns a list of space-separated names of undriven
+        signals.
+
+    . undriven_internal: List the names and sizes of all undriven signals that
+        are not primary inputs and that are in the scope of the specified
+        signals.
+
+        This command returns a list of space-separated names of undriven
+        internal signals.
+
+    . loop_index: List the names and sizes of all indexes of generate for loops
+        in the scope of the specified signals.
+
+        This command returns a list of space-separated names of loop index
+        signals.
+
+    . multiple_driven: List the names and sizes of all multiple-driven signals
+        or high impedance sources in the scope of the specified signals.
+
+        Not all signals returned by this command have more than one driver.
+        They can be a source of high impedance such as z-assignments (1'bz),
+        tri-states, bufifs, and mos gates (nmos, pmos, cmos).
+
+        This command returns a list of space-separated names of multiple-driven
+        or high impedance source signals.
+
+    . bbox_inout: List the names and sizes of the inout ports of blackboxed
+        instances that are in the scope of the specified signals.
+
+        This command returns a list of space-separated signal names.
+
+    . bbox_out: List the names and sizes of the output ports of blackboxed
+        instances that are in the scope of the specified signals.
+
+        This command returns a list of space-separated signal names.
+
+    . special_values: List all counter and FSM special values detected.
+      . Limitation: This argument applies to a single signal.
+      . Each special value is listed as an integer between parentheses and
+        a textual description, if one exists, for example, "(0) SOFA".
+      . This command returns a list of space-separated special values.
+
+    . module: List all modules in the "-signal" scope, displaying their
+        names. This command returns a list of space-separated module names.
+
+    . instance: List all instances in the "-signal" scope, displaying their
+        names. This command returns a list of space-separated instance
+        names. The list does not include blackboxed instances.
+
+    . bind_instance: List all bind instances of the "-signal" scope, displaying
+        their names. This command returns a list of space-separated bind
+        instance names. The list does not include blackboxed bind instances
+
+    . signal: List the specified signals.
+        This command returns a list of space-separated signal names.
+
+    . wire: List all wires in the "-signal" scope, displaying their names
+        and sizes in bits.
+        . Wires are all the signals not classified as registers, primary
+          inputs, or primary outputs (wires = signals - registers - PIs - POs).
+        . This command returns a list of space-separated signal names.
+
+    . parent: List the parent instance of the specified signals.
+
+"-property" Scope
+=================
+-property property_name+ [-regexp]
+               [-list
+                     ([basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+                      [register] [flop] [latch] [gate] [input]
+                      [undriven] [undriven_internal] [loop_index]
+                      [bbox_inout] [bbox_out] [multiple_driven]
+                      [module] [instance] [signal] [wire]
+                      [property] [assert] [assume] [cover] [stopat]
+                     )+
+               ]
+                     [-verbosity (high | low | silent)]
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+                     [-gui]
+    Get design information for one or more specified properties.
+
+    Important things to know about this command:
+    . This analysis considers hard stopats and instance stopats
+      in the corresponding task.
+    . This switch supports wildcards and regular expressions in property names.
+      When using a regular expression, use the "-regexp" switch after the
+      pattern:
+      get_design_info -property {pattern} -regexp
+    . Information available for more than one property is: number and list
+      of flops, latches, registers and inputs (PIs and stopats).
+    . Below you will find definitions of the supported "-list" enums for the
+      "-property" scope.
+    . See the section "Customizing Lists" for switches that refine your list,
+      for example, for scripting.
+
+    Supported "-list" Enums for the "-property" Scope
+    -------------------------------------------------
+    . basic: List the "default" set of information for the "-property" scope.
+        . The Tcl command returns the number of flops in the "-property"
+          scope.
+        . The command "get_design_info -property property_name -list basic" has
+          the same effect as "get_design_info -property property_name" with no
+          additional switches.
+
+    . counter: Identify counters in the vector of flops detected in the
+        "-property" scope.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the counter.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated counter names.
+
+    . fsm: Identify FSMs in the vector of flops detected in the "-property"
+        scope.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the FSM.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FSM names.
+
+    . fifo: Identify FIFO memories (multidimensional arrays) in the "-property"
+        scope.
+        . In addition to listing the names of FIFO memories, this command can
+          print the following information when you use the "-verbosity high"
+          switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . FIFO interface - clocks, resets, enables, access pointers, and data
+            signals on input (write) and output (read) sides of the FIFO,
+            in addition to associated full and empty signals.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FIFO memory names.
+
+    . array [-no_aggregate]: Identify multidimensional arrays (including FIFOs)
+        in the vector of flops detected in the "-property" scope.
+        . Use "-no_aggregate" to get a bit-blasted list.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated array names.
+
+    . register: List all flops and latches in the "-property" scope,
+        displaying their names and sizes (in bits).
+        This command returns a list of space-separated flop and latch names.
+
+    . flop: List all flops in the "-property" scope, displaying their names
+        and sizes (in bits).
+        . The list includes flop numbers shown as x(y)(z property flop bits).
+          . x is the total number of flops.
+          . y is the sum of flop bits connected to the specified property,
+            not including property flop bits.
+          . z is the sum of bits of property flops, which are generated as
+            observers for SVA and PSL properties.
+        . This command returns a list of space-separated flop names.
+
+    . latch: List all latches in the "-property" scope, displaying their
+        names and sizes (in bits).
+        This command returns a list of space-separated latch names.
+
+    . gate: List the number of gates and gate bits for the specified property.
+        This command returns the number of gates.
+
+    . input: List the number of inputs followed by their names and
+        sizes.
+        . Inputs can be PIs, signals with hard stopats, or output
+          signals of instance stopats.
+        . This command returns a list of space-separated input names.
+
+    . undriven: List the names and sizes of all undriven signals in the scope
+        of the specified properties.
+
+        This command returns a list of space-separated names of undriven
+        signals.
+
+    . undriven_internal: List the names and sizes of all undriven signals that
+        are not primary inputs and that are in the scope of the specified
+        properties.
+
+        This command returns a list of space-separated names of undriven
+        internal signals.
+
+    . loop_index: List the names and sizes of all indexes of generate for loops
+        in the scope of the specified properties.
+
+        This command returns a list of space-separated names of loop index
+        signals.
+
+    . multiple_driven: List the names and sizes of all multiple-driven signals
+        or high impedance sources in the scope of the specified properties.
+
+        Not all signals returned by this command have more than one driver.
+        They can be a source of high impedance such as z-assignments (1'bz),
+        tri-states, bufifs, and mos gates (nmos, pmos, cmos).
+
+        This command returns a list of space-separated names of multiple-driven
+        or high impedance source signals.
+
+    . multiplier
+      divider
+      modulus
+        List all cell-defined multipliers, dividers, or modulus in the scope
+        of the specified properties
+        "-property" scope.
+        . Each multiplier, divider, or modulus that has not
+          been blackboxed is cell defined. By default, all multipliers,
+          dividers, and modulus are blackboxed; however, you can use
+          "elaborate -bbox_mul", "-bbox_div", and "-bbox_mod" to avoid
+          blackboxing them.
+        . Each multiplier, divider, and modulus is described by three signals:
+          {out_internal left_internal right_internal}
+        . The right and left internal signals are the operands, and
+          "out_internal" is the resulting signal.
+        . This functionality is useful for manual abstraction.
+        . This command returns a list of space-separated triples of signals.
+
+      NOTE:
+      . Blackboxed multipliers, dividers and modulus are not listed
+          by this command.
+      . Blackboxed multipliers, dividers and modulus will prevent this
+          command from listing non-blackboxed multipliers dividers and
+          modulus that precede them in the "-property" scope, unless these
+          non-blackboxed operators are enocountered through other routes
+          in the "-property" scope.
+
+    . bbox_inout: List the names and sizes of the inout ports of blackboxed
+        instances that are in the scope of the specified properties.
+
+        This command returns a list of space-separated signal names.
+
+    . bbox_out: List the names and sizes of the output ports of blackboxed
+        instances that are in the scope of the specified properties.
+
+        This command returns a list of space-separated signal names.
+
+    . module: List all modules in the "-property" scope, displaying their
+        names. This command returns a list of space-separated module names.
+
+    . instance: List all instances in the "-property" scope, displaying their
+        names. This command returns a list of space-separated instance names.
+        The list does not include blackboxed instances.
+
+    . signal: List all signals in the "-property" scope, displaying their
+        names and sizes in bits.
+        . Signals are the set of all registers, primary inputs, primary
+          outputs, and wires (signals = registers + PIs + POs + wires).
+        . This command returns a list of space-separated signal names.
+
+    . wire: List all wires in the "-property" scope, displaying their names
+        and sizes in bits.
+        . Wires are all the signals not classified as registers, primary
+          inputs, or primary outputs (wires = signals - registers - PIs - POs).
+        . This command returns a list of space-separated signal names.
+
+    . property
+      assert
+      assume
+      cover
+        List one or more of the current task's embedded or Tcl properties of
+        the specified type.
+
+        NOTE:
+        . This command supports wildcards. If you do not use wildcards, it
+          returns the specified property.
+        . The list includes embedded and Tcl properties, embedded and
+          Tcl assertions, embedded and Tcl assumptions, or embedded and Tcl
+          cover directives.
+        . The list does not include assertions extracted by the apps, for
+          example, X-Prop and Connectivity assertions.
+        . The list does not include global assumptions specified with "assume
+          -env".
+
+        The list includes the number and names of properties the return is a
+        list of space-separated property names.
+
+    . stopat: List all the stopats in the "-property" scope, displaying their
+      names and sizes in bits. This command returns a list of space-separated
+      signal names.
+
+"-task" Scope
+=============
+-task task_name+ [-compute_all]
+               [-list
+                     ([basic] [counter] [fsm] [fifo] [array [-no_aggregate]]
+                      [register] [flop] [latch] [gate] [input]
+                      [undriven] [undriven_internal] [loop_index]
+                      [module] [instance] [signal] [wire]
+                      [property] [assert] [assume] [cover]
+                     )+
+               ]
+                     [-verbosity (high | low | silent)]
+                     [-typed_list]
+                     [-silent]
+                     [-file file_name [-force]]
+                     [-filter filter_expression [-regexp] [-case_sensitive]]
+                     [-gui]
+
+-task task_name+ [-compute_all]
+    Get design information for one or more specified tasks.
+
+    Important things to know about this command:
+    . This analysis considers hard stopats and instance
+      stopats in this task.
+    . Use the optional "-compute_all" switch to request the computation of the
+      list of registers for the specified task and for all properties within
+      this task. The computation of registers for properties in a task can be
+      done more efficiently if they are all done at the same time, and
+      therefore, you will save time.
+    . This switch supports wildcards (* and ?) in task names:
+      get_design_info -task t*
+      get_design_info -task task1 {task2} t*
+      get_design_info -task task?
+    . Information available for more than one task is: number and list
+      of flops, latches, registers and inputs (PIs and stopats).
+    . Below you will find definitions of the supported "-list" enums for the
+      "-task" scope.
+    . See the section "Customizing Lists" for switches that refine your list,
+      for example, for scripting.
+
+    NOTE: If you run the "reset" command prior to this command, the reset
+    signal is listed as a task input signal. This is the behavior
+    regardless of whether the task has properties.
+
+    Supported "-list" Enums for the "-task" Scope
+    ---------------------------------------------
+    . basic: List the "default" set of information for the "-task" scope.
+        . The Tcl command returns the number of flops in the "-task"
+          scope.
+        . The command "get_design_info -task task_name -list basic" has the
+          same effect as "get_design_info -task task_name" with no additional
+          switches.
+
+    . counter: Identify counters in the vector of flops detected in the
+        "-task" scope.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the counter.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated counter names.
+
+    . fsm: Identify FSMs in the vector of flops detected in the "-task"
+        scope.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Special values - values that are critical to the FSM.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FSM names.
+
+    . fifo: Identify FIFO memories (multidimensional arrays) in the "-task"
+        scope.
+        . In addition to listing the names of FIFO memories, this command can
+          print the following information when you use the "-verbosity high"
+          switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . FIFO interface - clocks, resets, enables, access pointers, and data
+            signals on input (write) and output (read) sides of the FIFO,
+            in addition to associated full and empty signals.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated FIFO memory names.
+
+    . array [-no_aggregate]: Identify multidimensional arrays (including FIFOs)
+        in the vector of flops detected in the "-task" scope.
+        . Use "-no_aggregate" to get a bit-blasted list.
+        . In addition to listing the names of flops, this command can print the
+          following information when you use the "-verbosity high" switch:
+          . Number of bits - flop width.
+          . Size logic - number of gates inside the flop's COI.
+          . Max depth - maximum number of flops from the original flop to a
+            primary input.
+          . Direct flops - list of flops directly connected to the original
+            flop. This list includes flop types (FSM, COUNTER, or OTHER).
+          . COI flops - list of flops in the COI of the original flop.
+        . This command returns a list of space-separated array names.
+
+    . register: List all flops and latches in the "-task" scope,
+        displaying their names and sizes (in bits).
+        This command returns a list of space-separated flop and latch names.
+
+    . flop: List all flops in the "-task" scope, displaying their names
+        and sizes (in bits).
+        . The list includes flop numbers shown as x(y)(z property flop bits).
+          . x is the total number of flops.
+          . y is the sum of bits of the flops, not including property flop
+            bits.
+          . z is the sum of bits of property flops, which are generated as
+            observers for SVA and PSL properties.
+        . This command returns a list of space-separated flop names.
+
+    . latch: List all latches in the "-task" scope, displaying their
+        names and sizes (in bits).
+        This command returns a list of space-separated latch names.
+
+    . gate: List the number of gates and gate bits for the specified task.
+        This command returns the number of gates.
+
+    . input: List the number of inputs followed by their names and sizes.
+        . Inputs can be PIs, signals with hard stopats, or output
+          signals of instance stopats.
+        . This command returns a list of space-separated input names.
+
+        NOTE: If you run the "reset" command prior to this command, the reset
+        signal is listed as a task input signal. This is the behavior
+        regardless of whether the task has properties.
+
+    . undriven: List the names and sizes of all undriven signals in the scope
+        of the specified tasks.
+
+        This command returns a list of space-separated names of undriven
+        signals.
+
+    . undriven_internal: List the names and sizes of all undriven signals that
+        are not primary inputs and that are in the scope of the specified
+        tasks.
+
+        This command returns a list of space-separated names of undriven
+        internal signals.
+
+    . loop_index: List the names and sizes of all indexes of generate for loops
+        in the scope of the specified tasks.
+
+        This command returns a list of space-separated names of loop index
+        signals.
+
+    . module: List all modules in the "-task" scope, displaying their
+        names. This command returns a list of space-separated module names.
+
+    . instance: List all instances in the "-task" scope, displaying their
+        names. This command returns a list of space-separated instance names.
+        The list does not include blackboxed instances.
+
+    . signal: List all signals in the "-task" scope, displaying their
+        names and sizes in bits.
+        . Signals are the set of all registers, primary inputs, primary
+          outputs, and wires (signals = registers + PIs + POs + wires).
+        . This command returns a list of space-separated signal names.
+
+    . wire: List all wires in the "-task" scope, displaying their names
+        and sizes in bits.
+        . Wires are all the signals not classified as registers, primary
+          inputs, or primary outputs (wires = signals - registers - PIs - POs).
+        . This command returns a list of space-separated signal names.
+
+    . property
+      assert
+      assume
+      cover
+        List embedded and Tcl properties of the specified type in the specified
+        task.
+
+        NOTE:
+        . The list includes embedded and Tcl properties, embedded and
+          Tcl assertions, embedded and Tcl assumptions, or embedded and Tcl
+          cover directives.
+        . The list does not include assertions extracted by the apps, for
+          example, X-Prop and Connectivity assertions.
+        . The list does not include global assumptions specified with "assume
+          -env".
+
+        This command lists the number and names of properties and returns a
+        list of space-separated property names.
+
+Customizing Lists
+=================
+    Use the following switches with one or more of the enums listed above.
+
+    -verbosity (high | low | silent)
+      Use the specified level of verbosity to provide information.
+      . high - Print all available information.
+        . Example: When used with "-list flop", this command prints:
+          . The total number of flops and property flops (flops generated as
+            observers for SVA and PSL properties).
+          . A list of all the signal names with their sizes shown in
+            parentheses.
+        . The return value is the sum of bits of all flops.
+      . low - Print minimal information.
+        . Example: When used with "-list flop", this command prints the
+          space-separated flop names.
+        . The "low" verbosity level is the default.
+      . silent - Turn off output to the screen and return design info with a
+        Tcl return value.
+        The "silent" option is helpful in Tcl scripts.
+
+    -typed_list
+      Change the return format for the "-list" switch by adding a type element
+      before each of the requested lists.
+      . The list format is as follows:
+        { input { <input_signal>+ } output { <output_signal>+ } }
+      . Refer to the "Example" section.
+
+    -silent
+      Turn off output to the screen and return design info with a Tcl return
+      value.
+      . The "silent" option is helpful in Tcl scripts.
+      . This switch has the same effect as "-verbosity silent".
+
+    -file file_name [-force]
+      Print information to the specified "file_name".
+
+      Use "-force" to overwrite an existing file.
+
+    -filter filter_expression [-regexp] [-case_sensitive]
+      Filters the returned list using case-insensitive wildcard strings
+     (default).
+      . Use "-regexp" to change the filter expression to a case-insensitive
+        regular expression.
+      . Use "-case_sensitive" to filter output using case-sensitive wildcard
+        strings or regular expressions.
+
+    -gui
+      Display the requested information in the Design Information GUI.
+
+    -include_hier_path
+      Display signal names with the instance path. Use this switch with the
+      following arguments:
+      . output
+      . input
+      . inout
+
+Counter, FSM, and FIFO Detection
+================================
+-signal signal_list
+                -is_counter |-is_fsm |-is_fifo
+                [-verbosity high]
+    Get design information for one or more specified signals.
+
+    Important things to know about this command:
+    . This analysis only considers hard stopats and instance stopats specified
+      with "-env".
+    . This command supports wildcards (* and ?) in the signal name.
+    . "-is_counter" returns true if the signal is a counter or false, if not.
+    . "-is_fsm" returns true if the signal is a finite state machine (FSM) or
+      false, if not.
+    . "-is_fifo" returns true if the signal is the output of a
+      first-in-first-out (FIFO) memory or false, if it is not.
+    . If you use "-verbosity high", and the signal is a counter, FSM, or FIFO,
+      the command prints additional details about the detected structure:
+      counter's critical values, FSM's states, and FIFO's interface.
+
+Cached-Info Clearing
+====================
+-clear
+    Remove all cached information for all "get_design_info" commands.
+    (Use this command to free memory.)
+
+Depth Calculation
+=================
+-signal name+ |-property name+
+                -list (flop | latch | register)
+                -depth N [-boundary] [-silent]
+    List all the state elements that are within N layers of sequential logic
+    from one or more target signals or properties.
+
+    NOTE: This switch supports wildcards (* and ?) in signal and property
+    names.
+
+    . -list flop: run the depth calculation in terms of flop layers.
+    . -list latch: run the depth calculation in terms of latch layers.
+    . -list register: run the depth calculation in terms of both flops and
+      latches.
+
+    If the target property or signal is a state element itself, it is
+    considered to be at depth 0.
+
+    . Use "-boundary" to list only the state elements at the outer layer
+      corresponding to depth N.
+    . Use "-silent" to get just the signal names list, not a printout of the
+      output of each signal with bit-width annotations.
+
+Example:
+% get_design_info -instance ing2 -list stopat
+% get_design_info -module pci_rst_int
+% get_design_info -module pci_bridge32 -list output
+% get_design_info -list counter
+% get_design_info -list bbox_in_instance_port
+{in bbinst bbinst.in}
+
+// List the flops and latches that are within distance 1 (in terms of layers of
+// state elements) from the target signal.
+% get_design_info -signal sigName1 -list register -depth 1
+
+// List the flops on the second layer of flops from either one of the two
+// target signals.
+% get_design_info -signal sigName1 sigName2 -list flop -depth 2 -boundary
+
+// List the flops that are on the 3rd layer of flops away from the target
+// property.
+% get_design_info -property propName1 -list flop -depth 3 -boundary
+
+// List the state elements (flops or latches) that are 2 layers of state
+// elements from the target properties.
+% get_design_info -property propName1 propName2 -list register -depth 2 -boundary
+
+// List FSMs and outputs for instance "arb", and return a typed list.
+% get_design_info -instance arb -list fsm output -typed_list
+fsm {arb_core.arb_state arb_core.pri_enc.curr_chan tag_mgr.tag_poolA tag_mgr.tag_poolB tag_mgr.tag_poolC} output {dat_out dat_val full0 full1 full2 full3 wb0_ack_o wb0_data_o wb0_err_o wb1_ack_o wb1_data_o wb1_err_o wb2_ack_o wb2_data_o wb2_err_o wb3_ack_o wb3_data_o wb3_err_o}
+
+----------------------------------------
+

@@ -1,0 +1,105 @@
+ 
+****************************************
+Report : resources
+Design : MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Thu Jul 24 21:46:29 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Multiplier_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| mult_x_1       | DW_mult_uns    | a_width=16 | mult_87 (RTL-Multiplier_syn.vhd:87) |
+        |                | b_width=16 |                            |
+| mult_x_2       | DW_mult_uns    | a_width=16 | mult_88 (RTL-Multiplier_syn.vhd:88) |
+        |                | b_width=16 |                            |
+| mult_x_3       | DW_mult_uns    | a_width=16 | mult_89 (RTL-Multiplier_syn.vhd:89) |
+        |                | b_width=16 |                            |
+| mult_x_4       | DW_mult_uns    | a_width=16 | mult_90 (RTL-Multiplier_syn.vhd:90) |
+        |                | b_width=16 |                            |
+| mult_x_5       | DW_mult_uns    | a_width=16 | mult_87_I2_I1 (RTL-Multiplier_syn.vhd:87) |
+  |                | b_width=16 |                            |
+| mult_x_6       | DW_mult_uns    | a_width=16 | mult_88_I2_I1 (RTL-Multiplier_syn.vhd:88) |
+  |                | b_width=16 |                            |
+| mult_x_7       | DW_mult_uns    | a_width=16 | mult_89_I2_I1 (RTL-Multiplier_syn.vhd:89) |
+  |                | b_width=16 |                            |
+| mult_x_8       | DW_mult_uns    | a_width=16 | mult_90_I2_I1 (RTL-Multiplier_syn.vhd:90) |
+  |                | b_width=16 |                            |
+| DP_OP_72J1_122_7639             |            |                            |
+|                | DP_OP_72J1_122_7639 |       |                            |
+| DP_OP_73J1_123_7639             |            |                            |
+|                | DP_OP_73J1_123_7639 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_72J1_122_7639
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_72J1_122_7639  | add_156 (RTL-Multiplier_syn.vhd:156)                |
+|                      | add_156_2 (RTL-Multiplier_syn.vhd:156)              |
+|                      | add_156_3 (RTL-Multiplier_syn.vhd:156)              |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 32    |                                          |
+| I4    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 + I3 + I4 (RTL-Multiplier_syn.vhd:156) |
+==============================================================================
+
+Datapath Report for DP_OP_73J1_123_7639
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_73J1_123_7639  | add_156_I2_I1 (RTL-Multiplier_syn.vhd:156)          |
+|                      | add_156_2_I2_I1 (RTL-Multiplier_syn.vhd:156)        |
+|                      | add_156_3_I2_I1 (RTL-Multiplier_syn.vhd:156)        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 32    |                                          |
+| I4    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 + I3 + I4 (RTL-Multiplier_syn.vhd:156) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| mult_x_1           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_2           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_3           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_4           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: benc_radix4              |
+| mult_x_5           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_6           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_7           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_8           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: benc_radix4              |
+| DP_OP_72J1_122_7639                   |                    |                |
+|                    | DP_OP_72J1_122_7639 | str (area)      |                |
+| DP_OP_73J1_123_7639                   |                    |                |
+|                    | DP_OP_73J1_123_7639 | str (area)      |                |
+===============================================================================
+
+1

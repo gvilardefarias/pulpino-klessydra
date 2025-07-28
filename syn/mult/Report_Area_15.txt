@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Thu Jul 24 21:46:29 2025
+****************************************
+
+Library(s) Used:
+
+    NanGate_15nm_OCL (File: /home/g.vilarde/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db)
+
+Number of ports:                          233
+Number of nets:                          5321
+Number of cells:                         4386
+Number of combinational cells:           4161
+Number of sequential cells:               224
+Number of macros/black boxes:               0
+Number of buf/inv:                        628
+Number of references:                      21
+
+Combinational area:               1791.885358
+Buf/Inv area:                       92.602371
+Noncombinational area:             286.261238
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                  2078.146596
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  ---------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-     Noncombi-  Black-
+                                  Total      Total    national   national   boxes   Design
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64 2078.1466   100.0 1791.8854  286.2612 0.0000 MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+--------------------------------  ---------  -------  ---------  ---------  ------  ---------
+Total                                                 1791.8854   286.2612  0.0000
+
+1

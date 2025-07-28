@@ -1,0 +1,41 @@
+ 
+****************************************
+Report : reference
+Design : ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:53:18 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912       2     0.589824
+AOI21_X1           NanGate_15nm_OCL     0.294912      34    10.027008
+AOI22_X1           NanGate_15nm_OCL     0.344064     103    35.438592
+DFFSNQ_X1          NanGate_15nm_OCL     1.277952      64    81.788925 n
+FA_X1              NanGate_15nm_OCL     1.179648      45    53.084162 r
+HA_X1              NanGate_15nm_OCL     0.638976       1     0.638976 r
+INV_X1             NanGate_15nm_OCL     0.147456     186    27.426817
+NAND2_X1           NanGate_15nm_OCL     0.196608      71    13.959168
+NAND3_X1           NanGate_15nm_OCL     0.294912       2     0.589824
+NOR2_X1            NanGate_15nm_OCL     0.196608     109    21.430273
+NOR3_X1            NanGate_15nm_OCL     0.294912       2     0.589824
+OAI21_X1           NanGate_15nm_OCL     0.294912      78    23.003137
+OAI22_X1           NanGate_15nm_OCL     0.344064      48    16.515072
+OR2_X1             NanGate_15nm_OCL     0.294912       1     0.294912
+OR4_X1             NanGate_15nm_OCL     0.442368       1     0.442368
+XNOR2_X1           NanGate_15nm_OCL     0.442368       3     1.327104
+XOR2_X1            NanGate_15nm_OCL     0.442368       6     2.654208
+-----------------------------------------------------------------------------
+Total 17 references                                   289.800194
+1

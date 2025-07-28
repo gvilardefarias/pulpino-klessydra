@@ -1,0 +1,133 @@
+#*******************************************************************************
+# (c) 2017 Synopsys, Inc.
+#
+# This file and it's contents are proprietary to Synopsys, Inc. and may 
+# only be used pursuant to the terms and conditions of a written license 
+# agreement with Synopsys, Inc. All other use, reproduction, modification, 
+# or distribution of this file is stricly prohibited.
+#*******************************************************************************
+
+# Set the Status Definitions that will be used and reported from fault simulation
+#StatusDefinitions
+#{
+    # Redefinition of some built-in status definitions
+##    Redefine ND NX "Not Detected"
+##    Redefine DD DX "Drop detected modified";
+##    Redefine PD AL "Unused"
+    # Creation of new functional safety definitions
+   
+#    RE "reg_file";
+#    RS "special regs";
+#    FP "if stage reg";
+#    FD "id stage reg";
+#    FE "ex stage reg";
+#    LS "load store unit reg";
+#    PX "Potential Drop detected";
+#    PR "Potential Reg File";
+#    PS "Potential Special Reg";
+#    PP "Potential if stage";
+#    PD "Potential id stage";
+#    PE "Potential ex stage";
+#    PL "Potential load_store unit";
+    
+    
+    # Any fault created and not set by a system task will have this status.
+ #   DefaultStatus (ND)
+
+    # Any fault of this status will be chosen by the simulation for injection
+ #   Selected (NA, ND)
+
+    #Define the merging of faults when multiple tests are run
+#    PromotionTable
+#    {
+#       StatusLabels(NA,NX,NC,NO,OA,OZ,IH,IX,UU,UT,UB,UR,UI,UO,DE,DF,IA,IF,IP,HA,HM,HT,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX)
+#        [
+#            | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#	    - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | | ;
+#            - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - | ;
+            
+#        ]
+	
+#    }
+    #PromotionTable
+    #{
+	#PromoteOrder (NA<NX<NC<NO<OA<OZ<IH<IX<UU<UT<UB<UR<UI<UO<DE<DF<IA<IF<IP<HA<HM<HT< AL < RE < DX)
+    #}
+
+  #  PromotionTable
+  #  {
+#	PromoteOrder (ND<DD)
+#    }
+
+
+    #StatusGroups
+    #{
+    #    SA "Safe" (UT, UB, UR, UU, AL);
+    #    SU "Dangerous Unobserved" (NN, NC, NO, NT);
+    #    DA "Dangerous Assumed" (HA, HM, HT, OA, OZ, IA, IP, IF, IX);
+    #    DN "Dangerous Not Diagnosed" (PN, ON, OP);
+    #    DD "Dangerous Diagnosed" (NP, ND, OD);
+    #}
+
+#}
+
+# Set fault generation constraints
+FaultGenerate
+{
+   # Create faults on all reg types in hierarchy
+ #   NA [0,1] { VARI "RCA.**" }
+   # Create faults on all ports in hierarchy
+    NA [0,1] { PORT "ACCUMULATOR.**" }
+ #   NA [0,1] { PRIM "RCA.**" }
+    #NA [0,1] { PORT "RCA.b" }
+    #NA [R,F] { PORT "RCA.a" },  [R, F] slow-to-rise trans. fault, slow-to-fall trans. fault
+
+# NA type { class "location"}, NA Not Attempted, 
+# type"
+# [0,1] stuck at 0, stuck at 1
+# [R, F] slow-to-rise trans. fault, slow-to-fall trans. fault
+
+
+# class:     ASGN assign fault, ARRY array fault, BRID bridge fault, PORT port fault, EXPR expression fault
+#           PRIM primitive input or output fault, TRAN transition fault
+
+
+}
+
+#Coverage
+#{
+#    "dropped coverage" = "DX/(NC + NA + NO + DX + RE + RS)";
+#}

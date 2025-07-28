@@ -1,0 +1,43 @@
+ 
+****************************************
+Report : area
+Design : SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:42:34 2025
+****************************************
+
+Library(s) Used:
+
+    NanGate_15nm_OCL (File: /home/g.vilarde/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db)
+
+Number of ports:                          159
+Number of nets:                          1074
+Number of cells:                          994
+Number of combinational cells:            857
+Number of sequential cells:               136
+Number of macros/black boxes:               0
+Number of buf/inv:                        123
+Number of references:                      14
+
+Combinational area:                234.061827
+Buf/Inv area:                       18.137089
+Noncombinational area:             173.801466
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                   407.863293
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area          Local cell area
+                                  ------------------  --------------------------- 
+Hierarchical cell                 Absolute   Percent  Combi-    Noncombi-  Black-
+                                  Total      Total    national  national   boxes   Design
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64  407.8633   100.0 234.0618  173.8015 0.0000 SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+--------------------------------  ---------  -------  --------  ---------  ------  ---------
+Total                                                 234.0618   173.8015  0.0000
+
+1

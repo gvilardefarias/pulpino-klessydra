@@ -1,0 +1,185 @@
+
+                                   Z01X (TM)
+
+       Version V-2023.12 for linux64 - Nov 19, 2023      
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Thu Jul 24 22:54:11 CEST 2025
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+25/07/24 22:54:11  Note:    Reading load file:bin/permanent_faults_gen.fmsh
+>  
+>  
+> set(var=[resources], messages=[all]) 
+25/07/24 22:54:11  Note:    Set resources[messages] to "all".
+> set(var=[defines], format=[standard]) 
+25/07/24 22:54:11  Note:    Set defines[format] to "standard".
+> set(var=[defines], dictionary.enable=[1]) 
+25/07/24 22:54:11  Note:    Set defines[dictionary.enable] to 1.
+25/07/24 22:54:11  Warning: Options will be saved when a design is opened
+> set(var=[fsim], dictionary.values=[all]) 
+25/07/24 22:54:11  Note:    Set fsim[dictionary.values] to "all".
+>  
+> # the next line defines if using the file "fault_list.sff" for defining the fault list for fault simulation. Otherwise, in stroves.v the faults can be defined, e.g., from an external file. 
+> #set(var=[fdef], method=[fr], fr.fr=[bin/fault_list.sff],abort=[error]) 
+>  
+> # set (var=[coats],status=[NA,NX,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX]) 
+> # set (var=[coats],status=[DD, ND]) 
+>  
+> set (var=[fsim],hyperfault=[0]) 
+25/07/24 22:54:11  Note:    Set fsim[hyperfault] to 0.
+> design() 
+25/07/24 22:54:11  Note:    Generating design fault universe file
+25/07/24 22:54:11  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_generate -l fgen.log
+25/07/24 22:54:11  Note:    Job fault_generate begun
+25/07/24 22:54:11  Note:    Job fault_generate completed: Host: monviso
+25/07/24 22:54:11  Note:    Total: 32508 Prime: 18503 Collapsed: 14005 Untestable: 160
+25/07/24 22:54:11  Note:    Fault Generation Completed 0 Errors 0 Warnings
+25/07/24 22:54:11  Note:    Created design, directory=/home/g.vilarde/Klessydra/pulpino-klessydra/zoix
+25/07/24 22:54:11  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -func __fubs__/design/__path__ -genfub +job_id+64f6ed72e7f8d341 -l __fubs__/design/design.log
+25/07/24 22:54:12  Note:    Job coats begun
+25/07/24 22:54:12  Note:    Job coats completed: Host: monviso
+>  
+> addtst(test=[MULTIPLIER], stimtype=[vcd], dictionary.enable=[1], stim=[vcd/mult.vcd],dut.stim=[MULTIPLIER,tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.MULTIPLIER],stim_options=[+TESTNAME=MULTIPLIER] ) 
+25/07/24 22:54:12  Note:    Adding test: MULTIPLIER
+25/07/24 22:54:12  CMD: ln -s ../../sim.zdb __tests__/MULTIPLIER/sim.zdb
+25/07/24 22:54:12  CMD: ln -s ../../zoix.sim __tests__/MULTIPLIER/zoix.sim
+25/07/24 22:54:12  CMD: cp vcd/mult.vcd __tests__/MULTIPLIER/mult.vcd
+25/07/24 22:54:12  CMD: ln -s ../../../__tests__/MULTIPLIER/mult.vcd __fubs__/design/MULTIPLIER/mult.vcd
+25/07/24 22:54:12  CMD: ln -s ../../../sim.zdb __fubs__/design/MULTIPLIER/sim.zdb
+25/07/24 22:54:12  CMD: ln -s ../../../zoix.sim __fubs__/design/MULTIPLIER/zoix.sim
+>  
+> #addtst(test=[RCA], stimtype=[vcd], dictionary.enable=[1], stim=[../tmax/dumpports_rtl.riscv_core.vcde],stim_options=[+TESTNAME=riscv_core] ) 
+>  
+> fsim() 
+25/07/24 22:54:12  Note:    Performing testability analysis
+25/07/24 22:54:12  CMD: ./zoix.sim -toggle __tests__/MULTIPLIER/MULTIPLIER.vtog -fstrobe __tests__/MULTIPLIER/__fstrobes__ -l __tests__/MULTIPLIER/zoix_rt.log +vcd+file+__tests__/MULTIPLIER/mult.vcd +progress -testdir __tests__/MULTIPLIER/ +vcd+dut+MULTIPLIER+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.MULTIPLIER +TESTNAME=MULTIPLIER -testname MULTIPLIER +job_id+5426cdd237b8f3c1
+25/07/24 22:54:13  Note:    Toggle simulation for test: MULTIPLIER
+25/07/24 22:54:13  Note:    Job toggle Test: MULTIPLIER begun
+25/07/24 22:54:16  Note:    Job toggle completed: Host: monviso Test: MULTIPLIER
+25/07/24 22:54:16  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test MULTIPLIER -seltyp observe +job_id+64f6ed72e7f8d341 -fstrobe __tests__/MULTIPLIER/__fstrobes__ -testid 65537 -l __fubs__/design/MULTIPLIER/coats.log
+25/07/24 22:54:17  Note:    Testability analysis for Test: MULTIPLIER
+25/07/24 22:54:17  Note:    Job coats Test: MULTIPLIER begun
+25/07/24 22:54:17  Note:    Job coats completed: Host: monviso Test: MULTIPLIER
+25/07/24 22:54:20  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -fdeffiles __fubs__/design/fdeffiles.txt -record -dir ./ -fub design -fdef sim.fdef -l __fubs__/design/boots.log
+25/07/24 22:54:20  Note:    Job boots Test: All begun
+25/07/24 22:54:20  Note:    Job boots completed: Host: monviso Test: All
+25/07/24 22:54:20  Note:    Updating Testability Report
+25/07/24 22:54:20  Note:    Simulating Test: MULTIPLIER
+25/07/24 22:54:20  Note:    Fault simulation on Test: MULTIPLIER starting
+25/07/24 22:54:20  Note:    Generate fault origins for Test: MULTIPLIER
+25/07/24 22:54:20  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test MULTIPLIER -recalc -m -l __fubs__/design/MULTIPLIER/fdef.log
+25/07/24 22:54:20  Note:    Job coats Test: MULTIPLIER begun
+25/07/24 22:54:20  Note:    Job coats completed: Host: monviso Test: MULTIPLIER
+25/07/24 22:54:20  Note:    Test: MULTIPLIER selected 18308 out of 18503 remaining faults to simulate
+25/07/24 22:54:20  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_sim -fdef __fubs__/design/MULTIPLIER/MULTIPLIER.fdef -q +vcd+file+__tests__/MULTIPLIER/mult.vcd +vcd+dut+MULTIPLIER+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.MULTIPLIER +TESTNAME=MULTIPLIER -cdfout __fubs__/design/MULTIPLIER/cdfout +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -fmsh -testdir __fubs__/design/MULTIPLIER/ -l __fubs__/design/MULTIPLIER/simout-N0
+25/07/24 22:54:20  Note:    Fault simulation for Test: MULTIPLIER
+25/07/24 22:54:20  Note:    Job fault_sim Test: MULTIPLIER begun
+25/07/24 22:55:04  Note:    Job fault_sim completed: Host: monviso Test: MULTIPLIER
+25/07/24 22:55:04  Note:    Record simulation results for Test: MULTIPLIER
+25/07/24 22:55:04  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -record -dir ./ -fub design -test MULTIPLIER -fdef sim.fdef -fntn 65537 __fubs__/design/MULTIPLIER/MULTIPLIER.fdef -l __fubs__/design/MULTIPLIER/boots.log
+25/07/24 22:55:04  Note:    Job boots Test: MULTIPLIER begun
+25/07/24 22:55:05  Note:    Job boots completed: Host: monviso Test: MULTIPLIER
+25/07/24 22:55:05  Note:    Simulation of test MULTIPLIER complete
+#                                Prime                  Total
+# Test: MULTIPLIER
+# Total Faults:                  18503                  32508
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:       16961    91.67%        30355    93.38%
+# Dropped Potential Faults:        542     2.93%          551     1.69%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             805     4.35%         1235     3.80%
+# Not Observed:                     35     0.19%           39     0.12%
+# Not Controlled:                  160     0.86%          328     1.01%
+# Simulation Times:          
+#   Toggle:                   00:00:03
+#   Fault Cumulative:         00:00:45
+#   Fault Wall Clock:         00:00:44
+#
+# Cumulative Test Results
+# Total Faults:                  18503                  32508
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:       16961    91.67%        30355    93.38%
+# Dropped Potential Faults:        542     2.93%          551     1.69%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             805     4.35%         1235     3.80%
+# Not Observed:                     35     0.19%           39     0.12%
+# Not Controlled:                  160     0.86%          328     1.01%
+#
+# Untestable Tied:                 160                    160
+#
+25/07/24 22:55:05  Note:    Simulation Completed.
+25/07/24 22:55:05  Note:    Updating Testability Report
+
+# Tests simulated in this session:
+#                                Prime                  Total
+# Test: MULTIPLIER
+# Total Faults:                  18503                  32508
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:       16961    91.67%        30355    93.38%
+# Dropped Potential Faults:        542     2.93%          551     1.69%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             805     4.35%         1235     3.80%
+# Not Observed:                     35     0.19%           39     0.12%
+# Not Controlled:                  160     0.86%          328     1.01%
+# Simulation Times:          
+#   Toggle:                   00:00:03
+#   Fault Cumulative:         00:00:45
+#   Fault Wall Clock:         00:00:44
+#
+# Cumulative Test Results
+# Total Faults:                  18503                  32508
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:       16961    91.67%        30355    93.38%
+# Dropped Potential Faults:        542     2.93%          551     1.69%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             805     4.35%         1235     3.80%
+# Not Observed:                     35     0.19%           39     0.12%
+# Not Controlled:                  160     0.86%          328     1.01%
+#
+# Untestable Tied:                 160                    160
+#
+# Test Coverage:                          93.13%                 94.22%
+# Fault Coverage:                         92.33%                 93.76%
+#
+>  
+> coverage(file=[SAF_coverage.sff]) 
+25/07/24 22:55:05  Note:    Running coverage analysis
+25/07/24 22:55:05  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report +fm -dir ./ +format+standard -out ./SAF_coverage.sff -testinfo __fubs__/testid.txt -l fault_report.log
+25/07/24 22:55:05  Note:    Job fault_report completed: Host: monviso
+25/07/24 22:55:05  Note:    Fault report file is SAF_coverage.sff
+> # coverage (type=[dictionary],file=[saf_dic_short.txt],test=[RCA], style=[short]) 
+>  
+> #coverage(type=[dictionary],test=[RCA],file=[saf_dic.txt])   
+> coverage (type=[dictionary],file=[saf_dic_long.txt],test=[MULTIPLIER]) 
+25/07/24 22:55:05  Note:    Creating coverage dictionary
+25/07/24 22:55:05  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report -dict __fubs__/design/MULTIPLIER/cdfout -dictout saf_dic_long.txt +format+standard -l __fubs__/design/MULTIPLIER/MULTIPLIER_cdf.log -fdef __fubs__/design/MULTIPLIER/MULTIPLIER.fdef
+25/07/24 22:55:14  Note:    Job fault_report completed: Host: monviso
+25/07/24 22:55:14  Note:    Coverage dictionary file is 'saf_dic_long.txt'
+>  
+25/07/24 22:55:14  Note:    Script file complete
+25/07/24 22:55:14  Note:    Thu Jul 24 22:55:14 CEST 2025
+#                                Total Run Times                                 
+#
+#                              Queued             CPU               Wall  
+# Fault simulation            00:00:00          00:00:45          00:00:45
+# Toggle simulation           00:00:00          00:00:04          00:00:07
+#
+#
+#                            Time Allocation Per Tool                            
+#
+#                                   Queued                Running      
+# Fault simulation            00:00:00     0.00%     00:00:44    73.70%
+# Fault results recording     00:00:00     0.00%     00:00:01     1.27%
+# Testability                 00:00:00     0.00%     00:00:01     1.21%
+# Toggle simulation           00:00:00     0.00%     00:00:04     6.62%
+# Fault creation              00:00:00     0.00%     00:00:00     0.59%
+# Fault coverage              00:00:00     0.00%     00:00:10    16.61%
+#----------------------------------------------------------------------
+# Total                       00:00:00     0.00%     00:00:59   100.00%
+CPU Time: 58.1s ; Elapsed Time: 63.7s ; Data Size: 95.7MB

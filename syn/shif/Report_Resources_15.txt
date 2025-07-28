@@ -1,0 +1,300 @@
+ 
+****************************************
+Report : resources
+Design : SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:42:34 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Shifter_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ashr_1         | DW_rightsh     | A_width=32 | srl_81 (RTL-Shifter_syn.vhd:81) |
+            |                | SH_width=5 |                            |
+| ashr_2         | DW_rightsh     | A_width=32 | srl_81_I2_I1 (RTL-Shifter_syn.vhd:81) |
+      |                | SH_width=5 |                            |
+| lte_x_23       | DW_cmp         | width=6    | lte_164_I2_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_24       | DW_cmp         | width=6    | lte_164_I3_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_25       | DW_cmp         | width=6    | lte_164_I4_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_26       | DW_cmp         | width=6    | lte_164_I5_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_27       | DW_cmp         | width=6    | lte_164_I6_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_28       | DW_cmp         | width=6    | lte_164_I7_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_29       | DW_cmp         | width=6    | lte_164_I8_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_31       | DW_cmp         | width=6    | lte_164_I10_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_32       | DW_cmp         | width=6    | lte_164_I11_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_33       | DW_cmp         | width=6    | lte_164_I12_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_34       | DW_cmp         | width=6    | lte_164_I13_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_35       | DW_cmp         | width=6    | lte_164_I14_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_36       | DW_cmp         | width=6    | lte_164_I15_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_37       | DW_cmp         | width=6    | lte_164_I16_I1 (RTL-Shifter_syn.vhd:164) |
+| lte_x_40       | DW_cmp         | width=5    | lte_174_I2_I1 (RTL-Shifter_syn.vhd:174) |
+| lte_x_41       | DW_cmp         | width=5    | lte_174_I3_I1 (RTL-Shifter_syn.vhd:174) |
+| lte_x_42       | DW_cmp         | width=5    | lte_174_I4_I1 (RTL-Shifter_syn.vhd:174) |
+| lte_x_44       | DW_cmp         | width=5    | lte_174_I6_I1 (RTL-Shifter_syn.vhd:174) |
+| lte_x_45       | DW_cmp         | width=5    | lte_174_I7_I1 (RTL-Shifter_syn.vhd:174) |
+| lte_x_46       | DW_cmp         | width=5    | lte_174_I8_I1 (RTL-Shifter_syn.vhd:174) |
+| eq_x_48        | DW_cmp         | width=7    | eq_187_I3_I1_I1 (RTL-Shifter_syn.vhd:187) |
+| sub_x_47       | DW01_sub       | width=7    | sub_187 (RTL-Shifter_syn.vhd:187) |
+          |                |            | sub_187_I2_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | sub_187_I3_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | sub_187_I4_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | sub_187_I5_I1_I1 (RTL-Shifter_syn.vhd:187) |
+| sub_x_21       | DW01_sub       | width=6    | sub_164 (RTL-Shifter_syn.vhd:164) |
+          |                |            | sub_201 (RTL-Shifter_syn.vhd:201) |
+          |                |            | sub_201_I2_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | sub_201_I3_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | sub_201_I4_I1_I1 (RTL-Shifter_syn.vhd:201) |
+| sub_x_38       | DW01_sub       | width=5    | sub_174 (RTL-Shifter_syn.vhd:174) |
+          |                |            | sub_215 (RTL-Shifter_syn.vhd:215) |
+          |                |            | sub_215_I2_I1_I1 (RTL-Shifter_syn.vhd:215) |
+ |                |            | sub_215_I3_I1_I1 (RTL-Shifter_syn.vhd:215) |
+ |                |            | sub_215_I4_I1_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_253       | DW_cmp         | width=6    | eq_201 (RTL-Shifter_syn.vhd:201) |
+           |                |            | eq_201_I2_I1 (RTL-Shifter_syn.vhd:201) |
+     |                |            | eq_201_I3_I1 (RTL-Shifter_syn.vhd:201) |
+     |                |            | eq_201_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_254       | DW_cmp         | width=6    | eq_201_I2_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I2_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I2_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I2_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_255       | DW_cmp         | width=6    | eq_201_I3_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I3_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I3_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I3_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_256       | DW_cmp         | width=6    | eq_201_I4_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I4_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I4_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I4_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_257       | DW_cmp         | width=6    | eq_201_I5_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I5_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I5_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I5_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_258       | DW_cmp         | width=6    | eq_201_I6_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I6_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I6_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I6_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_259       | DW_cmp         | width=6    | eq_201_I7_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I7_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I7_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I7_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_260       | DW_cmp         | width=6    | eq_201_I8_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I8_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I8_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I8_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_261       | DW_cmp         | width=6    | eq_201_I9_I1_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I9_I2_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I9_I3_I1 (RTL-Shifter_syn.vhd:201) |
+  |                |            | eq_201_I9_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_262       | DW_cmp         | width=6    | eq_201_I10_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I10_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I10_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I10_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_263       | DW_cmp         | width=6    | eq_201_I11_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I11_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I11_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I11_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_264       | DW_cmp         | width=6    | eq_201_I12_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I12_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I12_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I12_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_265       | DW_cmp         | width=6    | eq_201_I13_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I13_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I13_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I13_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_266       | DW_cmp         | width=6    | eq_201_I14_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I14_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I14_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I14_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_267       | DW_cmp         | width=6    | eq_201_I15_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I15_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I15_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I15_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_268       | DW_cmp         | width=6    | eq_201_I16_I1_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I16_I2_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I16_I3_I1 (RTL-Shifter_syn.vhd:201) |
+ |                |            | eq_201_I16_I4_I1 (RTL-Shifter_syn.vhd:201) |
+| eq_x_269       | DW_cmp         | width=5    | eq_215 (RTL-Shifter_syn.vhd:215) |
+           |                |            | eq_215_I2_I1 (RTL-Shifter_syn.vhd:215) |
+     |                |            | eq_215_I5_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_270       | DW_cmp         | width=5    | eq_215_I2_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I2_I2_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I2_I7_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_271       | DW_cmp         | width=5    | eq_215_I3_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I3_I4_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I3_I7_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_272       | DW_cmp         | width=5    | eq_215_I4_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I4_I2_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I4_I4_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I4_I7_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_273       | DW_cmp         | width=5    | eq_215_I5_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I5_I2_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I5_I4_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I5_I7_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_274       | DW_cmp         | width=5    | eq_215_I6_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I6_I2_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I6_I4_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I6_I6_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_275       | DW_cmp         | width=5    | eq_215_I7_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I7_I2_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I7_I4_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I7_I6_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_276       | DW_cmp         | width=5    | eq_215_I8_I1_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I8_I4_I1 (RTL-Shifter_syn.vhd:215) |
+  |                |            | eq_215_I8_I6_I1 (RTL-Shifter_syn.vhd:215) |
+| eq_x_277       | DW_cmp         | width=7    | eq_187 (RTL-Shifter_syn.vhd:187) |
+           |                |            | eq_187_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_278       | DW_cmp         | width=7    | eq_187_I2_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I2_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_279       | DW_cmp         | width=7    | eq_187_I4_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I4_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_280       | DW_cmp         | width=7    | eq_187_I5_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I5_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_281       | DW_cmp         | width=7    | eq_187_I6_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I6_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_282       | DW_cmp         | width=7    | eq_187_I7_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I7_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_283       | DW_cmp         | width=7    | eq_187_I8_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I8_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_284       | DW_cmp         | width=7    | eq_187_I9_I1_I1 (RTL-Shifter_syn.vhd:187) |
+  |                |            | eq_187_I9_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_285       | DW_cmp         | width=7    | eq_187_I10_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I10_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_286       | DW_cmp         | width=7    | eq_187_I11_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I11_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_287       | DW_cmp         | width=7    | eq_187_I12_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I12_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_288       | DW_cmp         | width=7    | eq_187_I13_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I13_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_289       | DW_cmp         | width=7    | eq_187_I14_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I14_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_290       | DW_cmp         | width=7    | eq_187_I15_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I15_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_291       | DW_cmp         | width=7    | eq_187_I16_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I16_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_292       | DW_cmp         | width=7    | eq_187_I17_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I17_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_293       | DW_cmp         | width=7    | eq_187_I18_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I18_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_294       | DW_cmp         | width=7    | eq_187_I19_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I19_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_295       | DW_cmp         | width=7    | eq_187_I20_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I20_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_296       | DW_cmp         | width=7    | eq_187_I21_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I21_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_297       | DW_cmp         | width=7    | eq_187_I22_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I22_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_298       | DW_cmp         | width=7    | eq_187_I23_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I23_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_299       | DW_cmp         | width=7    | eq_187_I24_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I24_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_300       | DW_cmp         | width=7    | eq_187_I25_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I25_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_301       | DW_cmp         | width=7    | eq_187_I26_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I26_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_302       | DW_cmp         | width=7    | eq_187_I27_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I27_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_303       | DW_cmp         | width=7    | eq_187_I28_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I28_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_304       | DW_cmp         | width=7    | eq_187_I29_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I29_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_305       | DW_cmp         | width=7    | eq_187_I30_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I30_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_306       | DW_cmp         | width=7    | eq_187_I31_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I31_I2_I1 (RTL-Shifter_syn.vhd:187) |
+| eq_x_307       | DW_cmp         | width=7    | eq_187_I32_I1_I1 (RTL-Shifter_syn.vhd:187) |
+ |                |            | eq_187_I32_I2_I1 (RTL-Shifter_syn.vhd:187) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ashr_1             | DW_rightsh       | astr (area)        |                |
+| ashr_2             | DW_rightsh       | astr (area)        |                |
+| lte_x_23           | DW_cmp           | apparch (area)     |                |
+| lte_x_24           | DW_cmp           | apparch (area)     |                |
+| lte_x_25           | DW_cmp           | apparch (area)     |                |
+| lte_x_26           | DW_cmp           | apparch (area)     |                |
+| lte_x_27           | DW_cmp           | apparch (area)     |                |
+| lte_x_28           | DW_cmp           | apparch (area)     |                |
+| lte_x_29           | DW_cmp           | apparch (area)     |                |
+| lte_x_31           | DW_cmp           | apparch (area)     |                |
+| lte_x_32           | DW_cmp           | apparch (area)     |                |
+| lte_x_33           | DW_cmp           | apparch (area)     |                |
+| lte_x_34           | DW_cmp           | apparch (area)     |                |
+| lte_x_35           | DW_cmp           | apparch (area)     |                |
+| lte_x_36           | DW_cmp           | apparch (area)     |                |
+| lte_x_37           | DW_cmp           | apparch (area)     |                |
+| lte_x_40           | DW_cmp           | apparch (area)     |                |
+| lte_x_41           | DW_cmp           | apparch (area)     |                |
+| lte_x_42           | DW_cmp           | apparch (area)     |                |
+| lte_x_44           | DW_cmp           | apparch (area)     |                |
+| lte_x_45           | DW_cmp           | apparch (area)     |                |
+| lte_x_46           | DW_cmp           | apparch (area)     |                |
+| eq_x_48            | DW_cmp           | apparch (area)     |                |
+| sub_x_47           | DW01_sub         | apparch (area)     |                |
+| sub_x_21           | DW01_sub         | apparch (area)     |                |
+| sub_x_38           | DW01_sub         | apparch (area)     |                |
+| eq_x_253           | DW_cmp           | apparch (area)     |                |
+| eq_x_254           | DW_cmp           | apparch (area)     |                |
+| eq_x_255           | DW_cmp           | apparch (area)     |                |
+| eq_x_256           | DW_cmp           | apparch (area)     |                |
+| eq_x_257           | DW_cmp           | apparch (area)     |                |
+| eq_x_258           | DW_cmp           | apparch (area)     |                |
+| eq_x_259           | DW_cmp           | apparch (area)     |                |
+| eq_x_260           | DW_cmp           | apparch (area)     |                |
+| eq_x_261           | DW_cmp           | apparch (area)     |                |
+| eq_x_262           | DW_cmp           | apparch (area)     |                |
+| eq_x_263           | DW_cmp           | apparch (area)     |                |
+| eq_x_264           | DW_cmp           | apparch (area)     |                |
+| eq_x_265           | DW_cmp           | apparch (area)     |                |
+| eq_x_266           | DW_cmp           | apparch (area)     |                |
+| eq_x_267           | DW_cmp           | apparch (area)     |                |
+| eq_x_268           | DW_cmp           | apparch (area)     |                |
+| eq_x_269           | DW_cmp           | apparch (area)     |                |
+| eq_x_270           | DW_cmp           | apparch (area)     |                |
+| eq_x_271           | DW_cmp           | apparch (area)     |                |
+| eq_x_272           | DW_cmp           | apparch (area)     |                |
+| eq_x_273           | DW_cmp           | apparch (area)     |                |
+| eq_x_274           | DW_cmp           | apparch (area)     |                |
+| eq_x_275           | DW_cmp           | apparch (area)     |                |
+| eq_x_276           | DW_cmp           | apparch (area)     |                |
+| eq_x_277           | DW_cmp           | apparch (area)     |                |
+| eq_x_278           | DW_cmp           | apparch (area)     |                |
+| eq_x_279           | DW_cmp           | apparch (area)     |                |
+| eq_x_280           | DW_cmp           | apparch (area)     |                |
+| eq_x_281           | DW_cmp           | apparch (area)     |                |
+| eq_x_282           | DW_cmp           | apparch (area)     |                |
+| eq_x_283           | DW_cmp           | apparch (area)     |                |
+| eq_x_284           | DW_cmp           | apparch (area)     |                |
+| eq_x_285           | DW_cmp           | apparch (area)     |                |
+| eq_x_286           | DW_cmp           | apparch (area)     |                |
+| eq_x_287           | DW_cmp           | apparch (area)     |                |
+| eq_x_288           | DW_cmp           | apparch (area)     |                |
+| eq_x_289           | DW_cmp           | apparch (area)     |                |
+| eq_x_290           | DW_cmp           | apparch (area)     |                |
+| eq_x_291           | DW_cmp           | apparch (area)     |                |
+| eq_x_292           | DW_cmp           | apparch (area)     |                |
+| eq_x_293           | DW_cmp           | apparch (area)     |                |
+| eq_x_294           | DW_cmp           | apparch (area)     |                |
+| eq_x_295           | DW_cmp           | apparch (area)     |                |
+| eq_x_296           | DW_cmp           | apparch (area)     |                |
+| eq_x_297           | DW_cmp           | apparch (area)     |                |
+| eq_x_298           | DW_cmp           | apparch (area)     |                |
+| eq_x_299           | DW_cmp           | apparch (area)     |                |
+| eq_x_300           | DW_cmp           | apparch (area)     |                |
+| eq_x_301           | DW_cmp           | apparch (area)     |                |
+| eq_x_302           | DW_cmp           | apparch (area)     |                |
+| eq_x_303           | DW_cmp           | apparch (area)     |                |
+| eq_x_304           | DW_cmp           | apparch (area)     |                |
+| eq_x_305           | DW_cmp           | apparch (area)     |                |
+| eq_x_306           | DW_cmp           | apparch (area)     |                |
+| eq_x_307           | DW_cmp           | apparch (area)     |                |
+===============================================================================
+
+1

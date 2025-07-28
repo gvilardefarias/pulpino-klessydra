@@ -42,6 +42,7 @@ entity Pipeline is
     count_all                  : natural;
     debug_en                   : natural;
     tracer_en                  : natural;
+    dsp_dump                   : natural;
     --------------------------------
     ACCL_NUM                   : natural;
     FU_NUM                     : natural;
@@ -1000,7 +1001,8 @@ begin
     dsp_we_word                => dsp_we_word,
     dsp_sc_write_addr          => dsp_sc_write_addr,
     dsp_sci_we                 => dsp_sci_we,
-    dsp_sci_req                => dsp_sci_req
+    dsp_sci_req                => dsp_sci_req,
+    state_DSP                  => state_DSP
 	);
 
   SCI : Scratchpad_memory_interface
@@ -1101,6 +1103,239 @@ begin
   --     ██║   ██║  ██║██║  ██║╚██████╗███████╗██║  ██║  --
   --     ╚═╝   ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚══════╝╚═╝  ╚═╝  --
   ---------------------------------------------------------
+
+  -- pragma translate_off
+  DSP_dump_gen : if dsp_dump = 1 generate
+  DSP_obs : process(clk_i
+  --                rst_ni
+  --                  rs1_to_sc,
+  --                  rs2_to_sc,
+  --                  rd_to_sc,
+  --                  MVSIZE,
+  --                  MVTYPE,
+  --                  MPSCLFAC,
+  --                  dsp_except_data,
+  --                  dsp_taken_branch,
+  --                  dsp_except_condition,
+  --                  decoded_instruction_DSP,
+  --                  harc_EXEC,
+  --                  pc_IE,
+  --                  RS1_Data_IE,
+  --                  RS2_Data_IE,
+  --                  RD_Data_IE,
+  --                  dsp_instr_req,
+  --                  spm_rs1,
+  --                  spm_rs2,
+  --                  vec_read_rs1_ID,
+  --                  vec_read_rs2_ID,
+  --                  vec_write_rd_ID,
+  --                  busy_dsp,
+  --                  dsp_data_gnt_i,
+  --                  dsp_sci_wr_gnt,
+  --                  dsp_sc_data_read,
+  --                  dsp_we_word,
+  --                  dsp_sc_read_addr,
+  --                  dsp_to_sc,
+  --                  dsp_sc_data_write_wire,
+  --                  dsp_sc_write_addr,
+  --                  dsp_sci_we,
+  --                  dsp_sci_req,
+  --                  state_DSP
+                   )
+    variable row_i  : line;
+    variable row_o  : line;
+    variable head_print : boolean := true;
+  begin
+    if head_print then
+      head_print := false;
+
+--      write(row, string'("timestamp")); 
+--      writeline(file_dump, row);
+      write(row_i, string'("clk_i")); 
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("rst_ni"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("rs1_to_sc"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("rs2_to_sc"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("rd_to_sc"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("MVSIZE")); 
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("MVTYPE"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("MPSCLFAC"));
+      writeline(file_dump_i, row_i);
+      write(row_o, string'("dsp_except_data"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_taken_branch"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_except_condition"));
+      writeline(file_dump_o, row_o);
+      write(row_i, string'("decoded_instruction_DSP"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("harc_EXEC"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("pc_IE"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("RS1_Data_IE"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("RS2_Data_IE"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("RD_Data_IE"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("dsp_instr_req"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("spm_rs1"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("spm_rs2"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("vec_read_rs1_ID"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("vec_read_rs2_ID"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("vec_write_rd_ID"));
+      writeline(file_dump_i, row_i);
+      write(row_o, string'("busy_dsp_o"));
+      writeline(file_dump_o, row_o);
+      write(row_i, string'("dsp_data_gnt_i"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("dsp_sci_wr_gnt"));
+      writeline(file_dump_i, row_i);
+      write(row_i, string'("dsp_sc_data_read"));
+      writeline(file_dump_i, row_i);
+      write(row_o, string'("dsp_we_word_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_sc_read_addr_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_to_sc_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_sc_data_write_wire_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_sc_write_addr_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_sci_we_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("dsp_sci_req_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("state_DSP_o"));
+      writeline(file_dump_o, row_o);
+      write(row_o, string'("###"));
+      writeline(file_dump_o, row_o);
+      write(row_i, string'("###"));
+      writeline(file_dump_i, row_i);
+    end if;
+
+--    write(row, to_string(now) & " "); 
+    write(row_i, clk_i);
+    write(row_i, string'(" "));
+    write(row_i, rst_ni);
+    write(row_i, string'(" "));
+    hwrite(row_i, rs1_to_sc);
+    write(row_i, string'(" "));
+    hwrite(row_i, rs2_to_sc);
+    write(row_i, string'(" "));
+    hwrite(row_i, rd_to_sc);
+    write(row_i, string'(" "));
+    for i in 0 to THREAD_POOL_SIZE-1 loop
+      hwrite(row_i, MVSIZE(i));
+      write(row_i, string'(" "));
+    end loop;
+    for i in 0 to THREAD_POOL_SIZE-1 loop
+      hwrite(row_i, MVTYPE(i));
+      write(row_i, string'(" "));
+    end loop;
+    for i in 0 to THREAD_POOL_SIZE-1 loop
+      hwrite(row_i, MPSCLFAC(i));
+      write(row_i, string'(" "));
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, dsp_except_data(i));
+      write(row_o, string'(" "));
+    end loop;
+    hwrite(row_o, dsp_taken_branch);
+    write(row_o, string'(" "));
+    hwrite(row_o, dsp_except_condition);
+    write(row_o, string'(" "));
+    hwrite(row_i, decoded_instruction_DSP);
+    write(row_i, string'(" "));
+    hwrite(row_i, std_logic_vector(to_unsigned(harc_EXEC, 4)));
+    write(row_i, string'(" "));
+    hwrite(row_i, pc_IE);
+    write(row_i, string'(" "));
+    hwrite(row_i, RS1_Data_IE);
+    write(row_i, string'(" "));
+    hwrite(row_i, RS2_Data_IE);
+    write(row_i, string'(" "));
+    hwrite(row_i, RD_Data_IE);
+    write(row_i, string'(" "));
+    hwrite(row_i, dsp_instr_req);
+    write(row_i, string'(" "));
+    write(row_i, spm_rs1);
+    write(row_i, string'(" "));
+    write(row_i, spm_rs2);
+    write(row_i, string'(" "));
+    write(row_i, vec_read_rs1_ID);
+    write(row_i, string'(" "));
+    write(row_i, vec_read_rs2_ID);
+    write(row_i, string'(" "));
+    write(row_i, vec_write_rd_ID);
+    write(row_i, string'(" "));
+    hwrite(row_o, busy_dsp);
+    write(row_o, string'(" "));
+    hwrite(row_i, dsp_data_gnt_i);
+    write(row_i, string'(" "));
+    hwrite(row_i, dsp_sci_wr_gnt);
+    write(row_i, string'(" "));
+    for i in 0 to ACCL_NUM-1 loop
+      for j in 0 to 1 loop
+      hwrite(row_i, dsp_sc_data_read(i)(j));
+      write(row_i, string'(" "));
+      end loop;
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, dsp_we_word(i));
+      write(row_o, string'(" "));
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      for j in 0 to 1 loop
+      hwrite(row_o, dsp_sc_read_addr(i)(j));
+      write(row_o, string'(" "));
+      end loop;
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      for j in 0 to SPM_NUM-1 loop
+      hwrite(row_o, dsp_to_sc(i)(j));
+      write(row_o, string'(" "));
+      end loop;
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, dsp_sc_data_write_wire(i));
+      write(row_o, string'(" "));
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, dsp_sc_write_addr(i));
+      write(row_o, string'(" "));
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, dsp_sci_we(i));
+      write(row_o, string'(" "));
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, dsp_sci_req(i));
+      write(row_o, string'(" "));
+    end loop;
+    for i in 0 to ACCL_NUM-1 loop
+      hwrite(row_o, state_DSP(i));
+      write(row_o, string'(" "));
+    end loop;
+
+    writeline(file_dump_o, row_o);
+    writeline(file_dump_i, row_i);
+  end process;
+
+  end generate DSP_dump_gen;
 
   -- pragma translate_off
 

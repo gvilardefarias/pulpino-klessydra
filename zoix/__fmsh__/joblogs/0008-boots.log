@@ -1,0 +1,89 @@
+CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -record -dir ./ -fub design -test ACCUMULATOR -fdef sim.fdef -fntn 65537 __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -l __fubs__/design/ACCUMULATOR/boots.log
+
+
+                                   Z01X (TM)
+
+                 Version V-2023.12 for linux64 - Nov 19, 2023 
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+Command: boots -record -dir ./ -fub design -test ACCUMULATOR -fdef sim.fdef -fntn 65537 -l __fubs__/design/ACCUMULATOR/boots.log __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef 
+
+Fault Status Mapping:
+ NA NA Not Attempted
+ ND ND Not Detected
+ DD DD Dropped Detected
+ DT DT Detected
+ DE DE Detected Error
+ DF DF Detected $finish/$stop
+ DO DO Detected Observable
+ PD PD Dropped Potential
+ PT PT Potential
+ PO PO Potential Observable
+ OZ OZ Oscillatory
+ OA OA Active
+ HA HA Hyperactive
+ HM HM Hypermemory
+ HT HT Hypertrophic
+ -- -- Collapsed
+ IA IA Illegal Access
+ IP IP Illegal User PLI
+ IH IH Illegal Hier Ref
+ IF IF Illegal File I/O
+ IX IX Impossible x-state
+ NC NC Not Controlled
+ NO NO Not Observed
+ NS NS Not Strobed
+ NI NI Not Injected
+ NT NT Not Tested
+ UU UU Untestable Unused
+ UT UT Untestable Tied
+ UB UB Untestable Blocked
+ UR UR Untestable Redundant
+ UI UI Untestable Import
+ UO UO Untestable Unobservable
+ UC UC UnControllable
+ EN EN Excluded
+
+Test Results:
+                               Prime        Total
+ Total Faults:                    3032         5250
+ DT                                  0            0
+ DD                               1658         3208
+ PT                                  0            0
+ PD                                235          243
+ NO                                756         1223
+ NC                                 77          171
+ CVG,Test Coverage, 58.56%, 63.42%
+ CVG,Fault Coverage, 58.56%, 63.42%
+
+FuB Results:
+                               Prime        Total
+ Total Faults:                    3032         5250
+ DT                                  0            0
+ DD                               1658         3208
+ PT                                  0            0
+ PD                                235          243
+ NO                                756         1223
+ NC                                 77          171
+ UT                                 64           64
+ CVG,Test Coverage, 58.56%, 63.42%
+ CVG,Fault Coverage, 57.35%, 62.66%
+
+Info:    CPU Time: 0.1s ; Elapsed Time: 0.2s ; Data Size: 38.4MB 

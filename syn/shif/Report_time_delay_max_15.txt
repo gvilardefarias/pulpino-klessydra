@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:42:34 2025
+****************************************
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: dsp_in_shifter_operand_lat_reg[56]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: dsp_out_shifter_results_reg[56]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                                   Incr       Path
+  --------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  dsp_in_shifter_operand_lat_reg[56]/CLK (DFFSNQ_X1)      0.00       0.00 r
+  dsp_in_shifter_operand_lat_reg[56]/Q (DFFSNQ_X1)       10.23      10.23 r
+  U964/ZN (INV_X1)                                        2.75      12.98 f
+  U1518/ZN (NOR2_X1)                                      9.74      22.72 r
+  U1538/ZN (INV_X1)                                       7.07      29.78 f
+  U1674/ZN (NOR2_X1)                                      7.76      37.54 r
+  U1675/ZN (AOI21_X1)                                     3.95      41.49 f
+  U1676/ZN (NAND2_X1)                                     4.04      45.52 r
+  dsp_out_shifter_results_reg[56]/D (DFFRNQ_X1)           0.00      45.52 r
+  data arrival time                                                 45.52
+
+  clock clk_i (rise edge)                              2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  dsp_out_shifter_results_reg[56]/CLK (DFFRNQ_X1)         0.00    2000.00 r
+  library setup time                                     -8.16    1991.84
+  data required time                                              1991.84
+  --------------------------------------------------------------------------
+  data required time                                              1991.84
+  data arrival time                                                -45.52
+  --------------------------------------------------------------------------
+  slack (MET)                                                     1946.31
+
+
+1

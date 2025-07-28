@@ -1,0 +1,185 @@
+
+                                   Z01X (TM)
+
+       Version V-2023.12 for linux64 - Nov 19, 2023      
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Fri Jul 25 12:03:56 CEST 2025
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+25/07/25 12:03:56  Note:    Reading load file:bin/permanent_faults_gen.fmsh
+>  
+>  
+> set(var=[resources], messages=[all]) 
+25/07/25 12:03:56  Note:    Set resources[messages] to "all".
+> set(var=[defines], format=[standard]) 
+25/07/25 12:03:56  Note:    Set defines[format] to "standard".
+> set(var=[defines], dictionary.enable=[1]) 
+25/07/25 12:03:56  Note:    Set defines[dictionary.enable] to 1.
+25/07/25 12:03:56  Warning: Options will be saved when a design is opened
+> set(var=[fsim], dictionary.values=[all]) 
+25/07/25 12:03:56  Note:    Set fsim[dictionary.values] to "all".
+>  
+> # the next line defines if using the file "fault_list.sff" for defining the fault list for fault simulation. Otherwise, in stroves.v the faults can be defined, e.g., from an external file. 
+> #set(var=[fdef], method=[fr], fr.fr=[bin/fault_list.sff],abort=[error]) 
+>  
+> # set (var=[coats],status=[NA,NX,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX]) 
+> # set (var=[coats],status=[DD, ND]) 
+>  
+> set (var=[fsim],hyperfault=[0]) 
+25/07/25 12:03:56  Note:    Set fsim[hyperfault] to 0.
+> design() 
+25/07/25 12:03:56  Note:    Generating design fault universe file
+25/07/25 12:03:56  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_generate -l fgen.log
+25/07/25 12:03:56  Note:    Job fault_generate begun
+25/07/25 12:03:56  Note:    Job fault_generate completed: Host: monviso
+25/07/25 12:03:56  Note:    Total: 7708 Prime: 4850 Collapsed: 2858 Untestable: 72
+25/07/25 12:03:56  Note:    Fault Generation Completed 0 Errors 0 Warnings
+25/07/25 12:03:56  Note:    Created design, directory=/home/g.vilarde/Klessydra/pulpino-klessydra/zoix
+25/07/25 12:03:56  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -func __fubs__/design/__path__ -genfub +job_id+d08d93707391df03 -l __fubs__/design/design.log
+25/07/25 12:03:57  Note:    Job coats begun
+25/07/25 12:03:57  Note:    Job coats completed: Host: monviso
+>  
+> addtst(test=[SHIFTER], stimtype=[vcd], dictionary.enable=[1], stim=[vcd/shif.vcd],dut.stim=[SHIFTER,tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.SHIFTER],stim_options=[+TESTNAME=SHIFTER] ) 
+25/07/25 12:03:57  Note:    Adding test: SHIFTER
+25/07/25 12:03:57  CMD: ln -s ../../sim.zdb __tests__/SHIFTER/sim.zdb
+25/07/25 12:03:57  CMD: ln -s ../../zoix.sim __tests__/SHIFTER/zoix.sim
+25/07/25 12:03:57  CMD: cp vcd/shif.vcd __tests__/SHIFTER/shif.vcd
+25/07/25 12:03:57  CMD: ln -s ../../../__tests__/SHIFTER/shif.vcd __fubs__/design/SHIFTER/shif.vcd
+25/07/25 12:03:57  CMD: ln -s ../../../sim.zdb __fubs__/design/SHIFTER/sim.zdb
+25/07/25 12:03:57  CMD: ln -s ../../../zoix.sim __fubs__/design/SHIFTER/zoix.sim
+>  
+> #addtst(test=[RCA], stimtype=[vcd], dictionary.enable=[1], stim=[../tmax/dumpports_rtl.riscv_core.vcde],stim_options=[+TESTNAME=riscv_core] ) 
+>  
+> fsim() 
+25/07/25 12:03:57  Note:    Performing testability analysis
+25/07/25 12:03:57  CMD: ./zoix.sim -toggle __tests__/SHIFTER/SHIFTER.vtog -fstrobe __tests__/SHIFTER/__fstrobes__ -l __tests__/SHIFTER/zoix_rt.log +vcd+file+__tests__/SHIFTER/shif.vcd +progress -testdir __tests__/SHIFTER/ +vcd+dut+SHIFTER+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.SHIFTER +TESTNAME=SHIFTER -testname SHIFTER +job_id+005d93e02351df03
+25/07/25 12:03:58  Note:    Toggle simulation for test: SHIFTER
+25/07/25 12:03:58  Note:    Job toggle Test: SHIFTER begun
+25/07/25 12:03:59  Note:    Job toggle completed: Host: monviso Test: SHIFTER
+25/07/25 12:03:59  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test SHIFTER -seltyp observe +job_id+d08d93707391df03 -fstrobe __tests__/SHIFTER/__fstrobes__ -testid 65537 -l __fubs__/design/SHIFTER/coats.log
+25/07/25 12:03:59  Note:    Testability analysis for Test: SHIFTER
+25/07/25 12:03:59  Note:    Job coats Test: SHIFTER begun
+25/07/25 12:03:59  Note:    Job coats completed: Host: monviso Test: SHIFTER
+25/07/25 12:04:02  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -fdeffiles __fubs__/design/fdeffiles.txt -record -dir ./ -fub design -fdef sim.fdef -l __fubs__/design/boots.log
+25/07/25 12:04:03  Note:    Job boots Test: All begun
+25/07/25 12:04:03  Note:    Job boots completed: Host: monviso Test: All
+25/07/25 12:04:03  Note:    Updating Testability Report
+25/07/25 12:04:03  Note:    Simulating Test: SHIFTER
+25/07/25 12:04:03  Note:    Fault simulation on Test: SHIFTER starting
+25/07/25 12:04:03  Note:    Generate fault origins for Test: SHIFTER
+25/07/25 12:04:03  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test SHIFTER -recalc -m -l __fubs__/design/SHIFTER/fdef.log
+25/07/25 12:04:03  Note:    Job coats Test: SHIFTER begun
+25/07/25 12:04:03  Note:    Job coats completed: Host: monviso Test: SHIFTER
+25/07/25 12:04:03  Note:    Test: SHIFTER selected 4448 out of 4850 remaining faults to simulate
+25/07/25 12:04:03  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_sim -fdef __fubs__/design/SHIFTER/SHIFTER.fdef -q +vcd+file+__tests__/SHIFTER/shif.vcd +vcd+dut+SHIFTER+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.SHIFTER +TESTNAME=SHIFTER -cdfout __fubs__/design/SHIFTER/cdfout +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -fmsh -testdir __fubs__/design/SHIFTER/ -l __fubs__/design/SHIFTER/simout-N0
+25/07/25 12:04:03  Note:    Fault simulation for Test: SHIFTER
+25/07/25 12:04:03  Note:    Job fault_sim Test: SHIFTER begun
+25/07/25 12:04:13  Note:    Job fault_sim completed: Host: monviso Test: SHIFTER
+25/07/25 12:04:13  Note:    Record simulation results for Test: SHIFTER
+25/07/25 12:04:13  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -record -dir ./ -fub design -test SHIFTER -fdef sim.fdef -fntn 65537 __fubs__/design/SHIFTER/SHIFTER.fdef -l __fubs__/design/SHIFTER/boots.log
+25/07/25 12:04:13  Note:    Job boots Test: SHIFTER begun
+25/07/25 12:04:13  Note:    Job boots completed: Host: monviso Test: SHIFTER
+25/07/25 12:04:13  Note:    Simulation of test SHIFTER complete
+#                                Prime                  Total
+# Test: SHIFTER
+# Total Faults:                   4850                   7708
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3330    68.66%         5565    72.20%
+# Dropped Potential Faults:        484     9.98%          528     6.85%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             634    13.07%          964    12.51%
+# Not Observed:                    357     7.36%          550     7.14%
+# Not Controlled:                   45     0.93%          101     1.31%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:10
+#   Fault Wall Clock:         00:00:10
+#
+# Cumulative Test Results
+# Total Faults:                   4850                   7708
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3330    68.66%         5565    72.20%
+# Dropped Potential Faults:        484     9.98%          528     6.85%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             634    13.07%          964    12.51%
+# Not Observed:                    357     7.36%          550     7.14%
+# Not Controlled:                   45     0.93%          101     1.31%
+#
+# Untestable Tied:                  72                     72
+#
+25/07/25 12:04:13  Note:    Simulation Completed.
+25/07/25 12:04:13  Note:    Updating Testability Report
+
+# Tests simulated in this session:
+#                                Prime                  Total
+# Test: SHIFTER
+# Total Faults:                   4850                   7708
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3330    68.66%         5565    72.20%
+# Dropped Potential Faults:        484     9.98%          528     6.85%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             634    13.07%          964    12.51%
+# Not Observed:                    357     7.36%          550     7.14%
+# Not Controlled:                   45     0.93%          101     1.31%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:10
+#   Fault Wall Clock:         00:00:10
+#
+# Cumulative Test Results
+# Total Faults:                   4850                   7708
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3330    68.66%         5565    72.20%
+# Dropped Potential Faults:        484     9.98%          528     6.85%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             634    13.07%          964    12.51%
+# Not Observed:                    357     7.36%          550     7.14%
+# Not Controlled:                   45     0.93%          101     1.31%
+#
+# Untestable Tied:                  72                     72
+#
+# Test Coverage:                          73.65%                 75.62%
+# Fault Coverage:                         72.57%                 74.92%
+#
+>  
+> coverage(file=[SAF_coverage.sff]) 
+25/07/25 12:04:13  Note:    Running coverage analysis
+25/07/25 12:04:13  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report +fm -dir ./ +format+standard -out ./SAF_coverage.sff -testinfo __fubs__/testid.txt -l fault_report.log
+25/07/25 12:04:13  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:04:13  Note:    Fault report file is SAF_coverage.sff
+> # coverage (type=[dictionary],file=[saf_dic_short.txt],test=[RCA], style=[short]) 
+>  
+> #coverage(type=[dictionary],test=[RCA],file=[saf_dic.txt])   
+> coverage (type=[dictionary],file=[saf_dic_long.txt],test=[SHIFTER]) 
+25/07/25 12:04:13  Note:    Creating coverage dictionary
+25/07/25 12:04:13  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report -dict __fubs__/design/SHIFTER/cdfout -dictout saf_dic_long.txt +format+standard -l __fubs__/design/SHIFTER/SHIFTER_cdf.log -fdef __fubs__/design/SHIFTER/SHIFTER.fdef
+25/07/25 12:04:16  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:04:16  Note:    Coverage dictionary file is 'saf_dic_long.txt'
+>  
+25/07/25 12:04:16  Note:    Script file complete
+25/07/25 12:04:16  Note:    Fri Jul 25 12:04:16 CEST 2025
+#                                Total Run Times                                 
+#
+#                              Queued             CPU               Wall  
+# Fault simulation            00:00:00          00:00:10          00:00:10
+# Toggle simulation           00:00:00          00:00:02          00:00:05
+#
+#
+#                            Time Allocation Per Tool                            
+#
+#                                   Queued                Running      
+# Fault simulation            00:00:00     0.00%     00:00:10    61.13%
+# Fault results recording     00:00:00     0.00%     00:00:00     2.48%
+# Testability                 00:00:00     0.00%     00:00:01     3.37%
+# Toggle simulation           00:00:00     0.00%     00:00:02    11.49%
+# Fault creation              00:00:00     0.00%     00:00:00     1.28%
+# Fault coverage              00:00:00     0.00%     00:00:03    20.25%
+#----------------------------------------------------------------------
+# Total                       00:00:00     0.00%     00:00:16   100.00%
+CPU Time: 16.2s ; Elapsed Time: 20.4s ; Data Size: 95.8MB

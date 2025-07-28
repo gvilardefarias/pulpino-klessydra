@@ -1,0 +1,3 @@
+/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report -fdef __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -l fr2fdef.0.2.log -xfidlist __fubs__/design/ACCUMULATOR/diagnostics/fidlist.0.2 -out fault.0.2.rpt
+/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fr2fdef fault.0.2.rpt -fdef sim.0.2.fdef +status+DG+PG+OG+IG+NG=NA
+./zoix.sim -xcode 1  -dictout __fubs__/design/ACCUMULATOR/cdfout.P2  -fault +vcd+file+__tests__/ACCUMULATOR/accum.vcd +vcd+dut+ACCUMULATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ACCUMULATOR +TESTNAME=ACCUMULATOR +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -testdir __fubs__/design/ACCUMULATOR/ -fdef __fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef -fdef sim.0.2.fdef -xnodfl -l fsim.0.2.log

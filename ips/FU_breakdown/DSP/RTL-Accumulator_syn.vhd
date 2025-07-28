@@ -202,6 +202,8 @@ begin
       variable h : integer;
     begin
       if rst_ni = '0' then
+        accum_results <= (others => '0');
+        accum_partial_results_stg_1 <= (others => '0');
       elsif rising_edge(clk_i) then
         accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
         for g in 0 to (ACCL_NUM - FU_NUM) loop

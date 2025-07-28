@@ -62,6 +62,7 @@ entity klessydra_t1_3th_core is
     count_all             : natural := 1;   -- Perfomance counters count for all the harts instead of there own hart
     debug_en              : natural := 0;   -- Generates the debug unit
     tracer_en             : natural := 0;   -- Enables the generation of the instruction tracer disable in extremely long simulations in order to save storage space
+    dsp_dump              : natural := 0;   -- Enables the generation of the instruction tracer disable in extremely long simulations in order to save storage space
      ----------------------------------------------------------------------------------------
     N_EXT_PERF_COUNTERS : integer := 0;   -- ignored in Klessydra
     INSTR_RDATA_WIDTH   : integer := 32;  -- ignored in Klessydra
@@ -442,6 +443,7 @@ architecture Klessydra_T1 of klessydra_t1_3th_core is
     count_all                  : natural;
     debug_en                   : natural;
     tracer_en                  : natural;
+    dsp_dump                   : natural;
     -------------------------------------
     ACCL_NUM                   : natural;
     FU_NUM                     : natural;
@@ -749,6 +751,7 @@ begin
       count_all             => count_all,
       debug_en              => debug_en,
       tracer_en             => tracer_en,
+      dsp_dump              => dsp_dump,
       -----------------------------------
       ACCL_NUM              => ACCL_NUM,
       FU_NUM                => FU_NUM,

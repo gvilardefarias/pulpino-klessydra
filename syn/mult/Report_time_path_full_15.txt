@@ -1,0 +1,76 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Thu Jul 24 21:46:29 2025
+****************************************
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: dsp_mul_c_reg[0]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: dsp_out_mul_results_reg[31]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                          Incr       Path
+  -----------------------------------------------------------------
+  clock clk_i (rise edge)                        0.00       0.00
+  clock network delay (ideal)                    0.00       0.00
+  dsp_mul_c_reg[0]/CLK (DFFSNQ_X1)               0.00       0.00 r
+  dsp_mul_c_reg[0]/Q (DFFSNQ_X1)                12.53      12.53 r
+  U3608/ZN (NAND4_X1)                            7.50      20.03 f
+  U3612/ZN (AOI22_X1)                            8.63      28.67 r
+  U3613/Z (OR2_X1)                               7.07      35.74 r
+  U3646/ZN (NAND2_X1)                            2.93      38.66 f
+  U3647/ZN (AOI21_X1)                            5.80      44.46 r
+  U3654/ZN (NOR2_X1)                             4.42      48.88 f
+  U3667/ZN (NOR2_X1)                             4.40      53.28 r
+  U3693/ZN (OAI21_X1)                            4.49      57.78 f
+  U3696/ZN (NOR2_X1)                             4.72      62.50 r
+  U3723/ZN (OAI21_X1)                            4.53      67.03 f
+  U3726/ZN (NOR2_X1)                             4.72      71.76 r
+  U3753/ZN (OAI21_X1)                            4.53      76.29 f
+  U3756/ZN (NOR2_X1)                             4.72      81.02 r
+  U3798/ZN (OAI21_X1)                            4.53      85.55 f
+  U3801/ZN (NOR2_X1)                             4.72      90.27 r
+  U3828/ZN (OAI21_X1)                            4.53      94.80 f
+  U3831/ZN (NOR2_X1)                             4.72      99.53 r
+  U3858/ZN (OAI21_X1)                            4.53     104.06 f
+  U3861/ZN (NOR2_X1)                             4.72     108.79 r
+  U3888/ZN (OAI21_X1)                            4.53     113.32 f
+  U3891/ZN (NOR2_X1)                             4.72     118.04 r
+  U3918/ZN (OAI21_X1)                            4.53     122.58 f
+  U3921/ZN (NOR2_X1)                             4.72     127.30 r
+  U3933/ZN (OAI21_X1)                            4.53     131.83 f
+  U3936/ZN (NOR2_X1)                             4.72     136.56 r
+  U3963/ZN (OAI21_X1)                            4.53     141.09 f
+  U3966/ZN (NOR2_X1)                             4.72     145.82 r
+  U3993/ZN (OAI21_X1)                            4.53     150.35 f
+  U3996/ZN (NOR2_X1)                             4.71     155.06 r
+  U4035/ZN (OAI21_X1)                            4.76     159.81 f
+  U4036/ZN (XNOR2_X1)                            8.20     168.02 r
+  U4037/ZN (XNOR2_X1)                            7.00     175.02 f
+  U4039/ZN (AOI22_X1)                            3.49     178.51 r
+  dsp_out_mul_results_reg[31]/D (DFFRNQ_X1)      0.00     178.51 r
+  data arrival time                                       178.51
+
+  clock clk_i (rise edge)                     2000.00    2000.00
+  clock network delay (ideal)                    0.00    2000.00
+  dsp_out_mul_results_reg[31]/CLK (DFFRNQ_X1)     0.00   2000.00 r
+  library setup time                            -9.51    1990.49
+  data required time                                     1990.49
+  -----------------------------------------------------------------
+  data required time                                     1990.49
+  data arrival time                                      -178.51
+  -----------------------------------------------------------------
+  slack (MET)                                            1811.98
+
+
+1

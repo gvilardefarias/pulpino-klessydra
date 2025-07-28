@@ -1,0 +1,76 @@
+
+                                   Z01X (TM)
+
+                 Version V-2023.12 for linux64 - Nov 19, 2023 
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+Command: coats -dir ./ -fub design -test ACCUMULATOR -seltyp observe +job_id+862ceecb17e5efe5 -fstrobe __tests__/ACCUMULATOR/__fstrobes__ -testid 65537 -l __fubs__/design/ACCUMULATOR/coats.log 
+
+Info:    Loading design       (12:19:47)
+Info:    Generating toggle map file.
+Info:    Reading toggle counts.
+Info:    Added backpointers.
+Info:    Relaxing toggle counts for multi-source wires.
+Info:    Relaxation iterations:                         1
+Info:    Total toggled faults:                       3032
+Info:    Loaded togmap file: ./__tests__/ACCUMULATOR/ACCUMULATOR.tmap
+Info:    Loading FuB faults marked previously.
+Info:    Calculating device observability.
+Primary outputs:                   32
+Info:    Marking Impossibles  (12:19:47)
+Info:    Collapsing           (12:19:47)
+Info:    Backtracing observable locations (12:19:47)
+Info:    Observability Queue Highwater mark: 359
+Info:    Unobservable Devices:
+Info:             0 Primitives
+Info:             0 Continuous Assigns
+Info:             8 Behavioral Modules
+
+Fault based observability metrics:
+  Fault selection method:             observe
+  Size of fault universe:                5250
+  Total untested faults:                 5173
+  Total observable faults:               2199
+  Total impossible faults:                 64
+  Total toggled faults:                  2955
+  Total NC faults:                         77
+  Total NO faults:                        756
+  Total NS faults:                          0
+  Total NI faults:                          0
+  Total NT faults:                          0
+  FuB fault count:                       2199
+  FuB remaining faults:                  3032
+  FuB observable faults:                 2199
+  FuB impossible Faults:                    0
+  FuB untested faults:                   2199
+  FuB faults toggled:                    2199
+  Selected fault count:                  2199
+  Selected fault avg tenacity:        231.823
+  Selected fault quality:             733.903
+  Selected fault avg test count:        0.000
+  Untested faults / Selected:           1.000
+  Selected faults / FuB faults:         1.000
+  Selected untested faults:              2199
+  Selected pot-det faults:                  0
+  Faults to be simulated:                2199
+Info:    
+Generating test resist map ./__fubs__/design/ACCUMULATOR/ACCUMULATOR.flst.
+Info:    At 07/25/25 12:19:47 task complete.
+Info:    CPU Time: 0.1s ; Elapsed Time: 0.2s ; Data Size: 35.0MB 

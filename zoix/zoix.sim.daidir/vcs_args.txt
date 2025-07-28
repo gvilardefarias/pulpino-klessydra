@@ -1,0 +1,47 @@
+/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/linux64/bin/vcs1
+-Mcc=gcc
+-Mcplusplus=g++
+-Masflags=
+-Mcfl= -pipe -fPIC -O -I/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/include 
+-Mxllcflags=
+-Mxcflags= -pipe -fPIC -I/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/include
+-Mldflags=-L/usr/lib/x86_64-linux-gnu -L/lib/x86_64-linux-gnu -Wl,--no-as-needed -rdynamic 
+-Mout=zoix.sim
+-Mamsrun=
+-Mvcsaceobjs=
+-Mobjects= /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/linux64/lib/libvirsim.so /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/linux64/lib/liberrorinf.so /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/linux64/lib/libsnpsmalloc.so /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/linux64/lib/libvfs.so 
+-Mexternalobj=
+-Msaverestoreobj=/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/vcs-mx/linux64/lib/vcs_save_restore_new.o
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mdir=sim.csrc
+-Msyslibs=-ldl 
+-l
+log/zoix_accumile.log
+-zoix=DLL=/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/lib/x86Linux64/libzc.so
+-full64
+-covg_disable_cg
+-zoix=xcombine
+-override_timescale=1ns/1ns
+-top
+ACCUMULATOR+strobe
++notimingcheck
+-zoix=notimingchecks
++define+ZOIX
+-zoix=suppress+cell
+-zoix=delay_mode_fault
+-Xzoixdbg=0x200
+-o
+zoix.sim
+-zoix=arglistfile+./sim.working/zoixarglist.txt
+-picarchive
+-sverilog
+-gen_obj
+-f
+sim.working/0.f
+./bin/strobes.sv
++incdir+./bin
+-zoix=incdir+./bin
+-v /home/g.vilarde/syn_libraries/15nm/verilog/NanGate_15nm_OCL_functional.v
+../GL/ACCUMULATOR.v

@@ -1,0 +1,24 @@
+(12:19:51) Part: 0 Host: monviso Simulation Started
+(12:19:51) Host: monviso Pass: 1 Simulation Started
+(12:19:54) Host: monviso Pass: 1 Simulation Time: 835545000
+Faults Run:2048
+Fault Statuses: ND:288 DD:1538 PD:222 N:0
+Last Strobe Time: 835542500
+Last Compare Time: 0
+RunStats: CPU Time: 2.5s ; Elapsed Time: 2.6s ; Data Size: 94.1MB 
+Invalid Iddq Count: 0
+Simulation ran to completion
+(12:19:54) Host: monviso Pass: 1 Pass Completed
+Run another pass
+(12:19:54) Host: monviso Pass: 2 Simulation Started
+(12:19:55) Host: monviso Pass: 2 Simulation Time: 835545000
+Faults Run:151
+Fault Statuses: ND:18 DD:120 PD:13 N:0
+Last Strobe Time: 835542500
+Last Compare Time: 0
+RunStats: CPU Time: 1.3s ; Elapsed Time: 1.5s ; Data Size: 92.1MB 
+Invalid Iddq Count: 0
+Simulation ran to completion
+(12:19:55) Host: monviso Pass: 2 Pass Completed
+No more passes needed
+(12:19:55) Host: monviso Simulation Completed

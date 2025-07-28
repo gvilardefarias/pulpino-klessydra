@@ -1,0 +1,68 @@
+Command: vcs -zoix=DLL=/eda/synopsys/2023-24/RHELx86/Z01X_2023.12/lib/x86Linux64/libzc.so \
+-full64 -covg_disable_cg -zoix=xcombine -file sim.working/zvcs_run.f
+              Z01X (TM) built with Chronologic VCS (TM)
+      VCS Version: V-2023.12_Full64 -- Fri Jul 25 12:12:35 2025
+
+                    Copyright (c) 1991 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Parsing design file '../GL/COMPARATOR.v'
+Parsing design file './bin/strobes.sv'
+Parsing library file '/home/g.vilarde/syn_libraries/15nm/verilog/NanGate_15nm_OCL_functional.v'
+TimeScale is 1 ns / 1 ns
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+Z01X Command Line Arguments: -f ./bin/load_design.f ./bin/strobes.sv +timescale+override+1ns/1ns +top+COMPARATOR+strobe +sv +notimingchecks +define+ZOIX +suppress+cell +delay_mode_fault -l log/zoix_compile.log
+
+Info:    Constructing Simulation Database
+Info:    Processing UDPs
+Starting vcs inline pass...
+Info:    Top Level Modules:
+Info:       COMPARATOR
+Info:       strobe
+Info:    Building simulation Database
+Info:       module: COMPARATOR
+Info:       module: DFFRNQ_X1
+Info:       module: INV_X1
+Info:       module: NOR2_X1
+Info:       module: AOI21_X1
+Info:       module: OAI21_X1
+Info:       module: NAND2_X1
+Info:       module: OAI22_X1
+Info:       module: AOI22_X1
+Info:       module: AND2_X1
+Info:       module: strobe
+Info:    Hierarchy built
+Info:    Writing simulation database
+Info:     Writing design primitives
+Info:     Writing simulated nets
+Info:     Writing symbol tables
+Info:    Design contents:
+Info:    	      389 Simulation primitives
+Info:    	      480 Simulated wires
+Info:    	      313 Module instances
+Info:    	        2 Continuous assigns
+Info:    	        1 Behavioral instances
+Info:    	        1 No diverge modules
+
+Info:    Compile complete with:  0 Errors 0 Warnings
+Info:    CPU Time: 0.2s ; Elapsed Time: 0.4s ; Data Size: 369.7MB 
+
+
+Compiling in 64-bit mode.
+Linking "zoix.sim" ...
+Info:    CPU Time: 2.6s ; Elapsed Time: 2.9s ; 
+Info:    Z01X compilation complete Fri Jul 25 12:12:37 2025

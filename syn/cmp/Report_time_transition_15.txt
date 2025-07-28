@@ -1,0 +1,67 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : COMPARATOR_SIMD2_multithreaded_accl_en0_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Fri Jul 25 11:51:47 2025
+****************************************
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: MSB_stage_3_reg[3]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: dsp_out_cmp_results_reg[0]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                             Fanout     Trans      Incr       Path      Attributes
+  -----------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                 0.00       0.00
+  clock network delay (ideal)                             0.00       0.00
+  MSB_stage_3_reg[3]/CLK (DFFRNQ_X1)            0.00      0.00       0.00 r
+  MSB_stage_3_reg[3]/Q (DFFRNQ_X1)              4.90     12.19      12.19 r
+  MSB_stage_3[3] (net)                2                   0.00      12.19 r
+  U305/ZN (INV_X1)                              3.47      2.95      15.13 f
+  n353 (net)                          2                   0.00      15.13 f
+  U454/ZN (AOI22_X1)                            7.95      5.95      21.08 r
+  n372 (net)                          2                   0.00      21.08 r
+  U455/ZN (INV_X1)                              4.26      3.51      24.59 f
+  n388 (net)                          2                   0.00      24.59 f
+  U477/ZN (OAI22_X1)                            7.56      4.57      29.16 r
+  n397 (net)                          1                   0.00      29.16 r
+  U480/ZN (AOI22_X1)                           10.25      3.70      32.86 f
+  n399 (net)                          1                   0.00      32.86 f
+  U481/ZN (NAND2_X1)                            6.11      3.26      36.12 r
+  n229 (net)                          1                   0.00      36.12 r
+  dsp_out_cmp_results_reg[0]/D (DFFRNQ_X1)      6.11      0.00      36.12 r
+  data arrival time                                                 36.12
+
+  clock clk_i (rise edge)                              2000.00    2000.00
+  clock network delay (ideal)                             0.00    2000.00
+  dsp_out_cmp_results_reg[0]/CLK (DFFRNQ_X1)              0.00    2000.00 r
+  library setup time                                     -8.24    1991.76
+  data required time                                              1991.76
+  -----------------------------------------------------------------------------------------------
+  data required time                                              1991.76
+  data arrival time                                                -36.12
+  -----------------------------------------------------------------------------------------------
+  slack (MET)                                                     1955.64
+
+
+1

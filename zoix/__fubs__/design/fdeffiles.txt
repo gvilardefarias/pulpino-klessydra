@@ -1,0 +1,1 @@
+__fubs__/design/ACCUMULATOR/ACCUMULATOR.fdef

@@ -909,6 +909,7 @@ begin
       cmp_stage_2_en(h)        <= '0';
       busy_DSP_internal_lat(h) <= '0';
       state_DSP(h)             <= dsp_init;
+      dsp_except_data(h)       <= (others => '0');
     elsif rising_edge(clk_i) then
       dsp_data_gnt_i_lat(h)   <= dsp_data_gnt_i(h);
       adder_stage_1_en(h)     <= dsp_data_gnt_i_lat(h) and add_en(h);
@@ -1934,8 +1935,10 @@ FU_replicated : for f in fu_range generate
             end loop;
           elsif MVTYPE_DSP(h) = "01" then
             for i in 0 to 2*SIMD-1 loop -- latch the sign bits
-              dsp_in_shifter_operand_lat(f)(15+16*i downto 16*i) <= (others => dsp_in_shifter_operand(f)(15+16*i));
-              -- TODO fix this: do the same as to 32 bits
+              for bit_idx in 0 to 15 loop
+                dsp_in_shifter_operand_lat(f)(16*i + bit_idx) <= dsp_in_shifter_operand(f)(15+16*i);
+              end loop;
+              --dsp_in_shifter_operand_lat(f)(15+16*i downto 16*i) <= (others => dsp_in_shifter_operand(f)(15+16*i));
             end loop;
           elsif MVTYPE_DSP(h) = "10" then
             for i in 0 to SIMD-1 loop -- latch the sign bits
@@ -2002,8 +2005,12 @@ FU_replicated : for f in fu_range generate
       dsp_shift_enabler(h) <= (others => '0');
       if shift_en(h) = '1' and halt_dsp_lat(h) = '0' then
         if MVTYPE_DSP(h) = "01" then
-          dsp_shift_enabler(h)(15 - to_integer(unsigned(dsp_in_shift_amount(h)(3 downto 0))) downto 0) <= (others => '1');
+          for idx in 0 to (15 - to_integer(unsigned(dsp_in_shift_amount(h)(3 downto 0)))) loop
+            dsp_shift_enabler(h)(idx) <= '1';
+          end loop;
+          --dsp_shift_enabler(h)(15 - to_integer(unsigned(dsp_in_shift_amount(h)(3 downto 0))) downto 0) <= (others => '1');
         elsif MVTYPE_DSP(h) = "00" then
+          -- TODO do the same thing as for 16b
           dsp_shift_enabler(h)(7 -  to_integer(unsigned(dsp_in_shift_amount(h)(2 downto 0))) downto 0) <= (others => '1');
         end if;
         if (decoded_instruction_DSP_lat(h)(KSRAV_bit_position) = '1' or decoded_instruction_DSP_lat(h)(KDOTPPS_bit_position) = '1') and
@@ -2220,14 +2227,18 @@ FU_replicated : for f in fu_range generate
                 else
                   if MSB_stage_3(f)(1)(i) = MSB_stage_3(f)(0)(i) then -- if both signs are equal, than read the MSB from the subtractor
                     if dsp_in_cmp_operands(f)(7+8*(i)) = '1' then
-                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (7+8*(i) downto 8*(i)+1 => '0') & '1';
+                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (std_logic_vector(to_unsigned(0, 7))) & '1';
+--                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (7+8*(i) downto 8*(i)+1 => '0') & '1';
                     else
-                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (others => '0');
+                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= std_logic_vector(to_unsigned(0, 8));
+--                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (others => '0');
                     end if;
                   elsif MSB_stage_3(f)(1)(i) /= MSB_stage_3(f)(0)(i) and MSB_stage_3(f)(0)(i) = '1' then
-                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (7+8*(i) downto 8*(i)+1 => '0') & '1';
+                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (std_logic_vector(to_unsigned(0, 7))) & '1';
+--                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (7+8*(i) downto 8*(i)+1 => '0') & '1';
                   else
-                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (others => '0');
+                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= std_logic_vector(to_unsigned(0, 8));
+--                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (others => '0');
                   end if;
                 end if;
               end loop;  -- SIMD LOOP

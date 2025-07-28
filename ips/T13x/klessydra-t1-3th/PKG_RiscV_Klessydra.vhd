@@ -30,6 +30,8 @@ package riscv_klessydra is
 
   file file_handler2 : text open write_mode is "execution_2.txt";
 
+  file file_dump_i : text open write_mode is "dump_i.txt";
+  file file_dump_o : text open write_mode is "dump_o.txt";
 
 ------------------------------------------------------------------------------------------------------------
 --   ██████╗██╗   ██╗███████╗████████╗ ██████╗ ███╗   ███╗    ████████╗██╗   ██╗██████╗ ███████╗███████╗  --
