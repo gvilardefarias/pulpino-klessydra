@@ -69,15 +69,15 @@ structAnalysis
 
 ## Collect reports:...
 
-check_fsv -report -type {sa0 sa1} -text ADD/struct_total_all.txt
+check_fsv -report -type {sa0 sa1} -text MULT/struct_total_all.txt
 
-check_fsv -report -class safe         -text ADD/struct_safe_ones.txt
-check_fsv -report -class unprocessed  -text ADD/struct_unprocessed_ones.txt
-check_fsv -report -class dangerous    -text ADD/struct_dangerous_ones.txt
+check_fsv -report -class safe         -text MULT/struct_safe_ones.txt
+check_fsv -report -class unprocessed  -text MULT/struct_unprocessed_ones.txt
+check_fsv -report -class dangerous    -text MULT/struct_dangerous_ones.txt
 
 ## Unknown means that these are the ones to analyse during fault campaigns.
 
-check_fsv -report -class unknown      -text ADD/struct_unknown_ones.txt
+check_fsv -report -class unknown      -text MULT/struct_unknown_ones.txt
 
 
 
@@ -90,15 +90,15 @@ set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
 
 activAnalysis
 
-check_fsv -report -type {sa0 sa1} -text ADD/active_analysis_total_all.txt
+check_fsv -report -type {sa0 sa1} -text MULT/active_analysis_total_all.txt
 
-check_fsv -report -class safe         -text ADD/active_analysis_safe_ones.txt
-check_fsv -report -class unprocessed  -text ADD/active_analysis_unprocessed_ones.txt
-check_fsv -report -class dangerous    -text ADD/active_analysis_dangerous_ones.txt
+check_fsv -report -class safe         -text MULT/active_analysis_safe_ones.txt
+check_fsv -report -class unprocessed  -text MULT/active_analysis_unprocessed_ones.txt
+check_fsv -report -class dangerous    -text MULT/active_analysis_dangerous_ones.txt
 
 ## Unknown means that these are the ones to analyse during fault campaigns.
 
-check_fsv -report -class unknown      -text ADD/active_analysis_unknown_ones.txt
+check_fsv -report -class unknown      -text MULT/active_analysis_unknown_ones.txt
 
 
 #########################
