@@ -52,7 +52,7 @@ check_fsv -fault -add [get_design_info -list signal] -type SA0+SA1
 # Specify the custom strobe list using the DESIGN_TOP env variable
 #########################
 
-check_fsv -strobe -add {dsp_out_shifter_results} -functional
+check_fsv -strobe -add {dsp_out_cmp_results} -functional
 
 set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
 
