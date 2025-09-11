@@ -17,7 +17,6 @@ entity COMPARATOR is
     --------------------------------
     ACCL_NUM              : natural;
     FU_NUM                : natural;
-    Data_Width            : natural;
     SIMD_Width            : natural
   );
   port(

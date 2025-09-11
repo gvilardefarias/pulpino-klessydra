@@ -59,6 +59,9 @@ def parser_line(line):
                 i_idx = parsed_l.index(signal + '(', i_idx+1) 
                 f_idx = i_idx + len(signal)
 
+                if parsed_l[i_idx-1] in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_':
+                    continue
+
                 par_count = 0
                 counter = 0
                 for car in parsed_l[f_idx:]:
@@ -67,7 +70,7 @@ def parser_line(line):
                     elif car == ')':
                         par_count -= 1
 
-                    if (car == ' ' and par_count == 0) or par_count < 0:
+                    if ((car == ' ' or car == '\'') and par_count == 0) or par_count < 0:
                         break
                     counter += 1
                 i_idx = f_idx
@@ -82,7 +85,7 @@ def parser_line(line):
                 if opr.count('(') == 1:
                     opr = extr_pare_cont(opr)
 
-                    opr_n += f'(({opr[0]}+1)*({signals_2d[signal][1]}))-1 downto {signals_2d[signal][1]}*{opr[0]}'
+                    opr_n += f'(({opr[0]}+1)*({signals_2d[signal][1]}))-1 downto ({signals_2d[signal][1]})*({opr[0]})'
                 else:
                     opr = extr_pare_cont_a2d(opr)
 
@@ -101,6 +104,9 @@ def parser_line(line):
                 i_idx = parsed_l.index(signal + '(', i_idx+1) 
                 f_idx = i_idx + len(signal)
 
+                if parsed_l[i_idx-1] in 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789_':
+                    continue
+
                 par_count = 0
                 counter = 0
                 for car in parsed_l[f_idx:]:
@@ -109,7 +115,7 @@ def parser_line(line):
                     elif car == ')':
                         par_count -= 1
 
-                    if (car == ' ' and par_count == 0) or par_count < 0:
+                    if ((car == ' ' or car == '\'') and par_count == 0) or par_count < 0:
                         break
                     counter += 1
                 i_idx = f_idx
@@ -122,11 +128,11 @@ def parser_line(line):
                 opr_n = '('
 
                 if opr.count('(') == 1: # format (a)
-                    opr_n += f'(({opr}+1)*({signals_3d[signal][1]})*({signals_3d[signal][2]}))-1 downto ({signals_3d[signal][1]})*({signals_3d[signal][2]})*{opr}'
+                    opr_n += f'(({opr}+1)*({signals_3d[signal][1]})*({signals_3d[signal][2]}))-1 downto ({signals_3d[signal][1]})*({signals_3d[signal][2]})*({opr})'
                 elif opr.count(')(') == 1: # format (a)(b)
-                    opr = extr_pare_cont(opr)
+                    opr = extr_pare_cont_a2d(opr)
 
-                    opr_n += f'(({opr[1]}+1)*({signals_3d[signal][2]}))-1 + ({opr[0]})*({signals_3d[signal][1]})*({signals_3d[signal][2]}) downto {signals_3d[signal][2]}*{opr[1]} + ({opr[0]})*({signals_3d[signal][1]})*({signals_3d[signal][2]})'
+                    opr_n += f'(({opr[1]}+1)*({signals_3d[signal][2]}))-1 + ({opr[0]})*({signals_3d[signal][1]})*({signals_3d[signal][2]}) downto ({signals_3d[signal][2]})*({opr[1]}) + ({opr[0]})*({signals_3d[signal][1]})*({signals_3d[signal][2]})'
                 else: # format (a)(b)(c)
                     opr = extr_pare_cont_a2d(opr)
 

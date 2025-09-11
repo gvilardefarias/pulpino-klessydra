@@ -75,7 +75,10 @@ begin
 
   process(clk_i, rst_ni)
   begin
-    if rising_edge(clk_i) then
+    if rst_ni = '0' then
+     -- pc_ID   <= (others => '0');
+      harc_ID <= 0;
+    elsif rising_edge(clk_i) then
       if instr_gnt_i = '1' then
         -- pc propagation
         pc_ID   <= pc_IF;

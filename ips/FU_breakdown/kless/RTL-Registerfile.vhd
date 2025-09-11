@@ -318,6 +318,9 @@ begin
   Spm_Addr_Mapping_Synch : process(clk_i, rst_ni)
   begin
     if rst_ni = '0' then
+      rs1_to_sc <= (others => '0');
+      rs2_to_sc <= (others => '0');
+      rd_to_sc  <= (others => '0');
     elsif rising_edge(clk_i) then
       rs1_to_sc <= ID_rs1_to_sc;
       rs2_to_sc <= ID_rs2_to_sc;

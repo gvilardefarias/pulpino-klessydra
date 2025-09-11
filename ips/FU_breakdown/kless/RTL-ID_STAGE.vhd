@@ -138,6 +138,16 @@ begin
       ls_instr_req    <= '0';
       comparator_en   <= '0'; 
       debug_marker    <= (others => '0');
+
+      if accl_en = 1 then
+        spm_rs1          <= '0';
+        spm_rs2          <= '0';
+        vec_write_rd_ID  <= '0';
+        vec_read_rs1_ID  <= '0';
+        vec_read_rs2_ID  <= '0';
+        vec_width_ID     <= "00";
+        decoded_instruction_DSP <= (others => '0');
+      end if;
     elsif rising_edge(clk_i) then
       ls_instr_req <= '0';
       ie_instr_req <= '0';
@@ -717,6 +727,7 @@ begin
   process(clk_i, rst_ni)
   begin
     if rst_ni = '0' then
+      dsp_instr_req <= (others => '0');
     elsif rising_edge(clk_i) then
       dsp_instr_req <= dsp_instr_req_wire;
     end if;

@@ -28,7 +28,7 @@ entity ADDER is
       adder_stage_2_en                : in std_logic_vector(ACCL_NUM-1 downto 0); -- enables the use of the adders in stage 2
       -- inputs from DSP_Exec_Unit
       carry_pass                      : in std_logic_vector(((ACCL_NUM)*(3))-1 downto 0);
-      twos_complement                 : in std_logic_vector(((ACCL_NUM)*(32))-1 downto 0);
+      twos_complement                 : in std_logic_vector(((ACCL_NUM)*(64))-1 downto 0);
       -- inputs from DSP_Excpt_Unit
       recover_state_wires             : in std_logic_vector(ACCL_NUM-1 downto 0); -- used to recover the state of the DSP, in case of an exception
       -- inputs from DSP_FU_Handler
