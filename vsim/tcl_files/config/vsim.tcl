@@ -98,10 +98,15 @@ set cmd "vsim -quiet $TB \
   -gTHREAD_NUM=$env(THREAD_NUM) \
   -t ps \
   -voptargs=\"+acc -suppress 2103\" \
-  -do \"vcd dumpports -file accum.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/ACCUM_STG/*\" \
+  -do \"vcd dumpports -file DSP.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP_Unit/*\" \
   $VSIM_FLAGS"
 }
 # TO generate VCD
+  #-do \"vcd dumpports -file add.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/ADD_STG/*\" \
+  #-do \"vcd dumpports -file comp.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/COMP_STG/*\" \
+  #-do \"vcd dumpports -file mult.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/MULT_STG/*\" \
+#  -do \"vcd dumpports -file accum.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/ACCUM_STG/*\" \
+  #-do \"vcd dumpports -file shif.vcd /tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/SHIF_STG/*\" \
   #-do \"vcd add -ports sim:/tb/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/MULT_STG/*\" \
 
 # set cmd "$cmd -sv_lib ./work/libri5cyv2sim"
