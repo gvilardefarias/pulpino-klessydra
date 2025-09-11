@@ -2,14 +2,20 @@
 # This script generates a fault list for a given input file containing signal names and types
 
 import re
+import argparse
+
+argparser = argparse.ArgumentParser(description="Generate fault list from signal list.")
+argparser.add_argument("input", type=str, default="sig_fu_wire_list.txt")
+
+input_args = argparser.parse_args()
 
 # Defines
-input_file = "sig_fu_wire_list.txt"
+input_file = input_args.input
 output_file = input_file.replace("sig", "fault")
 module_path = "/top_i/core_region_i/CORE/RISCV_CORE/Pipe/ACCL_generate/DSP/"
 
 ACCL = 1
-SIMD = 2
+SIMD = 4
 
 # Parameters
 if ACCL == 3:
@@ -37,8 +43,7 @@ params["SPM_ADDR_WID"] = 3
 params["THREAD_POOL_SIZE"] = 3 - 1 # Because of the -2 in the signal list
 params["Data_Width"] = 32
 
-if SIMD == 8:
-    output_file = output_file.replace(".txt", "_8simd.txt")
+output_file = output_file.replace(".txt", "_" + str(SIMD) + "simd.txt")
 
 
 def extr_pare_cont(line):

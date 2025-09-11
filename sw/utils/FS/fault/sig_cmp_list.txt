@@ -4,3 +4,5 @@
   signal dsp_out_cmp_results             : array_2d(fu_range)(SIMD_Width-1 downto 0);
   signal cmp_stage_1_en                  : std_logic_vector(accl_range);
   signal cmp_stage_2_en                  : std_logic_vector(accl_range);
+  signal MSB_stage_2                     : array_3d(accl_range)(1 downto 0)(4*SIMD-1 downto 0);
+  signal MSB_stage_3                     : array_3d(accl_range)(1 downto 0)(4*SIMD-1 downto 0);

@@ -206,8 +206,9 @@ def main():
                 os.system("cp final_fault_dictionary_back_up_" + str(application_name) + ".txt final_fault_dictionary_" + str(application_name) + ".txt" )
 
         # Fault injector execution:
-        with ProcessPoolExecutor(max_workers=max_threads) as executor:
-        #with ProcessPoolExecutor() as executor:
+        #with ProcessPoolExecutor(max_workers=80) as executor:
+        #with ProcessPoolExecutor(max_workers=max_threads) as executor:
+        with ProcessPoolExecutor() as executor:
             futures = []
 
             for line in inFile:

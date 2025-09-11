@@ -52,11 +52,14 @@ def Extract_GPU_time_params(out2, Debug_mode):
 	
 # Function employed to launch the fault simulator:
 def Lauch_execution(cmd_vsim, Enabled_Debug, num_fault_lines):				# The enabled_debug mode allows to find the performance parameters of the app.
-	print("Starting Fault simulation...")
 	#print(cmd_vsim)
-	p = subprocess.Popen(cmd_vsim, stdout=subprocess.PIPE, shell=True)
-	out, error = p.communicate()
-	print("Fault simulation finished")
+	err_c = -1
+	while err_c != 0:
+		#p = subprocess.Popen(cmd_vsim, stdout=subprocess.PIPE, shell=True)
+		p = subprocess.Popen(cmd_vsim, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+		out, error = p.communicate()
+		err_c = p.returncode
+		print("Fault simulation finished", error)
 	out = out.decode('utf-8')					# decode the output to string.
 	out = out.replace("\n", "")							# remove the new line characters.
 

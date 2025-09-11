@@ -3,6 +3,8 @@ import csv
 import numpy as np
 import argparse
 
+plt.rcParams['font.size'] = 15
+
 args = argparse.ArgumentParser(description='Generate graphs from data')
 args.add_argument('input', type=str, default='data.csv', help='Input file name')
 
@@ -82,12 +84,13 @@ def SF_MS():
 
     error = [lower_err, upper_err]
 
-    plt.plot(x, y)
+    #plt.plot(x, y, color='darkred')
+    plt.plot(x, y, color='red')
     plt.errorbar(x, y, yerr=error, fmt='o', capsize=5)
-    plt.ylabel('Silent Fault (Not detected)')
+    plt.ylabel('Silent Faults')
     plt.xlabel('Matrix Size')
 
-    plt.title('Faults not detected with random data vs Matrix Size')
+    plt.title('Silent Fault (3 experiments) vs Matrix Size')
 
     plt.show()
 
@@ -146,14 +149,17 @@ def stack():
     fig, ax = plt.subplots()
 
     color_map = {
-        'SF': 'red',
-        'TO': 'yellow',
+        'SF': 'darkred',
+        'TO': 'black',
         'DC': 'green',
         'FSF': 'purple',
-        'Halt': 'orange'
+        'MF': 'red',
+        'Halt': 'yellow'
     }
 
+    data['Name'] = [name.replace('(', '\n(') for name in data['Name']]
     bottom = np.zeros(len(data['Name']))
+
     for fault_t in data:
         if fault_t == 'Name':
             continue
@@ -163,10 +169,10 @@ def stack():
 
 
     ax.set_ylabel('Fault Count')
-    ax.set_xlabel('Matrix Size')
-    ax.set_title('Faults by Matrix Size')
+    ax.set_xlabel('Image')
+    ax.set_title('Faults by Image')
     ax.legend()
     plt.show()
 
-stack()
-#SF_MS()
+#stack()
+SF_MS()

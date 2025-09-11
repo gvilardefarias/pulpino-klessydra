@@ -9,8 +9,8 @@
 #include"functions.h"
 #include"klessydra_defs.h"
 
-#include "dataset.h"
-#include "ref.h"
+#include "dataset64.h"
+#include "ref64.h"
 
 #define SPM_MAX 64*32
 #define SIZE_OF_INT 4
@@ -142,6 +142,7 @@ int main(){
 		printf("Num_instr 0:%d\n", perf_results[0][1]);
 		printf("Num_instr 1:%d\n", perf_results[1][1]);
 		printf("Num_instr 2:%d\n", perf_results[2][1]);
+		*/
 
 		int pass = 1;
 		for (int i = 0; i < n; i++){
@@ -159,7 +160,6 @@ int main(){
 		else{
 			printf("Test failed\n");
 		}
-		*/
 
 		return 0;
 	} else {

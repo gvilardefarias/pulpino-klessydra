@@ -1,6 +1,6 @@
 import numpy as np
 import random
-random.seed(0)
+random.seed(2)
 
 FU = 3 # Number of functional units
 

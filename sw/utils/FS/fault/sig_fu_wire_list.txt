@@ -31,3 +31,5 @@
   signal mul_tmp_d                       : array_3d(fu_range)(SIMD-1 downto 0)(Data_Width-1 downto 0);
   signal dsp_shift_enabler               : array_2d(accl_range)(15 downto 0);
   signal dsp_in_shift_amount             : array_2d(accl_range)(4 downto 0);
+  signal dsp_in_shifter_operand          : array_2d(fu_range)(SIMD_Width-1 downto 0);
+  signal dsp_in_shifter_operand_lat_wire : array_2d(fu_range)(SIMD_Width-1 downto 0);

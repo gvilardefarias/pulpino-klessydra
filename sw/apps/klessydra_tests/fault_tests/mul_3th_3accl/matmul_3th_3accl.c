@@ -118,28 +118,28 @@ int main(){
 		}
 		kmemstr(&m_out32[th_id][0][0],  (void *)((int *)spmaddrC),  u*m*SIZE_OF_INT);
 	} else if( th_id == 1){
-		kmemld((void *)((int *)spmaddrA), &m2[0][0],  SIZE_OF_INT*(m*u));
+		kmemld((void *)((int *)spmaddrA), &m1[0][0],  SIZE_OF_INT*(m*u));
 
 		for(int i=0;i<m;i++){
 			for(int j=0;j<u;j++){
 				m_out32[th_id][i][j]=0;
 
 				if(i == 0){
-					kmemld((void *)((int *)spmaddrB + j*m), &m3[j][0],  SIZE_OF_INT*(m));
+					kmemld((void *)((int *)spmaddrB + j*m), &m2_trans[j][0],  SIZE_OF_INT*(m));
 				}
 				kdotp((void *)((int *)spmaddrC + i*u + j),(void *)((int *)spmaddrB + j*m),(void *)((int *)spmaddrA + i*m));
 			}
 		}
 		kmemstr(&m_out32[th_id][0][0],  (void *)((int *)spmaddrC),  u*m*SIZE_OF_INT);
 	} else {
-		kmemld((void *)((int *)spmaddrA), &m3[0][0],  SIZE_OF_INT*(m*u));
+		kmemld((void *)((int *)spmaddrA), &m1[0][0],  SIZE_OF_INT*(m*u));
 
 		for(int i=0;i<m;i++){
 			for(int j=0;j<u;j++){
 				m_out32[th_id][i][j]=0;
 
 				if(i == 0){
-					kmemld((void *)((int *)spmaddrB + j*m), &m4[j][0],  SIZE_OF_INT*(m));
+					kmemld((void *)((int *)spmaddrB + j*m), &m2_trans[j][0],  SIZE_OF_INT*(m));
 				}
 				kdotp((void *)((int *)spmaddrC + i*u + j),(void *)((int *)spmaddrB + j*m),(void *)((int *)spmaddrA + i*m));
 			}
@@ -187,8 +187,7 @@ int main(){
 		else{
 			printf("Test failed\n");
 		}
-		*/
-
+*/
 		return 0;
 	} else {
 		__asm__("wfi;");

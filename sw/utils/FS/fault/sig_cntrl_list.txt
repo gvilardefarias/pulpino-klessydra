@@ -1,18 +1,3 @@
-  signal cmp_en                          : std_logic_vector(accl_range);  -- enables the use of the shifters
-  signal shift_en                        : std_logic_vector(accl_range);  -- enables the use of the shifters
-  signal add_en                          : std_logic_vector(accl_range);  -- enables the use of the adders
-  signal mul_en                          : std_logic_vector(accl_range);  -- enables the use of the multipliers
-  signal accum_en                        : std_logic_vector(accl_range);  -- enables the use of the accumulator
-  signal add_en_pending                  : std_logic_vector(accl_range);  -- signal to preserve the request to access the adder "multhithreaded mode" only
-  signal shift_en_pending                : std_logic_vector(accl_range);  -- signal to preserve the request to access the shifter "multhithreaded mode" only
-  signal mul_en_pending                  : std_logic_vector(accl_range);  -- signal to preserve the request to access the multiplier "multhithreaded mode" only
-  signal accum_en_pending                : std_logic_vector(accl_range);  -- signal to preserve the request to access the accumulator "multhithreaded mode" only
-  signal cmp_en_pending                  : std_logic_vector(accl_range);  -- signal to preserve the request to access the ReLU "multhithreaded mode" only
-  signal busy_add                        : std_logic;  -- busy signal active only when the FU is shared and currently in use 
-  signal busy_mul                        : std_logic;  -- busy signal active only when the FU is shared and currently in use 
-  signal busy_shf                        : std_logic;  -- busy signal active only when the FU is shared and currently in use 
-  signal busy_acc                        : std_logic;  -- busy signal active only when the FU is shared and currently in use 
-  signal busy_cmp                        : std_logic;  -- busy signal active only when the FU is shared and currently in use 
   signal fu_gnt                          : array_2D(accl_range)(4 downto 0); -- Each threa has grant bits equal to the total number of FUs
   signal fu_rd_ptr                       : array_2D(4 downto 0)(TPS_BUF_CEIL-1 downto 0); -- five rd pointers each has a number of bits equal to ceil(log2(THREAD_POOL_SIZE-1))
   signal fu_wr_ptr                       : array_2D(4 downto 0)(TPS_BUF_CEIL-1 downto 0); -- five rd pointers each has a number of bits equal to ceil(log2(THREAD_POOL_SIZE-1))

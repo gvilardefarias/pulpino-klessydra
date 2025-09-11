@@ -209,7 +209,7 @@ macro(add_sim_targets NAME)
   # run Fault Simulation in modelsim
   add_custom_target(${NAME}.FC
     COMMAND ${CMAKE_COMMAND} -E remove stdout/*
-    COMMAND python FS/Script_Fault_Simulator_2021.py --fault_list FS/${FAULT_FILE} --application_name ${NAME} --env 'csh -c ${SETENV}' --vsim_golden 'source\\ tcl_files/$<TARGET_PROPERTY:${NAME}.elf,TB>\\\;'
+    COMMAND python FS/Script_Fault_Simulator_2021.py --fault_list FS/fault/${FAULT_FILE} --application_name ${NAME} --env 'csh -c ${SETENV}' --vsim_golden 'source\\ tcl_files/$<TARGET_PROPERTY:${NAME}.elf,TB>\\\;'
     #COMMAND csh -c "${SETENV} ${VSIM}  -c -64 -do 'source tcl_files/$<TARGET_PROPERTY:${NAME}.elf,TB>\\; run -a\\; exit\\;' >vsim.log"
     COMMAND tail -n +1 -- ./stdout/*
     WORKING_DIRECTORY ./${SUBDIR}

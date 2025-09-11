@@ -1,0 +1,5 @@
+Name,Halt,DC,SF
+conv,22,2754,696
+conv + mm,22,2784,666
+conv + mm16b,22,2881,569
+conv + mm16b + shf,22,3073,377
