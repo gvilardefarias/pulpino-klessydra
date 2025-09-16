@@ -326,8 +326,7 @@ end component COMPARATOR;
     --------------------------------
     ACCL_NUM              : natural;
     FU_NUM                : natural;
-    SIMD_Width            : natural;
-    Data_Width            : natural
+    SIMD_Width            : natural
   );
   port(
     -- Core Signals
@@ -386,7 +385,6 @@ end component COMPARATOR;
       ---------------------------------------------------------
       ACCL_NUM                          : natural;
       FU_NUM                            : natural;
-      Data_Width                        : natural;
       SIMD_Width                        : natural
     );
   port(
@@ -645,7 +643,7 @@ begin
                   MVSIZE_READ_MASK(((h+1)*(Addr_Width + 1))-1 downto (Addr_Width + 1)*(h)) <= std_logic_vector(resize(unsigned(MVSIZE_READ_MASK(((h+1)*(Addr_Width + 1))-1 downto (Addr_Width + 1)*(h))) - unsigned(SIMD_RD_BYTES_wire(((h+1)*(32))-1 downto (32)*(h))), MVSIZE_READ_MASK(((h+1)*(Addr_Width + 1))-1 downto (Addr_Width + 1)*(h))'length)); -- decrement by SIMD_BYTE Execution Capability 
                 else
                   MVSIZE_READ_MASK(((h+1)*(Addr_Width + 1))-1 downto (Addr_Width + 1)*(h)) <= (others => '0');
-                  for i in 0 to (ACCL_NUM*SIMD_Width)-1 loop
+                  for i in 0 to (SIMD_Width)-1 loop
                     if i < to_integer(unsigned(MVSIZE_READ_MASK(((h+1)*(Addr_Width + 1))-1 downto (Addr_Width + 1)*(h)))*8) then
                       dsp_sc_data_read_mask(i + (h)*(SIMD_Width)) <= '1';
                     else
@@ -793,15 +791,15 @@ begin
                for i in 0 to SIMD-1 loop
                  if i <= to_integer(unsigned(MVSIZE_WRITE(((h+1)*(Addr_Width + 1))-1 downto (Addr_Width + 1)*(h)))-1)/4 then -- Four because of the number of bytes per word
                    if to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(Addr_Width) downto  0 + (h)*(Addr_Width)))/4 + i) < SIMD then
-                     dsp_we_word(to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(SIMD)  + (h)*(Addr_Width) downto   0 + (h)*(Addr_Width)))/4 + i) + (h)*(SIMD)) <= '1';
+                     dsp_we_word(to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(Addr_Width) downto   0 + (h)*(Addr_Width)))/4 + i) + (h)*(SIMD)) <= '1';
                    elsif to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(Addr_Width) downto  0 + (h)*(Addr_Width)))/4 + i) >= SIMD then
-                     dsp_we_word(to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(SIMD)  + (h)*(Addr_Width) downto   0 + (h)*(Addr_Width)))/4 + i - SIMD) + (h)*(SIMD)) <= '1';
+                     dsp_we_word(to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(Addr_Width) downto   0 + (h)*(Addr_Width)))/4 + i - SIMD) + (h)*(SIMD)) <= '1';
                    end if;
                  end if;
                end loop;
              end if;
            elsif vec_write_rd_DSP(h) = '0' and  dsp_sci_we_out((h)*(SPM_NUM) + to_integer(unsigned(dsp_rd_to_sc(((h+1)*(SPM_ADDR_WID))-1 downto (SPM_ADDR_WID)*(h))))) = '1' then
-             dsp_we_word(to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(SIMD)  + (h)*(Addr_Width) downto   0 + (h)*(Addr_Width)))/4) + (h)*(SIMD)) <= '1';
+             dsp_we_word(to_integer(unsigned(dsp_sc_write_addr_out(SIMD_BITS+1  + (h)*(Addr_Width) downto   0 + (h)*(Addr_Width)))/4) + (h)*(SIMD)) <= '1';
            end if;
            -------------------------------------------------------------------------------------------------------------------------
 
@@ -1483,7 +1481,7 @@ MAPPER_replicated : for h in fu_range generate
                 decoded_instruction_DSP(KSVMULRF_bit_position) = '1'  or
                 decoded_instruction_DSP(KVMUL_bit_position)    = '1'  or
                 decoded_instruction_DSP(KSVMULSC_bit_position) = '1') and 
-              MVTYPE(3  + (h)*(4) downto  2 + (h)*(4)) = "00" then
+              MVTYPE_exec = "00" then
               SIMD_RD_BYTES_wire(((h+1)*(32))-1 downto (32)*(h)) <= std_logic_vector(to_unsigned(SIMD*(Data_Width/8)/2, 32));
             end if; 
 
@@ -1987,8 +1985,7 @@ end generate FU_replicated;
       --------------------------------
       ACCL_NUM              => ACCL_NUM,
       FU_NUM                => FU_NUM,
-      SIMD_Width            => SIMD_Width,
-      Data_Width            => Data_Width
+      SIMD_Width            => SIMD_Width
     )
     port map(
       clk_i                             => clk_i,
@@ -2049,7 +2046,6 @@ end generate FU_replicated;
       -------------------------------------------------
       ACCL_NUM                           => ACCL_NUM, 
       FU_NUM                             => FU_NUM, 
-      Data_Width                         => Data_Width, 
       SIMD_Width                         => SIMD_Width
     )
   port map(

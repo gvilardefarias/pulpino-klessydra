@@ -28,7 +28,6 @@ entity ACCUMULATOR is
       --------------------------------
       ACCL_NUM              : natural;
       FU_NUM                : natural;
-      Data_Width            : natural;
       SIMD_Width            : natural
     );
 	port(
@@ -63,6 +62,8 @@ begin
       variable h : integer;
     begin
       if rst_ni = '0' then
+        accum_partial_results_stg_1((f+1)*128 -1 downto f*128) <= (others => '0');
+        accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
       elsif rising_edge(clk_i) then
         accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
         for g in 0 to (ACCL_NUM - FU_NUM) loop
@@ -106,6 +107,8 @@ begin
       variable h : integer;
     begin
       if rst_ni = '0' then
+        accum_partial_results_stg_1((f+1)*128 -1 downto f*128) <= (others => '0');
+        accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
       elsif rising_edge(clk_i) then
         accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
         for g in 0 to (ACCL_NUM - FU_NUM) loop
@@ -151,6 +154,7 @@ begin
       variable h : integer;
     begin
       if rst_ni = '0' then
+        accum_partial_results_stg_1((f+1)*128 -1 downto f*128) <= (others => '0');
       elsif rising_edge(clk_i) then
         accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
         for g in 0 to (ACCL_NUM - FU_NUM) loop
@@ -202,8 +206,8 @@ begin
       variable h : integer;
     begin
       if rst_ni = '0' then
-        accum_results <= (others => '0');
-        accum_partial_results_stg_1 <= (others => '0');
+        accum_results((f+1)*32 -1 downto 32*f) <= (others => '0');
+        accum_partial_results_stg_1((f+1)*128 -1 downto f*128) <= (others => '0');
       elsif rising_edge(clk_i) then
         accum_results(((f+1)*(32))-1 downto 32*f) <= (others => '0');
         for g in 0 to (ACCL_NUM - FU_NUM) loop

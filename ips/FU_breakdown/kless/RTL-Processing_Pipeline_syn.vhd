@@ -141,6 +141,8 @@ architecture Pipe of Pipeline is
   subtype accl_range is integer range ACCL_NUM - 1 downto 0; 
   subtype fu_range   is integer range FU_NUM - 1 downto 0;
 
+  signal harc_EXEC_lv           : std_logic_vector(natural(ceil(log2(real(THREAD_POOL_SIZE))))-1 downto 0);
+
   signal state_IE               : fsm_IE_states;
   signal state_LS               : fsm_LS_states;
   signal state_DSP              : array_2d(accl_range)(1 downto 0);
@@ -582,7 +584,7 @@ architecture Pipe of Pipeline is
     dsp_except_condition       : out std_logic_vector(accl_range);
       -- ID_Stage Signals
     decoded_instruction_DSP    : in  std_logic_vector(DSP_UNIT_INSTR_SET_SIZE-1 downto 0);
-    harc_EXEC                  : in  harc_range;
+    harc_EXEC                  : in  std_logic_vector(natural(ceil(log2(real(THREAD_POOL_SIZE))))-1 downto 0);
     pc_IE                      : in  std_logic_vector(31 downto 0);
     RS1_Data_IE                : in  std_logic_vector(31 downto 0);
     RS2_Data_IE                : in  std_logic_vector(31 downto 0);
@@ -994,7 +996,7 @@ begin
     dsp_taken_branch           => dsp_taken_branch,
     dsp_except_condition       => dsp_except_condition,
     decoded_instruction_DSP    => decoded_instruction_DSP,
-    harc_EXEC                  => harc_EXEC,
+    harc_EXEC                  => harc_EXEC_lv,
     pc_IE                      => pc_IE,
     RS1_Data_IE                => RS1_Data_IE,
     RS2_Data_IE                => RS2_Data_IE,
@@ -2784,6 +2786,11 @@ begin
       dsp_to_sc(i)(j) <= dsp_to_sc_flat(i*SPM_NUM*2 + (j+1)*2 -1 downto i*SPM_NUM*2 + j*2);
     end loop;
   end loop;
+end process;
+
+gen_assigns: process(all)
+begin
+  harc_EXEC_lv <= std_logic_vector(to_unsigned(harc_EXEC, harc_EXEC_lv'length));
 end process;
 
 --------------------------------------------------------------------- end of PIPE -----------------

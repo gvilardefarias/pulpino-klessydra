@@ -142,7 +142,7 @@ begin
   variable h : integer;
   begin
   if rst_ni = '0' then
-    dsp_out_mul_results <= (others => '0');
+    dsp_out_mul_results((f+1)*SIMD_Width -1 downto f*SIMD_Width) <= (others => '0');
     elsif rising_edge(clk_i) then
       for g in 0 to (ACCL_NUM - FU_NUM) loop
         if multithreaded_accl_en = 1 then
