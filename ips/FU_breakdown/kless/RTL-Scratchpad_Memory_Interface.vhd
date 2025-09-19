@@ -160,6 +160,7 @@ begin
       halt_dsp(h)             <= '0';
       sc_word_count(h)        <= 0;
       dsp_sc_data_read(h)   <= (others => (others => '0'));
+      dsp_sci_wr_gnt_lat(h) <= '0';
     elsif rising_edge(clk_i) then
       halt_dsp(h)                     <= '0';
       dsp_sci_wr_gnt_lat(h)           <= dsp_sci_wr_gnt(h);
