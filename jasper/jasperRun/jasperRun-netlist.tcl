@@ -1,12 +1,12 @@
 
 # Set name of TOP Instance of the design to be considered by Jasper
-set topInstance "spi"
+set topInstance "DSP"
 
 #########################
 # Analyze and Elaborate Design
 #########################
 # Run Jasper Analyzes on synthesis library file and on design netlist file
-analyze -sv -v "$env(DESIGN_DIR)/../../../library/GSCLib_3.0.v" [dglob "$env(DESIGN_DIR)/netlist/*.v"]
+analyze -verilog -v "/home/g.vilarde/syn_libraries/15nm/verilog/NanGate_15nm_OCL_functional.v" [dglob "../../GL/DSP_1a_2s.v"]
 
 # Example with include dir
 #analyze -sv +incdir+$env(DESIGN_DIR)/../../../library/ [dglob "$env(DESIGN_DIR)/netlist/*.v"]
