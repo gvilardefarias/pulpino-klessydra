@@ -70,18 +70,39 @@ check_fsv -fault -add $LIST_OF_PORTS -type sa0+sa1
 #########################
 check_fsv -strobe -add [get_design_info -instance $topInstance -list output  -include_hier_path -silent] -functional
 
+set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
+
 
 #########################
 ## Start Structural Analysis for all faults 
 #########################
 structAnalysis
 
+check_fsv -report -type {sa0 sa1} -text out/struct_total_all.txt
+check_fsv -report -class safe         -text out/struct_safe_ones.txt
+check_fsv -report -class unprocessed  -text out/struct_unprocessed_ones.txt
+check_fsv -report -class dangerous    -text out/struct_dangerous_ones.txt
+check_fsv -report -class unknown      -text out/struct_unknown_ones.txt
+
 #########################
 ## Start Activatability Analysis for Not Safe Faults 
 #########################
 activAnalysis
 
+check_fsv -report -type {sa0 sa1} -text out/active_analysis_total_all.txt
+check_fsv -report -class safe         -text out/active_analysis_safe_ones.txt
+check_fsv -report -class unprocessed  -text out/active_analysis_unprocessed_ones.txt
+check_fsv -report -class dangerous    -text out/active_analysis_dangerous_ones.txt
+check_fsv -report -class unknown      -text out/active_analysis_unknown_ones.txt
+
 #########################
 ## Start Propagability Analysis for Not Safe Faults 
 #########################
 propagAnalysis
+
+check_fsv -report -type {sa0 sa1} -text out/propagation_analysis_total_all.txt
+check_fsv -report -class safe         -text out/propagation_analysis_safe_ones.txt
+check_fsv -report -class unprocessed  -text out/propagation_analysis_unprocessed_ones.txt
+check_fsv -report -class dangerous    -text out/propagation_analysis_dangerous_ones.txt
+check_fsv -report -class unknown      -text out/propagation_analysis_unknown_ones.txt
+	
