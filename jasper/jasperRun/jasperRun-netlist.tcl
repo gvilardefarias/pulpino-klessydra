@@ -1,4 +1,4 @@
-source jasper_aux_functions.tcl
+source jasper-aux-functions.tcl
 
 # Set name of TOP Instance of the design to be considered by Jasper
 set topInstance "DSP"
