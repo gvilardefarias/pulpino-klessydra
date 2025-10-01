@@ -2,6 +2,8 @@
 # Set name of TOP Instance of the design to be considered by Jasper
 set topInstance "DSP"
 
+check_fsv -init
+
 #########################
 # Analyze and Elaborate Design
 #########################
