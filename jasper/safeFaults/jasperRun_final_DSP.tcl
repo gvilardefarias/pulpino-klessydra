@@ -133,8 +133,8 @@ check_fsv -report -class unknown      -text DSP/struct_unknown_ones.txt
 ## Start Activatability Analysis for Not Safe Faults 
 #########################
 
-check_fsv -fault -add [get_design_info -list signal] -type SA0+SA1 
-set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
+#check_fsv -fault -add [get_design_info -list signal] -type SA0+SA1 
+#set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
 
 activAnalysis
 
@@ -152,8 +152,8 @@ check_fsv -report -class unknown      -text DSP/active_analysis_unknown_ones.txt
 #########################
 ## Start Propagability Analysis for Not Safe Faults 
 #########################
-check_fsv -fault -add [get_design_info -list signal] -type SA0+SA1 
-set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
+#check_fsv -fault -add [get_design_info -list signal] -type SA0+SA1 
+#set strobe_list [check_fsv -strobe -get node [check_fsv -strobe -list]]
 
 
 propagAnalysis
