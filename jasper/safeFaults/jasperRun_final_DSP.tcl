@@ -63,6 +63,10 @@ foreach CELL $LIST_OF_CELLS {
 	    continue
 	}
 
+    if { [string first "EXCP_STG" $CELL_INST] >= 0 } {
+        continue
+    }
+
 	set ALL_CELL_PINS [get_design_info -instance $CELL_INST -list input output -silent]
 
      	foreach CELL_PIN $ALL_CELL_PINS {
@@ -77,7 +81,7 @@ check_fsv -fault -add $LIST_OF_PORTS -type sa0+sa1
 
 
 #reset $resetSignal 
-#reset [reset -analyze -synchronous -list signal -silent]
+reset [reset -analyze -synchronous -list signal -silent]
 
 #reset -none
 
