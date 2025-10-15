@@ -62,9 +62,10 @@ begin
 
   fsm_RELU : process(clk_i, rst_ni)
   variable h : integer;
+  variable dsp_out_cmp_results_var : std_logic_vector(((FU_NUM)*(SIMD_Width))-1 downto 0);
   begin
     if rst_ni = '0' then
-      dsp_out_cmp_results((f+1)*(SIMD_Width)-1 downto (f)*(SIMD_Width)) <= (others => '0');
+      dsp_out_cmp_results_var((f+1)*(SIMD_Width)-1 downto (f)*(SIMD_Width)) := (others => '0');
       MSB_stage_3((f+1)*(2)*(4*SIMD)-1 downto (f)*(2)*(4*SIMD)) <= (others => '0');
     elsif rising_edge(clk_i) then
       for g in 0 to (ACCL_NUM - FU_NUM) loop
@@ -82,21 +83,21 @@ begin
                   if dsp_in_cmp_operands((f)*(SIMD_Width) + 31+32*(i)) = '1' then
                     -- TODO do the same for the other sizes
                     --dsp_out_cmp_results(f)(31+32*(i) downto 32*(i)) <= (others => '0');
-                    dsp_out_cmp_results(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) <= std_logic_vector(to_unsigned(0, 32));
+                    dsp_out_cmp_results_var(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) := std_logic_vector(to_unsigned(0, 32));
                   else
-                    dsp_out_cmp_results(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) <= dsp_in_cmp_operands(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width));
+                    dsp_out_cmp_results_var(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) := dsp_in_cmp_operands(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width));
                   end if;
                 else
                   if MSB_stage_3((f)*(2 + 4*SIMD) + (1)*(4*SIMD) + 4*(i)+3) = MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + 4*(i)+3) then -- if both signs are equal, than read the MSB from the subtractor
                     if dsp_in_cmp_operands((f)*(SIMD_Width) + 31+32*(i)) = '1' then
-                      dsp_out_cmp_results(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) <= (31+32*(i) downto 32*(i)+1 => '0') & '1';
+                      dsp_out_cmp_results_var(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) := (31+32*(i) downto 32*(i)+1 => '0') & '1';
                     else
-                      dsp_out_cmp_results(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) <= (others => '0');
+                      dsp_out_cmp_results_var(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) := (others => '0');
                     end if;
                   elsif MSB_stage_3((f)*(2 + 4*SIMD) + (1)*(4*SIMD) + 4*(i)+3) /= MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + 4*(i)+3) and MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + 4*(i)+3) = '1' then
-                    dsp_out_cmp_results(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) <= (31+32*(i) downto 32*(i)+1 => '0') & '1';
+                    dsp_out_cmp_results_var(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) := (31+32*(i) downto 32*(i)+1 => '0') & '1';
                   else
-                    dsp_out_cmp_results(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) <= (others => '0');
+                    dsp_out_cmp_results_var(31+32*(i)  + (f)*(SIMD_Width) downto  32*(i) + (f)*(SIMD_Width)) := (others => '0');
                   end if;
                 end if;
               end loop;
@@ -104,21 +105,21 @@ begin
               for i in 0 to 2*SIMD-1 loop
                 if relu_instr(h) = '1' then
                   if dsp_in_cmp_operands((f)*(SIMD_Width) + 15+16*(i)) = '1' then
-                      dsp_out_cmp_results(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) <= (others => '0');
+                      dsp_out_cmp_results_var(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) := (others => '0');
                   else
-                      dsp_out_cmp_results(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) <= dsp_in_cmp_operands(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width));
+                      dsp_out_cmp_results_var(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) := dsp_in_cmp_operands(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width));
                   end if;
                 else
                   if MSB_stage_3((f)*(2 + 4*SIMD) + (1)*(4*SIMD) + 2*(i)+1) = MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + 2*(i)+1) then -- if both signs are equal, than read the MSB from the subtractor
                     if dsp_in_cmp_operands((f)*(SIMD_Width) + 15+16*(i)) = '1' then
-                      dsp_out_cmp_results(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) <= (15+16*(i) downto 16*(i)+1 => '0') & '1';
+                      dsp_out_cmp_results_var(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) := (15+16*(i) downto 16*(i)+1 => '0') & '1';
                     else
-                      dsp_out_cmp_results(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) <= (others => '0');
+                      dsp_out_cmp_results_var(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) := (others => '0');
                     end if;
                   elsif MSB_stage_3((f)*(2 + 4*SIMD) + (1)*(4*SIMD) + 2*(i)+1) /= MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + 2*(i)+1) and MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + 2*(i)+1) = '1' then
-                    dsp_out_cmp_results(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) <= (15+16*(i) downto 16*(i)+1 => '0') & '1';
+                    dsp_out_cmp_results_var(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) := (15+16*(i) downto 16*(i)+1 => '0') & '1';
                   else
-                    dsp_out_cmp_results(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) <= (others => '0');
+                    dsp_out_cmp_results_var(15+16*(i)  + (f)*(SIMD_Width) downto  16*(i) + (f)*(SIMD_Width)) := (others => '0');
                   end if;
                 end if;
               end loop;
@@ -126,24 +127,24 @@ begin
               for i in 0 to 4*SIMD-1 loop
                 if relu_instr(h) = '1' then
                   if dsp_in_cmp_operands((f)*(SIMD_Width) + 7+8*(i)) = '1' then
-                      dsp_out_cmp_results(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) <= (others => '0');
+                      dsp_out_cmp_results_var(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) := (others => '0');
                   else
-                    dsp_out_cmp_results(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) <= dsp_in_cmp_operands(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width));
+                    dsp_out_cmp_results_var(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) := dsp_in_cmp_operands(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width));
                   end if;
                 else
                   if MSB_stage_3((f)*(2 + 4*SIMD) + (1)*(4*SIMD) + i) = MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + i) then -- if both signs are equal, than read the MSB from the subtractor
                     if dsp_in_cmp_operands((f)*(SIMD_Width) + 7+8*(i)) = '1' then
-                      dsp_out_cmp_results(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) <= (std_logic_vector(to_unsigned(0, 7))) & '1';
+                      dsp_out_cmp_results_var(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) := (std_logic_vector(to_unsigned(0, 7))) & '1';
 --                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (7+8*(i) downto 8*(i)+1 => '0') & '1';
                     else
-                      dsp_out_cmp_results(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) <= std_logic_vector(to_unsigned(0, 8));
+                      dsp_out_cmp_results_var(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) := std_logic_vector(to_unsigned(0, 8));
 --                      dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (others => '0');
                     end if;
                   elsif MSB_stage_3((f)*(2 + 4*SIMD) + (1)*(4*SIMD) + i) /= MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + i) and MSB_stage_3((f)*(2 + 4*SIMD) + (0)*(4*SIMD) + i) = '1' then
-                    dsp_out_cmp_results(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) <= (std_logic_vector(to_unsigned(0, 7))) & '1';
+                    dsp_out_cmp_results_var(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) := (std_logic_vector(to_unsigned(0, 7))) & '1';
 --                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (7+8*(i) downto 8*(i)+1 => '0') & '1';
                   else
-                    dsp_out_cmp_results(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) <= std_logic_vector(to_unsigned(0, 8));
+                    dsp_out_cmp_results_var(7+8*(i)  + (f)*(SIMD_Width) downto  8*(i) + (f)*(SIMD_Width)) := std_logic_vector(to_unsigned(0, 8));
 --                    dsp_out_cmp_results(f)(7+8*(i) downto 8*(i)) <= (others => '0');
                   end if;
                 end if;
@@ -153,6 +154,8 @@ begin
         end if;
       end loop; -- ACCL NUM LOOP
     end if;
+
+    dsp_out_cmp_results((f+1)*(SIMD_Width)-1 downto (f)*(SIMD_Width)) <= dsp_out_cmp_results_var((f+1)*(SIMD_Width)-1 downto (f)*(SIMD_Width));
   end process;
 
   end generate COMP_replicated;
