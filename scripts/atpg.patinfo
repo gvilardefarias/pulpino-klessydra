@@ -1,0 +1,39 @@
+STIL 1.0 {
+   Design P2002.13;
+   CTL P2002.18;
+   TRC P2002.3;
+}
+Header {
+   Title "  TetraMAX(R)  V-2023.12-i20231127_013657 STIL output";
+   Date "Wed Oct  8 18:41:17 2025";
+   History {
+   }         //end History
+}            //end Header
+PatternInformation {
+   Pattern "_pattern_" {
+      Purpose Scan;
+      FileReference "/home/g.vilarde/Klessydra/pulpino-klessydra/scripts/atpg.out";
+      PatternCharacteristics {
+         BreakPoint No;
+         ConditionalStatements No;
+         CoreUsageReady No;
+         NonCyclized No;
+         DeltaChangeVectorData Yes;
+         GoTo No;
+         IddqTestPoints No;
+         Macro Yes;
+         MultiBitData No;
+         NumberPatternUnits 280;
+         PatternVariables No;
+         ProcedureCalls WithParameters;
+         Shift Yes;
+         STILPatterns Yes;
+      }      //end PatternCharacteristics
+      Fault {
+         Type StuckAt;
+         FaultCount 6759;
+         FaultsDetected 4807;
+         FaultCoverage 71;
+      }      //end Fault
+   }         //end Pattern
+}            //end PatternInformation
