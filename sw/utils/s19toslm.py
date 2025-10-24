@@ -1,4 +1,4 @@
-#!/usr/bin/env python2.7
+#!/usr/bin/env python3
 
 # Copyright 2017 ETH Zurich and University of Bologna.
 # Copyright and related rights are licensed under the Solderpad Hardware
@@ -46,14 +46,15 @@ import math
 # Function to dump single bytes of a string to a file
 ###############################################################################
 def dump_bytes( filetoprint, addr, data_s):
-    for i in xrange(0,4,1):
-        filetoprint.write("@%08X %s\n" % ( addr+i,  data_s[i*2:(i+1)*2] ))
+    for i in range(0,4,1):
+        filetoprint.write("@%08X %s\n" % ( int(addr+i),  data_s[i*2:(i+1)*2] ))
 
 ###############################################################################
 # Read s19 file and put data bytes into a dictionary
 ###############################################################################
 def s19_parse(filename, s19_dict):
     s19_file = open(filename, 'r')
+    count = 0
     for line in s19_file:
         rec_field = line[:2]
         prefix    = line[:4]
@@ -61,12 +62,13 @@ def s19_parse(filename, s19_dict):
         if rec_field == "S0" or prefix == "S009" or prefix == "S505" or prefix == "S705" or prefix == "S017" or prefix == "S804" or line == "":
             continue
 
-        data = line[-6:-4] # extract data byte
-        str_addr = line[4:-6]
+        data = line[-5:-3] # extract data byte
+        str_addr = line[4:-5]
 
         addr = int("0x%s" % str_addr, 0)
 
 
+        count += 1
         s19_dict[addr] = data
 
     s19_file.close()
@@ -117,7 +119,7 @@ tcdm_banks     = 1
 #tcdm_bank_size = 65536 # in words (32 bit)
 tcdm_bank_size = 267386880/4
 tcdm_start     = 0x00100000
-tcdm_end       = tcdm_start + tcdm_banks * tcdm_bank_size * 4 - 1
+tcdm_end       = int(tcdm_start + tcdm_banks * tcdm_bank_size * 4 - 1)
 tcdm_bank_bits = int(math.log(tcdm_banks, 2))
 
 
@@ -196,11 +198,11 @@ for addr in sorted(slm_dict.keys()):
 ###############################################################################
 
 # 4KB blocks
-l2_blocks   = (l2_size/1024+1)
-tcdm_blocks = (tcdm_size/1024+1)
+l2_blocks   = int(l2_size/1024+1)
+tcdm_blocks = int(tcdm_size/1024+1)
 header_size = 8<<2
 
-l2_off_s    = "%08X"%(((tcdm_size+8)/1024 + 1)*1024 <<2)
+l2_off_s    = "%08X"%(int(((tcdm_size+8)/1024 + 1)*1024) <<2)
 l2_start_s  = "%08X"%(l2_start << 2)
 l2_size_s   = "%08X"%(l2_size << 2)
 l2_blocks_s = "%08X"%(l2_blocks)
