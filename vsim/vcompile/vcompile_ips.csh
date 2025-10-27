@@ -31,8 +31,9 @@ csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_OoO.csh || exit 1
 csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_S1.csh || exit 1
 csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_T02x.csh || exit 1
 csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_T03x.csh || exit 1
+csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_T13x_FU_BD_gl.csh || exit 1
 #csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_T13x_FU_BD.csh || exit 1
-csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_T13x.csh || exit 1
+#csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_T13x.csh || exit 1
 csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_fT13x.csh || exit 1
 csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_dfT13x.csh || exit 1
 csh ${PULP_PATH}/./vsim/vcompile/ips/vcompile_KPrim.csh || exit 1
