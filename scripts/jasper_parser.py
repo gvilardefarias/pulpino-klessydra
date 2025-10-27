@@ -2,8 +2,9 @@
 import argparse
 
 input_file = ""
+out_dir = "out/"
 
-parser = argparse.ArgumentParser(description="Zoix Report Parser")
+parser = argparse.ArgumentParser(description="Jasper Safe faults report parser")
 parser.add_argument("-i", "--input", type=str, required=True, help="Input file path")
 
 args = parser.parse_args()
@@ -38,7 +39,7 @@ def jasperSafes2dict(input_file):
 if __name__ == "__main__":
     out_dict = jasperSafes2dict(input_file)
 
-    output_file = "safe_dict.py"
+    output_file = out_dir + "safe_dict.py"
     with open(output_file, 'w') as f:
         f.write("safe_dict = ")
         f.write(str(out_dict))

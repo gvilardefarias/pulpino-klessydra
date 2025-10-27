@@ -1,6 +1,8 @@
 import out.fault_dict as fd
 import out.safe_dict as sd
 
+out_dir = "out/"
+
 def gen_fault_summary(fault_dict, verbose=False):
     if verbose:
         output = "Fault Analysis Summary\n"
@@ -67,4 +69,4 @@ if __name__ == "__main__":
 
     print("\n\nFiltered Fault Summary (after removing safe faults):")
     print(gen_fault_summary(fault_dict))
-    write_tmax_file(fault_dict, "tmax_faults.txt")
+    write_tmax_file(fault_dict, out_dir + "tmax_faults.txt")
