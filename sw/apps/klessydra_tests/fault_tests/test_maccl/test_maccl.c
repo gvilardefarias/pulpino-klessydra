@@ -232,13 +232,13 @@ unsigned int ops_mem[5][SPM_MAX][SPM_MAX];
 
 	CSR_MVSIZE(SPM_MAX*SPM_MAX*SIZE_OF_INT);
 	//kmemld((void *)spmaddrB, (void *)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
-	kmemld((void *)spmaddrC, (void *)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
+	kmemld((void *)spmaddrB, (void *)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
 	//kmemld((void *)spmaddrD, (void *)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
 
 	CSR_MVSIZE(m*SIZE_OF_INT);
-	int *addrA = (int *)spmaddrB;
-	int *addrB = (int *)spmaddrC;
-	int *addrC = (int *)spmaddrD;
+	int *addrA = (int *)spmaddrA;
+	int *addrB = (int *)spmaddrB;
+	int *addrC = (int *)spmaddrC;
 
 	kmemld((void *)((int *)addrA), &m2[0][0], SIZE_OF_INT * u * m);
 
