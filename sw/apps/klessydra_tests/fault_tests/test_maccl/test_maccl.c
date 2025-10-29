@@ -27,6 +27,11 @@ int dimension_A=A_ORDER*A_ORDER*sizeof(int);
 //int matB[B_ORDER*B_ORDER] = {0};
 //int dimension_B=B_ORDER*B_ORDER*sizeof(int);
 
+unsigned int shf_data[SIMD*2] = {0x7FFFFFFF, 0x7FFFFFFF, 0x80000000, 0x80000000};
+unsigned int relu_data[SIMD] = {0x7FFFFFFF, 0x7FFFFFFF};
+unsigned int cmp_data0[SIMD*2] = {0x80808080, 0xFFFFFFFF, 0x7F7F7F7F, 0x00000000};
+unsigned int cmp_data1[SIMD*2] = {0xFFFFFFFF, 0x80808080, 0x00000000, 0x7F7F7F7F};
+
 int dimension_B = NUM_KERNELS*B_ORDER*B_ORDER*sizeof(int);
 
 int output_compare0[NUM_KERNELS][A_ORDER*A_ORDER]={0};
@@ -104,6 +109,7 @@ int finish_count()
 
 	return perf_results;
 }
+	int v_max = SPM_MAX*SPM_MAX*SIZE_OF_INT;
 
 int main(){
 	__asm__("csrw 0x300, 0x8;" );// each thread enables it's own interrupt
@@ -114,13 +120,9 @@ int m;
 int u;
 int dt_sz = SIMD*2;
 unsigned int sub_out[N_ROW_1][N_COL_2];
-unsigned int shf_data[SIMD*2] = {0x7FFFFFFF, 0x7FFFFFFF, 0x80000000, 0x80000000};
 unsigned int shft_out0[SIMD*6];
 unsigned int shft_out1[SIMD*6];
-unsigned int relu_data[SIMD] = {0x7FFFFFFF, 0x7FFFFFFF};
 unsigned int relu_out[SIMD];
-unsigned int cmp_data0[SIMD*2] = {0x80808080, 0xFFFFFFFF, 0x7F7F7F7F, 0x00000000};
-unsigned int cmp_data1[SIMD*2] = {0xFFFFFFFF, 0x80808080, 0x00000000, 0x7F7F7F7F};
 unsigned int cmp_out0[SIMD*2];
 unsigned int cmp_out1[SIMD*2];
 unsigned int shf_out32[2][N_ROW_1][N_COL_2];
@@ -135,11 +137,34 @@ unsigned int ops_out16[15][N_ROW_1][N_COL_2];
 unsigned int ops_out8 [15][N_ROW_1][N_COL_2];
 unsigned int ops_mem[5][SPM_MAX][SPM_MAX];
 
-	int v_max = SPM_MAX*SPM_MAX*SIZE_OF_INT;
 	sync_barrier_reset();
 	sync_barrier_thread_registration();
+
 	int th_id = Klessydra_get_coreID();
 		CSR_MVTYPE(0x00000002);
+
+
+	if(th_id==0){
+		for(int i=0;i<SIMD;i++){
+			shf_data[i]      = 0x7FFFFFFF;
+			shf_data[i+SIMD] = 0x80000000;
+			relu_data[i]     = 0x7FFFFFFF;
+		}
+		for(int i=0;i<SIMD/2;i++){
+			cmp_data0[i*4]   = 0x80808080;
+			cmp_data0[i*4+1] = 0xFFFFFFFF;
+			cmp_data0[i*4+2] = 0x7F7F7F7F;
+			cmp_data0[i*4+3] = 0x00000000;
+			cmp_data1[i*4]   = 0xFFFFFFFF;
+			cmp_data1[i*4+1] = 0x80808080;
+			cmp_data1[i*4+2] = 0x00000000;
+			cmp_data1[i*4+3] = 0x7F7F7F7F;
+		}
+	}
+
+	sync_barrier();
+	sync_barrier_thread_registration();
+
 
 #if CHECK == 1
 		for (int i = 0; i < A_ORDER; i++)
@@ -391,21 +416,6 @@ unsigned int ops_mem[5][SPM_MAX][SPM_MAX];
 		}
 		kmemstr((void *)((int *)shf_out32[1]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
 
-		for(int i=0;i<SIMD;i++){
-			shf_data[i]      = 0x7FFFFFFF;
-			shf_data[i+SIMD] = 0x80000000;
-			relu_data[i]     = 0x7FFFFFFF;
-		}
-		for(int i=0;i<SIMD/2;i++){
-			cmp_data0[i*4]   = 0x80808080;
-			cmp_data0[i*4+1] = 0xFFFFFFFF;
-			cmp_data0[i*4+2] = 0x7F7F7F7F;
-			cmp_data0[i*4+3] = 0x00000000;
-			cmp_data1[i*4]   = 0xFFFFFFFF;
-			cmp_data1[i*4+1] = 0x80808080;
-			cmp_data1[i*4+2] = 0x00000000;
-			cmp_data1[i*4+3] = 0x7F7F7F7F;
-		}
 
 		CSR_MVTYPE(0x00000000);
 		CSR_MVSIZE(m*u/4*SIZE_OF_INT);
