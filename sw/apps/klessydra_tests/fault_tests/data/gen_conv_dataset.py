@@ -7,7 +7,7 @@ file_name = "conv_dataset.h"
 
 seed = 0
 
-A_ORDER = 32
+A_ORDER = 64
 NUM_KERNELS = 5
 
 parser = argparse.ArgumentParser(description="Generate convolution dataset")
