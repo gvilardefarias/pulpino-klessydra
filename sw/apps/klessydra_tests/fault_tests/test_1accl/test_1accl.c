@@ -9,8 +9,8 @@
 #include "ref.h"
 
 #define CHECK 0
-#define SIMD 4
-#define PERF 0
+#define SIMD 8
+#define PERF 1
 
 #define RELU 1
 
@@ -224,15 +224,6 @@ int main(){
 
 		CSR_MVSIZE(m*SIZE_OF_INT);
 
-		//kmemld((void *)((int *)addrB), &m1[0][0], SIZE_OF_INT * u * m);
-		//kmemld((void *)((int *)addrA), &m2_trans[0][0], SIZE_OF_INT * u * m);
-
-		//for (int i = 0; i < n; i++){
-		//	for (int j = 0; j < m; j++){
-		//		kdotp((void *)((int *)addrD + i*u + j), (void *)((int *)addrA + j*u), (void *)((int *)addrB + i*u));
-		//	}
-		//}
-		//kmemstr(&m_out32[0][0], (void *)((int *)addrD), u*m * SIZE_OF_INT);
 
 		kmemld((void *)((int *)addrA), &m2[0][0], SIZE_OF_INT * u * m);
 		for (int i = 0; i < n; i++){
@@ -258,12 +249,6 @@ int main(){
 		CSR_MVTYPE(0x00000001);
 		CSR_MVSIZE(u*SIZE_OF_INT);
 		CSR_MPSCLFAC(0x00000005);
-		//for (int i = 0; i < n/2; i++){
-		//	for (int j = 0; j < m/2; j++){
-		//		kaddv((void *)((int *)addrC + j*u/2), (void *)((int *)addrA + j*u/2), (void *)((int *)addrB + i*u/2));
-		//	}
-		//	kmemstr(&a_out16[i], (void *)((int *)addrC), u*m/4 * SIZE_OF_INT);
-		//}
 
 		for(int i = 0;i < u;i++){
 			ksubv((void *)((int *)addrC), (void *)((int *)addrA + (u-i-1)*m), (void *)((int *)addrB + i*m));
@@ -405,14 +390,6 @@ int main(){
 		ksubv((void *)((int *)spmaddrD), (void *)((int *)spmaddrA), (void *)((int *)spmaddrB));
 		kmemstr((void *)((int *) &ops_mem[1][0]), (void *)((int *)spmaddrD), v_max);
 
-		//for(int i = 0;i < SPM_MAX;i++){
-		//	for(int j = 0;j < SPM_MAX;j++){
-		//		printf("%x ", ops_mem[1][i][j]);
-		//	}
-		//	printf("\n");
-		//}
-
-		// add after GL syn
 		//CSR_MVTYPE(0x00000000);
 
 		CSR_MVSIZE(u/2*SIZE_OF_INT);
@@ -444,16 +421,6 @@ int main(){
 		}
 		kmemstr((void *)((int *)shf_out32[1]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
 
-		//for(int i=0;i<2;i++){
-		//	for(int j=0;j<u/2;j++){
-		//		for(int k=0;k<m/2;k++){
-		//			printf("%d ", shf_out32[i][j][k]);
-		//			printf("%d ", shf_out16[i][j][k]);
-		//			printf("%d ", shf_out8[i][j][k]);
-		//		}
-		//	}
-		//	printf("\n");
-		//}
 		for(int i=0;i<SIMD;i++){
 			shf_data[i]      = 0x7FFFFFFF;
 			shf_data[i+SIMD] = 0x80000000;
@@ -505,10 +472,6 @@ int main(){
 		kmemstr((void *)((int *)shft_out0 + 2*dt_sz), (void *)((int *)addrB), SIZE_OF_INT * dt_sz);
 		kmemstr((void *)((int *)shft_out1 + 2*dt_sz), (void *)((int *)addrC), SIZE_OF_INT * dt_sz);
 
-		//for(int i = 0;i < dt_sz*3;i++){
-		//	printf("shft_out0 = %x\n", shft_out0[i]);
-		//	printf("shft_out1 = %x\n", shft_out1[i]);
-		//}
 
 		// --------- Comparator ---------
 		CSR_MVTYPE(0x00000002);
@@ -532,9 +495,6 @@ int main(){
 		kmemstr((void *)((int *)cmp_out1), (void *)((int *)addrC), SIZE_OF_INT * SIMD * 2);
 
 
-		//printf("relu_out: %x %x\n", relu_out[0], relu_out[1]);
-		//printf("cmp_out0: %x %x %x %x\n", cmp_out0[0], cmp_out0[1], cmp_out0[2], cmp_out0[3]);
-		//printf("cmp_out1: %x %x %x %x\n", cmp_out1[0], cmp_out1[1], cmp_out1[2], cmp_out1[3]);
 	} else {
 		int x, y;
 		x = N_COL_1;
@@ -672,6 +632,8 @@ int main(){
 		kmemstr((void *)((int *) &ops_mem[1][0]), (void *)((int *)spmaddrD), v_max);
 
 	}
+	sync_barrier();
+	sync_barrier_thread_registration();
 
 	
 #if PERF == 1
@@ -703,12 +665,6 @@ shift_pre = 0;
 			matrix_check(output_compare_s0[i],output_compare0[i], A_ORDER);
 		}
 
-//		for(int i = 0;i < A_ORDER; i++) {
-//			for(int j = 0; j < A_ORDER; j++) {
-//				printf("%d ", output_compare_s0[0][i*A_ORDER+j]);
-//			}
-//			printf("\n");
-//		}
 	} else if(th_id == 1) {
 		int pass = 1;
 		for (int i = 0; i < n; i++){

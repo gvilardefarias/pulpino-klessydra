@@ -8,10 +8,10 @@
 #include "dataset.h"
 #include "ref.h"
 
-#define CHECK 1
-#define SIMD 2
+#define CHECK 0
+#define SIMD 8
 #define RELU 1
-#define PERF 0
+#define PERF 1
 
 #define TH_NUM 3
 #define SIZE_OF_INT 4
@@ -207,6 +207,8 @@ unsigned int ops_mem[5][SPM_MAX][SPM_MAX];
 		d_size = u*m/4;
 
 #if PERF == 1
+	sync_barrier();
+	sync_barrier_thread_registration();
 	start_count();
 #endif
 
@@ -476,8 +478,11 @@ unsigned int ops_mem[5][SPM_MAX][SPM_MAX];
 
 	
 #if PERF == 1
+	sync_barrier();
 		finish_count();
+	sync_barrier_thread_registration();
 #endif
+
 
 #if CHECK == 1
 shift_pre = 0;
