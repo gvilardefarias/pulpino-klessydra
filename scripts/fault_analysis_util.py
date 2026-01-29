@@ -1,5 +1,5 @@
-import out.fault_dict as fd
-import out.safe_dict as sd
+fault_dict_file = "out/3a_8s/64d/fault_dict.py"
+safe_dict_file = "out/3a_8s/safe_dict.py"
 
 out_dir = "out/"
 
@@ -56,17 +56,39 @@ def write_tmax_file(fault_dict, filename='tmax_faults.txt'):
                         f.write(f"{sta.replace('t', '')} AN {'/'.join(fault.split('.')[1:])}\n")
 
 if __name__ == "__main__":
-    fault_dict = fd.fault_dict
-    safe_dict = sd.safe_dict
+    with open(fault_dict_file, 'r') as f:
+        exec(f.read())
+    with open(safe_dict_file, 'r') as sd_f:
+        exec(sd_f.read())
 
-#    fault_dict = filter_faults(fault_dict, 'MULT_STG')
-#    fault_dict = filter_faults(fault_dict, 'ACCUM_STG')
-#    fault_dict = filter_faults(fault_dict, 'ADD_STG')
-#    fault_dict = filter_faults(fault_dict, 'SHIF_STG')
-#    fault_dict = filter_faults(fault_dict, 'COMP_STG')
+    mu_fault_dict = filter_faults(fault_dict, 'MULT_STG')
+    ac_fault_dict = filter_faults(fault_dict, 'ACCUM_STG')
+    ad_fault_dict = filter_faults(fault_dict, 'ADD_STG')
+    sh_fault_dict = filter_faults(fault_dict, 'SHIF_STG')
+    co_fault_dict = filter_faults(fault_dict, 'COMP_STG')
 
     fault_dict = remove_safe_faults(fault_dict, safe_dict)
 
-    print("\n\nFiltered Fault Summary (after removing safe faults):")
+    print("Filtered Fault Summary (after removing safe faults):")
     print(gen_fault_summary(fault_dict))
     write_tmax_file(fault_dict, out_dir + "tmax_faults.txt")
+
+    fault_dict = remove_safe_faults(mu_fault_dict, safe_dict)
+    print("MULT_STG Fault Summary:")
+    print(gen_fault_summary(fault_dict))
+
+    fault_dict = remove_safe_faults(ac_fault_dict, safe_dict)
+    print("ACCUM_STG Fault Summary :")
+    print(gen_fault_summary(fault_dict))
+
+    fault_dict = remove_safe_faults(ad_fault_dict, safe_dict)
+    print("ADD_STG Fault Summary:")
+    print(gen_fault_summary(fault_dict))
+
+    fault_dict = remove_safe_faults(sh_fault_dict, safe_dict)
+    print("SHIF_STG Fault Summary:")
+    print(gen_fault_summary(fault_dict))
+
+    fault_dict = remove_safe_faults(co_fault_dict, safe_dict)
+    print("COMP_STG Fault Summary:")
+    print(gen_fault_summary(fault_dict))

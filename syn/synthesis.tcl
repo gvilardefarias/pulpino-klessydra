@@ -5,7 +5,10 @@
 
 set ROOT "../.."
 #set SYNTHESIS_PATH "$ROOT/synthesis/PDK/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db"
-set SYNTHESIS_PATH "~/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db"
+#set SYNTHESIS_PATH "~/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db"
+
+set SYNTHESIS_PATH "~/syn_libraries/45nm/tech_lib/NangateOpenCellLibrary.db"
+
 
 source $ROOT/syn/defines.tcl
 
@@ -18,7 +21,6 @@ set hdlin_vhdl_2008 true
 # loading the libraries:
 set synthetic_library $SYNTHESIS_PATH
 set target_library $SYNTHESIS_PATH
-
 set link_library [list $target_library $synthetic_library]
 
 foreach src $pkg_src {
@@ -35,13 +37,6 @@ foreach src $modules_src {
 	}
 }
 
-
-# Create black box for dp_reg to be replaced with behavioral
-#set_dont_touch dp_regfile
-
-# elaborate STREAMING_MULTIPROCESSOR -architecture ARCH -library DEFAULT -parameters "STREAMING_MULTIPROCESSOR_ID = 00000000, GMEM_ADDR_SIZE = 18, CMEM_ADDR_SIZE = 13, SYSMEM_ADDR_SIZE = 18" -update
-
-
 elaborate $TOP_DESIGN -library DEFAULT -parameters $DESIGN_PARAM -update
 #elaborate $TOP_DESIGN -architecture $ARCH -library DEFAULT -parameters $DESIGN_PARAM -update
 
@@ -57,16 +52,49 @@ check_design
 create_clock -name clk_i -period 2000 clk_i
 
 
-		# ###########COMPILE
+# ###########COMPILE
 # ungroup -all -flatten
 
-		# compile
-	
-		#compile -map_effort high
-		#compile_ultra -inc -retime
-compile_ultra -retime
+# compile
 
-write -f verilog -hierarchy -output $TOP_DESIGN.v
+#compile -map_effort high
+#compile_ultra -inc -retime
+
+if {$TOP_DESIGN eq "DSP_Unit"} {
+	current_design SHIFTER*
+	compile_ultra -retime
+	set_dont_touch SHIFTER*
+	current_design ACCUMULATOR*
+	compile_ultra -retime
+	set_dont_touch ACCUMULATOR*
+	current_design COMPARATOR*
+	compile_ultra -retime
+	set_dont_touch COMPARATOR*
+	current_design ADDER*
+	compile_ultra -retime
+	set_dont_touch ADDER*
+
+	set_dont_use [get_lib_cells */*]
+	foreach cell $allowed_cells {
+	    if {[sizeof_collection [get_lib_cells */$cell]] > 0} {
+	        remove_attribute [get_lib_cells */$cell] dont_use
+	    } else {
+	        echo "Cell $cell not found in the library."
+	    }
+	}
+	current_design MULTIPLIER*
+	compile_ultra -retime
+	set_dont_touch MULTIPLIER*
+	remove_attribute [get_lib_cells */*] dont_use
+
+	current_design EXCP*
+	compile_ultra -retime
+	set_dont_touch EXCP*
+	current_design DSP*
+	compile_ultra -retime
+} else {
+	compile_ultra -retime
+}
 
 report_timing -transition_time -nets -attributes -nosplit > Report_time_transition_15.txt
 report_timing -delay max -nosplit > Report_time_delay_max_15.txt
@@ -78,5 +106,10 @@ report_reference -nosplit -hierarchy > Report_References_15.txt
 report_resources -nosplit -hierarchy > Report_Resources_15.txt
 report_cell > Report_Cells_15.txt
 
+change_names -rules verilog -hierarchy
+
+#write -f verilog -output $TOP_DESIGN.v
+write_file -format ddc -hierarchy -output top_synthesized.ddc
+write_file -format verilog -hierarchy -output $TOP_DESIGN.v
+
 exit
-		#quit

@@ -5,6 +5,7 @@ out_dir = "out/"
 
 parser = argparse.ArgumentParser(description="Zoix Report Parser")
 parser.add_argument("-i", "--input", type=str, required=True, help="Input file path")
+#Open SAF_coverage.sff
 
 args = parser.parse_args()
 input_file = args.input

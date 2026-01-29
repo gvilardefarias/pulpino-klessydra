@@ -151,7 +151,7 @@ begin
     elsif rising_edge(clk_i) then
       ls_instr_req <= '0';
       ie_instr_req <= '0';
-      debug_marker <= (others => '0');
+      debug_marker <= debug_marker;
       if core_busy_IE = '1' or core_busy_LS = '1' or ls_parallel_exec = '0'  or dsp_parallel_exec = '0' then -- the instruction pipeline is halted
         halt_IE  <= '1';
         halt_LSU <= '1';
@@ -246,7 +246,7 @@ begin
               -- found an instruction marker
               for i in 0 to THREAD_POOL_SIZE-1 loop
                 if (i = harc_ID) then
-                  debug_marker(i) <= '1';
+                  debug_marker(i) <= not debug_marker(i);
                 end if;
               end loop;
             end if;  -- if rd(instr_word_ID_lat) /=0

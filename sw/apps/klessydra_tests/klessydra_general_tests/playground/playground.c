@@ -8,8 +8,8 @@
 #include"klessydra_defs.h"
 
 int shift = 2;
-int a[4] = {32, 2, -4, -16};
-int b[4] = {-1, 2, -4, 6};
+int a[516];
+int b[516];
 
 int out1[4];
 int out2[4];
@@ -17,7 +17,21 @@ int out2[4];
 int main()
 {
     Klessydra_En_Int(); // enable irqs
-    
+    CSR_MVSIZE(4); // reset SPM size
+
+    if(Klessydra_get_coreID() == 0) {
+        kmemld((void *)((int *)spmaddrA), &a[0], 4 * sizeof(int));
+        kmemld((void *)((int *)spmaddrB), &b[0], 4 * sizeof(int));
+
+        kvmul((void *)((int *)spmaddrA), (void *)((int *)spmaddrA), (void *)((int *)spmaddrB));
+        kmemstr((void *)((int *)out1), (void *)((int *)spmaddrA), 4 * sizeof(int));
+        
+        for(int i = 0; i < 4; i++) {
+            printf("%d\n", out1[i]);
+        }
+    }
+
+    /*
     CSR_MVSIZE(4*4); // reset SPM size
     sync_barrier_reset();
     sync_barrier_thread_registration();
@@ -85,5 +99,6 @@ int main()
     //  printf("Hello World!!!!!\n");
     //}
     //sync_barrier();
+    */
     return 0;
 }

@@ -6,6 +6,7 @@ out_dir = "out/"
 
 parser = argparse.ArgumentParser(description="Jasper Safe faults report parser")
 parser.add_argument("-i", "--input", type=str, required=True, help="Input file path")
+#propagation_analysis_safe_ones.txt
 
 args = parser.parse_args()
 input_file = args.input

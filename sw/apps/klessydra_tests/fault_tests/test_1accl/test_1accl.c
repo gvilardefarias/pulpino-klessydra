@@ -8,9 +8,10 @@
 #include "dataset.h"
 #include "ref.h"
 
-#define CHECK 0
-#define SIMD 8
-#define PERF 1
+#define SIMD 2
+#define CHECK 1
+#define MARKER 0
+#define PERF 0
 
 #define RELU 1
 
@@ -83,6 +84,10 @@ int perf[3] = {0, 0, 0};
 int *ptr_perf[3];
 int perf_results[3][4] = {0};
 
+void add_marker(){
+	__asm__ volatile("addi x0, x0, 0x0FF"); // Instruction marker
+}
+
 void start_count()
 {
 	performance = 0;
@@ -100,11 +105,11 @@ void start_count()
 		:
 		: [cnt_en] "r"(cnt_en));
 
-	__asm__ volatile("addi x0, x0, 0x0FF"); // Instruction marker
+	add_marker();
 }
 int finish_count()
 {
-	__asm__ volatile("addi x0, x0, 0x0FF"); // Instruction marker
+	add_marker();
 
 	__asm__("csrrw zero, 0x7A0, 0x00000000");
 
@@ -142,6 +147,10 @@ int main(){
 
 		int offset = A_ORDER*A_ORDER;
 
+		if(A_ORDER == 64){
+			offset = 0;
+		}
+
 		int *addrA = (int *)spmaddrA + offset;
 		int *addrB = (int *)spmaddrB + offset;
 		int *addrC = (int *)spmaddrC + offset;
@@ -150,6 +159,11 @@ int main(){
 	int v_max = SPM_MAX*SPM_MAX*SIZE_OF_INT;
 	sync_barrier_reset();
 	sync_barrier_thread_registration();
+
+#if PERF == 1
+	start_count();
+#endif
+
 	int th_id = Klessydra_get_coreID();
 	if (th_id == 0) {
 		CSR_MVTYPE(0x00000002);
@@ -176,7 +190,6 @@ int main(){
 		CSR_MVSIZE(dimension_A);
 	
 	    //--------------------------------------LOADING & PRESCALING--------------------------------------------------
-		//kbcastld((void*)((int*)spmaddrB), (void*)matB, dimension_B);
 		kmemld((void*)((int*)spmaddrB), (void*)kernels, dimension_B);
 		kmemld((void*)((int*)spmaddrA), (void*)image, dimension_A);
 	}
@@ -189,9 +202,9 @@ int main(){
 	sync_barrier();
 	sync_barrier_thread_registration();
 
-#if PERF == 1
-	start_count();
-#endif
+	#if MARKER == 1
+	add_marker();
+	#endif
 
 	if(th_id == 0){
 		//------------------------------------------CONVOLUTION-------------------------------------------------------
@@ -200,7 +213,6 @@ int main(){
 
 		for(int i=0; i<NUM_KERNELS; i++){
 			convolution2D_SPM_off_NOB((void*)(	(int*)spmaddrC), (void*)(	(int*)spmaddrA), (void*)(	(int*)spmaddrB + i*B_ORDER*B_ORDER), (void*)(	(int*)spmaddrD ), A_ORDER);
-			//convolution2D_SPM_off_NOB((void*)(	(int*)spmaddrC + i*A_ORDER*A_ORDER), (void*)(	(int*)spmaddrA), (void*)(	(int*)spmaddrB + i*B_ORDER*B_ORDER), (void*)(	(int*)spmaddrD + i*A_ORDER*A_ORDER), A_ORDER);
 
 			#if RELU == 1
 				CSR_MVSIZE(dimension_A);
@@ -212,8 +224,13 @@ int main(){
 							SIZE_OF_INT*(	A_ORDER*A_ORDER));
 		}
 	}
-	//sync_barrier();
-	//sync_barrier_thread_registration();
+	if(A_ORDER == 64){
+		sync_barrier();
+		sync_barrier_thread_registration();
+	}
+	#if MARKER == 1
+	add_marker();
+	#endif
 
 	if(th_id == 1){
 #if CHECK == 1
@@ -226,6 +243,9 @@ int main(){
 
 
 		kmemld((void *)((int *)addrA), &m2[0][0], SIZE_OF_INT * u * m);
+	#if MARKER == 1
+	add_marker();
+	#endif
 		for (int i = 0; i < n; i++){
 			for (int j = 0; j < m; j++){
 				ksvmulrf((void *)((int *)addrC), (void *)((int *)addrA + j*u), m1[i][j]);
@@ -234,10 +254,16 @@ int main(){
 			kmemstr(&m_out32[i][0], (void *)((int *)addrD), u * SIZE_OF_INT);
 			kmemld((void *)((int *)addrD), (void *)azzero, m * SIZE_OF_INT);
 		}
+	#if MARKER == 1
+	add_marker();
+	#endif
 	}
 
 	sync_barrier();
 	sync_barrier_thread_registration();
+ 		n=16;
+ 		m=16;
+ 		u=16;
 
 	if(th_id == 2){
 		// -------- Test another structures -----------
@@ -245,6 +271,9 @@ int main(){
 
 		kmemld((void *)((int *)addrB), &m1[0][0], SIZE_OF_INT * u * m);
 
+	#if MARKER == 1
+	add_marker();
+	#endif
 	
 		CSR_MVTYPE(0x00000001);
 		CSR_MVSIZE(u*SIZE_OF_INT);
@@ -494,17 +523,23 @@ int main(){
 		kvslt((void *)((int *)addrC), (void *)((int *)addrB), (void *)((int *)addrA));
 		kmemstr((void *)((int *)cmp_out1), (void *)((int *)addrC), SIZE_OF_INT * SIMD * 2);
 
+	#if MARKER == 1
+	add_marker();
+	#endif
 
 	} else {
 		int x, y;
-		x = N_COL_1;
-		y = N_COL_1;
+		x = 16;
+		y = 16;
 
 				kmemld((void *)((int *)addrB), &m1[1][0], SIZE_OF_INT * (x-1) * y);
 			
 				CSR_MVTYPE(0x00000001);
 				CSR_MVSIZE(x*SIZE_OF_INT);
 				CSR_MPSCLFAC(0x00000005);
+	#if MARKER == 1
+	add_marker();
+	#endif
 
 					ksubv((void *)((int *)addrC), (void *)((int *)addrA + (x-0-1)*y), (void *)((int *)addrB + 2*y));
 					kmemstr((void *)((int *) &ops_out16[0][0]), (void *)((int *)addrC), SIZE_OF_INT * y);
@@ -631,11 +666,13 @@ int main(){
 		ksubv((void *)((int *)spmaddrD), (void *)((int *)spmaddrA), (void *)((int *)spmaddrB));
 		kmemstr((void *)((int *) &ops_mem[1][0]), (void *)((int *)spmaddrD), v_max);
 
+	#if MARKER == 1
+	add_marker();
+	#endif
 	}
+	
 	sync_barrier();
 	sync_barrier_thread_registration();
-
-	
 #if PERF == 1
 		finish_count();
 #endif
@@ -666,6 +703,7 @@ shift_pre = 0;
 		}
 
 	} else if(th_id == 1) {
+		/*
 		int pass = 1;
 		for (int i = 0; i < n; i++){
 			for (int j = 0; j < u; j++){
@@ -682,6 +720,7 @@ shift_pre = 0;
 		else{
 			printf("Mult test failed\n");
 		}
+		*/
 	}
 
 	sync_barrier();
