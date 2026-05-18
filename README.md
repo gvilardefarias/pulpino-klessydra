@@ -85,16 +85,15 @@ PULPino-Klessydra uses multiple git submodules. The submodules from PULPino were
 
 1.	Install the following packeges:
 		
-		sudo apt install python2.7
-		sudo apt install python-pip
-		pip2 install pyyaml
-		cd $(dirname $(which python2.7))
-		sudo ln -s python2.7 python
-		sudo apt-get install git cmake tcsh autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
+	    sudo apt install python2.7
+	    curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+	    sudo python2.7 get-pip.py
+	    pip2 install pyyaml==5.4.1
+	    cd $(dirname $(which python2.7))
+	    sudo ln -s python2.7 python
+	    sudo apt-get install git cmake tcsh autoconf automake autotools-dev curl libmpc-dev libmpfr-dev libgmp-dev gawk build-essential bison flex texinfo gperf libtool patchutils bc zlib1g-dev libexpat-dev
 
-libexpat-dev
-
-2.	Download and build the "ri5cy_gnu_toolchain" from PULP
+2.	If you want to use the PULP processors, download and build the "ri5cy_gnu_toolchain" from PULP
 
 		a) git clone https://github.com/pulp-platform/ri5cy_gnu_toolchain.git
 		
@@ -106,7 +105,7 @@ libexpat-dev
 		
 	When the build is done, add the path **_<path_to_toolchain>/ri5cy_gnu_toolchain/install/bin_**, to the $PATH variable
 
-3.	To run the klessydra tests, you have to install the Klessydra version of the riscv-gnu-toolchain , and build it:
+3.	If you want to use the klessydra processors, you have to install the Klessydra version of the riscv-gnu-toolchain , and build it. Go here and follow the steps:
 	
 	https://github.com/klessydra/riscv-gnu-toolchain	 
 
