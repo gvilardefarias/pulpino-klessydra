@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+                               Testability Report                               
+                         Basis: Selected fault quality                          
+                    Report Date: Friday, Mar 27 2026, 17:57
+                    
+                 Total: 104286  Prime: 90248  Collapsed: 14038                  
+
+-------------------------------------------------------------------------------
+                         Tests already fault simulated                         
+-------------------------------------------------------------------------------
+ Test   Selected  Selected  Selected  Selected  Selected  
+ Name:  fault     fault     fault     untested  fault     
+        quality:  count:    avg       faults:   avg       
+                            tenacity:           test      
+                                                count:    
+-------------------------------------------------------------------------------
+ DSP     994.767     88548    215.77     88548      0.00  
+

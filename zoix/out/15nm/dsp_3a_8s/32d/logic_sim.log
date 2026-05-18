@@ -1,0 +1,39 @@
+
+                                   Z01X (TM)
+
+               Version W-2024.09-SP1 for linux64 - Nov 24, 2024 
+
+                    Copyright (c) 1999 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Z01X (TM) Version: W-2024.09-SP1 (64-bit, Nov 24 2024) for Linux 64-bit
+
+Command: zoix.sim +vcd+file+vcd/DSP.vcd +vcd+dut+DSP+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP +vcd+verify +vcd+verbose -l logic_sim.log 
+
+Info:    Simulation Started Fri Oct 31 14:46:25 2025
+Info:    Logic Simulation  Host monviso
+
+Info:    Loading ...      (14:46:25)
+Info:    Initializing ... (14:46:26)
+Info:    Simulating ...   (14:46:26)
+ZOIX INJECTION
+
+Info:    VCD stimulus completed with 0 mismatches.
+
+Info:    Last simulation time was at 6036785000 ns
+Info:    Logic Events: 440477295
+Info:    CPU Time: 246.5s ; Elapsed Time: 246.6s ; Data Size: 113.8MB 
+Info:    Simulation Completed Fri Oct 31 14:50:32 2025

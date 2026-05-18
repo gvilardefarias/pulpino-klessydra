@@ -1,0 +1,185 @@
+
+                                   Z01X (TM)
+
+       Version V-2023.12 for linux64 - Nov 19, 2023      
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Fri Jul 25 12:16:09 CEST 2025
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+25/07/25 12:16:09  Note:    Reading load file:bin/permanent_faults_gen.fmsh
+>  
+>  
+> set(var=[resources], messages=[all]) 
+25/07/25 12:16:09  Note:    Set resources[messages] to "all".
+> set(var=[defines], format=[standard]) 
+25/07/25 12:16:09  Note:    Set defines[format] to "standard".
+> set(var=[defines], dictionary.enable=[1]) 
+25/07/25 12:16:09  Note:    Set defines[dictionary.enable] to 1.
+25/07/25 12:16:09  Warning: Options will be saved when a design is opened
+> set(var=[fsim], dictionary.values=[all]) 
+25/07/25 12:16:09  Note:    Set fsim[dictionary.values] to "all".
+>  
+> # the next line defines if using the file "fault_list.sff" for defining the fault list for fault simulation. Otherwise, in stroves.v the faults can be defined, e.g., from an external file. 
+> #set(var=[fdef], method=[fr], fr.fr=[bin/fault_list.sff],abort=[error]) 
+>  
+> # set (var=[coats],status=[NA,NX,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX]) 
+> # set (var=[coats],status=[DD, ND]) 
+>  
+> set (var=[fsim],hyperfault=[0]) 
+25/07/25 12:16:09  Note:    Set fsim[hyperfault] to 0.
+> design() 
+25/07/25 12:16:09  Note:    Generating design fault universe file
+25/07/25 12:16:09  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_generate -l fgen.log
+25/07/25 12:16:09  Note:    Job fault_generate begun
+25/07/25 12:16:09  Note:    Job fault_generate completed: Host: monviso
+25/07/25 12:16:09  Note:    Total: 6552 Prime: 4123 Collapsed: 2429 Untestable: 64
+25/07/25 12:16:09  Note:    Fault Generation Completed 0 Errors 0 Warnings
+25/07/25 12:16:09  Note:    Created design, directory=/home/g.vilarde/Klessydra/pulpino-klessydra/zoix
+25/07/25 12:16:09  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -func __fubs__/design/__path__ -genfub +job_id+b0a0028761366fce -l __fubs__/design/design.log
+25/07/25 12:16:10  Note:    Job coats begun
+25/07/25 12:16:10  Note:    Job coats completed: Host: monviso
+>  
+> addtst(test=[ADDER], stimtype=[vcd], dictionary.enable=[1], stim=[vcd/add.vcd],dut.stim=[ADDER,tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ADDER],stim_options=[+TESTNAME=ADDER] ) 
+25/07/25 12:16:10  Note:    Adding test: ADDER
+25/07/25 12:16:10  CMD: ln -s ../../sim.zdb __tests__/ADDER/sim.zdb
+25/07/25 12:16:10  CMD: ln -s ../../zoix.sim __tests__/ADDER/zoix.sim
+25/07/25 12:16:10  CMD: cp vcd/add.vcd __tests__/ADDER/add.vcd
+25/07/25 12:16:10  CMD: ln -s ../../../__tests__/ADDER/add.vcd __fubs__/design/ADDER/add.vcd
+25/07/25 12:16:10  CMD: ln -s ../../../sim.zdb __fubs__/design/ADDER/sim.zdb
+25/07/25 12:16:10  CMD: ln -s ../../../zoix.sim __fubs__/design/ADDER/zoix.sim
+>  
+> #addtst(test=[RCA], stimtype=[vcd], dictionary.enable=[1], stim=[../tmax/dumpports_rtl.riscv_core.vcde],stim_options=[+TESTNAME=riscv_core] ) 
+>  
+> fsim() 
+25/07/25 12:16:10  Note:    Performing testability analysis
+25/07/25 12:16:10  CMD: ./zoix.sim -toggle __tests__/ADDER/ADDER.vtog -fstrobe __tests__/ADDER/__fstrobes__ -l __tests__/ADDER/zoix_rt.log +vcd+file+__tests__/ADDER/add.vcd +progress -testdir __tests__/ADDER/ +vcd+dut+ADDER+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ADDER +TESTNAME=ADDER -testname ADDER +job_id+30d0b2470196bf4e
+25/07/25 12:16:11  Note:    Toggle simulation for test: ADDER
+25/07/25 12:16:11  Note:    Job toggle Test: ADDER begun
+25/07/25 12:16:12  Note:    Job toggle completed: Host: monviso Test: ADDER
+25/07/25 12:16:12  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test ADDER -seltyp observe +job_id+b0a0028761366fce -fstrobe __tests__/ADDER/__fstrobes__ -testid 65537 -l __fubs__/design/ADDER/coats.log
+25/07/25 12:16:13  Note:    Testability analysis for Test: ADDER
+25/07/25 12:16:13  Note:    Job coats Test: ADDER begun
+25/07/25 12:16:13  Note:    Job coats completed: Host: monviso Test: ADDER
+25/07/25 12:16:16  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -fdeffiles __fubs__/design/fdeffiles.txt -record -dir ./ -fub design -fdef sim.fdef -l __fubs__/design/boots.log
+25/07/25 12:16:16  Note:    Job boots Test: All begun
+25/07/25 12:16:16  Note:    Job boots completed: Host: monviso Test: All
+25/07/25 12:16:16  Note:    Updating Testability Report
+25/07/25 12:16:16  Note:    Simulating Test: ADDER
+25/07/25 12:16:16  Note:    Fault simulation on Test: ADDER starting
+25/07/25 12:16:16  Note:    Generate fault origins for Test: ADDER
+25/07/25 12:16:16  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test ADDER -recalc -m -l __fubs__/design/ADDER/fdef.log
+25/07/25 12:16:16  Note:    Job coats Test: ADDER begun
+25/07/25 12:16:16  Note:    Job coats completed: Host: monviso Test: ADDER
+25/07/25 12:16:16  Note:    Test: ADDER selected 3864 out of 4123 remaining faults to simulate
+25/07/25 12:16:16  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_sim -fdef __fubs__/design/ADDER/ADDER.fdef -q +vcd+file+__tests__/ADDER/add.vcd +vcd+dut+ADDER+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.ADDER +TESTNAME=ADDER -cdfout __fubs__/design/ADDER/cdfout +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -fmsh -testdir __fubs__/design/ADDER/ -l __fubs__/design/ADDER/simout-N0
+25/07/25 12:16:16  Note:    Fault simulation for Test: ADDER
+25/07/25 12:16:16  Note:    Job fault_sim Test: ADDER begun
+25/07/25 12:16:25  Note:    Job fault_sim completed: Host: monviso Test: ADDER
+25/07/25 12:16:25  Note:    Record simulation results for Test: ADDER
+25/07/25 12:16:25  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -record -dir ./ -fub design -test ADDER -fdef sim.fdef -fntn 65537 __fubs__/design/ADDER/ADDER.fdef -l __fubs__/design/ADDER/boots.log
+25/07/25 12:16:25  Note:    Job boots Test: ADDER begun
+25/07/25 12:16:26  Note:    Job boots completed: Host: monviso Test: ADDER
+25/07/25 12:16:26  Note:    Simulation of test ADDER complete
+#                                Prime                  Total
+# Test: ADDER
+# Total Faults:                   4123                   6552
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3012    73.05%         5120    78.14%
+# Dropped Potential Faults:        357     8.66%          364     5.56%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             495    12.01%          639     9.75%
+# Not Observed:                    127     3.08%          158     2.41%
+# Not Controlled:                  132     3.20%          271     4.14%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:09
+#   Fault Wall Clock:         00:00:09
+#
+# Cumulative Test Results
+# Total Faults:                   4123                   6552
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3012    73.05%         5120    78.14%
+# Dropped Potential Faults:        357     8.66%          364     5.56%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             495    12.01%          639     9.75%
+# Not Observed:                    127     3.08%          158     2.41%
+# Not Controlled:                  132     3.20%          271     4.14%
+#
+# Untestable Tied:                  64                     64
+#
+25/07/25 12:16:26  Note:    Simulation Completed.
+25/07/25 12:16:26  Note:    Updating Testability Report
+
+# Tests simulated in this session:
+#                                Prime                  Total
+# Test: ADDER
+# Total Faults:                   4123                   6552
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3012    73.05%         5120    78.14%
+# Dropped Potential Faults:        357     8.66%          364     5.56%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             495    12.01%          639     9.75%
+# Not Observed:                    127     3.08%          158     2.41%
+# Not Controlled:                  132     3.20%          271     4.14%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:09
+#   Fault Wall Clock:         00:00:09
+#
+# Cumulative Test Results
+# Total Faults:                   4123                   6552
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        3012    73.05%         5120    78.14%
+# Dropped Potential Faults:        357     8.66%          364     5.56%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             495    12.01%          639     9.75%
+# Not Observed:                    127     3.08%          158     2.41%
+# Not Controlled:                  132     3.20%          271     4.14%
+#
+# Untestable Tied:                  64                     64
+#
+# Test Coverage:                          77.38%                 80.92%
+# Fault Coverage:                         76.20%                 80.14%
+#
+>  
+> coverage(file=[SAF_coverage.sff]) 
+25/07/25 12:16:26  Note:    Running coverage analysis
+25/07/25 12:16:26  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report +fm -dir ./ +format+standard -out ./SAF_coverage.sff -testinfo __fubs__/testid.txt -l fault_report.log
+25/07/25 12:16:26  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:16:26  Note:    Fault report file is SAF_coverage.sff
+> # coverage (type=[dictionary],file=[saf_dic_short.txt],test=[RCA], style=[short]) 
+>  
+> #coverage(type=[dictionary],test=[RCA],file=[saf_dic.txt])   
+> coverage (type=[dictionary],file=[saf_dic_long.txt],test=[ADDER]) 
+25/07/25 12:16:26  Note:    Creating coverage dictionary
+25/07/25 12:16:26  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report -dict __fubs__/design/ADDER/cdfout -dictout saf_dic_long.txt +format+standard -l __fubs__/design/ADDER/ADDER_cdf.log -fdef __fubs__/design/ADDER/ADDER.fdef
+25/07/25 12:16:29  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:16:29  Note:    Coverage dictionary file is 'saf_dic_long.txt'
+>  
+25/07/25 12:16:29  Note:    Script file complete
+25/07/25 12:16:29  Note:    Fri Jul 25 12:16:29 CEST 2025
+#                                Total Run Times                                 
+#
+#                              Queued             CPU               Wall  
+# Fault simulation            00:00:00          00:00:10          00:00:10
+# Toggle simulation           00:00:00          00:00:02          00:00:05
+#
+#
+#                            Time Allocation Per Tool                            
+#
+#                                   Queued                Running      
+# Fault simulation            00:00:00     0.00%     00:00:09    59.47%
+# Fault results recording     00:00:00     0.00%     00:00:00     2.80%
+# Testability                 00:00:00     0.00%     00:00:01     3.33%
+# Toggle simulation           00:00:00     0.00%     00:00:02    12.80%
+# Fault creation              00:00:00     0.00%     00:00:00     1.63%
+# Fault coverage              00:00:00     0.00%     00:00:03    19.97%
+#----------------------------------------------------------------------
+# Total                       00:00:00     0.00%     00:00:16   100.00%
+CPU Time: 16.0s ; Elapsed Time: 19.9s ; Data Size: 95.8MB

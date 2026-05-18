@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+                               Testability Report                               
+                         Basis: Selected fault quality                          
+                   Report Date: Thursday, Jul 24 2025, 22:55
+                   
+                  Total: 32508  Prime: 18503  Collapsed: 14005                  
+
+-------------------------------------------------------------------------------
+                         Tests already fault simulated                         
+-------------------------------------------------------------------------------
+ Test          Selected  Selected  Selected  Selected  Selected  
+ Name:         fault     fault     fault     untested  fault     
+               quality:  count:    avg       faults:   avg       
+                                   tenacity:           test      
+                                                       count:    
+-------------------------------------------------------------------------------
+ MULTIPLIER    1009.855     18308    149.49     18308      0.00  
+

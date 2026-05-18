@@ -1,0 +1,187 @@
+
+                                   Z01X (TM)
+
+       Version W-2024.09-SP1 for linux64 - Nov 24, 2024      
+
+                    Copyright (c) 1999 - 2024 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Thu Oct 30 14:28:27 CET 2025
+Z01X (TM) Version: W-2024.09-SP1 (64-bit, Nov 24 2024) for Linux 64-bit
+
+25/10/30 14:28:27  Note:    Reading load file:bin/permanent_faults_gen.fmsh
+>  
+>  
+> set(var=[resources], messages=[all]) 
+25/10/30 14:28:27  Note:    Set resources[messages] to "all".
+> set(var=[defines], format=[standard]) 
+25/10/30 14:28:27  Note:    Set defines[format] to "standard".
+> set(var=[defines], dictionary.enable=[1]) 
+25/10/30 14:28:27  Note:    Set defines[dictionary.enable] to 1.
+25/10/30 14:28:27  Warning: Options will be saved when a design is opened
+> set(var=[fsim], dictionary.values=[all]) 
+25/10/30 14:28:27  Note:    Set fsim[dictionary.values] to "all".
+>  
+> # the next line defines if using the file "fault_list.sff" for defining the fault list for fault simulation. Otherwise, in stroves.v the faults can be defined, e.g., from an external file. 
+> #set(var=[fdef], method=[fr], fr.fr=[bin/fault_list.sff],abort=[error]) 
+>  
+> # set (var=[coats],status=[NA,NX,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX]) 
+> # set (var=[coats],status=[DD, ND]) 
+>  
+> set (var=[fsim],hyperfault=[0]) 
+25/10/30 14:28:27  Note:    Set fsim[hyperfault] to 0.
+> design() 
+25/10/30 14:28:27  Note:    Generating design fault universe file
+25/10/30 14:28:27  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/fault_generate -l fgen.log
+25/10/30 14:28:27  Note:    Job fault_generate begun
+25/10/30 14:28:32  Note:    Job fault_generate completed: Host: monviso
+25/10/30 14:28:32  Note:    Total: 434886 Prime: 256933 Collapsed: 177953 Untestable: 0
+25/10/30 14:28:32  Note:    Fault Generation Completed 0 Errors 0 Warnings
+25/10/30 14:28:32  Note:    Created design, directory=/home/g.vilarde/Klessydra/pulpino-klessydra/zoix
+25/10/30 14:28:32  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/coats -dir ./ -fub design -func __fubs__/design/__path__ -genfub +job_id+9aaadcf01e454fa4 -l __fubs__/design/design.log
+25/10/30 14:28:32  Note:    Job coats begun
+25/10/30 14:28:33  Note:    Job coats completed: Host: monviso
+>  
+> addtst(test=[DSP], stimtype=[vcd], dictionary.enable=[1], stim=[vcd/DSP.vcd],dut.stim=[DSP,tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP],stim_options=[+TESTNAME=DSP] ) 
+25/10/30 14:28:33  Note:    Adding test: DSP
+25/10/30 14:28:33  CMD: ln -s ../../sim.zdb __tests__/DSP/sim.zdb
+25/10/30 14:28:33  CMD: ln -s ../../zoix.sim __tests__/DSP/zoix.sim
+25/10/30 14:28:33  CMD: cp vcd/DSP.vcd __tests__/DSP/DSP.vcd
+25/10/30 14:28:33  CMD: ln -s ../../../__tests__/DSP/DSP.vcd __fubs__/design/DSP/DSP.vcd
+25/10/30 14:28:34  CMD: ln -s ../../../sim.zdb __fubs__/design/DSP/sim.zdb
+25/10/30 14:28:34  CMD: ln -s ../../../zoix.sim __fubs__/design/DSP/zoix.sim
+>  
+> #addtst(test=[RCA], stimtype=[vcd], dictionary.enable=[1], stim=[../tmax/dumpports_rtl.riscv_core.vcde],stim_options=[+TESTNAME=riscv_core] ) 
+>  
+> fsim() 
+25/10/30 14:28:34  Note:    Performing testability analysis
+25/10/30 14:28:34  CMD: ./zoix.sim -toggle __tests__/DSP/DSP.vtog -fstrobe __tests__/DSP/__fstrobes__ -l __tests__/DSP/zoix_rt.log +vcd+file+__tests__/DSP/DSP.vcd +progress -testdir __tests__/DSP/ +vcd+dut+DSP+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP +TESTNAME=DSP -testname DSP +job_id+0aba3ce0ee857fc4
+25/10/30 14:28:34  Note:    Toggle simulation for test: DSP
+25/10/30 14:28:34  Note:    Job toggle Test: DSP begun
+25/10/30 14:34:18  Note:    Job toggle completed: Host: monviso Test: DSP
+25/10/30 14:34:18  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/coats -dir ./ -fub design -test DSP -seltyp observe +job_id+9aaadcf01e454fa4 -fstrobe __tests__/DSP/__fstrobes__ -testid 65537 -l __fubs__/design/DSP/coats.log
+25/10/30 14:35:49  Note:    Testability analysis for Test: DSP
+25/10/30 14:35:49  Note:    Job coats Test: DSP begun
+25/10/30 14:35:51  Note:    Job coats completed: Host: monviso Test: DSP
+25/10/30 14:35:54  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/boots -fdeffiles __fubs__/design/fdeffiles.txt -record -dir ./ -fub design -fdef sim.fdef -l __fubs__/design/boots.log
+25/10/30 14:35:54  Note:    Job boots Test: All begun
+25/10/30 14:35:55  Note:    Job boots completed: Host: monviso Test: All
+25/10/30 14:35:55  Note:    Updating Testability Report
+25/10/30 14:35:55  Note:    Simulating Test: DSP
+25/10/30 14:35:55  Note:    Fault simulation on Test: DSP starting
+25/10/30 14:35:55  Note:    Generate fault origins for Test: DSP
+25/10/30 14:35:55  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/coats -dir ./ -fub design -test DSP -recalc -m -l __fubs__/design/DSP/fdef.log
+25/10/30 14:35:55  Note:    Job coats Test: DSP begun
+25/10/30 14:35:57  Note:    Job coats completed: Host: monviso Test: DSP
+25/10/30 14:35:57  Note:    Test: DSP selected 251019 out of 256933 remaining faults to simulate
+25/10/30 14:35:57  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/fault_sim -fdef __fubs__/design/DSP/DSP.fdef -q +vcd+file+__tests__/DSP/DSP.vcd +vcd+dut+DSP+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP +TESTNAME=DSP -cdfout __fubs__/design/DSP/cdfout +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -fmsh -testdir __fubs__/design/DSP/ -l __fubs__/design/DSP/simout-N0
+25/10/30 14:35:57  Note:    Fault simulation for Test: DSP
+25/10/30 14:35:57  Note:    Job fault_sim Test: DSP begun
+25/10/30 23:07:32  Note:    Job fault_sim completed: Host: monviso Test: DSP
+25/10/30 23:07:32  Note:    Record simulation results for Test: DSP
+25/10/30 23:07:32  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/boots -record -dir ./ -fub design -test DSP -fdef sim.fdef -fntn 65537 __fubs__/design/DSP/DSP.fdef -l __fubs__/design/DSP/boots.log
+25/10/30 23:07:32  Note:    Job boots Test: DSP begun
+25/10/30 23:07:36  Note:    Job boots completed: Host: monviso Test: DSP
+25/10/30 23:07:36  Note:    Simulation of test DSP complete
+#                                Prime                  Total
+# Test: DSP
+# Total Faults:                 256933                 434886
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:      234388    91.23%       402684    92.60%
+# Dropped Potential Faults:        394     0.15%          395     0.09%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:           16237     6.32%        22957     5.28%
+# Not Observed:                   4857     1.89%         6831     1.57%
+# Not Controlled:                 1057     0.41%         2019     0.46%
+# Simulation Times:          
+#   Toggle:                   00:05:44
+#   Fault Cumulative:         08:01:19
+#   Fault Wall Clock:         08:31:38
+#
+# Cumulative Test Results
+# Total Faults:                 256933                 434886
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:      234388    91.23%       402684    92.60%
+# Dropped Potential Faults:        394     0.15%          395     0.09%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:           16237     6.32%        22957     5.28%
+# Not Observed:                   4857     1.89%         6831     1.57%
+# Not Controlled:                 1057     0.41%         2019     0.46%
+#
+# Untestable Unused:              3073                   4702
+# Untestable Tied:                 108                    108
+#
+25/10/30 23:07:36  Note:    Simulation Completed.
+25/10/30 23:07:36  Note:    Updating Testability Report
+
+# Tests simulated in this session:
+#                                Prime                  Total
+# Test: DSP
+# Total Faults:                 256933                 434886
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:      234388    91.23%       402684    92.60%
+# Dropped Potential Faults:        394     0.15%          395     0.09%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:           16237     6.32%        22957     5.28%
+# Not Observed:                   4857     1.89%         6831     1.57%
+# Not Controlled:                 1057     0.41%         2019     0.46%
+# Simulation Times:          
+#   Toggle:                   00:05:44
+#   Fault Cumulative:         08:01:19
+#   Fault Wall Clock:         08:31:38
+#
+# Cumulative Test Results
+# Total Faults:                 256933                 434886
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:      234388    91.23%       402684    92.60%
+# Dropped Potential Faults:        394     0.15%          395     0.09%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:           16237     6.32%        22957     5.28%
+# Not Observed:                   4857     1.89%         6831     1.57%
+# Not Controlled:                 1057     0.41%         2019     0.46%
+#
+# Untestable Unused:              3073                   4702
+# Untestable Tied:                 108                    108
+#
+# Test Coverage:                          91.30%                 92.64%
+# Fault Coverage:                         90.19%                 91.63%
+#
+>  
+> coverage(file=[SAF_coverage.sff]) 
+25/10/30 23:07:36  Note:    Running coverage analysis
+25/10/30 23:07:36  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/fault_report +fm -dir ./ +format+standard -out ./SAF_coverage.sff -testinfo __fubs__/testid.txt -l fault_report.log
+25/10/30 23:07:39  Note:    Job fault_report completed: Host: monviso
+25/10/30 23:07:39  Note:    Fault report file is SAF_coverage.sff
+> # coverage (type=[dictionary],file=[saf_dic_short.txt],test=[RCA], style=[short]) 
+>  
+> #coverage(type=[dictionary],test=[RCA],file=[saf_dic.txt])   
+> coverage (type=[dictionary],file=[saf_dic_long.txt],test=[DSP],hierarchical=[1]) 
+25/10/30 23:07:39  Note:    Creating coverage dictionary
+25/10/30 23:07:39  CMD: /eda/synopsys/2024-25/RHELx86/Z01X_2024.09-SP1/bin/fault_report +hierarchical+1 -dict __fubs__/design/DSP/cdfout -dictout saf_dic_long.txt +format+standard -l __fubs__/design/DSP/DSP_cdf.log -fdef __fubs__/design/DSP/DSP.fdef
+25/10/30 23:25:58  Note:    Job fault_report completed: Host: monviso
+25/10/30 23:25:58  Note:    Coverage dictionary file is 'saf_dic_long.txt'
+>  
+25/10/30 23:25:58  Note:    Script file complete
+25/10/30 23:25:58  Note:    Thu Oct 30 23:25:58 CET 2025
+#                                Total Run Times                                 
+#
+#                              Queued             CPU               Wall  
+# Fault simulation            00:00:00          08:31:41          08:31:41
+# Toggle simulation           00:00:00          00:07:18          00:07:21
+#
+#
+#                            Time Allocation Per Tool                            
+#
+#                                   Queued                Running      
+# Fault simulation            00:00:00     0.00%     08:31:34    95.19%
+# Fault results recording     00:00:00     0.00%     00:00:06     0.02%
+# Testability                 00:00:00     0.00%     00:01:35     0.30%
+# Toggle simulation           00:00:00     0.00%     00:05:44     1.07%
+# Fault creation              00:00:00     0.00%     00:00:05     0.01%
+# Fault coverage              00:00:00     0.00%     00:18:22     3.42%
+#----------------------------------------------------------------------
+# Total                       00:00:00     0.00%     08:57:26   100.00%
+CPU Time: 30259.8s ; Elapsed Time: 32250.9s ; Data Size: 87.7MB

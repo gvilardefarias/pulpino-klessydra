@@ -1,0 +1,180 @@
+
+                                   Z01X (TM)
+
+       Version V-2023.12 for linux64 - Nov 19, 2023      
+
+                    Copyright (c) 1999 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+Fri Jul 25 12:12:38 CEST 2025
+Z01X (TM) Version: V-2023.12 (64-bit, Nov 19 2023) for Linux 64-bit
+
+25/07/25 12:12:38  Note:    Reading load file:bin/permanent_faults_gen.fmsh
+>  
+>  
+> set(var=[resources], messages=[all]) 
+25/07/25 12:12:38  Note:    Set resources[messages] to "all".
+> set(var=[defines], format=[standard]) 
+25/07/25 12:12:38  Note:    Set defines[format] to "standard".
+> set(var=[defines], dictionary.enable=[1]) 
+25/07/25 12:12:38  Note:    Set defines[dictionary.enable] to 1.
+25/07/25 12:12:38  Warning: Options will be saved when a design is opened
+> set(var=[fsim], dictionary.values=[all]) 
+25/07/25 12:12:38  Note:    Set fsim[dictionary.values] to "all".
+>  
+> # the next line defines if using the file "fault_list.sff" for defining the fault list for fault simulation. Otherwise, in stroves.v the faults can be defined, e.g., from an external file. 
+> #set(var=[fdef], method=[fr], fr.fr=[bin/fault_list.sff],abort=[error]) 
+>  
+> # set (var=[coats],status=[NA,NX,PP,FP,PD,FD,PE,FE,PL,LS,PS,RS,PR,RE,PX,DX]) 
+> # set (var=[coats],status=[DD, ND]) 
+>  
+> set (var=[fsim],hyperfault=[0]) 
+25/07/25 12:12:38  Note:    Set fsim[hyperfault] to 0.
+> design() 
+25/07/25 12:12:38  Note:    Generating design fault universe file
+25/07/25 12:12:38  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_generate -l fgen.log
+25/07/25 12:12:38  Note:    Job fault_generate begun
+25/07/25 12:12:38  Note:    Job fault_generate completed: Host: monviso
+25/07/25 12:12:38  Note:    Total: 2234 Prime: 1466 Collapsed: 768 Untestable: 0
+25/07/25 12:12:38  Note:    Fault Generation Completed 0 Errors 0 Warnings
+25/07/25 12:12:38  Note:    Created design, directory=/home/g.vilarde/Klessydra/pulpino-klessydra/zoix
+25/07/25 12:12:38  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -func __fubs__/design/__path__ -genfub +job_id+ce919130c8e9a662 -l __fubs__/design/design.log
+25/07/25 12:12:38  Note:    Job coats begun
+25/07/25 12:12:39  Note:    Job coats completed: Host: monviso
+>  
+> addtst(test=[COMPARATOR], stimtype=[vcd], dictionary.enable=[1], stim=[vcd/comp.vcd],dut.stim=[COMPARATOR,tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.COMPARATOR],stim_options=[+TESTNAME=COMPARATOR] ) 
+25/07/25 12:12:39  Note:    Adding test: COMPARATOR
+25/07/25 12:12:39  CMD: ln -s ../../sim.zdb __tests__/COMPARATOR/sim.zdb
+25/07/25 12:12:39  CMD: ln -s ../../zoix.sim __tests__/COMPARATOR/zoix.sim
+25/07/25 12:12:39  CMD: cp vcd/comp.vcd __tests__/COMPARATOR/comp.vcd
+25/07/25 12:12:39  CMD: ln -s ../../../__tests__/COMPARATOR/comp.vcd __fubs__/design/COMPARATOR/comp.vcd
+25/07/25 12:12:39  CMD: ln -s ../../../sim.zdb __fubs__/design/COMPARATOR/sim.zdb
+25/07/25 12:12:39  CMD: ln -s ../../../zoix.sim __fubs__/design/COMPARATOR/zoix.sim
+>  
+> #addtst(test=[RCA], stimtype=[vcd], dictionary.enable=[1], stim=[../tmax/dumpports_rtl.riscv_core.vcde],stim_options=[+TESTNAME=riscv_core] ) 
+>  
+> fsim() 
+25/07/25 12:12:39  Note:    Performing testability analysis
+25/07/25 12:12:39  CMD: ./zoix.sim -toggle __tests__/COMPARATOR/COMPARATOR.vtog -fstrobe __tests__/COMPARATOR/__fstrobes__ -l __tests__/COMPARATOR/zoix_rt.log +vcd+file+__tests__/COMPARATOR/comp.vcd +progress -testdir __tests__/COMPARATOR/ +vcd+dut+COMPARATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.COMPARATOR +TESTNAME=COMPARATOR -testname COMPARATOR +job_id+6e719150d8f9f6c2
+25/07/25 12:12:39  Note:    Toggle simulation for test: COMPARATOR
+25/07/25 12:12:39  Note:    Job toggle Test: COMPARATOR begun
+25/07/25 12:12:40  Note:    Job toggle completed: Host: monviso Test: COMPARATOR
+25/07/25 12:12:40  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test COMPARATOR -seltyp observe +job_id+ce919130c8e9a662 -fstrobe __tests__/COMPARATOR/__fstrobes__ -testid 65537 -l __fubs__/design/COMPARATOR/coats.log
+25/07/25 12:12:40  Note:    Testability analysis for Test: COMPARATOR
+25/07/25 12:12:40  Note:    Job coats Test: COMPARATOR begun
+25/07/25 12:12:41  Note:    Job coats completed: Host: monviso Test: COMPARATOR
+25/07/25 12:12:44  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -fdeffiles __fubs__/design/fdeffiles.txt -record -dir ./ -fub design -fdef sim.fdef -l __fubs__/design/boots.log
+25/07/25 12:12:44  Note:    Job boots Test: All begun
+25/07/25 12:12:44  Note:    Job boots completed: Host: monviso Test: All
+25/07/25 12:12:44  Note:    Updating Testability Report
+25/07/25 12:12:44  Note:    Simulating Test: COMPARATOR
+25/07/25 12:12:44  Note:    Fault simulation on Test: COMPARATOR starting
+25/07/25 12:12:44  Note:    Generate fault origins for Test: COMPARATOR
+25/07/25 12:12:44  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/coats -dir ./ -fub design -test COMPARATOR -recalc -m -l __fubs__/design/COMPARATOR/fdef.log
+25/07/25 12:12:44  Note:    Job coats Test: COMPARATOR begun
+25/07/25 12:12:44  Note:    Job coats completed: Host: monviso Test: COMPARATOR
+25/07/25 12:12:44  Note:    Test: COMPARATOR selected 1407 out of 1466 remaining faults to simulate
+25/07/25 12:12:44  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_sim -fdef __fubs__/design/COMPARATOR/COMPARATOR.fdef -q +vcd+file+__tests__/COMPARATOR/comp.vcd +vcd+dut+COMPARATOR+tb.top_i.core_region_i.CORE.RISCV_CORE.Pipe.ACCL_generate.DSP.COMPARATOR +TESTNAME=COMPARATOR -cdfout __fubs__/design/COMPARATOR/cdfout +dictionary+values+all -fpp 2048 +limit+hyperfault+0 -fmsh -testdir __fubs__/design/COMPARATOR/ -l __fubs__/design/COMPARATOR/simout-N0
+25/07/25 12:12:44  Note:    Fault simulation for Test: COMPARATOR
+25/07/25 12:12:44  Note:    Job fault_sim Test: COMPARATOR begun
+25/07/25 12:12:47  Note:    Job fault_sim completed: Host: monviso Test: COMPARATOR
+25/07/25 12:12:47  Note:    Record simulation results for Test: COMPARATOR
+25/07/25 12:12:47  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/boots -record -dir ./ -fub design -test COMPARATOR -fdef sim.fdef -fntn 65537 __fubs__/design/COMPARATOR/COMPARATOR.fdef -l __fubs__/design/COMPARATOR/boots.log
+25/07/25 12:12:47  Note:    Job boots Test: COMPARATOR begun
+25/07/25 12:12:47  Note:    Job boots completed: Host: monviso Test: COMPARATOR
+25/07/25 12:12:47  Note:    Simulation of test COMPARATOR complete
+#                                Prime                  Total
+# Test: COMPARATOR
+# Total Faults:                   1466                   2234
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1126    76.81%         1840    82.36%
+# Dropped Potential Faults:        124     8.46%          124     5.55%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             157    10.71%          190     8.50%
+# Not Observed:                     48     3.27%           57     2.55%
+# Not Controlled:                   11     0.75%           23     1.03%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:03
+#   Fault Wall Clock:         00:00:03
+#
+# Cumulative Test Results
+# Total Faults:                   1466                   2234
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1126    76.81%         1840    82.36%
+# Dropped Potential Faults:        124     8.46%          124     5.55%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             157    10.71%          190     8.50%
+# Not Observed:                     48     3.27%           57     2.55%
+# Not Controlled:                   11     0.75%           23     1.03%
+#
+25/07/25 12:12:47  Note:    Simulation Completed.
+25/07/25 12:12:47  Note:    Updating Testability Report
+
+# Tests simulated in this session:
+#                                Prime                  Total
+# Test: COMPARATOR
+# Total Faults:                   1466                   2234
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1126    76.81%         1840    82.36%
+# Dropped Potential Faults:        124     8.46%          124     5.55%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             157    10.71%          190     8.50%
+# Not Observed:                     48     3.27%           57     2.55%
+# Not Controlled:                   11     0.75%           23     1.03%
+# Simulation Times:          
+#   Toggle:                   00:00:01
+#   Fault Cumulative:         00:00:03
+#   Fault Wall Clock:         00:00:03
+#
+# Cumulative Test Results
+# Total Faults:                   1466                   2234
+# Detected Faults:                   0     0.00%            0     0.00%
+# Dropped Detected Faults:        1126    76.81%         1840    82.36%
+# Dropped Potential Faults:        124     8.46%          124     5.55%
+# Potential Faults:                  0     0.00%            0     0.00%
+# Not Detected Faults:             157    10.71%          190     8.50%
+# Not Observed:                     48     3.27%           57     2.55%
+# Not Controlled:                   11     0.75%           23     1.03%
+#
+# Test Coverage:                          81.04%                 85.14%
+#
+>  
+> coverage(file=[SAF_coverage.sff]) 
+25/07/25 12:12:47  Note:    Running coverage analysis
+25/07/25 12:12:47  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report +fm -dir ./ +format+standard -out ./SAF_coverage.sff -testinfo __fubs__/testid.txt -l fault_report.log
+25/07/25 12:12:47  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:12:47  Note:    Fault report file is SAF_coverage.sff
+> # coverage (type=[dictionary],file=[saf_dic_short.txt],test=[RCA], style=[short]) 
+>  
+> #coverage(type=[dictionary],test=[RCA],file=[saf_dic.txt])   
+> coverage (type=[dictionary],file=[saf_dic_long.txt],test=[COMPARATOR]) 
+25/07/25 12:12:47  Note:    Creating coverage dictionary
+25/07/25 12:12:47  CMD: /eda/synopsys/2023-24/RHELx86/Z01X_2023.12/bin/fault_report -dict __fubs__/design/COMPARATOR/cdfout -dictout saf_dic_long.txt +format+standard -l __fubs__/design/COMPARATOR/COMPARATOR_cdf.log -fdef __fubs__/design/COMPARATOR/COMPARATOR.fdef
+25/07/25 12:12:49  Note:    Job fault_report completed: Host: monviso
+25/07/25 12:12:49  Note:    Coverage dictionary file is 'saf_dic_long.txt'
+>  
+25/07/25 12:12:49  Note:    Script file complete
+25/07/25 12:12:49  Note:    Fri Jul 25 12:12:49 CEST 2025
+#                                Total Run Times                                 
+#
+#                              Queued             CPU               Wall  
+# Fault simulation            00:00:00          00:00:03          00:00:03
+# Toggle simulation           00:00:00          00:00:01          00:00:04
+#
+#
+#                            Time Allocation Per Tool                            
+#
+#                                   Queued                Running      
+# Fault simulation            00:00:00     0.00%     00:00:03    44.38%
+# Fault results recording     00:00:00     0.00%     00:00:00     5.00%
+# Testability                 00:00:00     0.00%     00:00:00     7.43%
+# Toggle simulation           00:00:00     0.00%     00:00:01    14.60%
+# Fault creation              00:00:00     0.00%     00:00:00     3.18%
+# Fault coverage              00:00:00     0.00%     00:00:02    25.40%
+#----------------------------------------------------------------------
+# Total                       00:00:00     0.00%     00:00:07   100.00%
+CPU Time: 7.3s ; Elapsed Time: 11.0s ; Data Size: 95.8MB

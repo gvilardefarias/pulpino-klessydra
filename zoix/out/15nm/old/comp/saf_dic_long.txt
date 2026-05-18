@@ -1,0 +1,4298 @@
+Version("1.1")
+Date("07/25/25 12:12:49")
+User("g.vilarde")
+Tool("ZOIX")
+Info("  Type:    Fault Coverage Report")
+Info("  Version: V-2023.12 (64-bit, Nov 19 2023)")
+Info("  Models:  All")
+Info("  Classes: All")
+
+FunctionalBlocks{
+     1 design {
+           1  COMPARATOR {F:1466}
+    }
+}
+StrobeData{
+    StrobeList{"strobe1"
+        Pins{
+            1 "COMPARATOR.dsp_out_cmp_results[63:0]";
+        }
+    }
+}
+
+FaultList{
+    ND 0 {PORT "COMPARATOR.U473.B1"}
+    ND 0 {PORT "COMPARATOR.U459.A2"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .RN"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .RN"}
+    ND 0 {PORT "COMPARATOR.U465.A2"}
+    ND 0 {PORT "COMPARATOR.U473.B2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .RN"}
+    ND 0 {PORT "COMPARATOR.U439.A2"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .RN"}
+    ND 1 {PORT "COMPARATOR.U462.A1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .RN"}
+    ND 1 {PORT "COMPARATOR.U263.ZN"}
+    -- 0 {PORT "COMPARATOR.U263.I"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .RN"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .RN"}
+    ND 0 {PORT "COMPARATOR.U289.A2"}
+    ND 0 {PORT "COMPARATOR.U406.A2"}
+    -- 0 {PORT "COMPARATOR.U406.A1"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .RN"}
+    ND 1 {PORT "COMPARATOR.U310.A2"}
+    -- 1 {PORT "COMPARATOR.U310.A1"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .RN"}
+    ND 0 {PORT "COMPARATOR.U296.ZN"}
+    -- 1 {PORT "COMPARATOR.U296.I"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .RN"}
+    ND 0 {PORT "COMPARATOR.U287.ZN"}
+    -- 1 {PORT "COMPARATOR.U287.I"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .RN"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .RN"}
+    ND 0 {PORT "COMPARATOR.U426.B2"}
+    -- 0 {PORT "COMPARATOR.U426.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .RN"}
+    ND 0 {PORT "COMPARATOR.U292.A2"}
+    ND 0 {PORT "COMPARATOR.U274.A2"}
+    ND 0 {PORT "COMPARATOR.U251.ZN"}
+    -- 1 {PORT "COMPARATOR.U251.I"}
+    ND 0 {PORT "COMPARATOR.U479.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .RN"}
+    ND 0 {PORT "COMPARATOR.U477.A2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .RN"}
+    ND 1 {PORT "COMPARATOR.U305.ZN"}
+    -- 0 {PORT "COMPARATOR.U305.I"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .RN"}
+    ND 1 {PORT "COMPARATOR.U473.B2"}
+    -- 1 {PORT "COMPARATOR.U473.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .RN"}
+    ND 1 {PORT "COMPARATOR.U250.ZN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .RN"}
+    ND 0 {PORT "COMPARATOR.U420.B2"}
+    -- 0 {PORT "COMPARATOR.U420.B1"}
+    ND 1 {PORT "COMPARATOR.U428.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .RN"}
+    ND 0 {PORT "COMPARATOR.U477.B1"}
+    ND 0 {PORT "COMPARATOR.U470.A2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .RN"}
+    ND 1 {PORT "COMPARATOR.U448.B2"}
+    ND 0 {PORT "COMPARATOR.U422.B2"}
+    -- 0 {PORT "COMPARATOR.U422.B1"}
+    ND 0 {PORT "COMPARATOR.U434.B2"}
+    -- 0 {PORT "COMPARATOR.U434.B1"}
+    ND 1 {PORT "COMPARATOR.U477.B2"}
+    -- 1 {PORT "COMPARATOR.U477.B1"}
+    ND 1 {PORT "COMPARATOR.U307.A2"}
+    -- 1 {PORT "COMPARATOR.U307.A1"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .RN"}
+    ND 0 {PORT "COMPARATOR.U295.A2"}
+    ND 1 {PORT "COMPARATOR.U422.B1"}
+    ND 0 {PORT "COMPARATOR.U436.A1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .RN"}
+    ND 0 {PORT "COMPARATOR.U301.A2"}
+    ND 1 {PORT "COMPARATOR.U454.B2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .RN"}
+    ND 0 {PORT "COMPARATOR.U299.ZN"}
+    -- 1 {PORT "COMPARATOR.U299.I"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .RN"}
+    ND 1 {PORT "COMPARATOR.U283.B2"}
+    -- 1 {PORT "COMPARATOR.U283.B1"}
+    ND 0 {PORT "COMPARATOR.U443.A2"}
+    ND 0 {PORT "COMPARATOR.U290.ZN"}
+    -- 1 {PORT "COMPARATOR.U290.I"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .RN"}
+    ND 0 {PORT "COMPARATOR.U283.A2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .RN"}
+    ND 1 {PORT "COMPARATOR.U426.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .RN"}
+    ND 1 {PORT "COMPARATOR.U298.A2"}
+    -- 1 {PORT "COMPARATOR.U298.A1"}
+    ND 1 {PORT "COMPARATOR.U406.A2"}
+    ND 0 {PORT "COMPARATOR.U310.A2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .RN"}
+    ND 1 {PORT "COMPARATOR.U284.A1"}
+    ND 1 {PORT "COMPARATOR.U274.B2"}
+    -- 1 {PORT "COMPARATOR.U274.B1"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .RN"}
+    ND 0 {PORT "COMPARATOR.U424.B2"}
+    -- 0 {PORT "COMPARATOR.U424.B1"}
+    ND 1 {PORT "COMPARATOR.U301.A2"}
+    -- 1 {PORT "COMPARATOR.U301.A1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .RN"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .RN"}
+    ND 1 {PORT "COMPARATOR.U430.B1"}
+    ND 1 {PORT "COMPARATOR.U424.B1"}
+    ND 1 {PORT "COMPARATOR.U256.A1"}
+    ND 0 {PORT "COMPARATOR.U477.A1"}
+    ND 1 {PORT "COMPARATOR.U295.A2"}
+    -- 1 {PORT "COMPARATOR.U295.A1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .RN"}
+    ND 1 {PORT "COMPARATOR.U292.A2"}
+    -- 1 {PORT "COMPARATOR.U292.A1"}
+    ND 0 {PORT "COMPARATOR.U478.A2"}
+    ND 0 {PORT "COMPARATOR.U298.A2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .RN"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .RN"}
+    ND 0 {PORT "COMPARATOR.U473.A1"}
+    ND 1 {PORT "COMPARATOR.U434.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .RN"}
+    ND 0 {PORT "COMPARATOR.U473.A2"}
+    ND 0 {PORT "COMPARATOR.U432.B2"}
+    -- 0 {PORT "COMPARATOR.U432.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .RN"}
+    ND 1 {PORT "COMPARATOR.U437.A2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .RN"}
+    ND 0 {PORT "COMPARATOR.U302.ZN"}
+    -- 1 {PORT "COMPARATOR.U302.I"}
+    ND 1 {PORT "COMPARATOR.U432.B1"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .RN"}
+    ND 1 {PORT "COMPARATOR.U265.A1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .RN"}
+    ND 1 {PORT "COMPARATOR.U289.A2"}
+    -- 1 {PORT "COMPARATOR.U289.A1"}
+    ND 0 {PORT "COMPARATOR.U430.B2"}
+    -- 0 {PORT "COMPARATOR.U430.B1"}
+    ND 1 {PORT "COMPARATOR.U304.A2"}
+    -- 1 {PORT "COMPARATOR.U304.A1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .RN"}
+    ND 0 {PORT "COMPARATOR.U304.A2"}
+    ND 0 {PORT "COMPARATOR.U293.ZN"}
+    -- 1 {PORT "COMPARATOR.U293.I"}
+    ND 1 {PORT "COMPARATOR.U446.A2"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .RN"}
+    ND 0 {PORT "COMPARATOR.U307.A2"}
+    ND 0 {PORT "COMPARATOR.U477.B2"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .RN"}
+    ND 1 {PORT "COMPARATOR.U462.A2"}
+    ND 1 {PORT "COMPARATOR.U452.A2"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .RN"}
+    ND 0 {PORT "COMPARATOR.U250.A1"}
+    -- 1 {PORT "COMPARATOR.U249.I"}
+    -- 0 {PORT "COMPARATOR.U249.ZN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .RN"}
+    ND 1 {PORT "COMPARATOR.U420.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .RN"}
+    ND 0 {PORT "COMPARATOR.U428.B2"}
+    -- 0 {PORT "COMPARATOR.U428.B1"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .RN"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .RN"}
+    ND 1 {PORT "COMPARATOR.U308.ZN"}
+    -- 0 {PORT "COMPARATOR.U308.I"}
+    ND 1 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .RN"}
+    ND 0 {PORT "COMPARATOR.U252.B"}
+    ND 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .RN"}
+    NO 0 {PORT "COMPARATOR.U442.A2"}
+    NO 0 {PORT "COMPARATOR.U316.A1"}
+    NO 1 {PORT "COMPARATOR.U426.A1"}
+    NO 1 {PORT "COMPARATOR.U437.A1"}
+    NO 1 {PORT "COMPARATOR.U294.A1"}
+    NO 1 {PORT "COMPARATOR.U430.A1"}
+    NO 0 {PORT "COMPARATOR.U328.B1"}
+    NO 1 {PORT "COMPARATOR.U271.A1"}
+    NC 1 {PORT "COMPARATOR.U328.A2"}
+    -- 1 {PORT "COMPARATOR.U328.A1"}
+    NO 1 {PORT "COMPARATOR.U288.A1"}
+    NO 1 {PORT "COMPARATOR.U278.A2"}
+    NO 0 {PORT "COMPARATOR.U480.A2"}
+    -- 0 {PORT "COMPARATOR.U480.A1"}
+    -- 0 {PORT "COMPARATOR.U477.ZN"}
+    NO 0 {PORT "COMPARATOR.U460.A1"}
+    NO 1 {PORT "COMPARATOR.U300.A1"}
+    NO 1 {PORT "COMPARATOR.U420.A1"}
+    NO 0 {PORT "COMPARATOR.U345.A1"}
+    NO 1 {PORT "COMPARATOR.U432.A1"}
+    NO 1 {PORT "COMPARATOR.U463.A1"}
+    NO 0 {PORT "COMPARATOR.U377.B1"}
+    NC 0 {PORT "COMPARATOR.U462.Z"}
+    -- 0 {PORT "COMPARATOR.U462.A1"}
+    -- 0 {PORT "COMPARATOR.U462.A2"}
+    NO 1 {PORT "COMPARATOR.U428.A1"}
+    NO 0 {PORT "COMPARATOR.U377.A1"}
+    NO 0 {PORT "COMPARATOR.U466.A1"}
+    NC 1 {PORT "COMPARATOR.U327.ZN"}
+    -- 0 {PORT "COMPARATOR.U327.A2"}
+    -- 0 {PORT "COMPARATOR.U327.A1"}
+    NO 0 {PORT "COMPARATOR.U274.B1"}
+    NO 1 {PORT "COMPARATOR.U468.A2"}
+    NO 1 {PORT "COMPARATOR.U252.A2"}
+    NC 1 {PORT "COMPARATOR.U315.ZN"}
+    -- 0 {PORT "COMPARATOR.U315.A1"}
+    -- 0 {PORT "COMPARATOR.U315.A2"}
+    NO 1 {PORT "COMPARATOR.U306.A1"}
+    NO 0 {PORT "COMPARATOR.U276.B2"}
+    NO 0 {PORT "COMPARATOR.U328.A1"}
+    NC 1 {PORT "COMPARATOR.U345.A2"}
+    -- 1 {PORT "COMPARATOR.U345.A1"}
+    NC 1 {PORT "COMPARATOR.U392.A2"}
+    -- 1 {PORT "COMPARATOR.U392.A1"}
+    NO 1 {PORT "COMPARATOR.U253.B"}
+    -- 1 {PORT "COMPARATOR.U252.ZN"}
+    NO 1 {PORT "COMPARATOR.U258.A1"}
+    NO 0 {PORT "COMPARATOR.U468.A2"}
+    -- 0 {PORT "COMPARATOR.U468.A1"}
+    NC 1 {PORT "COMPARATOR.U316.B2"}
+    -- 1 {PORT "COMPARATOR.U316.B1"}
+    NO 1 {PORT "COMPARATOR.U477.A2"}
+    -- 1 {PORT "COMPARATOR.U477.A1"}
+    NC 0 {PORT "COMPARATOR.U253.A2"}
+    NO 1 {PORT "COMPARATOR.U422.A1"}
+    NO 1 {PORT "COMPARATOR.U309.A1"}
+    NC 1 {PORT "COMPARATOR.U377.B2"}
+    -- 1 {PORT "COMPARATOR.U377.B1"}
+    NO 0 {PORT "COMPARATOR.U438.A2"}
+    NO 0 {PORT "COMPARATOR.U474.A2"}
+    -- 0 {PORT "COMPARATOR.U473.ZN"}
+    -- 0 {PORT "COMPARATOR.U474.A1"}
+    NO 0 {PORT "COMPARATOR.U392.B1"}
+    NO 0 {PORT "COMPARATOR.U392.A1"}
+    NC 0 {PORT "COMPARATOR.U463.A2"}
+    -- 0 {PORT "COMPARATOR.U463.A1"}
+    NO 0 {PORT "COMPARATOR.U283.B1"}
+    NO 1 {PORT "COMPARATOR.U303.A1"}
+    NC 0 {PORT "COMPARATOR.U250.A2"}
+    NO 0 {PORT "COMPARATOR.U316.B1"}
+    NO 1 {PORT "COMPARATOR.U434.A1"}
+    NO 0 {PORT "COMPARATOR.U252.A2"}
+    -- 0 {PORT "COMPARATOR.U252.A1"}
+    NO 1 {PORT "COMPARATOR.U297.A1"}
+    NO 1 {PORT "COMPARATOR.U266.A2"}
+    NO 0 {PORT "COMPARATOR.U471.B2"}
+    NO 1 {PORT "COMPARATOR.U424.A1"}
+    NO 1 {PORT "COMPARATOR.U473.A2"}
+    -- 1 {PORT "COMPARATOR.U473.A1"}
+    NO 1 {PORT "COMPARATOR.U291.A1"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............1 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............2 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............4 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............8 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............X ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............1. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............2. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............4. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............8. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............X. ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .............1.. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .............2.. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .............4.. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .............8.. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .............X.. ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ............1... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ............2... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ............4... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ............8... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ............X... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........1.... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........2.... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........4.... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........8.... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........X.... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........1..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........2..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........4..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........8..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........X..... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .........1...... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .........2...... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .........4...... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .........8...... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .........X...... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ........1....... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ........2....... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ........4....... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ........X....... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .......1........ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .......2........ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .......4........ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .......8........ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .......X........ ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ......1......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ......2......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ......4......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ......8......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ......X......... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .CLK"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .....1.......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .....2.......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .....4.......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .....8.......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .....X.......... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ....1........... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ....2........... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ....4........... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ....8........... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ....X........... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...1............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...2............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...4............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...8............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ...X............ ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..1............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..2............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..4............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..8............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: ..X............. ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .1.............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .2.............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .4.............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .8.............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: .X.............. ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .RN"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: 1............... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: 2............... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: 4............... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .Q"}
+
+    [2500ns, 
+        1      GM: 0000000000000000 
+               FM: X............... ]
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .RN"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .CLK"}
+        PD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .CLK"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............1 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .D"}
+        -- 0 {PORT "COMPARATOR.U481.A1"}
+        -- 0 {PORT "COMPARATOR.U480.ZN"}
+        -- 0 {PORT "COMPARATOR.U476.ZN"}
+        -- 1 {PORT "COMPARATOR.U481.ZN"}
+        -- 0 {PORT "COMPARATOR.U481.A2"}
+        DD 1 {PORT "COMPARATOR.U476.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............2 ]
+        DD 1 {PORT "COMPARATOR.U418.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .D"}
+        -- 1 {PORT "COMPARATOR.U419.ZN"}
+        -- 0 {PORT "COMPARATOR.U418.ZN"}
+        -- 0 {PORT "COMPARATOR.U419.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............4 ]
+        DD 1 {PORT "COMPARATOR.U416.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .D"}
+        -- 0 {PORT "COMPARATOR.U416.ZN"}
+        -- 1 {PORT "COMPARATOR.U417.ZN"}
+        -- 0 {PORT "COMPARATOR.U417.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............8 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .D"}
+        -- 0 {PORT "COMPARATOR.U414.ZN"}
+        -- 0 {PORT "COMPARATOR.U415.I"}
+        -- 1 {PORT "COMPARATOR.U415.ZN"}
+        DD 1 {PORT "COMPARATOR.U414.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............1. ]
+        DD 1 {PORT "COMPARATOR.U412.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .D"}
+        -- 1 {PORT "COMPARATOR.U413.ZN"}
+        -- 0 {PORT "COMPARATOR.U413.I"}
+        -- 0 {PORT "COMPARATOR.U412.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............2. ]
+        DD 1 {PORT "COMPARATOR.U410.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .D"}
+        -- 0 {PORT "COMPARATOR.U411.I"}
+        -- 0 {PORT "COMPARATOR.U410.ZN"}
+        -- 1 {PORT "COMPARATOR.U411.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............4. ]
+        DD 1 {PORT "COMPARATOR.U408.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .D"}
+        -- 0 {PORT "COMPARATOR.U408.ZN"}
+        -- 1 {PORT "COMPARATOR.U409.ZN"}
+        -- 0 {PORT "COMPARATOR.U409.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............8. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .D"}
+        -- 1 {PORT "COMPARATOR.U276.ZN"}
+        DD 1 {PORT "COMPARATOR.U273.I"}
+        DD 0 {PORT "COMPARATOR.U276.A2"}
+        -- 0 {PORT "COMPARATOR.U273.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .............1.. ]
+        DD 1 {PORT "COMPARATOR.U440.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .D"}
+        -- 0 {PORT "COMPARATOR.U440.ZN"}
+        -- 1 {PORT "COMPARATOR.U441.ZN"}
+        -- 0 {PORT "COMPARATOR.U441.B"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .............2.. ]
+        DD 1 {PORT "COMPARATOR.U403.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .D"}
+        -- 1 {PORT "COMPARATOR.U404.ZN"}
+        -- 0 {PORT "COMPARATOR.U403.ZN"}
+        -- 0 {PORT "COMPARATOR.U404.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .............4.. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .D"}
+        -- 1 {PORT "COMPARATOR.U402.ZN"}
+        -- 0 {PORT "COMPARATOR.U402.I"}
+        -- 0 {PORT "COMPARATOR.U401.ZN"}
+        DD 1 {PORT "COMPARATOR.U401.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .............8.. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .D"}
+        -- 0 {PORT "COMPARATOR.U399.ZN"}
+        -- 0 {PORT "COMPARATOR.U400.I"}
+        -- 1 {PORT "COMPARATOR.U400.ZN"}
+        DD 1 {PORT "COMPARATOR.U399.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ............1... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .D"}
+        -- 0 {PORT "COMPARATOR.U398.I"}
+        -- 1 {PORT "COMPARATOR.U398.ZN"}
+        -- 0 {PORT "COMPARATOR.U397.ZN"}
+        DD 1 {PORT "COMPARATOR.U397.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ............2... ]
+        DD 1 {PORT "COMPARATOR.U395.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .D"}
+        -- 0 {PORT "COMPARATOR.U395.ZN"}
+        -- 0 {PORT "COMPARATOR.U396.I"}
+        -- 1 {PORT "COMPARATOR.U396.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ............4... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .D"}
+        -- 0 {PORT "COMPARATOR.U393.ZN"}
+        -- 0 {PORT "COMPARATOR.U394.I"}
+        -- 1 {PORT "COMPARATOR.U394.ZN"}
+        DD 1 {PORT "COMPARATOR.U393.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ............8... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .D"}
+        -- 1 {PORT "COMPARATOR.U272.ZN"}
+        DD 1 {PORT "COMPARATOR.U269.I"}
+        DD 0 {PORT "COMPARATOR.U272.A2"}
+        -- 0 {PORT "COMPARATOR.U269.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........1.... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .D"}
+        -- 0 {PORT "COMPARATOR.U467.ZN"}
+        -- 0 {PORT "COMPARATOR.U469.A2"}
+        -- 0 {PORT "COMPARATOR.U469.A1"}
+        -- 0 {PORT "COMPARATOR.U468.ZN"}
+        -- 1 {PORT "COMPARATOR.U469.ZN"}
+        DD 1 {PORT "COMPARATOR.U467.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........2.... ]
+        DD 1 {PORT "COMPARATOR.U390.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .D"}
+        -- 0 {PORT "COMPARATOR.U391.I"}
+        -- 1 {PORT "COMPARATOR.U391.ZN"}
+        -- 0 {PORT "COMPARATOR.U390.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........4.... ]
+        DD 1 {PORT "COMPARATOR.U388.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .D"}
+        -- 0 {PORT "COMPARATOR.U389.I"}
+        -- 0 {PORT "COMPARATOR.U388.ZN"}
+        -- 1 {PORT "COMPARATOR.U389.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........8.... ]
+        DD 1 {PORT "COMPARATOR.U386.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .D"}
+        -- 0 {PORT "COMPARATOR.U387.I"}
+        -- 0 {PORT "COMPARATOR.U386.ZN"}
+        -- 1 {PORT "COMPARATOR.U387.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........1..... ]
+        DD 1 {PORT "COMPARATOR.U384.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .D"}
+        -- 0 {PORT "COMPARATOR.U384.ZN"}
+        -- 1 {PORT "COMPARATOR.U385.ZN"}
+        -- 0 {PORT "COMPARATOR.U385.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........2..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .D"}
+        -- 0 {PORT "COMPARATOR.U382.ZN"}
+        -- 0 {PORT "COMPARATOR.U383.I"}
+        -- 1 {PORT "COMPARATOR.U383.ZN"}
+        DD 1 {PORT "COMPARATOR.U382.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........4..... ]
+        DD 1 {PORT "COMPARATOR.U378.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .D"}
+        -- 0 {PORT "COMPARATOR.U379.I"}
+        -- 0 {PORT "COMPARATOR.U378.ZN"}
+        -- 1 {PORT "COMPARATOR.U379.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........8..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .D"}
+        -- 1 {PORT "COMPARATOR.U268.ZN"}
+        DD 0 {PORT "COMPARATOR.U268.A2"}
+        -- 0 {PORT "COMPARATOR.U261.ZN"}
+        DD 1 {PORT "COMPARATOR.U261.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .........1...... ]
+        DD 1 {PORT "COMPARATOR.U456.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .D"}
+        -- 1 {PORT "COMPARATOR.U457.ZN"}
+        -- 0 {PORT "COMPARATOR.U457.B"}
+        -- 0 {PORT "COMPARATOR.U456.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .........2...... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .D"}
+        -- 1 {PORT "COMPARATOR.U373.ZN"}
+        -- 0 {PORT "COMPARATOR.U373.I"}
+        -- 0 {PORT "COMPARATOR.U372.ZN"}
+        DD 1 {PORT "COMPARATOR.U372.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .........4...... ]
+        DD 1 {PORT "COMPARATOR.U370.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .D"}
+        -- 0 {PORT "COMPARATOR.U370.ZN"}
+        -- 0 {PORT "COMPARATOR.U371.I"}
+        -- 1 {PORT "COMPARATOR.U371.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .........8...... ]
+        DD 1 {PORT "COMPARATOR.U368.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .D"}
+        -- 1 {PORT "COMPARATOR.U369.ZN"}
+        -- 0 {PORT "COMPARATOR.U369.I"}
+        -- 0 {PORT "COMPARATOR.U368.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ........1....... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .D"}
+        -- 0 {PORT "COMPARATOR.U367.I"}
+        -- 1 {PORT "COMPARATOR.U367.ZN"}
+        -- 0 {PORT "COMPARATOR.U366.ZN"}
+        DD 1 {PORT "COMPARATOR.U366.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ........2....... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .D"}
+        -- 0 {PORT "COMPARATOR.U362.ZN"}
+        -- 1 {PORT "COMPARATOR.U363.ZN"}
+        -- 0 {PORT "COMPARATOR.U363.I"}
+        DD 1 {PORT "COMPARATOR.U362.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ........4....... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .D"}
+        -- 0 {PORT "COMPARATOR.U361.I"}
+        -- 0 {PORT "COMPARATOR.U360.ZN"}
+        -- 1 {PORT "COMPARATOR.U361.ZN"}
+        DD 1 {PORT "COMPARATOR.U360.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .......1........ ]
+        DD 1 {PORT "COMPARATOR.U472.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .D"}
+        -- 0 {PORT "COMPARATOR.U472.ZN"}
+        -- 0 {PORT "COMPARATOR.U474.ZN"}
+        -- 0 {PORT "COMPARATOR.U475.A2"}
+        -- 0 {PORT "COMPARATOR.U475.A1"}
+        -- 1 {PORT "COMPARATOR.U475.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .......2........ ]
+        DD 1 {PORT "COMPARATOR.U358.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .D"}
+        -- 1 {PORT "COMPARATOR.U359.ZN"}
+        -- 0 {PORT "COMPARATOR.U359.I"}
+        -- 0 {PORT "COMPARATOR.U358.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .......4........ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .D"}
+        -- 0 {PORT "COMPARATOR.U356.ZN"}
+        -- 0 {PORT "COMPARATOR.U357.I"}
+        -- 1 {PORT "COMPARATOR.U357.ZN"}
+        DD 1 {PORT "COMPARATOR.U356.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .......8........ ]
+        DD 1 {PORT "COMPARATOR.U354.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .D"}
+        -- 0 {PORT "COMPARATOR.U355.I"}
+        -- 1 {PORT "COMPARATOR.U355.ZN"}
+        -- 0 {PORT "COMPARATOR.U354.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ......1......... ]
+        DD 1 {PORT "COMPARATOR.U352.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .D"}
+        -- 1 {PORT "COMPARATOR.U353.ZN"}
+        -- 0 {PORT "COMPARATOR.U352.ZN"}
+        -- 0 {PORT "COMPARATOR.U353.I"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ......2......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .D"}
+        -- 0 {PORT "COMPARATOR.U364.ZN"}
+        -- 0 {PORT "COMPARATOR.U365.I"}
+        -- 1 {PORT "COMPARATOR.U365.ZN"}
+        DD 1 {PORT "COMPARATOR.U364.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ......4......... ]
+        DD 1 {PORT "COMPARATOR.U346.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .D"}
+        -- 0 {PORT "COMPARATOR.U346.ZN"}
+        -- 0 {PORT "COMPARATOR.U347.I"}
+        -- 1 {PORT "COMPARATOR.U347.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ......8......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .D"}
+        -- 1 {PORT "COMPARATOR.U286.ZN"}
+        DD 1 {PORT "COMPARATOR.U281.I"}
+        DD 0 {PORT "COMPARATOR.U286.A2"}
+        -- 0 {PORT "COMPARATOR.U281.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .....1.......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .D"}
+        -- 0 {PORT "COMPARATOR.U444.ZN"}
+        -- 0 {PORT "COMPARATOR.U445.B"}
+        -- 1 {PORT "COMPARATOR.U445.ZN"}
+        DD 1 {PORT "COMPARATOR.U444.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .....2.......... ]
+        DD 1 {PORT "COMPARATOR.U341.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .D"}
+        -- 0 {PORT "COMPARATOR.U342.I"}
+        -- 1 {PORT "COMPARATOR.U342.ZN"}
+        -- 0 {PORT "COMPARATOR.U341.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .....4.......... ]
+        DD 1 {PORT "COMPARATOR.U339.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .D"}
+        -- 0 {PORT "COMPARATOR.U339.ZN"}
+        -- 0 {PORT "COMPARATOR.U340.I"}
+        -- 1 {PORT "COMPARATOR.U340.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .....8.......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .D"}
+        -- 0 {PORT "COMPARATOR.U338.I"}
+        -- 1 {PORT "COMPARATOR.U338.ZN"}
+        -- 0 {PORT "COMPARATOR.U337.ZN"}
+        DD 1 {PORT "COMPARATOR.U337.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ....1........... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .D"}
+        -- 0 {PORT "COMPARATOR.U374.ZN"}
+        -- 0 {PORT "COMPARATOR.U375.I"}
+        -- 1 {PORT "COMPARATOR.U375.ZN"}
+        DD 1 {PORT "COMPARATOR.U374.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ....2........... ]
+        DD 1 {PORT "COMPARATOR.U348.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .D"}
+        -- 1 {PORT "COMPARATOR.U349.ZN"}
+        -- 0 {PORT "COMPARATOR.U349.I"}
+        -- 0 {PORT "COMPARATOR.U348.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ....4........... ]
+        DD 1 {PORT "COMPARATOR.U329.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .D"}
+        -- 1 {PORT "COMPARATOR.U330.ZN"}
+        -- 0 {PORT "COMPARATOR.U330.I"}
+        -- 0 {PORT "COMPARATOR.U329.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ....8........... ]
+        DD 0 {PORT "COMPARATOR.U260.A2"}
+        -- 0 {PORT "COMPARATOR.U255.ZN"}
+        DD 1 {PORT "COMPARATOR.U255.I"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .D"}
+        -- 1 {PORT "COMPARATOR.U260.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...1............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .D"}
+        -- 1 {PORT "COMPARATOR.U464.ZN"}
+        -- 0 {PORT "COMPARATOR.U464.A1"}
+        -- 0 {PORT "COMPARATOR.U463.ZN"}
+        -- 0 {PORT "COMPARATOR.U464.A2"}
+        -- 0 {PORT "COMPARATOR.U461.ZN"}
+        DD 1 {PORT "COMPARATOR.U461.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...2............ ]
+        DD 1 {PORT "COMPARATOR.U321.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .D"}
+        -- 0 {PORT "COMPARATOR.U322.I"}
+        -- 0 {PORT "COMPARATOR.U321.ZN"}
+        -- 1 {PORT "COMPARATOR.U322.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...4............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .D"}
+        -- 1 {PORT "COMPARATOR.U326.ZN"}
+        -- 0 {PORT "COMPARATOR.U325.ZN"}
+        -- 0 {PORT "COMPARATOR.U326.I"}
+        DD 1 {PORT "COMPARATOR.U325.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ...8............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .D"}
+        -- 1 {PORT "COMPARATOR.U351.ZN"}
+        -- 0 {PORT "COMPARATOR.U350.ZN"}
+        -- 0 {PORT "COMPARATOR.U351.I"}
+        DD 1 {PORT "COMPARATOR.U350.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..1............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .D"}
+        -- 1 {PORT "COMPARATOR.U332.ZN"}
+        -- 0 {PORT "COMPARATOR.U331.ZN"}
+        -- 0 {PORT "COMPARATOR.U332.I"}
+        DD 1 {PORT "COMPARATOR.U331.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..2............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .D"}
+        -- 0 {PORT "COMPARATOR.U317.ZN"}
+        -- 0 {PORT "COMPARATOR.U318.I"}
+        -- 1 {PORT "COMPARATOR.U318.ZN"}
+        DD 1 {PORT "COMPARATOR.U317.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..4............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .D"}
+        -- 0 {PORT "COMPARATOR.U324.I"}
+        -- 1 {PORT "COMPARATOR.U324.ZN"}
+        -- 0 {PORT "COMPARATOR.U323.ZN"}
+        DD 1 {PORT "COMPARATOR.U323.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: ..8............. ]
+        DD 1 {PORT "COMPARATOR.U277.I"}
+        DD 0 {PORT "COMPARATOR.U280.A2"}
+        -- 0 {PORT "COMPARATOR.U277.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .D"}
+        -- 1 {PORT "COMPARATOR.U280.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .1.............. ]
+        DD 1 {PORT "COMPARATOR.U450.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .D"}
+        -- 1 {PORT "COMPARATOR.U451.ZN"}
+        -- 0 {PORT "COMPARATOR.U451.B"}
+        -- 0 {PORT "COMPARATOR.U450.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .2.............. ]
+        DD 1 {PORT "COMPARATOR.U333.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .D"}
+        -- 0 {PORT "COMPARATOR.U334.I"}
+        -- 0 {PORT "COMPARATOR.U333.ZN"}
+        -- 1 {PORT "COMPARATOR.U334.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .4.............. ]
+        DD 1 {PORT "COMPARATOR.U319.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .D"}
+        -- 1 {PORT "COMPARATOR.U320.ZN"}
+        -- 0 {PORT "COMPARATOR.U320.I"}
+        -- 0 {PORT "COMPARATOR.U319.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: .8.............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .D"}
+        -- 0 {PORT "COMPARATOR.U336.I"}
+        -- 1 {PORT "COMPARATOR.U336.ZN"}
+        -- 0 {PORT "COMPARATOR.U335.ZN"}
+        DD 1 {PORT "COMPARATOR.U335.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: 1............... ]
+        DD 1 {PORT "COMPARATOR.U311.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .D"}
+        -- 1 {PORT "COMPARATOR.U312.ZN"}
+        -- 0 {PORT "COMPARATOR.U312.I"}
+        -- 0 {PORT "COMPARATOR.U311.ZN"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: 2............... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .D"}
+        -- 1 {PORT "COMPARATOR.U344.ZN"}
+        -- 0 {PORT "COMPARATOR.U344.I"}
+        -- 0 {PORT "COMPARATOR.U343.ZN"}
+        DD 1 {PORT "COMPARATOR.U343.B1"}
+
+    [557500ns, 
+        1      GM: 0000000000000000 
+               FM: 4............... ]
+        DD 1 {PORT "COMPARATOR.U380.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .D"}
+        -- 0 {PORT "COMPARATOR.U380.ZN"}
+        -- 0 {PORT "COMPARATOR.U381.I"}
+        -- 1 {PORT "COMPARATOR.U381.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...............1 ]
+        DD 0 {PORT "COMPARATOR.U436.A2"}
+        DD 1 {PORT "COMPARATOR.U436.ZN"}
+        DD 1 {PORT "COMPARATOR.U480.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...............2 ]
+        DD 1 {PORT "COMPARATOR.U418.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...............4 ]
+        DD 1 {PORT "COMPARATOR.U416.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...............8 ]
+        DD 1 {PORT "COMPARATOR.U414.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..............1. ]
+        DD 1 {PORT "COMPARATOR.U412.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..............2. ]
+        DD 1 {PORT "COMPARATOR.U410.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..............3e ]
+        DD 1 {PORT "COMPARATOR.U406.A1"}
+        DD 0 {PORT "COMPARATOR.U407.A1"}
+        -- 0 {PORT "COMPARATOR.U406.ZN"}
+        -- 1 {PORT "COMPARATOR.U406.B"}
+        DD 1 {PORT "COMPARATOR.U265.A2"}
+        DD 0 {PORT "COMPARATOR.U263.ZN"}
+        -- 1 {PORT "COMPARATOR.U263.I"}
+        DD 1 {PORT "COMPARATOR.U407.ZN"}
+        DD 0 {PORT "COMPARATOR.U274.A1"}
+        DD 1 {PORT "COMPARATOR.U313.ZN"}
+        -- 0 {PORT "COMPARATOR.U313.I"}
+        DD 1 {PORT "COMPARATOR.U274.ZN"}
+        DD 0 {PORT "COMPARATOR.U274.B2"}
+        DD 0 {PORT "COMPARATOR.U265.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..............8. ]
+        DD 0 {PORT "COMPARATOR.U276.B1"}
+        -- 0 {PORT "COMPARATOR.U275.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ............2... ]
+        DD 1 {PORT "COMPARATOR.U395.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ............4... ]
+        DD 1 {PORT "COMPARATOR.U393.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ............6... ]
+        DD 0 {PORT "COMPARATOR.U327.ZN"}
+        DD 1 {PORT "COMPARATOR.U392.ZN"}
+        DD 0 {PORT "COMPARATOR.U392.B2"}
+        DD 0 {PORT "COMPARATOR.U392.A2"}
+        DD 1 {PORT "COMPARATOR.U327.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...........1.... ]
+        DD 1 {PORT "COMPARATOR.U468.A1"}
+        DD 1 {PORT "COMPARATOR.U467.A1"}
+        DD 1 {PORT "COMPARATOR.U458.ZN"}
+        -- 0 {PORT "COMPARATOR.U458.I"}
+        DD 1 {PORT "COMPARATOR.U468.B2"}
+        DD 1 {PORT "COMPARATOR.U462.Z"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..........4..... ]
+        DD 1 {PORT "COMPARATOR.U378.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..........41.... ]
+        DD 1 {PORT "COMPARATOR.U377.ZN"}
+        DD 0 {PORT "COMPARATOR.U377.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..........416... ]
+        DD 0 {PORT "COMPARATOR.U376.ZN"}
+        -- 1 {PORT "COMPARATOR.U376.I"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..........8..... ]
+        DD 0 {PORT "COMPARATOR.U268.B1"}
+        -- 0 {PORT "COMPARATOR.U266.ZN"}
+        DD 1 {PORT "COMPARATOR.U266.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .........1...... ]
+        DD 0 {PORT "COMPARATOR.U457.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .........1.1.... ]
+        DD 0 {PORT "COMPARATOR.U437.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .........2...... ]
+        DD 1 {PORT "COMPARATOR.U372.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .........4...... ]
+        DD 1 {PORT "COMPARATOR.U370.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .........8...... ]
+        DD 1 {PORT "COMPARATOR.U368.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ........1....... ]
+        DD 1 {PORT "COMPARATOR.U366.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ........2....... ]
+        DD 1 {PORT "COMPARATOR.U362.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ........4....... ]
+        DD 1 {PORT "COMPARATOR.U360.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ........7ec16... ]
+        DD 0 {PORT "COMPARATOR.U262.A2"}
+        DD 1 {PORT "COMPARATOR.U262.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .......5........ ]
+        DD 0 {PORT "COMPARATOR.U354.A2"}
+        -- 0 {PORT "COMPARATOR.U354.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .D"}
+        -- 1 {PORT "COMPARATOR.U355.I"}
+        -- 1 {PORT "COMPARATOR.U354.ZN"}
+        -- 0 {PORT "COMPARATOR.U355.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[35] .CLK"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .......9........ ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .CLK"}
+        DD 0 {PORT "COMPARATOR.U356.A2"}
+        -- 0 {PORT "COMPARATOR.U356.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[34] .D"}
+        -- 1 {PORT "COMPARATOR.U357.I"}
+        -- 0 {PORT "COMPARATOR.U357.ZN"}
+        -- 1 {PORT "COMPARATOR.U356.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .......c........ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .D"}
+        -- 0 {PORT "COMPARATOR.U475.ZN"}
+        DD 1 {PORT "COMPARATOR.U475.A2"}
+        -- 1 {PORT "COMPARATOR.U474.ZN"}
+        DD 0 {PORT "COMPARATOR.U474.B2"}
+        -- 0 {PORT "COMPARATOR.U474.B1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[32] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .......f........ ]
+        DD 1 {PORT "COMPARATOR.U358.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ......00........ ]
+        DD 1 {PORT "COMPARATOR.U284.ZN"}
+        -- 0 {PORT "COMPARATOR.U284.A2"}
+        -- 0 {PORT "COMPARATOR.U283.ZN"}
+        -- 0 {PORT "COMPARATOR.U284.A1"}
+        DD 1 {PORT "COMPARATOR.U345.B"}
+        DD 0 {PORT "COMPARATOR.U345.ZN"}
+        DD 0 {PORT "COMPARATOR.U282.ZN"}
+        -- 1 {PORT "COMPARATOR.U282.I"}
+        DD 1 {PORT "COMPARATOR.U283.A2"}
+        -- 1 {PORT "COMPARATOR.U283.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ......3......... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .Q"}
+        DD 0 {PORT "COMPARATOR.U346.A2"}
+        -- 0 {PORT "COMPARATOR.U346.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .D"}
+        -- 1 {PORT "COMPARATOR.U346.ZN"}
+        -- 1 {PORT "COMPARATOR.U347.I"}
+        -- 0 {PORT "COMPARATOR.U347.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[38] .CLK"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ......5......... ]
+        DD 0 {PORT "COMPARATOR.U364.A2"}
+        -- 0 {PORT "COMPARATOR.U364.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .D"}
+        -- 1 {PORT "COMPARATOR.U365.I"}
+        -- 1 {PORT "COMPARATOR.U364.ZN"}
+        -- 0 {PORT "COMPARATOR.U365.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[37] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ......6......... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .CLK"}
+        DD 0 {PORT "COMPARATOR.U352.A2"}
+        -- 0 {PORT "COMPARATOR.U352.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .D"}
+        -- 1 {PORT "COMPARATOR.U353.I"}
+        -- 0 {PORT "COMPARATOR.U353.ZN"}
+        -- 1 {PORT "COMPARATOR.U352.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[36] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ......f......... ]
+        DD 0 {PORT "COMPARATOR.U286.B2"}
+        DD 0 {PORT "COMPARATOR.U285.ZN"}
+        -- 1 {PORT "COMPARATOR.U285.I"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .....3.......... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[43] .D"}
+        -- 0 {PORT "COMPARATOR.U338.ZN"}
+        -- 1 {PORT "COMPARATOR.U338.I"}
+        -- 1 {PORT "COMPARATOR.U337.ZN"}
+        DD 0 {PORT "COMPARATOR.U337.A2"}
+        -- 0 {PORT "COMPARATOR.U337.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .....9.......... ]
+        DD 0 {PORT "COMPARATOR.U341.A2"}
+        -- 0 {PORT "COMPARATOR.U341.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .D"}
+        -- 1 {PORT "COMPARATOR.U342.I"}
+        -- 1 {PORT "COMPARATOR.U341.ZN"}
+        -- 0 {PORT "COMPARATOR.U342.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[41] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .....a.......... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .CLK"}
+        DD 1 {PORT "COMPARATOR.U445.B"}
+        -- 1 {PORT "COMPARATOR.U444.ZN"}
+        DD 0 {PORT "COMPARATOR.U444.A2"}
+        -- 0 {PORT "COMPARATOR.U444.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[40] .D"}
+        -- 0 {PORT "COMPARATOR.U445.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .....f.......... ]
+        DD 1 {PORT "COMPARATOR.U339.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ....7........... ]
+        DD 1 {PORT "COMPARATOR.U260.B2"}
+        -- 1 {PORT "COMPARATOR.U260.B1"}
+        -- 1 {PORT "COMPARATOR.U258.ZN"}
+        -- 0 {PORT "COMPARATOR.U258.A1"}
+        -- 0 {PORT "COMPARATOR.U258.A2"}
+        DD 1 {PORT "COMPARATOR.U259.ZN"}
+        -- 0 {PORT "COMPARATOR.U259.I"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .D"}
+        -- 0 {PORT "COMPARATOR.U260.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[47] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ....80.......... ]
+        DD 0 {PORT "COMPARATOR.U328.ZN"}
+        DD 1 {PORT "COMPARATOR.U328.B2"}
+        -- 1 {PORT "COMPARATOR.U328.B1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ....80......6.3e ]
+        DD 1 {PORT "COMPARATOR.U264.ZN"}
+        -- 0 {PORT "COMPARATOR.U264.I"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ....b........... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .CLK"}
+        DD 0 {PORT "COMPARATOR.U329.A2"}
+        -- 0 {PORT "COMPARATOR.U329.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[46] .D"}
+        -- 1 {PORT "COMPARATOR.U330.I"}
+        -- 0 {PORT "COMPARATOR.U330.ZN"}
+        -- 1 {PORT "COMPARATOR.U329.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ....d........... ]
+        DD 0 {PORT "COMPARATOR.U348.A2"}
+        -- 0 {PORT "COMPARATOR.U348.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .D"}
+        -- 0 {PORT "COMPARATOR.U349.ZN"}
+        -- 1 {PORT "COMPARATOR.U349.I"}
+        -- 1 {PORT "COMPARATOR.U348.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[45] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ....e........... ]
+        DD 0 {PORT "COMPARATOR.U374.A2"}
+        -- 0 {PORT "COMPARATOR.U374.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .D"}
+        -- 1 {PORT "COMPARATOR.U374.ZN"}
+        -- 1 {PORT "COMPARATOR.U375.I"}
+        -- 0 {PORT "COMPARATOR.U375.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[44] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...0............ ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .Q"}
+        DD 0 {PORT "COMPARATOR.U325.A2"}
+        -- 0 {PORT "COMPARATOR.U325.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[50] .D"}
+        -- 1 {PORT "COMPARATOR.U326.I"}
+        -- 1 {PORT "COMPARATOR.U325.ZN"}
+        -- 0 {PORT "COMPARATOR.U326.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...5............ ]
+        DD 1 {PORT "COMPARATOR.U463.B1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...6............ ]
+        DD 1 {PORT "COMPARATOR.U321.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ...c............ ]
+        DD 1 {PORT "COMPARATOR.U350.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..0............. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .Q"}
+        DD 0 {PORT "COMPARATOR.U331.A2"}
+        -- 0 {PORT "COMPARATOR.U331.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[52] .D"}
+        -- 1 {PORT "COMPARATOR.U331.ZN"}
+        -- 1 {PORT "COMPARATOR.U332.I"}
+        -- 0 {PORT "COMPARATOR.U332.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..00............ ]
+        DD 0 {PORT "COMPARATOR.U316.ZN"}
+        DD 1 {PORT "COMPARATOR.U316.A2"}
+        -- 1 {PORT "COMPARATOR.U316.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..0080.......... ]
+        DD 1 {PORT "COMPARATOR.U314.ZN"}
+        -- 0 {PORT "COMPARATOR.U314.I"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..3............. ]
+        DD 1 {PORT "COMPARATOR.U317.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..5............. ]
+        DD 1 {PORT "COMPARATOR.U323.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: ..9............. ]
+        DD 0 {PORT "COMPARATOR.U280.B2"}
+        DD 0 {PORT "COMPARATOR.U279.ZN"}
+        -- 1 {PORT "COMPARATOR.U279.I"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .00000.......... ]
+        DD 0 {PORT "COMPARATOR.U257.ZN"}
+        -- 1 {PORT "COMPARATOR.U257.A1"}
+        -- 1 {PORT "COMPARATOR.U257.A2"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .0000000........ ]
+        DD 0 {PORT "COMPARATOR.U254.ZN"}
+        -- 1 {PORT "COMPARATOR.U254.I"}
+        DD 1 {PORT "COMPARATOR.U251.ZN"}
+        -- 0 {PORT "COMPARATOR.U251.I"}
+        DD 1 {PORT "COMPARATOR.U253.ZN"}
+        -- 1 {PORT "COMPARATOR.U252.B"}
+        -- 0 {PORT "COMPARATOR.U253.B"}
+        -- 0 {PORT "COMPARATOR.U252.ZN"}
+        DD 0 {PORT "COMPARATOR.U253.A1"}
+        DD 1 {PORT "COMPARATOR.U256.ZN"}
+        -- 0 {PORT "COMPARATOR.U256.A2"}
+        -- 0 {PORT "COMPARATOR.U256.A1"}
+        DD 1 {PORT "COMPARATOR.U252.A1"}
+        DD 0 {PORT "COMPARATOR.U250.ZN"}
+        -- 1 {PORT "COMPARATOR.U250.A1"}
+        -- 1 {PORT "COMPARATOR.U250.A2"}
+        -- 0 {PORT "COMPARATOR.U249.I"}
+        -- 1 {PORT "COMPARATOR.U249.ZN"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .1.............. ]
+        DD 0 {PORT "COMPARATOR.U333.A2"}
+        -- 0 {PORT "COMPARATOR.U333.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .D"}
+        -- 1 {PORT "COMPARATOR.U333.ZN"}
+        -- 0 {PORT "COMPARATOR.U334.ZN"}
+        -- 1 {PORT "COMPARATOR.U334.I"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[57] .Q"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .2.............. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .D"}
+        -- 0 {PORT "COMPARATOR.U451.ZN"}
+        DD 0 {PORT "COMPARATOR.U450.A2"}
+        -- 0 {PORT "COMPARATOR.U450.A1"}
+        DD 1 {PORT "COMPARATOR.U451.B"}
+        -- 1 {PORT "COMPARATOR.U450.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[56] .CLK"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .7.............. ]
+        DD 1 {PORT "COMPARATOR.U319.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: .b.............. ]
+        DD 1 {PORT "COMPARATOR.U335.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: 1............... ]
+        DD 1 {PORT "COMPARATOR.U311.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: 2............... ]
+        DD 1 {PORT "COMPARATOR.U343.A1"}
+
+    [441417500ns, 
+        1      GM: 0314fb7d00000000 
+               FM: 4............... ]
+        DD 1 {PORT "COMPARATOR.U380.A1"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............1 ]
+        DD 1 {PORT "COMPARATOR.U476.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ..............4. ]
+        DD 1 {PORT "COMPARATOR.U408.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .............2.. ]
+        DD 1 {PORT "COMPARATOR.U403.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .............8.. ]
+        DD 1 {PORT "COMPARATOR.U399.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........1..... ]
+        DD 0 {PORT "COMPARATOR.U377.B2"}
+        DD 1 {PORT "COMPARATOR.U384.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .......1........ ]
+        DD 1 {PORT "COMPARATOR.U474.A1"}
+        DD 1 {PORT "COMPARATOR.U472.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .......4........ ]
+        DD 1 {PORT "COMPARATOR.U356.B2"}
+        DD 1 {PORT "COMPARATOR.U356.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .......8........ ]
+        DD 1 {PORT "COMPARATOR.U354.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ......1......... ]
+        DD 1 {PORT "COMPARATOR.U352.A2"}
+        DD 1 {PORT "COMPARATOR.U352.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ......2......... ]
+        DD 1 {PORT "COMPARATOR.U364.A2"}
+        DD 1 {PORT "COMPARATOR.U364.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ......34........ ]
+        DD 0 {PORT "COMPARATOR.U345.A2"}
+        DD 1 {PORT "COMPARATOR.U284.A2"}
+        -- 1 {PORT "COMPARATOR.U283.ZN"}
+        DD 1 {PORT "COMPARATOR.U345.ZN"}
+        -- 0 {PORT "COMPARATOR.U345.B"}
+        DD 0 {PORT "COMPARATOR.U284.ZN"}
+        DD 0 {PORT "COMPARATOR.U283.B2"}
+        DD 0 {PORT "COMPARATOR.U283.A1"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ......4......... ]
+        DD 1 {PORT "COMPARATOR.U346.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .....1.......... ]
+        DD 1 {PORT "COMPARATOR.U444.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .....2.......... ]
+        DD 1 {PORT "COMPARATOR.U341.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .....8.......... ]
+        DD 1 {PORT "COMPARATOR.U337.A2"}
+        DD 1 {PORT "COMPARATOR.U337.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ....1........... ]
+        DD 1 {PORT "COMPARATOR.U374.A2"}
+        DD 1 {PORT "COMPARATOR.U374.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ....2........... ]
+        DD 1 {PORT "COMPARATOR.U348.A2"}
+        DD 1 {PORT "COMPARATOR.U348.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ....38.......... ]
+        DD 0 {PORT "COMPARATOR.U328.A2"}
+        DD 0 {PORT "COMPARATOR.U328.B2"}
+        DD 1 {PORT "COMPARATOR.U328.ZN"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ....4........... ]
+        DD 1 {PORT "COMPARATOR.U329.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ....8........... ]
+        DD 0 {PORT "COMPARATOR.U260.A1"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ...1............ ]
+        DD 1 {PORT "COMPARATOR.U463.B2"}
+        DD 1 {PORT "COMPARATOR.U463.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ...2............ ]
+        DD 1 {PORT "COMPARATOR.U321.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ...4............ ]
+        DD 1 {PORT "COMPARATOR.U325.B2"}
+        DD 1 {PORT "COMPARATOR.U325.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ...8............ ]
+        DD 1 {PORT "COMPARATOR.U350.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ..1............. ]
+        DD 1 {PORT "COMPARATOR.U331.B2"}
+        DD 1 {PORT "COMPARATOR.U331.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ..1f............ ]
+        DD 0 {PORT "COMPARATOR.U316.B2"}
+        DD 0 {PORT "COMPARATOR.U316.A2"}
+        DD 1 {PORT "COMPARATOR.U316.ZN"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ..1f..34..1..... ]
+        DD 1 {PORT "COMPARATOR.U315.A1"}
+        DD 0 {PORT "COMPARATOR.U315.ZN"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: ..1f38.......... ]
+        DD 0 {PORT "COMPARATOR.U314.ZN"}
+        -- 1 {PORT "COMPARATOR.U314.I"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .1.............. ]
+        DD 0 {PORT "COMPARATOR.U451.A2"}
+        DD 1 {PORT "COMPARATOR.U450.A2"}
+        DD 1 {PORT "COMPARATOR.U450.B2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .2.............. ]
+        DD 1 {PORT "COMPARATOR.U333.B2"}
+        DD 1 {PORT "COMPARATOR.U333.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .4.............. ]
+        DD 1 {PORT "COMPARATOR.U319.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: .8.............. ]
+        DD 1 {PORT "COMPARATOR.U335.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: 1............... ]
+        DD 1 {PORT "COMPARATOR.U311.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: 2............... ]
+        DD 1 {PORT "COMPARATOR.U343.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: 4............... ]
+        DD 1 {PORT "COMPARATOR.U380.A2"}
+
+    [441427500ns, 
+        1      GM: 0000000000000000 
+               FM: 7f1f38.......... ]
+        DD 1 {PORT "COMPARATOR.U257.ZN"}
+        DD 0 {PORT "COMPARATOR.U257.A2"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...............0 ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .CLK"}
+        DD 0 {PORT "COMPARATOR.U418.A2"}
+        -- 0 {PORT "COMPARATOR.U418.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[1] .D"}
+        -- 0 {PORT "COMPARATOR.U419.ZN"}
+        -- 1 {PORT "COMPARATOR.U418.ZN"}
+        -- 1 {PORT "COMPARATOR.U419.I"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...............3 ]
+        DD 1 {PORT "COMPARATOR.U476.A1"}
+        DD 1 {PORT "COMPARATOR.U480.B1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...............6 ]
+        DD 1 {PORT "COMPARATOR.U416.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...............a ]
+        DD 1 {PORT "COMPARATOR.U414.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..............00 ]
+        DD 0 {PORT "COMPARATOR.U274.ZN"}
+        DD 1 {PORT "COMPARATOR.U274.A2"}
+        -- 1 {PORT "COMPARATOR.U274.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..............2. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .D"}
+        -- 0 {PORT "COMPARATOR.U276.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[7] .CLK"}
+        DD 1 {PORT "COMPARATOR.U276.B2"}
+        -- 1 {PORT "COMPARATOR.U276.B1"}
+        -- 0 {PORT "COMPARATOR.U275.A2"}
+        -- 0 {PORT "COMPARATOR.U275.A1"}
+        -- 1 {PORT "COMPARATOR.U275.ZN"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..............8. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .D"}
+        -- 1 {PORT "COMPARATOR.U411.I"}
+        -- 1 {PORT "COMPARATOR.U410.ZN"}
+        -- 0 {PORT "COMPARATOR.U411.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[5] .CLK"}
+        DD 0 {PORT "COMPARATOR.U410.A2"}
+        -- 0 {PORT "COMPARATOR.U410.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..............80 ]
+        DD 0 {PORT "COMPARATOR.U406.B"}
+        DD 0 {PORT "COMPARATOR.U407.ZN"}
+        -- 1 {PORT "COMPARATOR.U406.ZN"}
+        -- 1 {PORT "COMPARATOR.U407.A2"}
+        -- 1 {PORT "COMPARATOR.U407.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..............b. ]
+        DD 1 {PORT "COMPARATOR.U412.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..............e. ]
+        DD 1 {PORT "COMPARATOR.U408.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .............0.. ]
+        DD 0 {PORT "COMPARATOR.U401.A2"}
+        -- 0 {PORT "COMPARATOR.U401.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[10] .D"}
+        -- 1 {PORT "COMPARATOR.U402.I"}
+        -- 0 {PORT "COMPARATOR.U402.ZN"}
+        -- 1 {PORT "COMPARATOR.U401.ZN"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .............5.. ]
+        DD 1 {PORT "COMPARATOR.U440.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .............6.. ]
+        DD 1 {PORT "COMPARATOR.U403.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .............c.. ]
+        DD 1 {PORT "COMPARATOR.U399.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ............00.. ]
+        DD 0 {PORT "COMPARATOR.U392.ZN"}
+        DD 1 {PORT "COMPARATOR.U392.B2"}
+        -- 1 {PORT "COMPARATOR.U392.B1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ............1... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .D"}
+        -- 0 {PORT "COMPARATOR.U394.ZN"}
+        -- 1 {PORT "COMPARATOR.U394.I"}
+        -- 1 {PORT "COMPARATOR.U393.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .Q"}
+        DD 0 {PORT "COMPARATOR.U393.A2"}
+        -- 0 {PORT "COMPARATOR.U393.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[14] .CLK"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ............4... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .D"}
+        -- 1 {PORT "COMPARATOR.U398.I"}
+        -- 0 {PORT "COMPARATOR.U398.ZN"}
+        -- 1 {PORT "COMPARATOR.U397.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[12] .Q"}
+        DD 0 {PORT "COMPARATOR.U397.A2"}
+        -- 0 {PORT "COMPARATOR.U397.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ............7... ]
+        DD 1 {PORT "COMPARATOR.U395.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ............d... ]
+        DD 0 {PORT "COMPARATOR.U270.ZN"}
+        -- 1 {PORT "COMPARATOR.U270.I"}
+        DD 0 {PORT "COMPARATOR.U272.B1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...........5.... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .CLK"}
+        DD 0 {PORT "COMPARATOR.U386.A2"}
+        -- 0 {PORT "COMPARATOR.U386.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[19] .D"}
+        -- 0 {PORT "COMPARATOR.U387.ZN"}
+        -- 1 {PORT "COMPARATOR.U387.I"}
+        -- 1 {PORT "COMPARATOR.U386.ZN"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...........9.... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .CLK"}
+        DD 0 {PORT "COMPARATOR.U388.A2"}
+        -- 0 {PORT "COMPARATOR.U388.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .D"}
+        -- 1 {PORT "COMPARATOR.U389.I"}
+        -- 0 {PORT "COMPARATOR.U389.ZN"}
+        -- 1 {PORT "COMPARATOR.U388.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[18] .Q"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...........c.... ]
+        DD 1 {PORT "COMPARATOR.U469.A2"}
+        -- 1 {PORT "COMPARATOR.U468.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .D"}
+        -- 0 {PORT "COMPARATOR.U469.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .Q"}
+        DD 0 {PORT "COMPARATOR.U468.B2"}
+        -- 0 {PORT "COMPARATOR.U468.B1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[16] .CLK"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...........f.... ]
+        DD 1 {PORT "COMPARATOR.U390.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..........00.... ]
+        DD 0 {PORT "COMPARATOR.U377.ZN"}
+        DD 1 {PORT "COMPARATOR.U377.A2"}
+        -- 1 {PORT "COMPARATOR.U377.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..........0000.. ]
+        DD 1 {PORT "COMPARATOR.U376.ZN"}
+        -- 0 {PORT "COMPARATOR.U376.I"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..........1..... ]
+        DD 0 {PORT "COMPARATOR.U378.A2"}
+        -- 0 {PORT "COMPARATOR.U378.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .D"}
+        -- 1 {PORT "COMPARATOR.U379.I"}
+        -- 0 {PORT "COMPARATOR.U379.ZN"}
+        -- 1 {PORT "COMPARATOR.U378.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[22] .CLK"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..........4..... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .D"}
+        -- 1 {PORT "COMPARATOR.U384.ZN"}
+        -- 1 {PORT "COMPARATOR.U385.I"}
+        -- 0 {PORT "COMPARATOR.U385.ZN"}
+        DD 0 {PORT "COMPARATOR.U384.A2"}
+        -- 0 {PORT "COMPARATOR.U384.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[20] .CLK"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..........7..... ]
+        DD 1 {PORT "COMPARATOR.U382.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..........d..... ]
+        DD 0 {PORT "COMPARATOR.U267.ZN"}
+        -- 1 {PORT "COMPARATOR.U267.I"}
+        DD 0 {PORT "COMPARATOR.U268.B2"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .........00000.. ]
+        DD 0 {PORT "COMPARATOR.U262.ZN"}
+        -- 1 {PORT "COMPARATOR.U262.A1"}
+        -- 1 {PORT "COMPARATOR.U262.A2"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .........1...... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .D"}
+        -- 1 {PORT "COMPARATOR.U373.I"}
+        -- 0 {PORT "COMPARATOR.U373.ZN"}
+        -- 1 {PORT "COMPARATOR.U372.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[25] .CLK"}
+        DD 0 {PORT "COMPARATOR.U372.A2"}
+        -- 0 {PORT "COMPARATOR.U372.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .........2...... ]
+        DD 0 {PORT "COMPARATOR.U456.A2"}
+        -- 0 {PORT "COMPARATOR.U456.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .Q"}
+        DD 1 {PORT "COMPARATOR.U457.B"}
+        -- 1 {PORT "COMPARATOR.U456.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .D"}
+        -- 0 {PORT "COMPARATOR.U457.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[24] .CLK"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .........7...... ]
+        DD 1 {PORT "COMPARATOR.U370.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .........b...... ]
+        DD 1 {PORT "COMPARATOR.U368.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ........1....... ]
+        DD 1 {PORT "COMPARATOR.U366.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ........2....... ]
+        DD 1 {PORT "COMPARATOR.U362.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ........4....... ]
+        DD 1 {PORT "COMPARATOR.U360.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .......d........ ]
+        DD 1 {PORT "COMPARATOR.U356.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .....b.......... ]
+        DD 1 {PORT "COMPARATOR.U341.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ....f........... ]
+        DD 1 {PORT "COMPARATOR.U374.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...0............ ]
+        DD 0 {PORT "COMPARATOR.U321.A2"}
+        -- 0 {PORT "COMPARATOR.U321.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[49] .D"}
+        -- 1 {PORT "COMPARATOR.U322.I"}
+        -- 1 {PORT "COMPARATOR.U321.ZN"}
+        -- 0 {PORT "COMPARATOR.U322.ZN"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ...6............ ]
+        DD 1 {PORT "COMPARATOR.U325.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: ..1............. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .D"}
+        -- 0 {PORT "COMPARATOR.U324.ZN"}
+        -- 1 {PORT "COMPARATOR.U324.I"}
+        -- 1 {PORT "COMPARATOR.U323.ZN"}
+        DD 0 {PORT "COMPARATOR.U323.A2"}
+        -- 0 {PORT "COMPARATOR.U323.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[54] .CLK"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .1.............. ]
+        DD 1 {PORT "COMPARATOR.U450.A1"}
+
+    [441437500ns, 
+        1      GM: 0052e979035d54a2 
+               FM: .2.............. ]
+        DD 1 {PORT "COMPARATOR.U333.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...............0 ]
+        DD 1 {PORT "COMPARATOR.U481.A1"}
+        -- 1 {PORT "COMPARATOR.U476.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .D"}
+        -- 0 {PORT "COMPARATOR.U481.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[0] .CLK"}
+        DD 0 {PORT "COMPARATOR.U476.A2"}
+        -- 0 {PORT "COMPARATOR.U476.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...............3 ]
+        DD 1 {PORT "COMPARATOR.U418.A1"}
+        DD 1 {PORT "COMPARATOR.U418.B2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ..............b. ]
+        DD 0 {PORT "COMPARATOR.U408.A2"}
+        -- 0 {PORT "COMPARATOR.U408.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .D"}
+        -- 1 {PORT "COMPARATOR.U409.I"}
+        -- 0 {PORT "COMPARATOR.U409.ZN"}
+        -- 1 {PORT "COMPARATOR.U408.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[6] .CLK"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ..............e. ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .Q"}
+        DD 0 {PORT "COMPARATOR.U412.A2"}
+        -- 0 {PORT "COMPARATOR.U412.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[4] .D"}
+        -- 1 {PORT "COMPARATOR.U413.I"}
+        -- 0 {PORT "COMPARATOR.U413.ZN"}
+        -- 1 {PORT "COMPARATOR.U412.ZN"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .............0.. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .D"}
+        -- 0 {PORT "COMPARATOR.U404.ZN"}
+        -- 1 {PORT "COMPARATOR.U404.I"}
+        -- 1 {PORT "COMPARATOR.U403.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .Q"}
+        DD 0 {PORT "COMPARATOR.U403.A2"}
+        -- 0 {PORT "COMPARATOR.U403.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[9] .CLK"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .............6.. ]
+        DD 1 {PORT "COMPARATOR.U401.B2"}
+        DD 1 {PORT "COMPARATOR.U401.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ............5... ]
+        DD 1 {PORT "COMPARATOR.U397.B2"}
+        DD 1 {PORT "COMPARATOR.U397.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...........0.... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .D"}
+        -- 1 {PORT "COMPARATOR.U391.I"}
+        -- 0 {PORT "COMPARATOR.U391.ZN"}
+        -- 1 {PORT "COMPARATOR.U390.ZN"}
+        DD 0 {PORT "COMPARATOR.U390.A2"}
+        -- 0 {PORT "COMPARATOR.U390.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[17] .Q"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...........3.... ]
+        DD 1 {PORT "COMPARATOR.U467.B2"}
+        DD 1 {PORT "COMPARATOR.U468.B1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...........6.... ]
+        DD 1 {PORT "COMPARATOR.U388.B2"}
+        DD 1 {PORT "COMPARATOR.U388.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...........a.... ]
+        DD 1 {PORT "COMPARATOR.U386.A1"}
+        DD 1 {PORT "COMPARATOR.U386.B2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ..........5..... ]
+        DD 1 {PORT "COMPARATOR.U378.B2"}
+        DD 1 {PORT "COMPARATOR.U378.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .........3...... ]
+        DD 1 {PORT "COMPARATOR.U456.A1"}
+        DD 1 {PORT "COMPARATOR.U456.B2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .......1........ ]
+        DD 1 {PORT "COMPARATOR.U472.A1"}
+        DD 1 {PORT "COMPARATOR.U474.B2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .......2........ ]
+        DD 1 {PORT "COMPARATOR.U358.A2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ......8......... ]
+        DD 0 {PORT "COMPARATOR.U286.B1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .....1.......... ]
+        DD 1 {PORT "COMPARATOR.U444.A2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: .....4.......... ]
+        DD 1 {PORT "COMPARATOR.U339.A2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ....4........... ]
+        DD 1 {PORT "COMPARATOR.U329.A2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...1............ ]
+        DD 1 {PORT "COMPARATOR.U461.A1"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ...2............ ]
+        DD 1 {PORT "COMPARATOR.U321.B2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ..2............. ]
+        DD 1 {PORT "COMPARATOR.U317.A2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ..4............. ]
+        DD 1 {PORT "COMPARATOR.U323.B2"}
+
+    [441447500ns, 
+        1      GM: 00000000021242f1 
+               FM: ..8............. ]
+        DD 1 {PORT "COMPARATOR.U278.A1"}
+        DD 0 {PORT "COMPARATOR.U280.B1"}
+        -- 0 {PORT "COMPARATOR.U278.ZN"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ...............1 ]
+        DD 1 {PORT "COMPARATOR.U476.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..............1. ]
+        DD 1 {PORT "COMPARATOR.U412.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..............2. ]
+        DD 1 {PORT "COMPARATOR.U410.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..............4. ]
+        DD 1 {PORT "COMPARATOR.U408.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..............8. ]
+        DD 0 {PORT "COMPARATOR.U276.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .............1.. ]
+        DD 1 {PORT "COMPARATOR.U440.A2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .............2.. ]
+        DD 1 {PORT "COMPARATOR.U403.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .............4.. ]
+        DD 1 {PORT "COMPARATOR.U401.A2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ............1... ]
+        DD 1 {PORT "COMPARATOR.U397.A2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ............4... ]
+        DD 1 {PORT "COMPARATOR.U393.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ...........2.... ]
+        DD 1 {PORT "COMPARATOR.U390.B2"}
+        DD 1 {PORT "COMPARATOR.U390.A2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ...........4.... ]
+        DD 1 {PORT "COMPARATOR.U388.A2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..........1..... ]
+        DD 1 {PORT "COMPARATOR.U384.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .........2...... ]
+        DD 1 {PORT "COMPARATOR.U372.B2"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .......d........ ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .D"}
+        -- 0 {PORT "COMPARATOR.U359.ZN"}
+        -- 1 {PORT "COMPARATOR.U358.ZN"}
+        -- 1 {PORT "COMPARATOR.U359.I"}
+        DD 0 {PORT "COMPARATOR.U358.A2"}
+        -- 0 {PORT "COMPARATOR.U358.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[33] .Q"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ......1......... ]
+        DD 1 {PORT "COMPARATOR.U352.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ......2......... ]
+        DD 1 {PORT "COMPARATOR.U364.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ......4......... ]
+        DD 1 {PORT "COMPARATOR.U346.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .....a.......... ]
+        DD 0 {PORT "COMPARATOR.U339.A2"}
+        -- 0 {PORT "COMPARATOR.U339.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .D"}
+        -- 1 {PORT "COMPARATOR.U340.I"}
+        -- 0 {PORT "COMPARATOR.U340.ZN"}
+        -- 1 {PORT "COMPARATOR.U339.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[42] .CLK"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: .....f.......... ]
+        DD 1 {PORT "COMPARATOR.U444.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ....6........... ]
+        DD 1 {PORT "COMPARATOR.U329.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ....a........... ]
+        DD 0 {PORT "COMPARATOR.U260.B2"}
+        DD 0 {PORT "COMPARATOR.U259.ZN"}
+        -- 1 {PORT "COMPARATOR.U259.I"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ...2............ ]
+        DD 1 {PORT "COMPARATOR.U464.A2"}
+        -- 1 {PORT "COMPARATOR.U463.ZN"}
+        DD 0 {PORT "COMPARATOR.U463.B2"}
+        -- 0 {PORT "COMPARATOR.U463.B1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .D"}
+        -- 0 {PORT "COMPARATOR.U464.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[48] .CLK"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..6............. ]
+        DD 1 {PORT "COMPARATOR.U279.ZN"}
+        -- 0 {PORT "COMPARATOR.U279.I"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .D"}
+        -- 0 {PORT "COMPARATOR.U280.ZN"}
+        DD 1 {PORT "COMPARATOR.U280.B2"}
+        -- 1 {PORT "COMPARATOR.U280.B1"}
+        -- 0 {PORT "COMPARATOR.U278.A2"}
+        -- 0 {PORT "COMPARATOR.U278.A1"}
+        -- 1 {PORT "COMPARATOR.U278.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[55] .Q"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..c............. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .D"}
+        -- 0 {PORT "COMPARATOR.U318.ZN"}
+        -- 1 {PORT "COMPARATOR.U318.I"}
+        -- 1 {PORT "COMPARATOR.U317.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[53] .CLK"}
+        DD 0 {PORT "COMPARATOR.U317.A2"}
+        -- 0 {PORT "COMPARATOR.U317.A1"}
+
+    [441457500ns, 
+        1      GM: 03e32e0f00000000 
+               FM: ..f............. ]
+        DD 1 {PORT "COMPARATOR.U331.A1"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ...............3 ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .D"}
+        -- 1 {PORT "COMPARATOR.U415.I"}
+        -- 1 {PORT "COMPARATOR.U414.ZN"}
+        -- 0 {PORT "COMPARATOR.U415.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[3] .Q"}
+        DD 0 {PORT "COMPARATOR.U414.A2"}
+        -- 0 {PORT "COMPARATOR.U414.A1"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ..............3. ]
+        DD 1 {PORT "COMPARATOR.U410.A1"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ..............9. ]
+        DD 1 {PORT "COMPARATOR.U275.A1"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: .............6.. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .D"}
+        -- 0 {PORT "COMPARATOR.U400.ZN"}
+        -- 1 {PORT "COMPARATOR.U399.ZN"}
+        -- 1 {PORT "COMPARATOR.U400.I"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .CLK"}
+        DD 0 {PORT "COMPARATOR.U399.A2"}
+        -- 0 {PORT "COMPARATOR.U399.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[11] .Q"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ..........1..... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .D"}
+        -- 1 {PORT "COMPARATOR.U382.ZN"}
+        -- 0 {PORT "COMPARATOR.U383.ZN"}
+        -- 1 {PORT "COMPARATOR.U383.I"}
+        DD 0 {PORT "COMPARATOR.U382.A2"}
+        -- 0 {PORT "COMPARATOR.U382.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[21] .Q"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: .......2........ ]
+        DD 1 {PORT "COMPARATOR.U358.B2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: .......8........ ]
+        DD 1 {PORT "COMPARATOR.U354.A2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: .....1.......... ]
+        DD 0 {PORT "COMPARATOR.U445.A1"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: .....2.......... ]
+        DD 1 {PORT "COMPARATOR.U341.A2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: .....4.......... ]
+        DD 1 {PORT "COMPARATOR.U339.B2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ....8........... ]
+        DD 1 {PORT "COMPARATOR.U258.A2"}
+        DD 0 {PORT "COMPARATOR.U260.B1"}
+        -- 0 {PORT "COMPARATOR.U258.ZN"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ...1............ ]
+        DD 1 {PORT "COMPARATOR.U461.B2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ..2............. ]
+        DD 1 {PORT "COMPARATOR.U317.B2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ..4............. ]
+        DD 1 {PORT "COMPARATOR.U323.A2"}
+
+    [441467500ns, 
+        1      GM: 00000000033d4e1b 
+               FM: ..8............. ]
+        DD 0 {PORT "COMPARATOR.U280.A1"}
+
+    [441477500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............8 ]
+        DD 1 {PORT "COMPARATOR.U414.B2"}
+
+    [441477500ns, 
+        1      GM: 0000000000000000 
+               FM: .............8.. ]
+        DD 1 {PORT "COMPARATOR.U399.B2"}
+
+    [441477500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........2..... ]
+        DD 1 {PORT "COMPARATOR.U382.B2"}
+
+    [441477500ns, 
+        1      GM: 0000000000000000 
+               FM: ......4......... ]
+        DD 1 {PORT "COMPARATOR.U346.A2"}
+
+    [441487500ns, 
+        1      GM: 00000000026d2f38 
+               FM: .............e.. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .D"}
+        -- 0 {PORT "COMPARATOR.U441.ZN"}
+        DD 1 {PORT "COMPARATOR.U441.B"}
+        -- 1 {PORT "COMPARATOR.U440.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[8] .CLK"}
+        DD 0 {PORT "COMPARATOR.U440.A2"}
+        -- 0 {PORT "COMPARATOR.U440.A1"}
+
+    [441487500ns, 
+        1      GM: 00000000026d2f38 
+               FM: ............0... ]
+        DD 0 {PORT "COMPARATOR.U395.A2"}
+        -- 0 {PORT "COMPARATOR.U395.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .D"}
+        -- 0 {PORT "COMPARATOR.U396.ZN"}
+        -- 1 {PORT "COMPARATOR.U395.ZN"}
+        -- 1 {PORT "COMPARATOR.U396.I"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[13] .CLK"}
+
+    [441487500ns, 
+        1      GM: 00000000026d2f38 
+               FM: ............6... ]
+        DD 1 {PORT "COMPARATOR.U393.A1"}
+
+    [441487500ns, 
+        1      GM: 00000000026d2f38 
+               FM: ..........7..... ]
+        DD 1 {PORT "COMPARATOR.U384.A1"}
+
+    [441497500ns, 
+        1      GM: 02dd48fd03d01210 
+               FM: .............3.. ]
+        DD 1 {PORT "COMPARATOR.U440.B2"}
+
+    [441497500ns, 
+        1      GM: 02dd48fd03d01210 
+               FM: ............3... ]
+        DD 1 {PORT "COMPARATOR.U395.B2"}
+
+    [441497500ns, 
+        1      GM: 02dd48fd03d01210 
+               FM: ..........5..... ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .Q"}
+        DD 1 {PORT "COMPARATOR.U267.ZN"}
+        -- 0 {PORT "COMPARATOR.U267.I"}
+        DD 1 {PORT "COMPARATOR.U268.B2"}
+        -- 0 {PORT "COMPARATOR.U266.A1"}
+        -- 0 {PORT "COMPARATOR.U266.A2"}
+        -- 1 {PORT "COMPARATOR.U268.B1"}
+        -- 1 {PORT "COMPARATOR.U266.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[23] .D"}
+        -- 0 {PORT "COMPARATOR.U268.ZN"}
+
+    [441497500ns, 
+        1      GM: 02dd48fd03d01210 
+               FM: ......7......... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .D"}
+        -- 0 {PORT "COMPARATOR.U286.ZN"}
+        DD 1 {PORT "COMPARATOR.U285.ZN"}
+        -- 0 {PORT "COMPARATOR.U285.I"}
+        DD 1 {PORT "COMPARATOR.U286.B2"}
+        -- 1 {PORT "COMPARATOR.U286.B1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[39] .CLK"}
+
+    [441497500ns, 
+        1      GM: 02dd48fd03d01210 
+               FM: ....6........... ]
+        DD 1 {PORT "COMPARATOR.U348.A1"}
+
+    [441497500ns, 
+        1      GM: 02dd48fd03d01210 
+               FM: ...5............ ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .Q"}
+        DD 0 {PORT "COMPARATOR.U350.A2"}
+        -- 0 {PORT "COMPARATOR.U350.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[51] .D"}
+        -- 1 {PORT "COMPARATOR.U350.ZN"}
+        -- 0 {PORT "COMPARATOR.U351.ZN"}
+        -- 1 {PORT "COMPARATOR.U351.I"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: .............1.. ]
+        DD 0 {PORT "COMPARATOR.U441.A1"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: ............8... ]
+        DD 1 {PORT "COMPARATOR.U271.A2"}
+        DD 0 {PORT "COMPARATOR.U272.B2"}
+        -- 0 {PORT "COMPARATOR.U271.ZN"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: ...........8.... ]
+        DD 1 {PORT "COMPARATOR.U386.A2"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........2..... ]
+        DD 1 {PORT "COMPARATOR.U382.A2"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: ..........8..... ]
+        DD 0 {PORT "COMPARATOR.U268.A1"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: ......8......... ]
+        DD 0 {PORT "COMPARATOR.U286.A1"}
+
+    [441507500ns, 
+        1      GM: 0000000000000000 
+               FM: ...8............ ]
+        DD 1 {PORT "COMPARATOR.U350.B2"}
+
+    [441517500ns, 
+        1      GM: 01bf5ee600000000 
+               FM: ..............8. ]
+        DD 1 {PORT "COMPARATOR.U275.A2"}
+
+    [441517500ns, 
+        1      GM: 01bf5ee600000000 
+               FM: .........1...... ]
+        DD 1 {PORT "COMPARATOR.U456.A2"}
+
+    [441517500ns, 
+        1      GM: 01bf5ee600000000 
+               FM: .......7........ ]
+        DD 1 {PORT "COMPARATOR.U474.B1"}
+
+    [441517500ns, 
+        1      GM: 01bf5ee600000000 
+               FM: .......e........ ]
+        DD 1 {PORT "COMPARATOR.U354.A1"}
+
+    [441537500ns, 
+        1      GM: 011e330902413433 
+               FM: .....b.......... ]
+        DD 1 {PORT "COMPARATOR.U337.A1"}
+
+    [441567500ns, 
+        1      GM: 0000000002010977 
+               FM: ...............3 ]
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .CLK"}
+        DD 0 {PORT "COMPARATOR.U416.A2"}
+        -- 0 {PORT "COMPARATOR.U416.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .D"}
+        -- 1 {PORT "COMPARATOR.U416.ZN"}
+        -- 0 {PORT "COMPARATOR.U417.ZN"}
+        -- 1 {PORT "COMPARATOR.U417.I"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[2] .Q"}
+
+    [441577500ns, 
+        1      GM: 0000000000000000 
+               FM: ...............4 ]
+        DD 1 {PORT "COMPARATOR.U416.B2"}
+
+    [441657500ns, 
+        1      GM: 0000000003c6f2c2 
+               FM: ............7... ]
+        DD 1 {PORT "COMPARATOR.U272.B2"}
+        -- 0 {PORT "COMPARATOR.U271.A2"}
+        -- 1 {PORT "COMPARATOR.U271.ZN"}
+        -- 0 {PORT "COMPARATOR.U271.A1"}
+        -- 1 {PORT "COMPARATOR.U272.B1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .CLK"}
+        DD 1 {PORT "COMPARATOR.U270.ZN"}
+        -- 0 {PORT "COMPARATOR.U270.I"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[15] .D"}
+        -- 0 {PORT "COMPARATOR.U272.ZN"}
+
+    [441667500ns, 
+        1      GM: 02d4908c00ce3c6f 
+               FM: ............b... ]
+        DD 0 {PORT "COMPARATOR.U272.A1"}
+
+    [441667500ns, 
+        1      GM: 02d4908c00ce3c6f 
+               FM: .........2...... ]
+        DD 1 {PORT "COMPARATOR.U372.A1"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ...............0 ]
+        DD 0 {PORT "COMPARATOR.U476.B2"}
+        DD 0 {PORT "COMPARATOR.U476.B1"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ..............1. ]
+        DD 0 {PORT "COMPARATOR.U273.I"}
+        DD 1 {PORT "COMPARATOR.U276.A2"}
+        -- 1 {PORT "COMPARATOR.U273.ZN"}
+        -- 1 {PORT "COMPARATOR.U276.A1"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ..............8. ]
+        DD 0 {PORT "COMPARATOR.U412.B1"}
+        DD 0 {PORT "COMPARATOR.U412.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: .............0.. ]
+        DD 0 {PORT "COMPARATOR.U403.B2"}
+        DD 0 {PORT "COMPARATOR.U403.B1"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ............5... ]
+        DD 0 {PORT "COMPARATOR.U269.I"}
+        DD 1 {PORT "COMPARATOR.U272.A2"}
+        -- 1 {PORT "COMPARATOR.U272.A1"}
+        -- 1 {PORT "COMPARATOR.U269.ZN"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ............5.1. ]
+        DD 1 {PORT "COMPARATOR.U254.ZN"}
+        -- 0 {PORT "COMPARATOR.U254.I"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ............9... ]
+        DD 0 {PORT "COMPARATOR.U393.B2"}
+        DD 0 {PORT "COMPARATOR.U393.B1"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ............c... ]
+        DD 0 {PORT "COMPARATOR.U397.B1"}
+        DD 0 {PORT "COMPARATOR.U397.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ...........2.... ]
+        DD 0 {PORT "COMPARATOR.U386.B1"}
+        DD 0 {PORT "COMPARATOR.U386.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ...........8.... ]
+        DD 0 {PORT "COMPARATOR.U390.B1"}
+        DD 0 {PORT "COMPARATOR.U390.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ..........3..... ]
+        DD 0 {PORT "COMPARATOR.U378.B2"}
+        DD 0 {PORT "COMPARATOR.U378.B1"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ..........5..... ]
+        DD 0 {PORT "COMPARATOR.U382.B1"}
+        DD 0 {PORT "COMPARATOR.U382.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: ..........6..... ]
+        DD 0 {PORT "COMPARATOR.U384.B1"}
+        DD 0 {PORT "COMPARATOR.U384.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: .........0...... ]
+        DD 0 {PORT "COMPARATOR.U456.B1"}
+        DD 0 {PORT "COMPARATOR.U456.B2"}
+
+    [442697500ns, 
+        1      GM: 00000000017ad291 
+               FM: .........0000000 ]
+        DD 0 {PORT "COMPARATOR.U253.ZN"}
+        DD 1 {PORT "COMPARATOR.U253.A2"}
+        -- 1 {PORT "COMPARATOR.U253.A1"}
+
+    [546207500ns, 
+        1      GM: 03581f4006ad5b0d 
+               FM: .........2...... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .D"}
+        -- 0 {PORT "COMPARATOR.U371.ZN"}
+        -- 1 {PORT "COMPARATOR.U371.I"}
+        -- 1 {PORT "COMPARATOR.U370.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[26] .CLK"}
+        DD 0 {PORT "COMPARATOR.U370.A2"}
+        -- 0 {PORT "COMPARATOR.U370.A1"}
+
+    [546217500ns, 
+        1      GM: 0000000000000000 
+               FM: .........4...... ]
+        DD 1 {PORT "COMPARATOR.U370.B2"}
+
+    [546317500ns, 
+        1      GM: 04fd2bb900000000 
+               FM: .0.............. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .D"}
+        -- 0 {PORT "COMPARATOR.U320.ZN"}
+        -- 1 {PORT "COMPARATOR.U320.I"}
+        -- 1 {PORT "COMPARATOR.U319.ZN"}
+        DD 0 {PORT "COMPARATOR.U319.A2"}
+        -- 0 {PORT "COMPARATOR.U319.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[58] .Q"}
+
+    [546327500ns, 
+        1      GM: 0000000004bee242 
+               FM: .4.............. ]
+        DD 1 {PORT "COMPARATOR.U319.B2"}
+
+    [546377500ns, 
+        1      GM: 0c0b482f01732065 
+               FM: .4.............. ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .D"}
+        -- 1 {PORT "COMPARATOR.U335.ZN"}
+        -- 1 {PORT "COMPARATOR.U336.I"}
+        -- 0 {PORT "COMPARATOR.U336.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[59] .CLK"}
+        DD 0 {PORT "COMPARATOR.U335.A2"}
+        -- 0 {PORT "COMPARATOR.U335.A1"}
+
+    [546387500ns, 
+        1      GM: 05d7111008b0032f 
+               FM: .........0...... ]
+        DD 0 {PORT "COMPARATOR.U368.A2"}
+        -- 0 {PORT "COMPARATOR.U368.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .D"}
+        -- 0 {PORT "COMPARATOR.U369.ZN"}
+        -- 1 {PORT "COMPARATOR.U368.ZN"}
+        -- 1 {PORT "COMPARATOR.U369.I"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[27] .CLK"}
+
+    [546387500ns, 
+        1      GM: 05d7111008b0032f 
+               FM: .d.............. ]
+        DD 1 {PORT "COMPARATOR.U335.B2"}
+
+    [546397500ns, 
+        1      GM: 0000000000000000 
+               FM: .........8...... ]
+        DD 1 {PORT "COMPARATOR.U368.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ...............7 ]
+        DD 0 {PORT "COMPARATOR.U414.B1"}
+        DD 0 {PORT "COMPARATOR.U414.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ...............b ]
+        DD 0 {PORT "COMPARATOR.U416.B1"}
+        DD 0 {PORT "COMPARATOR.U416.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ...............d ]
+        DD 0 {PORT "COMPARATOR.U418.B2"}
+        DD 0 {PORT "COMPARATOR.U418.B1"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ..............9. ]
+        DD 0 {PORT "COMPARATOR.U410.B2"}
+        DD 0 {PORT "COMPARATOR.U410.B1"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .............4.. ]
+        DD 0 {PORT "COMPARATOR.U399.B1"}
+        DD 0 {PORT "COMPARATOR.U399.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .............8.. ]
+        DD 0 {PORT "COMPARATOR.U401.B1"}
+        DD 0 {PORT "COMPARATOR.U401.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .........1...... ]
+        DD 0 {PORT "COMPARATOR.U372.B1"}
+        DD 0 {PORT "COMPARATOR.U372.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .......1........ ]
+        DD 0 {PORT "COMPARATOR.U354.B1"}
+        DD 0 {PORT "COMPARATOR.U354.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .......8........ ]
+        DD 1 {PORT "COMPARATOR.U475.A1"}
+        -- 1 {PORT "COMPARATOR.U472.ZN"}
+        DD 0 {PORT "COMPARATOR.U472.B2"}
+        DD 0 {PORT "COMPARATOR.U472.B1"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ......5......... ]
+        DD 0 {PORT "COMPARATOR.U281.I"}
+        DD 1 {PORT "COMPARATOR.U286.A2"}
+        -- 1 {PORT "COMPARATOR.U286.A1"}
+        -- 1 {PORT "COMPARATOR.U281.ZN"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ......9......... ]
+        DD 0 {PORT "COMPARATOR.U346.B2"}
+        DD 0 {PORT "COMPARATOR.U346.B1"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ......c......... ]
+        DD 0 {PORT "COMPARATOR.U352.B1"}
+        DD 0 {PORT "COMPARATOR.U352.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .....1.......... ]
+        DD 0 {PORT "COMPARATOR.U341.B1"}
+        DD 0 {PORT "COMPARATOR.U341.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .....2.......... ]
+        DD 0 {PORT "COMPARATOR.U444.B2"}
+        DD 0 {PORT "COMPARATOR.U444.B1"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ....1........... ]
+        DD 0 {PORT "COMPARATOR.U348.B1"}
+        DD 0 {PORT "COMPARATOR.U348.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ....2........... ]
+        DD 0 {PORT "COMPARATOR.U374.B1"}
+        DD 0 {PORT "COMPARATOR.U374.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ...0............ ]
+        DD 0 {PORT "COMPARATOR.U321.B1"}
+        DD 0 {PORT "COMPARATOR.U321.B2"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: ..0............. ]
+        DD 0 {PORT "COMPARATOR.U277.I"}
+        DD 1 {PORT "COMPARATOR.U280.A2"}
+        -- 1 {PORT "COMPARATOR.U280.A1"}
+        -- 1 {PORT "COMPARATOR.U277.ZN"}
+
+    [547487500ns, 
+        1      GM: 048233d903001cbf 
+               FM: .0.............. ]
+        DD 0 {PORT "COMPARATOR.U319.B2"}
+        DD 0 {PORT "COMPARATOR.U319.B1"}
+
+    [594457500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ........3....... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .Q"}
+        DD 0 {PORT "COMPARATOR.U360.A2"}
+        -- 0 {PORT "COMPARATOR.U360.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[30] .D"}
+        -- 0 {PORT "COMPARATOR.U361.ZN"}
+        -- 1 {PORT "COMPARATOR.U360.ZN"}
+        -- 1 {PORT "COMPARATOR.U361.I"}
+
+    [594457500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ........5....... ]
+        DD 0 {PORT "COMPARATOR.U362.A2"}
+        -- 0 {PORT "COMPARATOR.U362.A1"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .D"}
+        -- 1 {PORT "COMPARATOR.U363.I"}
+        -- 0 {PORT "COMPARATOR.U363.ZN"}
+        -- 1 {PORT "COMPARATOR.U362.ZN"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[29] .Q"}
+
+    [594457500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ........6....... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .D"}
+        -- 0 {PORT "COMPARATOR.U367.ZN"}
+        -- 1 {PORT "COMPARATOR.U367.I"}
+        -- 1 {PORT "COMPARATOR.U366.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .CLK"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[28] .Q"}
+        DD 0 {PORT "COMPARATOR.U366.A2"}
+        -- 0 {PORT "COMPARATOR.U366.A1"}
+
+    [594457500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: 3............... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .D"}
+        -- 0 {PORT "COMPARATOR.U381.ZN"}
+        -- 1 {PORT "COMPARATOR.U380.ZN"}
+        -- 1 {PORT "COMPARATOR.U381.I"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[62] .CLK"}
+        DD 0 {PORT "COMPARATOR.U380.A2"}
+        -- 0 {PORT "COMPARATOR.U380.A1"}
+
+    [594457500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: 5............... ]
+        DD 0 {PORT "COMPARATOR.U343.A2"}
+        -- 0 {PORT "COMPARATOR.U343.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .Q"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .D"}
+        -- 1 {PORT "COMPARATOR.U344.I"}
+        -- 0 {PORT "COMPARATOR.U344.ZN"}
+        -- 1 {PORT "COMPARATOR.U343.ZN"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[61] .CLK"}
+
+    [594457500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: 6............... ]
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .Q"}
+        DD 1 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .CLK"}
+        DD 0 {PORT "COMPARATOR.U311.A2"}
+        -- 0 {PORT "COMPARATOR.U311.A1"}
+        DD 0 {PORT "COMPARATOR.\dsp_out_cmp_results_reg[60] .D"}
+        -- 1 {PORT "COMPARATOR.U312.I"}
+        -- 1 {PORT "COMPARATOR.U311.ZN"}
+        -- 0 {PORT "COMPARATOR.U312.ZN"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ..............b. ]
+        DD 0 {PORT "COMPARATOR.U408.B2"}
+        DD 0 {PORT "COMPARATOR.U408.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .............e.. ]
+        DD 0 {PORT "COMPARATOR.U440.B1"}
+        DD 0 {PORT "COMPARATOR.U440.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ............d... ]
+        DD 0 {PORT "COMPARATOR.U395.B1"}
+        DD 0 {PORT "COMPARATOR.U395.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ...........b.... ]
+        DD 0 {PORT "COMPARATOR.U388.B1"}
+        DD 0 {PORT "COMPARATOR.U388.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ...........e.... ]
+        DD 1 {PORT "COMPARATOR.U469.A1"}
+        -- 1 {PORT "COMPARATOR.U467.ZN"}
+        DD 0 {PORT "COMPARATOR.U467.B1"}
+        DD 0 {PORT "COMPARATOR.U467.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ..........7..... ]
+        DD 1 {PORT "COMPARATOR.U268.A2"}
+        -- 1 {PORT "COMPARATOR.U261.ZN"}
+        -- 1 {PORT "COMPARATOR.U268.A1"}
+        DD 0 {PORT "COMPARATOR.U261.I"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .........7...... ]
+        DD 0 {PORT "COMPARATOR.U368.B2"}
+        DD 0 {PORT "COMPARATOR.U368.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .........b...... ]
+        DD 0 {PORT "COMPARATOR.U370.B1"}
+        DD 0 {PORT "COMPARATOR.U370.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ........3....... ]
+        DD 0 {PORT "COMPARATOR.U360.B2"}
+        DD 0 {PORT "COMPARATOR.U360.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ........5....... ]
+        DD 0 {PORT "COMPARATOR.U362.B1"}
+        DD 0 {PORT "COMPARATOR.U362.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ........6....... ]
+        DD 0 {PORT "COMPARATOR.U366.B2"}
+        DD 0 {PORT "COMPARATOR.U366.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .......b........ ]
+        DD 0 {PORT "COMPARATOR.U356.B1"}
+        DD 0 {PORT "COMPARATOR.U356.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .......d........ ]
+        DD 0 {PORT "COMPARATOR.U358.B2"}
+        DD 0 {PORT "COMPARATOR.U358.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ......d......... ]
+        DD 0 {PORT "COMPARATOR.U364.B1"}
+        DD 0 {PORT "COMPARATOR.U364.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .....7.......... ]
+        DD 0 {PORT "COMPARATOR.U337.B2"}
+        DD 0 {PORT "COMPARATOR.U337.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .....b.......... ]
+        DD 0 {PORT "COMPARATOR.U339.B1"}
+        DD 0 {PORT "COMPARATOR.U339.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ....7........... ]
+        DD 0 {PORT "COMPARATOR.U255.I"}
+        DD 1 {PORT "COMPARATOR.U260.A2"}
+        -- 1 {PORT "COMPARATOR.U255.ZN"}
+        -- 1 {PORT "COMPARATOR.U260.A1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ....b........... ]
+        DD 0 {PORT "COMPARATOR.U329.B1"}
+        DD 0 {PORT "COMPARATOR.U329.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ...7............ ]
+        DD 0 {PORT "COMPARATOR.U350.B1"}
+        DD 0 {PORT "COMPARATOR.U350.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ...b............ ]
+        DD 0 {PORT "COMPARATOR.U325.B1"}
+        DD 0 {PORT "COMPARATOR.U325.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ...e............ ]
+        DD 1 {PORT "COMPARATOR.U464.A1"}
+        -- 1 {PORT "COMPARATOR.U461.ZN"}
+        DD 0 {PORT "COMPARATOR.U461.B2"}
+        DD 0 {PORT "COMPARATOR.U461.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ..b............. ]
+        DD 0 {PORT "COMPARATOR.U323.B1"}
+        DD 0 {PORT "COMPARATOR.U323.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ..d............. ]
+        DD 0 {PORT "COMPARATOR.U317.B1"}
+        DD 0 {PORT "COMPARATOR.U317.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: ..e............. ]
+        DD 0 {PORT "COMPARATOR.U331.B2"}
+        DD 0 {PORT "COMPARATOR.U331.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .7.............. ]
+        DD 0 {PORT "COMPARATOR.U335.B2"}
+        DD 0 {PORT "COMPARATOR.U335.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .d.............. ]
+        DD 0 {PORT "COMPARATOR.U333.B1"}
+        DD 0 {PORT "COMPARATOR.U333.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: .e.............. ]
+        DD 0 {PORT "COMPARATOR.U450.B2"}
+        DD 0 {PORT "COMPARATOR.U450.B1"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: 3............... ]
+        DD 0 {PORT "COMPARATOR.U380.B1"}
+        DD 0 {PORT "COMPARATOR.U380.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: 5............... ]
+        DD 0 {PORT "COMPARATOR.U343.B1"}
+        DD 0 {PORT "COMPARATOR.U343.B2"}
+
+    [594467500ns, 
+        1      GM: 7fffffff7fffffff 
+               FM: 6............... ]
+        DD 0 {PORT "COMPARATOR.U311.B1"}
+        DD 0 {PORT "COMPARATOR.U311.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ...............0 ]
+        DD 1 {PORT "COMPARATOR.U405.ZN"}
+        -- 0 {PORT "COMPARATOR.U405.I"}
+        DD 1 {PORT "COMPARATOR.U481.A2"}
+        -- 1 {PORT "COMPARATOR.U480.ZN"}
+        DD 1 {PORT "COMPARATOR.U479.B2"}
+        -- 1 {PORT "COMPARATOR.U479.B1"}
+        DD 1 {PORT "COMPARATOR.U289.B"}
+        -- 1 {PORT "COMPARATOR.U288.ZN"}
+        -- 0 {PORT "COMPARATOR.U288.A2"}
+        -- 0 {PORT "COMPARATOR.U288.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .D"}
+        -- 0 {PORT "COMPARATOR.U289.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .Q"}
+        DD 0 {PORT "COMPARATOR.U480.B2"}
+        -- 0 {PORT "COMPARATOR.U479.ZN"}
+        -- 0 {PORT "COMPARATOR.U480.B1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .CLK"}
+        DD 1 {PORT "COMPARATOR.U287.ZN"}
+        -- 0 {PORT "COMPARATOR.U287.I"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .RN"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .............0.. ]
+        DD 1 {PORT "COMPARATOR.U295.B"}
+        -- 1 {PORT "COMPARATOR.U294.ZN"}
+        -- 0 {PORT "COMPARATOR.U294.A2"}
+        -- 0 {PORT "COMPARATOR.U294.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .RN"}
+        DD 1 {PORT "COMPARATOR.U293.ZN"}
+        -- 0 {PORT "COMPARATOR.U293.I"}
+        DD 1 {PORT "COMPARATOR.U441.A2"}
+        -- 1 {PORT "COMPARATOR.U441.A1"}
+        DD 1 {PORT "COMPARATOR.U439.ZN"}
+        -- 0 {PORT "COMPARATOR.U438.ZN"}
+        -- 0 {PORT "COMPARATOR.U439.B"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .Q"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .D"}
+        -- 0 {PORT "COMPARATOR.U295.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .CLK"}
+        DD 1 {PORT "COMPARATOR.U438.A2"}
+        -- 1 {PORT "COMPARATOR.U438.A1"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ...........0.... ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .RN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .CLK"}
+        DD 0 {PORT "COMPARATOR.U467.A2"}
+        -- 0 {PORT "COMPARATOR.U466.ZN"}
+        -- 0 {PORT "COMPARATOR.U467.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .CLK"}
+        DD 1 {PORT "COMPARATOR.U466.B"}
+        -- 0 {PORT "COMPARATOR.U465.B"}
+        -- 1 {PORT "COMPARATOR.U465.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .D"}
+        -- 1 {PORT "COMPARATOR.U433.I"}
+        -- 0 {PORT "COMPARATOR.U433.ZN"}
+        -- 1 {PORT "COMPARATOR.U432.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .Q"}
+        DD 0 {PORT "COMPARATOR.U465.A1"}
+        DD 0 {PORT "COMPARATOR.U432.A2"}
+        -- 0 {PORT "COMPARATOR.U432.A1"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ...........0...0 ]
+        DD 0 {PORT "COMPARATOR.U458.ZN"}
+        -- 1 {PORT "COMPARATOR.U458.I"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .........0...... ]
+        DD 1 {PORT "COMPARATOR.U307.B"}
+        -- 0 {PORT "COMPARATOR.U306.A2"}
+        -- 0 {PORT "COMPARATOR.U306.A1"}
+        -- 1 {PORT "COMPARATOR.U306.ZN"}
+        DD 0 {PORT "COMPARATOR.U454.ZN"}
+        DD 1 {PORT "COMPARATOR.U455.ZN"}
+        -- 0 {PORT "COMPARATOR.U455.I"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .Q"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .RN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .D"}
+        -- 0 {PORT "COMPARATOR.U307.ZN"}
+        DD 1 {PORT "COMPARATOR.U454.A2"}
+        -- 0 {PORT "COMPARATOR.U452.A1"}
+        -- 1 {PORT "COMPARATOR.U452.ZN"}
+        -- 0 {PORT "COMPARATOR.U452.A2"}
+        DD 1 {PORT "COMPARATOR.U457.A2"}
+        -- 1 {PORT "COMPARATOR.U457.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .CLK"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .........0.0.0.. ]
+        DD 0 {PORT "COMPARATOR.U264.ZN"}
+        -- 1 {PORT "COMPARATOR.U264.I"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .........0.0.0.0 ]
+        DD 1 {PORT "COMPARATOR.U265.ZN"}
+        -- 0 {PORT "COMPARATOR.U265.A1"}
+        -- 0 {PORT "COMPARATOR.U265.A2"}
+        DD 1 {PORT "COMPARATOR.U437.ZN"}
+        -- 0 {PORT "COMPARATOR.U437.A2"}
+        -- 0 {PORT "COMPARATOR.U437.A1"}
+        DD 0 {PORT "COMPARATOR.U313.ZN"}
+        -- 1 {PORT "COMPARATOR.U313.I"}
+        DD 0 {PORT "COMPARATOR.U436.ZN"}
+        -- 1 {PORT "COMPARATOR.U436.A2"}
+        -- 1 {PORT "COMPARATOR.U436.A1"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ........1....... ]
+        DD 1 {PORT "COMPARATOR.U366.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ........2....... ]
+        DD 1 {PORT "COMPARATOR.U362.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ........4....... ]
+        DD 1 {PORT "COMPARATOR.U360.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .......1........ ]
+        DD 1 {PORT "COMPARATOR.U474.A2"}
+        -- 1 {PORT "COMPARATOR.U473.ZN"}
+        DD 0 {PORT "COMPARATOR.U471.A1"}
+        DD 1 {PORT "COMPARATOR.U472.A2"}
+        -- 1 {PORT "COMPARATOR.U471.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .Q"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .CLK"}
+        DD 0 {PORT "COMPARATOR.U471.B1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .RN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .D"}
+        -- 1 {PORT "COMPARATOR.U425.I"}
+        -- 0 {PORT "COMPARATOR.U425.ZN"}
+        -- 1 {PORT "COMPARATOR.U424.ZN"}
+        DD 0 {PORT "COMPARATOR.U424.A2"}
+        -- 0 {PORT "COMPARATOR.U424.A1"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .....1.......... ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .D"}
+        -- 1 {PORT "COMPARATOR.U431.I"}
+        -- 0 {PORT "COMPARATOR.U431.ZN"}
+        -- 1 {PORT "COMPARATOR.U430.ZN"}
+        DD 0 {PORT "COMPARATOR.U445.A2"}
+        DD 0 {PORT "COMPARATOR.U430.A2"}
+        -- 0 {PORT "COMPARATOR.U430.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .Q"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .CLK"}
+        DD 0 {PORT "COMPARATOR.U442.A1"}
+        DD 1 {PORT "COMPARATOR.U443.B"}
+        -- 1 {PORT "COMPARATOR.U442.ZN"}
+        -- 0 {PORT "COMPARATOR.U442.B"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .CLK"}
+        DD 0 {PORT "COMPARATOR.U443.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .RN"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ....7f.......... ]
+        DD 1 {PORT "COMPARATOR.U327.A1"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ...1............ ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .Q"}
+        DD 1 {PORT "COMPARATOR.U459.A2"}
+        -- 1 {PORT "COMPARATOR.U459.A1"}
+        DD 1 {PORT "COMPARATOR.U292.B"}
+        -- 0 {PORT "COMPARATOR.U291.A1"}
+        -- 1 {PORT "COMPARATOR.U291.ZN"}
+        -- 0 {PORT "COMPARATOR.U291.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .CLK"}
+        DD 1 {PORT "COMPARATOR.U290.ZN"}
+        -- 0 {PORT "COMPARATOR.U290.I"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .RN"}
+        DD 1 {PORT "COMPARATOR.U461.A2"}
+        -- 0 {PORT "COMPARATOR.U459.ZN"}
+        -- 0 {PORT "COMPARATOR.U460.B"}
+        -- 1 {PORT "COMPARATOR.U460.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .D"}
+        -- 0 {PORT "COMPARATOR.U292.ZN"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ..7f..7f........ ]
+        DD 1 {PORT "COMPARATOR.U315.A2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: ..7f7f7f........ ]
+        DD 1 {PORT "COMPARATOR.U282.ZN"}
+        -- 0 {PORT "COMPARATOR.U282.I"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: .1.............. ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .Q"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .D"}
+        -- 0 {PORT "COMPARATOR.U421.ZN"}
+        -- 1 {PORT "COMPARATOR.U421.I"}
+        -- 1 {PORT "COMPARATOR.U420.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .RN"}
+        DD 0 {PORT "COMPARATOR.U420.A2"}
+        -- 0 {PORT "COMPARATOR.U420.A1"}
+        DD 0 {PORT "COMPARATOR.U451.A1"}
+        DD 0 {PORT "COMPARATOR.U448.A2"}
+        -- 0 {PORT "COMPARATOR.U446.ZN"}
+        -- 0 {PORT "COMPARATOR.U448.A1"}
+        DD 1 {PORT "COMPARATOR.U448.ZN"}
+        DD 0 {PORT "COMPARATOR.U449.ZN"}
+        -- 1 {PORT "COMPARATOR.U449.I"}
+        DD 1 {PORT "COMPARATOR.U446.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .CLK"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: 1............... ]
+        DD 1 {PORT "COMPARATOR.U311.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: 2............... ]
+        DD 1 {PORT "COMPARATOR.U343.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: 4............... ]
+        DD 1 {PORT "COMPARATOR.U380.B2"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: 7f.............. ]
+        DD 0 {PORT "COMPARATOR.U257.A1"}
+
+    [595027500ns, 
+        1      GM: 0000000001010101 
+               FM: 7f7f7f7f........ ]
+        DD 0 {PORT "COMPARATOR.U256.ZN"}
+        DD 1 {PORT "COMPARATOR.U256.A2"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: ...............1 ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .D"}
+        -- 1 {PORT "COMPARATOR.U289.ZN"}
+        -- 0 {PORT "COMPARATOR.U288.ZN"}
+        -- 0 {PORT "COMPARATOR.U289.B"}
+        DD 0 {PORT "COMPARATOR.U479.A2"}
+        -- 0 {PORT "COMPARATOR.U478.ZN"}
+        -- 1 {PORT "COMPARATOR.U478.A2"}
+        -- 1 {PORT "COMPARATOR.U478.A1"}
+        DD 1 {PORT "COMPARATOR.U288.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[0] .Q"}
+        DD 1 {PORT "COMPARATOR.U480.B2"}
+        -- 1 {PORT "COMPARATOR.U479.ZN"}
+        DD 0 {PORT "COMPARATOR.U289.A1"}
+        DD 1 {PORT "COMPARATOR.U480.A2"}
+        -- 1 {PORT "COMPARATOR.U477.ZN"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: ..............7f ]
+        DD 0 {PORT "COMPARATOR.U407.A2"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: .............1.. ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .Q"}
+        DD 0 {PORT "COMPARATOR.U439.ZN"}
+        DD 0 {PORT "COMPARATOR.U441.A2"}
+        DD 0 {PORT "COMPARATOR.U295.A1"}
+        DD 1 {PORT "COMPARATOR.U439.A2"}
+        -- 1 {PORT "COMPARATOR.U439.A1"}
+        DD 1 {PORT "COMPARATOR.U294.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[1] .D"}
+        -- 0 {PORT "COMPARATOR.U295.B"}
+        -- 0 {PORT "COMPARATOR.U294.ZN"}
+        -- 1 {PORT "COMPARATOR.U295.ZN"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: ...........1.... ]
+        DD 1 {PORT "COMPARATOR.U465.B"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .Q"}
+        DD 1 {PORT "COMPARATOR.U432.B2"}
+        DD 1 {PORT "COMPARATOR.U467.A2"}
+        -- 0 {PORT "COMPARATOR.U465.ZN"}
+        -- 0 {PORT "COMPARATOR.U466.B"}
+        -- 1 {PORT "COMPARATOR.U466.ZN"}
+        DD 1 {PORT "COMPARATOR.U432.A2"}
+        DD 0 {PORT "COMPARATOR.U466.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[2] .D"}
+        -- 0 {PORT "COMPARATOR.U433.I"}
+        -- 1 {PORT "COMPARATOR.U433.ZN"}
+        -- 0 {PORT "COMPARATOR.U432.ZN"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: .........1...... ]
+        DD 1 {PORT "COMPARATOR.U306.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .D"}
+        -- 1 {PORT "COMPARATOR.U307.ZN"}
+        -- 0 {PORT "COMPARATOR.U307.B"}
+        -- 0 {PORT "COMPARATOR.U306.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[3] .Q"}
+        DD 0 {PORT "COMPARATOR.U307.A1"}
+        DD 0 {PORT "COMPARATOR.U454.B2"}
+        -- 0 {PORT "COMPARATOR.U454.B1"}
+        -- 0 {PORT "COMPARATOR.U453.ZN"}
+        -- 1 {PORT "COMPARATOR.U453.I"}
+        DD 0 {PORT "COMPARATOR.U457.A2"}
+        DD 1 {PORT "COMPARATOR.U454.ZN"}
+        DD 0 {PORT "COMPARATOR.U455.ZN"}
+        -- 1 {PORT "COMPARATOR.U455.I"}
+        DD 0 {PORT "COMPARATOR.U305.ZN"}
+        -- 1 {PORT "COMPARATOR.U305.I"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: ........7f...... ]
+        DD 0 {PORT "COMPARATOR.U262.A1"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: .......0........ ]
+        DD 0 {PORT "COMPARATOR.U470.A1"}
+        DD 0 {PORT "COMPARATOR.U472.A2"}
+        -- 0 {PORT "COMPARATOR.U471.ZN"}
+        -- 0 {PORT "COMPARATOR.U472.A1"}
+        DD 1 {PORT "COMPARATOR.U424.A2"}
+        DD 1 {PORT "COMPARATOR.U424.B2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .D"}
+        -- 0 {PORT "COMPARATOR.U425.I"}
+        -- 1 {PORT "COMPARATOR.U425.ZN"}
+        -- 0 {PORT "COMPARATOR.U424.ZN"}
+        DD 1 {PORT "COMPARATOR.U471.A2"}
+        -- 1 {PORT "COMPARATOR.U470.ZN"}
+        -- 1 {PORT "COMPARATOR.U471.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[12] .Q"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: .....0.......... ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .D"}
+        -- 1 {PORT "COMPARATOR.U431.ZN"}
+        -- 0 {PORT "COMPARATOR.U430.ZN"}
+        -- 0 {PORT "COMPARATOR.U431.I"}
+        DD 1 {PORT "COMPARATOR.U443.ZN"}
+        -- 0 {PORT "COMPARATOR.U443.B"}
+        -- 0 {PORT "COMPARATOR.U442.ZN"}
+        DD 1 {PORT "COMPARATOR.U442.B"}
+        DD 1 {PORT "COMPARATOR.U430.B2"}
+        DD 1 {PORT "COMPARATOR.U445.A2"}
+        -- 1 {PORT "COMPARATOR.U445.A1"}
+        DD 0 {PORT "COMPARATOR.U443.A1"}
+        DD 1 {PORT "COMPARATOR.U430.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[13] .Q"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: ...0............ ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .Q"}
+        DD 0 {PORT "COMPARATOR.U461.A2"}
+        -- 0 {PORT "COMPARATOR.U460.ZN"}
+        -- 0 {PORT "COMPARATOR.U461.A1"}
+        DD 1 {PORT "COMPARATOR.U460.A2"}
+        -- 1 {PORT "COMPARATOR.U460.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[14] .D"}
+        -- 0 {PORT "COMPARATOR.U292.B"}
+        -- 1 {PORT "COMPARATOR.U292.ZN"}
+        -- 0 {PORT "COMPARATOR.U291.ZN"}
+        DD 1 {PORT "COMPARATOR.U291.A2"}
+        DD 0 {PORT "COMPARATOR.U292.A1"}
+
+    [595037500ns, 
+        1      GM: 0101010100000000 
+               FM: .0.............. ]
+        DD 1 {PORT "COMPARATOR.U451.A2"}
+        -- 1 {PORT "COMPARATOR.U451.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .D"}
+        -- 0 {PORT "COMPARATOR.U420.ZN"}
+        -- 1 {PORT "COMPARATOR.U421.ZN"}
+        -- 0 {PORT "COMPARATOR.U421.I"}
+        DD 1 {PORT "COMPARATOR.U449.ZN"}
+        -- 0 {PORT "COMPARATOR.U449.I"}
+        DD 1 {PORT "COMPARATOR.U420.B2"}
+        DD 1 {PORT "COMPARATOR.U448.A1"}
+        DD 0 {PORT "COMPARATOR.U448.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[15] .Q"}
+        DD 1 {PORT "COMPARATOR.U420.A2"}
+        DD 1 {PORT "COMPARATOR.U448.B1"}
+        -- 0 {PORT "COMPARATOR.U447.I"}
+        -- 1 {PORT "COMPARATOR.U447.ZN"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: ...............1 ]
+        DD 0 {PORT "COMPARATOR.U405.ZN"}
+        -- 1 {PORT "COMPARATOR.U405.I"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .Q"}
+        DD 0 {PORT "COMPARATOR.U479.B2"}
+        DD 0 {PORT "COMPARATOR.U426.A2"}
+        -- 0 {PORT "COMPARATOR.U426.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .D"}
+        -- 1 {PORT "COMPARATOR.U426.ZN"}
+        -- 1 {PORT "COMPARATOR.U427.I"}
+        -- 0 {PORT "COMPARATOR.U427.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .RN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .CLK"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .CLK"}
+        DD 0 {PORT "COMPARATOR.U479.A1"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: .............1.. ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .CLK"}
+        DD 0 {PORT "COMPARATOR.U438.A1"}
+        DD 1 {PORT "COMPARATOR.U439.B"}
+        -- 1 {PORT "COMPARATOR.U438.ZN"}
+        -- 0 {PORT "COMPARATOR.U438.B"}
+        DD 0 {PORT "COMPARATOR.U428.A2"}
+        -- 0 {PORT "COMPARATOR.U428.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .RN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .D"}
+        -- 0 {PORT "COMPARATOR.U429.ZN"}
+        -- 1 {PORT "COMPARATOR.U428.ZN"}
+        -- 1 {PORT "COMPARATOR.U429.I"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .Q"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: ...........1.... ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .CLK"}
+        DD 1 {PORT "COMPARATOR.U298.B"}
+        -- 1 {PORT "COMPARATOR.U297.ZN"}
+        -- 0 {PORT "COMPARATOR.U297.A2"}
+        -- 0 {PORT "COMPARATOR.U297.A1"}
+        DD 1 {PORT "COMPARATOR.U296.ZN"}
+        -- 0 {PORT "COMPARATOR.U296.I"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .D"}
+        -- 0 {PORT "COMPARATOR.U298.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .RN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .Q"}
+        DD 1 {PORT "COMPARATOR.U465.A2"}
+        -- 1 {PORT "COMPARATOR.U465.A1"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: .........1...... ]
+        DD 1 {PORT "COMPARATOR.U452.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .Q"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .RN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .D"}
+        -- 1 {PORT "COMPARATOR.U423.I"}
+        -- 0 {PORT "COMPARATOR.U423.ZN"}
+        -- 1 {PORT "COMPARATOR.U422.ZN"}
+        DD 0 {PORT "COMPARATOR.U454.A2"}
+        -- 0 {PORT "COMPARATOR.U452.ZN"}
+        -- 0 {PORT "COMPARATOR.U454.A1"}
+        DD 0 {PORT "COMPARATOR.U422.A2"}
+        -- 0 {PORT "COMPARATOR.U422.A1"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: .......0........ ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .D"}
+        -- 0 {PORT "COMPARATOR.U304.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .Q"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .CLK"}
+        DD 1 {PORT "COMPARATOR.U471.B2"}
+        -- 1 {PORT "COMPARATOR.U471.B1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .RN"}
+        DD 1 {PORT "COMPARATOR.U304.B"}
+        -- 0 {PORT "COMPARATOR.U303.A2"}
+        -- 0 {PORT "COMPARATOR.U303.A1"}
+        -- 1 {PORT "COMPARATOR.U303.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .CLK"}
+        DD 1 {PORT "COMPARATOR.U302.ZN"}
+        -- 0 {PORT "COMPARATOR.U302.I"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: .....0.......... ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .RN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .Q"}
+        DD 1 {PORT "COMPARATOR.U299.ZN"}
+        -- 0 {PORT "COMPARATOR.U299.I"}
+        DD 1 {PORT "COMPARATOR.U442.A2"}
+        -- 1 {PORT "COMPARATOR.U442.A1"}
+        DD 1 {PORT "COMPARATOR.U301.B"}
+        -- 0 {PORT "COMPARATOR.U300.A1"}
+        -- 1 {PORT "COMPARATOR.U300.ZN"}
+        -- 0 {PORT "COMPARATOR.U300.A2"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .D"}
+        -- 0 {PORT "COMPARATOR.U301.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .CLK"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: ...0............ ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .RN"}
+        DD 0 {PORT "COMPARATOR.U459.A1"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .D"}
+        -- 1 {PORT "COMPARATOR.U434.ZN"}
+        -- 1 {PORT "COMPARATOR.U435.I"}
+        -- 0 {PORT "COMPARATOR.U435.ZN"}
+        DD 0 {PORT "COMPARATOR.U434.A2"}
+        -- 0 {PORT "COMPARATOR.U434.A1"}
+        DD 1 {PORT "COMPARATOR.U460.B"}
+        -- 0 {PORT "COMPARATOR.U459.B"}
+        -- 1 {PORT "COMPARATOR.U459.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .Q"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .CLK"}
+
+    [595317500ns, 
+        1      GM: 0101010100000000 
+               FM: .0.............. ]
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .CLK"}
+        DD 1 {PORT "COMPARATOR.U448.A2"}
+        -- 0 {PORT "COMPARATOR.U446.A2"}
+        -- 1 {PORT "COMPARATOR.U446.ZN"}
+        -- 0 {PORT "COMPARATOR.U446.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .CLK"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .D"}
+        -- 0 {PORT "COMPARATOR.U310.ZN"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .Q"}
+        DD 0 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .RN"}
+        DD 1 {PORT "COMPARATOR.U310.B"}
+        -- 0 {PORT "COMPARATOR.U309.A1"}
+        -- 1 {PORT "COMPARATOR.U309.ZN"}
+        -- 0 {PORT "COMPARATOR.U309.A2"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: ...............0 ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .Q"}
+        DD 0 {PORT "COMPARATOR.U478.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[8] .D"}
+        -- 0 {PORT "COMPARATOR.U427.I"}
+        -- 1 {PORT "COMPARATOR.U427.ZN"}
+        -- 0 {PORT "COMPARATOR.U426.ZN"}
+        DD 1 {PORT "COMPARATOR.U426.A2"}
+        DD 1 {PORT "COMPARATOR.U479.A2"}
+        -- 1 {PORT "COMPARATOR.U479.A1"}
+        -- 1 {PORT "COMPARATOR.U478.ZN"}
+        DD 1 {PORT "COMPARATOR.U426.B2"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: .............0.. ]
+        DD 1 {PORT "COMPARATOR.U428.B2"}
+        DD 1 {PORT "COMPARATOR.U438.B"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .D"}
+        -- 0 {PORT "COMPARATOR.U429.I"}
+        -- 0 {PORT "COMPARATOR.U428.ZN"}
+        -- 1 {PORT "COMPARATOR.U429.ZN"}
+        DD 1 {PORT "COMPARATOR.U428.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[9] .Q"}
+        DD 0 {PORT "COMPARATOR.U439.A1"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: ...........0.... ]
+        DD 1 {PORT "COMPARATOR.U466.A2"}
+        -- 1 {PORT "COMPARATOR.U466.A1"}
+        DD 1 {PORT "COMPARATOR.U297.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .Q"}
+        DD 0 {PORT "COMPARATOR.U298.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[10] .D"}
+        -- 0 {PORT "COMPARATOR.U298.B"}
+        -- 1 {PORT "COMPARATOR.U298.ZN"}
+        -- 0 {PORT "COMPARATOR.U297.ZN"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: .........0...... ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .D"}
+        -- 0 {PORT "COMPARATOR.U423.I"}
+        -- 1 {PORT "COMPARATOR.U423.ZN"}
+        -- 0 {PORT "COMPARATOR.U422.ZN"}
+        DD 1 {PORT "COMPARATOR.U454.B1"}
+        -- 0 {PORT "COMPARATOR.U453.I"}
+        -- 1 {PORT "COMPARATOR.U453.ZN"}
+        DD 1 {PORT "COMPARATOR.U422.B2"}
+        DD 1 {PORT "COMPARATOR.U454.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[11] .Q"}
+        DD 1 {PORT "COMPARATOR.U422.A2"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: .......1........ ]
+        DD 0 {PORT "COMPARATOR.U304.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .D"}
+        -- 0 {PORT "COMPARATOR.U304.B"}
+        -- 1 {PORT "COMPARATOR.U304.ZN"}
+        -- 0 {PORT "COMPARATOR.U303.ZN"}
+        DD 1 {PORT "COMPARATOR.U303.A2"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[4] .Q"}
+        DD 0 {PORT "COMPARATOR.U471.A2"}
+        -- 0 {PORT "COMPARATOR.U470.ZN"}
+        -- 1 {PORT "COMPARATOR.U470.A2"}
+        -- 1 {PORT "COMPARATOR.U470.A1"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: .....1.......... ]
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .Q"}
+        DD 0 {PORT "COMPARATOR.U301.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[5] .D"}
+        -- 0 {PORT "COMPARATOR.U301.B"}
+        -- 1 {PORT "COMPARATOR.U301.ZN"}
+        -- 0 {PORT "COMPARATOR.U300.ZN"}
+        DD 1 {PORT "COMPARATOR.U443.A2"}
+        -- 1 {PORT "COMPARATOR.U443.A1"}
+        DD 1 {PORT "COMPARATOR.U300.A2"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: ...1............ ]
+        DD 0 {PORT "COMPARATOR.U460.A2"}
+        DD 1 {PORT "COMPARATOR.U434.A2"}
+        DD 1 {PORT "COMPARATOR.U459.B"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .D"}
+        -- 1 {PORT "COMPARATOR.U435.ZN"}
+        -- 0 {PORT "COMPARATOR.U435.I"}
+        -- 0 {PORT "COMPARATOR.U434.ZN"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[6] .Q"}
+        DD 1 {PORT "COMPARATOR.U434.B2"}
+
+    [595327500ns, 
+        1      GM: 0000000001010101 
+               FM: .1.............. ]
+        DD 0 {PORT "COMPARATOR.U448.B2"}
+        -- 0 {PORT "COMPARATOR.U447.ZN"}
+        -- 0 {PORT "COMPARATOR.U448.B1"}
+        -- 1 {PORT "COMPARATOR.U447.I"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .Q"}
+        DD 0 {PORT "COMPARATOR.U310.A1"}
+        DD 1 {PORT "COMPARATOR.\MSB_stage_3_reg[7] .D"}
+        -- 1 {PORT "COMPARATOR.U310.ZN"}
+        -- 0 {PORT "COMPARATOR.U310.B"}
+        -- 0 {PORT "COMPARATOR.U309.ZN"}
+        DD 0 {PORT "COMPARATOR.U308.ZN"}
+        -- 1 {PORT "COMPARATOR.U308.I"}
+        DD 1 {PORT "COMPARATOR.U309.A2"}
+}
+#----------------------------------------------------------------------
+# Fault Coverage Summary
+#
+#                                        Prime             Total
+#----------------------------------------------------------------------
+# Total Faults:                           1466              2234
+# 
+# Dropped Detected                 DD     1126  76.81%      1840  82.36%
+# Dropped Potential                PD      124   8.46%       124   5.55%
+# Not Detected                     ND      157  10.71%       190   8.50%
+# Not Observed                     NO       48   3.27%        57   2.55%
+# Not Controlled                   NC       11   0.75%        23   1.03%
+# 
+# Test Coverage                                 81.04%            85.14%
+# Fault Coverage                                81.04%            85.14%
+#----------------------------------------------------------------------
