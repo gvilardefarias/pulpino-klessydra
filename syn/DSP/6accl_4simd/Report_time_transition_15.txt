@@ -1,0 +1,152 @@
+Information: Updating design information... (UID-85)
+Warning: Design 'DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD4_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS2_Data_Width32_SIMD_Width128' contains 2 high-fanout nets. A fanout number of 1000 will be used for delay calculations involving these nets. (TIM-134)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD4_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS2_Data_Width32_SIMD_Width128
+Version: V-2023.12
+Date   : Wed Sep 24 15:32:56 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: state_DSP_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: MULT_STG/dsp_mul_d_var_reg[126]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                                                                                             Fanout     Trans      Incr       Path      Attributes
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                                                                                                 0.00       0.00
+  clock network delay (ideal)                                                                                                             0.00       0.00
+  state_DSP_out_reg[1]/CLK (DFFRNQ_X1)                                                                                          0.00      0.00 #     0.00 r
+  state_DSP_out_reg[1]/Q (DFFRNQ_X1)                                                                                           12.93     17.02      17.02 r
+  state_DSP[1] (net)                                                                                                  9                   0.00      17.02 r
+  U35838/ZN (INV_X1)                                                                                                           17.12     11.91      28.92 f
+  n33010 (net)                                                                                                       13                   0.00      28.92 f
+  U33162/ZN (NOR2_X1)                                                                                                         131.52     67.41      96.33 r
+  n27860 (net)                                                                                                       55                   0.00      96.33 r
+  U51527/ZN (NAND2_X1)                                                                                                         30.42     19.29     115.62 f
+  n37590 (net)                                                                                                        3                   0.00     115.62 f
+  U33180/ZN (NOR2_X1)                                                                                                         208.27    106.09     221.71 r
+  n47950 (net)                                                                                                       88                   0.00     221.71 r
+  U33262/ZN (NAND2_X1)                                                                                                        153.93    106.40     328.11 f
+  n48833 (net)                                                                                                       57                   0.00     328.11 f
+  U59378/ZN (INV_X1)                                                                                                          114.67     85.28     413.39 r
+  n48548 (net)                                                                                                       64                   0.00     413.39 r
+  U64854/ZN (NAND2_X1)                                                                                                         20.15     10.00     423.40 f
+  n48855 (net)                                                                                                        2                   0.00     423.40 f
+  U65082/ZN (AOI21_X1)                                                                                                         60.69     34.14     457.54 r
+  dsp_in_mul_operands_lat[105]5 (net)                                                                                25                   0.00     457.54 r
+  MULT_STG/dsp_in_mul_operands[105] (MULTIPLIER_multithreaded_accl_en0_SIMD4_ACCL_NUM6_FU_NUM6_Data_Width32_SIMD_Width128)                0.00     457.54 r
+  MULT_STG/dsp_in_mul_operands[105] (net)                                                                                                 0.00     457.54 r    d 
+  MULT_STG/U36291/ZN (INV_X1)                                                                                                  41.29     31.11     488.65 f    d 
+  MULT_STG/n46581 (net)                                                                                              25                   0.00     488.65 f    d 
+  MULT_STG/U44002/ZN (OAI22_X1)                                                                                                47.33     30.74     519.39 r    d 
+  MULT_STG/n46613 (net)                                                                                              17                   0.00     519.39 r    d 
+  MULT_STG/U44005/ZN (INV_X1)                                                                                                  12.57      7.66     527.05 f    d 
+  MULT_STG/n46267 (net)                                                                                               3                   0.00     527.05 f    d 
+  MULT_STG/U44006/ZN (NAND2_X1)                                                                                                 6.53      5.11     532.16 r    d 
+  MULT_STG/n46264 (net)                                                                                               2                   0.00     532.16 r    d 
+  MULT_STG/U44007/ZN (INV_X1)                                                                                                  20.30     12.43     544.59 f    d 
+  MULT_STG/n46611 (net)                                                                                              16                   0.00     544.59 f    d 
+  MULT_STG/U44221/ZN (OAI21_X1)                                                                                                14.25      6.18     550.77 r    d 
+  MULT_STG/n46434 (net)                                                                                               1                   0.00     550.77 r    d 
+  MULT_STG/U44399/S (FA_X1)                                                                                                     4.75     16.41     567.18 f    d 
+  MULT_STG/n46455 (net)                                                                                               1                   0.00     567.18 f    d 
+  MULT_STG/U44409/S (FA_X1)                                                                                                     4.98     15.11     582.28 r    d 
+  MULT_STG/n46452 (net)                                                                                               1                   0.00     582.28 r    d 
+  MULT_STG/U44408/S (FA_X1)                                                                                                     7.69     12.66     594.95 r    d 
+  MULT_STG/n46894 (net)                                                                                               3                   0.00     594.95 r    d 
+  MULT_STG/U44406/ZN (NAND2_X1)                                                                                                 4.45      3.43     598.38 f    d 
+  MULT_STG/n46449 (net)                                                                                               1                   0.00     598.38 f    d 
+  MULT_STG/U44407/ZN (OAI21_X1)                                                                                                 6.77      3.73     602.11 r    d 
+  MULT_STG/n46888 (net)                                                                                               1                   0.00     602.11 r    d 
+  MULT_STG/U44632/CO (FA_X1)                                                                                                    4.83     10.05     612.16 r    d 
+  MULT_STG/n46883 (net)                                                                                               1                   0.00     612.16 r    d 
+  MULT_STG/U44629/CO (FA_X1)                                                                                                    4.84      9.75     621.91 r    d 
+  MULT_STG/n46877 (net)                                                                                               1                   0.00     621.91 r    d 
+  MULT_STG/U44626/CO (FA_X1)                                                                                                    6.55     10.87     632.78 r    d 
+  MULT_STG/n46869 (net)                                                                                               3                   0.00     632.78 r    d 
+  MULT_STG/U44420/ZN (NAND2_X1)                                                                                                 5.71      4.26     637.04 f    d 
+  MULT_STG/n46868 (net)                                                                                               2                   0.00     637.04 f    d 
+  MULT_STG/U44432/ZN (AOI21_X1)                                                                                                 6.60      4.60     641.64 r    d 
+  MULT_STG/n46865 (net)                                                                                               1                   0.00     641.64 r    d 
+  MULT_STG/U44620/CO (FA_X1)                                                                                                    4.83     10.02     651.66 r    d 
+  MULT_STG/n46860 (net)                                                                                               1                   0.00     651.66 r    d 
+  MULT_STG/U44618/CO (FA_X1)                                                                                                    4.84      9.75     661.41 r    d 
+  MULT_STG/n46855 (net)                                                                                               1                   0.00     661.41 r    d 
+  MULT_STG/U44616/CO (FA_X1)                                                                                                    8.07     11.82     673.23 r    d 
+  MULT_STG/n46848 (net)                                                                                               4                   0.00     673.23 r    d 
+  MULT_STG/U44446/Z (AND2_X1)                                                                                                   2.47      5.17     678.40 r    d 
+  MULT_STG/n46585 (net)                                                                                               1                   0.00     678.40 r    d 
+  MULT_STG/U44471/ZN (OAI22_X1)                                                                                                 7.01      3.99     682.39 f    d 
+  MULT_STG/n46842 (net)                                                                                               1                   0.00     682.39 f    d 
+  MULT_STG/U44609/CO (FA_X1)                                                                                                    4.31      8.85     691.24 f    d 
+  MULT_STG/n46836 (net)                                                                                               1                   0.00     691.24 f    d 
+  MULT_STG/U44606/CO (FA_X1)                                                                                                    4.31      8.40     699.64 f    d 
+  MULT_STG/n46830 (net)                                                                                               1                   0.00     699.64 f    d 
+  MULT_STG/U44603/CO (FA_X1)                                                                                                    6.66     10.00     709.64 f    d 
+  MULT_STG/n46823 (net)                                                                                               3                   0.00     709.64 f    d 
+  MULT_STG/U44512/Z (OR2_X1)                                                                                                    2.32      5.29     714.93 f    d 
+  MULT_STG/n46691 (net)                                                                                               1                   0.00     714.93 f    d 
+  MULT_STG/U44518/ZN (AOI22_X1)                                                                                                 7.47      5.07     719.99 r    d 
+  MULT_STG/n46818 (net)                                                                                               1                   0.00     719.99 r    d 
+  MULT_STG/U44596/CO (FA_X1)                                                                                                    6.45     11.21     731.21 r    d 
+  MULT_STG/n46811 (net)                                                                                               3                   0.00     731.21 r    d 
+  MULT_STG/U44525/ZN (NAND2_X1)                                                                                                 5.83      4.35     735.56 f    d 
+  MULT_STG/n46809 (net)                                                                                               2                   0.00     735.56 f    d 
+  MULT_STG/U44526/ZN (AOI22_X1)                                                                                                12.50      8.51     744.06 r    d 
+  MULT_STG/n46803 (net)                                                                                               3                   0.00     744.06 r    d 
+  MULT_STG/U44527/ZN (NOR2_X1)                                                                                                  4.77      3.55     747.61 f    d 
+  MULT_STG/n46705 (net)                                                                                               1                   0.00     747.61 f    d 
+  MULT_STG/U44529/ZN (OAI21_X1)                                                                                                 5.97      4.56     752.17 r    d 
+  MULT_STG/n46799 (net)                                                                                               1                   0.00     752.17 r    d 
+  MULT_STG/U44588/CO (FA_X1)                                                                                                    7.91     11.90     764.07 r    d 
+  MULT_STG/n46791 (net)                                                                                               3                   0.00     764.07 r    d 
+  MULT_STG/U44545/Z (AND2_X1)                                                                                                   2.52      5.21     769.27 r    d 
+  MULT_STG/n46742 (net)                                                                                               1                   0.00     769.27 r    d 
+  MULT_STG/U44556/ZN (OAI22_X1)                                                                                                 6.78      4.55     773.83 f    d 
+  MULT_STG/n46784 (net)                                                                                               1                   0.00     773.83 f    d 
+  MULT_STG/U44579/CO (FA_X1)                                                                                                    4.30      8.81     782.64 f    d 
+  MULT_STG/n46779 (net)                                                                                               1                   0.00     782.64 f    d 
+  MULT_STG/U44576/S (FA_X1)                                                                                                     3.94     13.69     796.33 r    d 
+  MULT_STG/n46780 (net)                                                                                               1                   0.00     796.33 r    d 
+  MULT_STG/U44577/ZN (AOI22_X1)                                                                                                37.62      3.25     799.58 f    d 
+  MULT_STG/n46781 (net)                                                                                               1                   0.00     799.58 f    d 
+  MULT_STG/U44578/ZN (INV_X1)                                                                                                   6.58      4.28     803.85 r    d 
+  MULT_STG/n5025 (net)                                                                                                1                   0.00     803.85 r    d 
+  MULT_STG/dsp_mul_d_var_reg[126]/D (DFFRNQ_X1)                                                                                 6.58      0.00     803.85 r    d 
+  data arrival time                                                                                                                                803.85
+
+  clock clk_i (rise edge)                                                                                                              2000.00    2000.00
+  clock network delay (ideal)                                                                                                             0.00    2000.00
+  MULT_STG/dsp_mul_d_var_reg[126]/CLK (DFFRNQ_X1)                                                                                         0.00    2000.00 r
+  library setup time                                                                                                                     -8.29    1991.71
+  data required time                                                                                                                              1991.71
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                                              1991.71
+  data arrival time                                                                                                                               -803.85
+  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                                                                     1187.86
+
+
+1

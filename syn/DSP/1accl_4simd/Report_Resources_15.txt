@@ -1,0 +1,1728 @@
+ 
+****************************************
+Report : resources
+Design : DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD4_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS2_Data_Width32_SIMD_Width128
+Version: V-2023.12
+Date   : Wed Sep 24 17:07:45 2025
+****************************************
+
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-DSP_Unit_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| lte_x_3        | DW_cmp         | width=15   | lte_gte_651 (RTL-DSP_Unit_syn.vhd:651) |
+| add_x_4        | DW01_add       | width=14   | add_684 (RTL-DSP_Unit_syn.vhd:684) |
+| gte_x_5        | DW_cmp         | width=15   | gte_687 (RTL-DSP_Unit_syn.vhd:687) |
+| sub_x_6        | DW01_sub       | width=15   | sub_688 (RTL-DSP_Unit_syn.vhd:688) |
+| gte_x_7        | DW_cmp         | width=15   | gte_711 (RTL-DSP_Unit_syn.vhd:711) |
+| sub_x_8        | DW01_sub       | width=15   | sub_713 (RTL-DSP_Unit_syn.vhd:713) |
+| lt_x_9         | DW_cmp         | width=19   | lt_718 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_10        | DW_cmp         | width=19   | lt_718_I2 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_11        | DW_cmp         | width=19   | lt_718_I3 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_12        | DW_cmp         | width=19   | lt_718_I4 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_13        | DW_cmp         | width=19   | lt_718_I5 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_14        | DW_cmp         | width=19   | lt_718_I6 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_15        | DW_cmp         | width=19   | lt_718_I7 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_16        | DW_cmp         | width=19   | lt_718_I8 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_17        | DW_cmp         | width=19   | lt_718_I9 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_18        | DW_cmp         | width=19   | lt_718_I10 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_19        | DW_cmp         | width=19   | lt_718_I11 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_20        | DW_cmp         | width=19   | lt_718_I12 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_21        | DW_cmp         | width=19   | lt_718_I13 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_22        | DW_cmp         | width=19   | lt_718_I14 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_23        | DW_cmp         | width=19   | lt_718_I15 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_24        | DW_cmp         | width=19   | lt_718_I16 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_25        | DW_cmp         | width=19   | lt_718_I17 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_26        | DW_cmp         | width=19   | lt_718_I18 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_27        | DW_cmp         | width=19   | lt_718_I19 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_28        | DW_cmp         | width=19   | lt_718_I20 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_29        | DW_cmp         | width=19   | lt_718_I21 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_30        | DW_cmp         | width=19   | lt_718_I22 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_31        | DW_cmp         | width=19   | lt_718_I23 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_32        | DW_cmp         | width=19   | lt_718_I24 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_33        | DW_cmp         | width=19   | lt_718_I25 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_34        | DW_cmp         | width=19   | lt_718_I26 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_35        | DW_cmp         | width=19   | lt_718_I27 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_36        | DW_cmp         | width=19   | lt_718_I28 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_37        | DW_cmp         | width=19   | lt_718_I29 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_38        | DW_cmp         | width=19   | lt_718_I30 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_39        | DW_cmp         | width=19   | lt_718_I31 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_40        | DW_cmp         | width=19   | lt_718_I32 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_41        | DW_cmp         | width=19   | lt_718_I33 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_42        | DW_cmp         | width=19   | lt_718_I34 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_43        | DW_cmp         | width=19   | lt_718_I35 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_44        | DW_cmp         | width=19   | lt_718_I36 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_45        | DW_cmp         | width=19   | lt_718_I37 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_46        | DW_cmp         | width=19   | lt_718_I38 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_47        | DW_cmp         | width=19   | lt_718_I39 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_48        | DW_cmp         | width=19   | lt_718_I40 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_49        | DW_cmp         | width=19   | lt_718_I41 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_50        | DW_cmp         | width=19   | lt_718_I42 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_51        | DW_cmp         | width=19   | lt_718_I43 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_52        | DW_cmp         | width=19   | lt_718_I44 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_53        | DW_cmp         | width=19   | lt_718_I45 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_54        | DW_cmp         | width=19   | lt_718_I46 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_55        | DW_cmp         | width=19   | lt_718_I47 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_56        | DW_cmp         | width=19   | lt_718_I48 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_57        | DW_cmp         | width=19   | lt_718_I49 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_58        | DW_cmp         | width=19   | lt_718_I50 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_59        | DW_cmp         | width=19   | lt_718_I51 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_60        | DW_cmp         | width=19   | lt_718_I52 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_61        | DW_cmp         | width=19   | lt_718_I53 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_62        | DW_cmp         | width=19   | lt_718_I54 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_63        | DW_cmp         | width=19   | lt_718_I55 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_64        | DW_cmp         | width=19   | lt_718_I56 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_65        | DW_cmp         | width=19   | lt_718_I57 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_66        | DW_cmp         | width=19   | lt_718_I58 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_67        | DW_cmp         | width=19   | lt_718_I59 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_68        | DW_cmp         | width=19   | lt_718_I60 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_69        | DW_cmp         | width=19   | lt_718_I61 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_70        | DW_cmp         | width=19   | lt_718_I62 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_71        | DW_cmp         | width=19   | lt_718_I63 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_72        | DW_cmp         | width=19   | lt_718_I64 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_73        | DW_cmp         | width=19   | lt_718_I65 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_74        | DW_cmp         | width=19   | lt_718_I66 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_75        | DW_cmp         | width=19   | lt_718_I67 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_76        | DW_cmp         | width=19   | lt_718_I68 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_77        | DW_cmp         | width=19   | lt_718_I69 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_78        | DW_cmp         | width=19   | lt_718_I70 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_79        | DW_cmp         | width=19   | lt_718_I71 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_80        | DW_cmp         | width=19   | lt_718_I72 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_81        | DW_cmp         | width=19   | lt_718_I73 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_82        | DW_cmp         | width=19   | lt_718_I74 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_83        | DW_cmp         | width=19   | lt_718_I75 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_84        | DW_cmp         | width=19   | lt_718_I76 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_85        | DW_cmp         | width=19   | lt_718_I77 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_86        | DW_cmp         | width=19   | lt_718_I78 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_87        | DW_cmp         | width=19   | lt_718_I79 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_88        | DW_cmp         | width=19   | lt_718_I80 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_89        | DW_cmp         | width=19   | lt_718_I81 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_90        | DW_cmp         | width=19   | lt_718_I82 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_91        | DW_cmp         | width=19   | lt_718_I83 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_92        | DW_cmp         | width=19   | lt_718_I84 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_93        | DW_cmp         | width=19   | lt_718_I85 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_94        | DW_cmp         | width=19   | lt_718_I86 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_95        | DW_cmp         | width=19   | lt_718_I87 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_96        | DW_cmp         | width=19   | lt_718_I88 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_97        | DW_cmp         | width=19   | lt_718_I89 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_98        | DW_cmp         | width=19   | lt_718_I90 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_99        | DW_cmp         | width=19   | lt_718_I91 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_100       | DW_cmp         | width=19   | lt_718_I92 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_101       | DW_cmp         | width=19   | lt_718_I93 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_102       | DW_cmp         | width=19   | lt_718_I94 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_103       | DW_cmp         | width=19   | lt_718_I95 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_104       | DW_cmp         | width=19   | lt_718_I96 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_105       | DW_cmp         | width=19   | lt_718_I97 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_106       | DW_cmp         | width=19   | lt_718_I98 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_107       | DW_cmp         | width=19   | lt_718_I99 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_108       | DW_cmp         | width=19   | lt_718_I100 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_109       | DW_cmp         | width=19   | lt_718_I101 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_110       | DW_cmp         | width=19   | lt_718_I102 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_111       | DW_cmp         | width=19   | lt_718_I103 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_112       | DW_cmp         | width=19   | lt_718_I104 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_113       | DW_cmp         | width=19   | lt_718_I105 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_114       | DW_cmp         | width=19   | lt_718_I106 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_115       | DW_cmp         | width=19   | lt_718_I107 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_116       | DW_cmp         | width=19   | lt_718_I108 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_117       | DW_cmp         | width=19   | lt_718_I109 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_118       | DW_cmp         | width=19   | lt_718_I110 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_119       | DW_cmp         | width=19   | lt_718_I111 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_120       | DW_cmp         | width=19   | lt_718_I112 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_121       | DW_cmp         | width=19   | lt_718_I113 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_122       | DW_cmp         | width=19   | lt_718_I114 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_123       | DW_cmp         | width=19   | lt_718_I115 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_124       | DW_cmp         | width=19   | lt_718_I116 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_125       | DW_cmp         | width=19   | lt_718_I117 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_126       | DW_cmp         | width=19   | lt_718_I118 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_127       | DW_cmp         | width=19   | lt_718_I119 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_128       | DW_cmp         | width=19   | lt_718_I120 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_129       | DW_cmp         | width=19   | lt_718_I121 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_130       | DW_cmp         | width=19   | lt_718_I122 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_131       | DW_cmp         | width=19   | lt_718_I123 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_132       | DW_cmp         | width=19   | lt_718_I124 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_133       | DW_cmp         | width=19   | lt_718_I125 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_134       | DW_cmp         | width=19   | lt_718_I126 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_135       | DW_cmp         | width=19   | lt_718_I127 (RTL-DSP_Unit_syn.vhd:718) |
+| lt_x_136       | DW_cmp         | width=19   | lt_718_I128 (RTL-DSP_Unit_syn.vhd:718) |
+| lte_x_348      | DW_cmp         | width=32   | lte_813 (RTL-DSP_Unit_syn.vhd:813) |
+| lte_x_349      | DW_cmp         | width=15   | lte_gte_818 (RTL-DSP_Unit_syn.vhd:818) |
+| lte_x_350      | DW_cmp         | width=15   | lte_gte_820 (RTL-DSP_Unit_syn.vhd:820) |
+| lte_x_352      | DW_cmp         | width=14   | lte_822_I2 (RTL-DSP_Unit_syn.vhd:822) |
+| lte_x_354      | DW_cmp         | width=14   | lte_822_I3 (RTL-DSP_Unit_syn.vhd:822) |
+| lte_x_356      | DW_cmp         | width=14   | lte_822_I4 (RTL-DSP_Unit_syn.vhd:822) |
+| mult_x_935     | DW_mult_uns    | a_width=5  | mult_add_639_aco (RTL-DSP_Unit_syn.vhd:639) |
+|                | b_width=1  |                            |
+| mult_x_936     | DW_mult_uns    | a_width=5  | mult_add_645_aco (RTL-DSP_Unit_syn.vhd:645) |
+|                | b_width=1  |                            |
+| gte_x_937      | DW_cmp         | width=15   | gte_694 (RTL-DSP_Unit_syn.vhd:694) |
+         |                |            | gte_704 (RTL-DSP_Unit_syn.vhd:704) |
+| gt_x_938       | DW_cmp         | width=15   | gt_839 (RTL-DSP_Unit_syn.vhd:839) |
+          |                |            | gt_860 (RTL-DSP_Unit_syn.vhd:860) |
+          |                |            | gt_882 (RTL-DSP_Unit_syn.vhd:882) |
+          |                |            | gt_907 (RTL-DSP_Unit_syn.vhd:907) |
+          |                |            | gt_929 (RTL-DSP_Unit_syn.vhd:929) |
+          |                |            | gt_952 (RTL-DSP_Unit_syn.vhd:952) |
+          |                |            | gt_978 (RTL-DSP_Unit_syn.vhd:978) |
+| gt_x_939       | DW_cmp         | width=15   | gt_1031 (RTL-DSP_Unit_syn.vhd:1031) |
+        |                |            | gt_855 (RTL-DSP_Unit_syn.vhd:855) |
+          |                |            | gt_877 (RTL-DSP_Unit_syn.vhd:877) |
+          |                |            | gt_899 (RTL-DSP_Unit_syn.vhd:899) |
+          |                |            | gt_924 (RTL-DSP_Unit_syn.vhd:924) |
+          |                |            | gt_947 (RTL-DSP_Unit_syn.vhd:947) |
+          |                |            | gt_970 (RTL-DSP_Unit_syn.vhd:970) |
+          |                |            | gt_997 (RTL-DSP_Unit_syn.vhd:997) |
+| sub_x_351      | DW01_dec       | width=15   | sub_822_I2 (RTL-DSP_Unit_syn.vhd:822) |
+      |                |            | sub_822_I3 (RTL-DSP_Unit_syn.vhd:822) |
+      |                |            | sub_822_I4 (RTL-DSP_Unit_syn.vhd:822) |
+| add_x_1        | DW01_inc       | width=4    | add_467 (RTL-DSP_Unit_syn.vhd:467) |
+         |                |            | add_624 (RTL-DSP_Unit_syn.vhd:624) |
+         |                |            | add_661 (RTL-DSP_Unit_syn.vhd:661) |
+| add_x_355      | DW01_add       | width=3    | add_823_I3 (RTL-DSP_Unit_syn.vhd:823) |
+      |                |            | add_825_I3 (RTL-DSP_Unit_syn.vhd:825) |
+| add_x_357      | DW01_add       | width=3    | add_823_I4 (RTL-DSP_Unit_syn.vhd:823) |
+      |                |            | add_825_I4 (RTL-DSP_Unit_syn.vhd:825) |
+| add_x_353      | DW01_inc       | width=3    | add_823_I2 (RTL-DSP_Unit_syn.vhd:823) |
+      |                |            | add_825_I2 (RTL-DSP_Unit_syn.vhd:825) |
+| add_x_2        | DW01_add       | width=4    | add_1511 (RTL-DSP_Unit_syn.vhd:1511) |
+       |                |            | add_627 (RTL-DSP_Unit_syn.vhd:627) |
+| DP_OP_1401J7_122_1786           |            |                            |
+|                | DP_OP_1401J7_122_1786 |     |                            |
+| DP_OP_1402J7_123_1785           |            |                            |
+|                | DP_OP_1402J7_123_1785 |     |                            |
+| DP_OP_1403J7_130_2248           |            |                            |
+|                | DP_OP_1403J7_130_2248 |     |                            |
+| DP_OP_363J7_127_3148            |            |                            |
+|                | DP_OP_363J7_127_3148 |      |                            |
+| DP_OP_361J7_124_2892            |            |                            |
+|                | DP_OP_361J7_124_2892 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_1401J7_122_1786
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1401J7_122_1786 | mult_467 (RTL-DSP_Unit_syn.vhd:467)                |
+|                      | mult_624 (RTL-DSP_Unit_syn.vhd:624)                 |
+|                      | mult_661 (RTL-DSP_Unit_syn.vhd:661)                 |
+|                      | sub_467 (RTL-DSP_Unit_syn.vhd:467)                  |
+|                      | sub_624 (RTL-DSP_Unit_syn.vhd:624)                  |
+|                      | sub_661 (RTL-DSP_Unit_syn.vhd:661)                  |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 3     |                                          |
+| T1    | IFO  | Unsigned | 6     | I1 * $unsigned(4'b1111) ( RTL-DSP_Unit_syn.vhd:467 RTL-DSP_Unit_syn.vhd:624 RTL-DSP_Unit_syn.vhd:661 ) |
+| O1    | PO   | Signed   | 6     | T1 - $unsigned(1'b1) ( RTL-DSP_Unit_syn.vhd:467 RTL-DSP_Unit_syn.vhd:624 RTL-DSP_Unit_syn.vhd:661 ) |
+==============================================================================
+
+Datapath Report for DP_OP_1402J7_123_1785
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1402J7_123_1785 | mult_626 (RTL-DSP_Unit_syn.vhd:626)                |
+|                      | sub_626 (RTL-DSP_Unit_syn.vhd:626)                  |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 3     |                                          |
+| T6    | IFO  | Unsigned | 5     | I1 * $unsigned(3'b101) (RTL-DSP_Unit_syn.vhd:626) |
+| O1    | PO   | Signed   | 5     | T6 - $unsigned(1'b1) (RTL-DSP_Unit_syn.vhd:626) |
+==============================================================================
+
+Datapath Report for DP_OP_1403J7_130_2248
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_1403J7_130_2248 | sub_705 (RTL-DSP_Unit_syn.vhd:705)                 |
+|                      | sub_652 (RTL-DSP_Unit_syn.vhd:652)                  |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 15    |                                          |
+| I2    | PI   | Unsigned | 5     |                                          |
+| O1    | PO   | Signed   | 15    | I1 - I2 ( RTL-DSP_Unit_syn.vhd:652 RTL-DSP_Unit_syn.vhd:705 ) |
+==============================================================================
+
+Datapath Report for DP_OP_363J7_127_3148
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_363J7_127_3148 | add_645_aco (RTL-DSP_Unit_syn.vhd:645)              |
+|                      | add_699 (RTL-DSP_Unit_syn.vhd:699)                  |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 5     |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 ( RTL-DSP_Unit_syn.vhd:645 RTL-DSP_Unit_syn.vhd:699 ) |
+==============================================================================
+
+Datapath Report for DP_OP_361J7_124_2892
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_361J7_124_2892 | add_639_aco (RTL-DSP_Unit_syn.vhd:639)              |
+|                      | add_696 (RTL-DSP_Unit_syn.vhd:696)                  |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 5     |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 ( RTL-DSP_Unit_syn.vhd:639 RTL-DSP_Unit_syn.vhd:696 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'mult_467 (RTL-DSP_Unit_syn.vhd:467) mult_624 (RTL-DSP_Unit_syn.vhd:624) mult_661 (RTL-DSP_Unit_syn.vhd:661)' in design 'DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD4_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS2_Data_Width32_SIMD_Width128' breaks the datapath extraction because there is leakage due to truncation on the fanout of its driver 'add_467 (RTL-DSP_Unit_syn.vhd:467) add_624 (RTL-DSP_Unit_syn.vhd:624) add_661 (RTL-DSP_Unit_syn.vhd:661)'.  (HDL-120)
+
+Information: Operator associated with resources 'sub_822_I2 (RTL-DSP_Unit_syn.vhd:822) sub_822_I3 (RTL-DSP_Unit_syn.vhd:822) sub_822_I4 (RTL-DSP_Unit_syn.vhd:822)' in design 'DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD4_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS2_Data_Width32_SIMD_Width128' breaks the datapath extraction because there is leakage due to truncation on its fanout.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| lte_x_3            | DW_cmp           | apparch (area)     |                |
+| add_x_4            | DW01_add         | apparch (area)     |                |
+| gte_x_5            | DW_cmp           | apparch (area)     |                |
+| sub_x_6            | DW01_sub         | apparch (area)     |                |
+| gte_x_7            | DW_cmp           | apparch (area)     |                |
+| sub_x_8            | DW01_sub         | apparch (area)     |                |
+| lt_x_9             | DW_cmp           | apparch (area)     |                |
+| lt_x_10            | DW_cmp           | apparch (area)     |                |
+| lt_x_11            | DW_cmp           | apparch (area)     |                |
+| lt_x_12            | DW_cmp           | apparch (area)     |                |
+| lt_x_13            | DW_cmp           | apparch (area)     |                |
+| lt_x_14            | DW_cmp           | apparch (area)     |                |
+| lt_x_15            | DW_cmp           | apparch (area)     |                |
+| lt_x_16            | DW_cmp           | apparch (area)     |                |
+| lt_x_17            | DW_cmp           | apparch (area)     |                |
+| lt_x_18            | DW_cmp           | apparch (area)     |                |
+| lt_x_19            | DW_cmp           | apparch (area)     |                |
+| lt_x_20            | DW_cmp           | apparch (area)     |                |
+| lt_x_21            | DW_cmp           | apparch (area)     |                |
+| lt_x_22            | DW_cmp           | apparch (area)     |                |
+| lt_x_23            | DW_cmp           | apparch (area)     |                |
+| lt_x_24            | DW_cmp           | apparch (area)     |                |
+| lt_x_25            | DW_cmp           | apparch (area)     |                |
+| lt_x_26            | DW_cmp           | apparch (area)     |                |
+| lt_x_27            | DW_cmp           | apparch (area)     |                |
+| lt_x_28            | DW_cmp           | apparch (area)     |                |
+| lt_x_29            | DW_cmp           | apparch (area)     |                |
+| lt_x_30            | DW_cmp           | apparch (area)     |                |
+| lt_x_31            | DW_cmp           | apparch (area)     |                |
+| lt_x_32            | DW_cmp           | apparch (area)     |                |
+| lt_x_33            | DW_cmp           | apparch (area)     |                |
+| lt_x_34            | DW_cmp           | apparch (area)     |                |
+| lt_x_35            | DW_cmp           | apparch (area)     |                |
+| lt_x_36            | DW_cmp           | apparch (area)     |                |
+| lt_x_37            | DW_cmp           | apparch (area)     |                |
+| lt_x_38            | DW_cmp           | apparch (area)     |                |
+| lt_x_39            | DW_cmp           | apparch (area)     |                |
+| lt_x_40            | DW_cmp           | apparch (area)     |                |
+| lt_x_41            | DW_cmp           | apparch (area)     |                |
+| lt_x_42            | DW_cmp           | apparch (area)     |                |
+| lt_x_43            | DW_cmp           | apparch (area)     |                |
+| lt_x_44            | DW_cmp           | apparch (area)     |                |
+| lt_x_45            | DW_cmp           | apparch (area)     |                |
+| lt_x_46            | DW_cmp           | apparch (area)     |                |
+| lt_x_47            | DW_cmp           | apparch (area)     |                |
+| lt_x_48            | DW_cmp           | apparch (area)     |                |
+| lt_x_49            | DW_cmp           | apparch (area)     |                |
+| lt_x_50            | DW_cmp           | apparch (area)     |                |
+| lt_x_51            | DW_cmp           | apparch (area)     |                |
+| lt_x_52            | DW_cmp           | apparch (area)     |                |
+| lt_x_53            | DW_cmp           | apparch (area)     |                |
+| lt_x_54            | DW_cmp           | apparch (area)     |                |
+| lt_x_55            | DW_cmp           | apparch (area)     |                |
+| lt_x_56            | DW_cmp           | apparch (area)     |                |
+| lt_x_57            | DW_cmp           | apparch (area)     |                |
+| lt_x_58            | DW_cmp           | apparch (area)     |                |
+| lt_x_59            | DW_cmp           | apparch (area)     |                |
+| lt_x_60            | DW_cmp           | apparch (area)     |                |
+| lt_x_61            | DW_cmp           | apparch (area)     |                |
+| lt_x_62            | DW_cmp           | apparch (area)     |                |
+| lt_x_63            | DW_cmp           | apparch (area)     |                |
+| lt_x_64            | DW_cmp           | apparch (area)     |                |
+| lt_x_65            | DW_cmp           | apparch (area)     |                |
+| lt_x_66            | DW_cmp           | apparch (area)     |                |
+| lt_x_67            | DW_cmp           | apparch (area)     |                |
+| lt_x_68            | DW_cmp           | apparch (area)     |                |
+| lt_x_69            | DW_cmp           | apparch (area)     |                |
+| lt_x_70            | DW_cmp           | apparch (area)     |                |
+| lt_x_71            | DW_cmp           | apparch (area)     |                |
+| lt_x_72            | DW_cmp           | apparch (area)     |                |
+| lt_x_73            | DW_cmp           | apparch (area)     |                |
+| lt_x_74            | DW_cmp           | apparch (area)     |                |
+| lt_x_75            | DW_cmp           | apparch (area)     |                |
+| lt_x_76            | DW_cmp           | apparch (area)     |                |
+| lt_x_77            | DW_cmp           | apparch (area)     |                |
+| lt_x_78            | DW_cmp           | apparch (area)     |                |
+| lt_x_79            | DW_cmp           | apparch (area)     |                |
+| lt_x_80            | DW_cmp           | apparch (area)     |                |
+| lt_x_81            | DW_cmp           | apparch (area)     |                |
+| lt_x_82            | DW_cmp           | apparch (area)     |                |
+| lt_x_83            | DW_cmp           | apparch (area)     |                |
+| lt_x_84            | DW_cmp           | apparch (area)     |                |
+| lt_x_85            | DW_cmp           | apparch (area)     |                |
+| lt_x_86            | DW_cmp           | apparch (area)     |                |
+| lt_x_87            | DW_cmp           | apparch (area)     |                |
+| lt_x_88            | DW_cmp           | apparch (area)     |                |
+| lt_x_89            | DW_cmp           | apparch (area)     |                |
+| lt_x_90            | DW_cmp           | apparch (area)     |                |
+| lt_x_91            | DW_cmp           | apparch (area)     |                |
+| lt_x_92            | DW_cmp           | apparch (area)     |                |
+| lt_x_93            | DW_cmp           | apparch (area)     |                |
+| lt_x_94            | DW_cmp           | apparch (area)     |                |
+| lt_x_95            | DW_cmp           | apparch (area)     |                |
+| lt_x_96            | DW_cmp           | apparch (area)     |                |
+| lt_x_97            | DW_cmp           | apparch (area)     |                |
+| lt_x_98            | DW_cmp           | apparch (area)     |                |
+| lt_x_99            | DW_cmp           | apparch (area)     |                |
+| lt_x_100           | DW_cmp           | apparch (area)     |                |
+| lt_x_101           | DW_cmp           | apparch (area)     |                |
+| lt_x_102           | DW_cmp           | apparch (area)     |                |
+| lt_x_103           | DW_cmp           | apparch (area)     |                |
+| lt_x_104           | DW_cmp           | apparch (area)     |                |
+| lt_x_105           | DW_cmp           | apparch (area)     |                |
+| lt_x_106           | DW_cmp           | apparch (area)     |                |
+| lt_x_107           | DW_cmp           | apparch (area)     |                |
+| lt_x_108           | DW_cmp           | apparch (area)     |                |
+| lt_x_109           | DW_cmp           | apparch (area)     |                |
+| lt_x_110           | DW_cmp           | apparch (area)     |                |
+| lt_x_111           | DW_cmp           | apparch (area)     |                |
+| lt_x_112           | DW_cmp           | apparch (area)     |                |
+| lt_x_113           | DW_cmp           | apparch (area)     |                |
+| lt_x_114           | DW_cmp           | apparch (area)     |                |
+| lt_x_115           | DW_cmp           | apparch (area)     |                |
+| lt_x_116           | DW_cmp           | apparch (area)     |                |
+| lt_x_117           | DW_cmp           | apparch (area)     |                |
+| lt_x_118           | DW_cmp           | apparch (area)     |                |
+| lt_x_119           | DW_cmp           | apparch (area)     |                |
+| lt_x_120           | DW_cmp           | apparch (area)     |                |
+| lt_x_121           | DW_cmp           | apparch (area)     |                |
+| lt_x_122           | DW_cmp           | apparch (area)     |                |
+| lt_x_123           | DW_cmp           | apparch (area)     |                |
+| lt_x_124           | DW_cmp           | apparch (area)     |                |
+| lt_x_125           | DW_cmp           | apparch (area)     |                |
+| lt_x_126           | DW_cmp           | apparch (area)     |                |
+| lt_x_127           | DW_cmp           | apparch (area)     |                |
+| lt_x_128           | DW_cmp           | apparch (area)     |                |
+| lt_x_129           | DW_cmp           | apparch (area)     |                |
+| lt_x_130           | DW_cmp           | apparch (area)     |                |
+| lt_x_131           | DW_cmp           | apparch (area)     |                |
+| lt_x_132           | DW_cmp           | apparch (area)     |                |
+| lt_x_133           | DW_cmp           | apparch (area)     |                |
+| lt_x_134           | DW_cmp           | apparch (area)     |                |
+| lt_x_135           | DW_cmp           | apparch (area)     |                |
+| lt_x_136           | DW_cmp           | apparch (area)     |                |
+| lte_x_348          | DW_cmp           | apparch (area)     |                |
+| lte_x_349          | DW_cmp           | apparch (area)     |                |
+| lte_x_350          | DW_cmp           | apparch (area)     |                |
+| lte_x_352          | DW_cmp           | apparch (area)     |                |
+| lte_x_354          | DW_cmp           | apparch (area)     |                |
+| lte_x_356          | DW_cmp           | apparch (area)     |                |
+| mult_x_935         | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_936         | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| gte_x_937          | DW_cmp           | apparch (area)     |                |
+| gt_x_938           | DW_cmp           | apparch (area)     |                |
+| gt_x_939           | DW_cmp           | apparch (area)     |                |
+| sub_x_351          | DW01_dec         | apparch (area)     |                |
+| add_x_1            | DW01_inc         | apparch (area)     |                |
+| add_x_355          | DW01_add         | apparch (area)     |                |
+| add_x_357          | DW01_add         | apparch (area)     |                |
+| add_x_353          | DW01_inc         | apparch (area)     |                |
+| add_x_2            | DW01_add         | apparch (area)     |                |
+| DP_OP_1401J7_122_1786                 |                    |                |
+|                    | DP_OP_1401J7_122_1786 | str (area)    |                |
+| DP_OP_1402J7_123_1785                 |                    |                |
+|                    | DP_OP_1402J7_123_1785 | str (area)    |                |
+| DP_OP_1403J7_130_2248                 |                    |                |
+|                    | DP_OP_1403J7_130_2248 | str (area)    |                |
+| DP_OP_363J7_127_3148                  |                    |                |
+|                    | DP_OP_363J7_127_3148 | str (area)     |                |
+| DP_OP_361J7_124_2892                  |                    |                |
+|                    | DP_OP_361J7_124_2892 | str (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : ACCUMULATOR_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_SIMD_Width128
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Accumulator_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_add       | width=32   | add_172 (RTL-Accumulator_syn.vhd:172) |
+| add_x_2        | DW01_add       | width=32   | add_173 (RTL-Accumulator_syn.vhd:173) |
+| add_x_3        | DW01_add       | width=16   | add_185 (RTL-Accumulator_syn.vhd:185) |
+| add_x_4        | DW01_add       | width=16   | add_186 (RTL-Accumulator_syn.vhd:186) |
+| add_x_5        | DW01_add       | width=16   | add_187 (RTL-Accumulator_syn.vhd:187) |
+| add_x_6        | DW01_add       | width=16   | add_188 (RTL-Accumulator_syn.vhd:188) |
+| DP_OP_91J2_122_1183             |            |                            |
+|                | DP_OP_91J2_122_1183 |       |                            |
+| DP_OP_92J2_123_1183             |            |                            |
+|                | DP_OP_92J2_123_1183 |       |                            |
+| DP_OP_93J2_124_1152             |            |                            |
+|                | DP_OP_93J2_124_1152 |       |                            |
+=============================================================================
+
+Datapath Report for DP_OP_91J2_122_1183
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_91J2_122_1183  | add_191 (RTL-Accumulator_syn.vhd:191)               |
+|                      | add_191_2 (RTL-Accumulator_syn.vhd:191)             |
+|                      | add_191_3 (RTL-Accumulator_syn.vhd:191)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| O1    | PO   | Unsigned | 16    | I1 + I2 (RTL-Accumulator_syn.vhd:191)    |
+==============================================================================
+
+Datapath Report for DP_OP_92J2_123_1183
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_92J2_123_1183  | add_191 (RTL-Accumulator_syn.vhd:191)               |
+|                      | add_191_2 (RTL-Accumulator_syn.vhd:191)             |
+|                      | add_191_3 (RTL-Accumulator_syn.vhd:191)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 16    |                                          |
+| I2    | PI   | Unsigned | 16    |                                          |
+| O1    | PO   | Unsigned | 16    | I1 + I2 (RTL-Accumulator_syn.vhd:191)    |
+==============================================================================
+
+Datapath Report for DP_OP_93J2_124_1152
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_93J2_124_1152  | add_176 (RTL-Accumulator_syn.vhd:176)               |
+|                      | add_176_2 (RTL-Accumulator_syn.vhd:176)             |
+|                      | add_191 (RTL-Accumulator_syn.vhd:191)               |
+|                      | add_191_2 (RTL-Accumulator_syn.vhd:191)             |
+|                      | add_191_3 (RTL-Accumulator_syn.vhd:191)             |
+|                      | C1299 (RTL-Accumulator_syn.vhd:190)                 |
+|                      | C1301 (RTL-Accumulator_syn.vhd:180)                 |
+|                      | C1294 (RTL-Accumulator_syn.vhd:175)                 |
+|                      | C1304 (RTL-Accumulator_syn.vhd:167)                 |
+|                      | add_191_4 (RTL-Accumulator_syn.vhd:191)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 16    |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| I5    | PI   | Unsigned | 1     |                                          |
+| I6    | PI   | Unsigned | 32    |                                          |
+| T89   | IFO  | Unsigned | 32    | { I4, I5 } ? I3 : O1 ( RTL-Accumulator_syn.vhd:167 RTL-Accumulator_syn.vhd:175 RTL-Accumulator_syn.vhd:180 RTL-Accumulator_syn.vhd:190 ) |
+| O1    | PO   | Unsigned | 32    | I1 + I2 ( RTL-Accumulator_syn.vhd:176 RTL-Accumulator_syn.vhd:191 ) |
+| O2    | PO   | Unsigned | 32    | I6 + T89 ( RTL-Accumulator_syn.vhd:176 RTL-Accumulator_syn.vhd:191 ) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'add_191 (RTL-Accumulator_syn.vhd:191) add_191_2 (RTL-Accumulator_syn.vhd:191) add_191_3 (RTL-Accumulator_syn.vhd:191)' in design 'ACCUMULATOR_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_SIMD_Width128' breaks the datapath extraction because there is leakage due to truncation on its fanout.  (HDL-120)
+
+Information: Operator associated with resources 'add_191 (RTL-Accumulator_syn.vhd:191) add_191_2 (RTL-Accumulator_syn.vhd:191) add_191_3 (RTL-Accumulator_syn.vhd:191)' in design 'ACCUMULATOR_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_SIMD_Width128' breaks the datapath extraction because there is leakage due to truncation on its fanout.  (HDL-120)
+
+Information: Operator associated with resources 'add_191 (RTL-Accumulator_syn.vhd:191) add_191_2 (RTL-Accumulator_syn.vhd:191) add_191_3 (RTL-Accumulator_syn.vhd:191)' in design 'ACCUMULATOR_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_SIMD_Width128' breaks the datapath extraction because there is leakage due to truncation on its fanout to operator of resources 'add_191_4 (RTL-Accumulator_syn.vhd:191)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_add         | apparch (area)     |                |
+| add_x_2            | DW01_add         | apparch (area)     |                |
+| add_x_3            | DW01_add         | apparch (area)     |                |
+| add_x_4            | DW01_add         | apparch (area)     |                |
+| add_x_5            | DW01_add         | apparch (area)     |                |
+| add_x_6            | DW01_add         | apparch (area)     |                |
+| DP_OP_91J2_122_1183                   |                    |                |
+|                    | DP_OP_91J2_122_1183 | str (area)      |                |
+| DP_OP_92J2_123_1183                   |                    |                |
+|                    | DP_OP_92J2_123_1183 | str (area)      |                |
+| DP_OP_93J2_124_1152                   |                    |                |
+|                    | DP_OP_93J2_124_1152 | str (area)      |                |
+===============================================================================
+
+ 
+****************************************
+Design : MULTIPLIER_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width128
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Multiplier_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| mult_x_1       | DW_mult_uns    | a_width=16 | mult_95 (RTL-Multiplier_syn.vhd:95) |
+        |                | b_width=16 |                            |
+| mult_x_2       | DW_mult_uns    | a_width=16 | mult_96 (RTL-Multiplier_syn.vhd:96) |
+        |                | b_width=16 |                            |
+| mult_x_3       | DW_mult_uns    | a_width=16 | mult_97 (RTL-Multiplier_syn.vhd:97) |
+        |                | b_width=16 |                            |
+| mult_x_4       | DW_mult_uns    | a_width=16 | mult_98 (RTL-Multiplier_syn.vhd:98) |
+        |                | b_width=16 |                            |
+| mult_x_5       | DW_mult_uns    | a_width=16 | mult_95_I2_I1 (RTL-Multiplier_syn.vhd:95) |
+  |                | b_width=16 |                            |
+| mult_x_6       | DW_mult_uns    | a_width=16 | mult_96_I2_I1 (RTL-Multiplier_syn.vhd:96) |
+  |                | b_width=16 |                            |
+| mult_x_7       | DW_mult_uns    | a_width=16 | mult_97_I2_I1 (RTL-Multiplier_syn.vhd:97) |
+  |                | b_width=16 |                            |
+| mult_x_8       | DW_mult_uns    | a_width=16 | mult_98_I2_I1 (RTL-Multiplier_syn.vhd:98) |
+  |                | b_width=16 |                            |
+| mult_x_9       | DW_mult_uns    | a_width=16 | mult_95_I3_I1 (RTL-Multiplier_syn.vhd:95) |
+  |                | b_width=16 |                            |
+| mult_x_10      | DW_mult_uns    | a_width=16 | mult_96_I3_I1 (RTL-Multiplier_syn.vhd:96) |
+  |                | b_width=16 |                            |
+| mult_x_11      | DW_mult_uns    | a_width=16 | mult_97_I3_I1 (RTL-Multiplier_syn.vhd:97) |
+  |                | b_width=16 |                            |
+| mult_x_12      | DW_mult_uns    | a_width=16 | mult_98_I3_I1 (RTL-Multiplier_syn.vhd:98) |
+  |                | b_width=16 |                            |
+| mult_x_13      | DW_mult_uns    | a_width=16 | mult_95_I4_I1 (RTL-Multiplier_syn.vhd:95) |
+  |                | b_width=16 |                            |
+| mult_x_14      | DW_mult_uns    | a_width=16 | mult_96_I4_I1 (RTL-Multiplier_syn.vhd:96) |
+  |                | b_width=16 |                            |
+| mult_x_15      | DW_mult_uns    | a_width=16 | mult_97_I4_I1 (RTL-Multiplier_syn.vhd:97) |
+  |                | b_width=16 |                            |
+| mult_x_16      | DW_mult_uns    | a_width=16 | mult_98_I4_I1 (RTL-Multiplier_syn.vhd:98) |
+  |                | b_width=16 |                            |
+| DP_OP_133J5_122_7095            |            |                            |
+|                | DP_OP_133J5_122_7095 |      |                            |
+| DP_OP_134J5_123_7095            |            |                            |
+|                | DP_OP_134J5_123_7095 |      |                            |
+| DP_OP_135J5_124_7095            |            |                            |
+|                | DP_OP_135J5_124_7095 |      |                            |
+| DP_OP_136J5_125_7095            |            |                            |
+|                | DP_OP_136J5_125_7095 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_133J5_122_7095
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_133J5_122_7095 | add_177 (RTL-Multiplier_syn.vhd:177)                |
+|                      | add_177_2 (RTL-Multiplier_syn.vhd:177)              |
+|                      | add_177_3 (RTL-Multiplier_syn.vhd:177)              |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 32    |                                          |
+| I4    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 + I3 + I4 (RTL-Multiplier_syn.vhd:177) |
+==============================================================================
+
+Datapath Report for DP_OP_134J5_123_7095
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_134J5_123_7095 | add_177_I2_I1 (RTL-Multiplier_syn.vhd:177)          |
+|                      | add_177_2_I2_I1 (RTL-Multiplier_syn.vhd:177)        |
+|                      | add_177_3_I2_I1 (RTL-Multiplier_syn.vhd:177)        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 32    |                                          |
+| I4    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 + I3 + I4 (RTL-Multiplier_syn.vhd:177) |
+==============================================================================
+
+Datapath Report for DP_OP_135J5_124_7095
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_135J5_124_7095 | add_177_I3_I1 (RTL-Multiplier_syn.vhd:177)          |
+|                      | add_177_2_I3_I1 (RTL-Multiplier_syn.vhd:177)        |
+|                      | add_177_3_I3_I1 (RTL-Multiplier_syn.vhd:177)        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 32    |                                          |
+| I4    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 + I3 + I4 (RTL-Multiplier_syn.vhd:177) |
+==============================================================================
+
+Datapath Report for DP_OP_136J5_125_7095
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_136J5_125_7095 | add_177_I4_I1 (RTL-Multiplier_syn.vhd:177)          |
+|                      | add_177_2_I4_I1 (RTL-Multiplier_syn.vhd:177)        |
+|                      | add_177_3_I4_I1 (RTL-Multiplier_syn.vhd:177)        |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 32    |                                          |
+| I2    | PI   | Unsigned | 32    |                                          |
+| I3    | PI   | Unsigned | 32    |                                          |
+| I4    | PI   | Unsigned | 32    |                                          |
+| O1    | PO   | Unsigned | 32    | I1 + I2 + I3 + I4 (RTL-Multiplier_syn.vhd:177) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| mult_x_1           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_2           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_3           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_4           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: benc_radix4              |
+| mult_x_5           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_6           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_7           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_8           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: benc_radix4              |
+| mult_x_9           | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_10          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_11          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_12          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: benc_radix4              |
+| mult_x_13          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_14          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_15          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: and     |                |
+| mult_x_16          | DW_mult_uns      | apparch (area)     |                |
+|                    |                  | mult_arch: benc_radix4              |
+| DP_OP_133J5_122_7095                  |                    |                |
+|                    | DP_OP_133J5_122_7095 | str (area)     |                |
+| DP_OP_134J5_123_7095                  |                    |                |
+|                    | DP_OP_134J5_123_7095 | str (area)     |                |
+| DP_OP_135J5_124_7095                  |                    |                |
+|                    | DP_OP_135J5_124_7095 | str (area)     |                |
+| DP_OP_136J5_125_7095                  |                    |                |
+|                    | DP_OP_136J5_125_7095 | str (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : ADDER_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_SIMD_Width128
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Adder_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| DP_OP_197J4_122_687             |            |                            |
+|                | DP_OP_197J4_122_687 |       |                            |
+| DP_OP_198J4_123_4916            |            |                            |
+|                | DP_OP_198J4_123_4916 |      |                            |
+| DP_OP_199J4_124_687             |            |                            |
+|                | DP_OP_199J4_124_687 |       |                            |
+| DP_OP_200J4_125_4916            |            |                            |
+|                | DP_OP_200J4_125_4916 |      |                            |
+| DP_OP_201J4_126_687             |            |                            |
+|                | DP_OP_201J4_126_687 |       |                            |
+| DP_OP_202J4_127_4916            |            |                            |
+|                | DP_OP_202J4_127_4916 |      |                            |
+| DP_OP_203J4_128_687             |            |                            |
+|                | DP_OP_203J4_128_687 |       |                            |
+| DP_OP_204J4_129_4916            |            |                            |
+|                | DP_OP_204J4_129_4916 |      |                            |
+| DP_OP_205J4_130_4916            |            |                            |
+|                | DP_OP_205J4_130_4916 |      |                            |
+| DP_OP_206J4_131_4916            |            |                            |
+|                | DP_OP_206J4_131_4916 |      |                            |
+| DP_OP_207J4_132_4916            |            |                            |
+|                | DP_OP_207J4_132_4916 |      |                            |
+| DP_OP_208J4_133_4916            |            |                            |
+|                | DP_OP_208J4_133_4916 |      |                            |
+| DP_OP_209J4_134_4915            |            |                            |
+|                | DP_OP_209J4_134_4915 |      |                            |
+| DP_OP_210J4_135_4915            |            |                            |
+|                | DP_OP_210J4_135_4915 |      |                            |
+| DP_OP_211J4_136_4915            |            |                            |
+|                | DP_OP_211J4_136_4915 |      |                            |
+| DP_OP_212J4_137_4915            |            |                            |
+|                | DP_OP_212J4_137_4915 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_197J4_122_687
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_197J4_122_687  | add_101 (RTL-Adder_syn.vhd:101)                     |
+|                      | add_101_4 (RTL-Adder_syn.vhd:101)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 (RTL-Adder_syn.vhd:101)     |
+==============================================================================
+
+Datapath Report for DP_OP_198J4_123_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_198J4_123_4916 | add_102 (RTL-Adder_syn.vhd:102)                     |
+|                      | add_102_2 (RTL-Adder_syn.vhd:102)                   |
+|                      | add_102_5 (RTL-Adder_syn.vhd:102)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:102) |
+==============================================================================
+
+Datapath Report for DP_OP_199J4_124_687
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_199J4_124_687  | add_101_I2_I1 (RTL-Adder_syn.vhd:101)               |
+|                      | add_101_4_I2_I1 (RTL-Adder_syn.vhd:101)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 (RTL-Adder_syn.vhd:101)     |
+==============================================================================
+
+Datapath Report for DP_OP_200J4_125_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_200J4_125_4916 | add_102_I2_I1 (RTL-Adder_syn.vhd:102)               |
+|                      | add_102_2_I2_I1 (RTL-Adder_syn.vhd:102)             |
+|                      | add_102_5_I2_I1 (RTL-Adder_syn.vhd:102)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:102) |
+==============================================================================
+
+Datapath Report for DP_OP_201J4_126_687
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_201J4_126_687  | add_101_I3_I1 (RTL-Adder_syn.vhd:101)               |
+|                      | add_101_4_I3_I1 (RTL-Adder_syn.vhd:101)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 (RTL-Adder_syn.vhd:101)     |
+==============================================================================
+
+Datapath Report for DP_OP_202J4_127_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_202J4_127_4916 | add_102_I3_I1 (RTL-Adder_syn.vhd:102)               |
+|                      | add_102_2_I3_I1 (RTL-Adder_syn.vhd:102)             |
+|                      | add_102_5_I3_I1 (RTL-Adder_syn.vhd:102)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:102) |
+==============================================================================
+
+Datapath Report for DP_OP_203J4_128_687
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_203J4_128_687  | add_101_I4_I1 (RTL-Adder_syn.vhd:101)               |
+|                      | add_101_4_I4_I1 (RTL-Adder_syn.vhd:101)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 (RTL-Adder_syn.vhd:101)     |
+==============================================================================
+
+Datapath Report for DP_OP_204J4_129_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_204J4_129_4916 | add_102_I4_I1 (RTL-Adder_syn.vhd:102)               |
+|                      | add_102_2_I4_I1 (RTL-Adder_syn.vhd:102)             |
+|                      | add_102_5_I4_I1 (RTL-Adder_syn.vhd:102)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:102) |
+==============================================================================
+
+Datapath Report for DP_OP_205J4_130_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_205J4_130_4916 | add_146_I4_I1 (RTL-Adder_syn.vhd:146)               |
+|                      | add_146_2_I4_I1 (RTL-Adder_syn.vhd:146)             |
+|                      | add_146_5_I4_I1 (RTL-Adder_syn.vhd:146)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:146) |
+==============================================================================
+
+Datapath Report for DP_OP_206J4_131_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_206J4_131_4916 | add_146_I3_I1 (RTL-Adder_syn.vhd:146)               |
+|                      | add_146_2_I3_I1 (RTL-Adder_syn.vhd:146)             |
+|                      | add_146_5_I3_I1 (RTL-Adder_syn.vhd:146)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:146) |
+==============================================================================
+
+Datapath Report for DP_OP_207J4_132_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_207J4_132_4916 | add_146_I2_I1 (RTL-Adder_syn.vhd:146)               |
+|                      | add_146_2_I2_I1 (RTL-Adder_syn.vhd:146)             |
+|                      | add_146_5_I2_I1 (RTL-Adder_syn.vhd:146)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:146) |
+==============================================================================
+
+Datapath Report for DP_OP_208J4_133_4916
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_208J4_133_4916 | add_146 (RTL-Adder_syn.vhd:146)                     |
+|                      | add_146_2 (RTL-Adder_syn.vhd:146)                   |
+|                      | add_146_5 (RTL-Adder_syn.vhd:146)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 9     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:146) |
+==============================================================================
+
+Datapath Report for DP_OP_209J4_134_4915
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_209J4_134_4915 | add_149_I4_I1 (RTL-Adder_syn.vhd:149)               |
+|                      | add_149_2_I4_I1 (RTL-Adder_syn.vhd:149)             |
+|                      | add_149_5_I4_I1 (RTL-Adder_syn.vhd:149)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 8     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:149) |
+==============================================================================
+
+Datapath Report for DP_OP_210J4_135_4915
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_210J4_135_4915 | add_149_I3_I1 (RTL-Adder_syn.vhd:149)               |
+|                      | add_149_2_I3_I1 (RTL-Adder_syn.vhd:149)             |
+|                      | add_149_5_I3_I1 (RTL-Adder_syn.vhd:149)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 8     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:149) |
+==============================================================================
+
+Datapath Report for DP_OP_211J4_136_4915
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_211J4_136_4915 | add_149_I2_I1 (RTL-Adder_syn.vhd:149)               |
+|                      | add_149_2_I2_I1 (RTL-Adder_syn.vhd:149)             |
+|                      | add_149_5_I2_I1 (RTL-Adder_syn.vhd:149)             |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 8     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:149) |
+==============================================================================
+
+Datapath Report for DP_OP_212J4_137_4915
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_212J4_137_4915 | add_149 (RTL-Adder_syn.vhd:149)                     |
+|                      | add_149_2 (RTL-Adder_syn.vhd:149)                   |
+|                      | add_149_5 (RTL-Adder_syn.vhd:149)                   |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 8     |                                          |
+| I2    | PI   | Unsigned | 8     |                                          |
+| I3    | PI   | Unsigned | 1     |                                          |
+| I4    | PI   | Unsigned | 1     |                                          |
+| O1    | PO   | Unsigned | 8     | I1 + I2 + I3 + I4 (RTL-Adder_syn.vhd:149) |
+==============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| DP_OP_197J4_122_687                   |                    |                |
+|                    | DP_OP_197J4_122_687 | str (area)      |                |
+| DP_OP_198J4_123_4916                  |                    |                |
+|                    | DP_OP_198J4_123_4916 | str (area)     |                |
+| DP_OP_199J4_124_687                   |                    |                |
+|                    | DP_OP_199J4_124_687 | str (area)      |                |
+| DP_OP_200J4_125_4916                  |                    |                |
+|                    | DP_OP_200J4_125_4916 | str (area)     |                |
+| DP_OP_201J4_126_687                   |                    |                |
+|                    | DP_OP_201J4_126_687 | str (area)      |                |
+| DP_OP_202J4_127_4916                  |                    |                |
+|                    | DP_OP_202J4_127_4916 | str (area)     |                |
+| DP_OP_203J4_128_687                   |                    |                |
+|                    | DP_OP_203J4_128_687 | str (area)      |                |
+| DP_OP_204J4_129_4916                  |                    |                |
+|                    | DP_OP_204J4_129_4916 | str (area)     |                |
+| DP_OP_205J4_130_4916                  |                    |                |
+|                    | DP_OP_205J4_130_4916 | str (area)     |                |
+| DP_OP_206J4_131_4916                  |                    |                |
+|                    | DP_OP_206J4_131_4916 | str (area)     |                |
+| DP_OP_207J4_132_4916                  |                    |                |
+|                    | DP_OP_207J4_132_4916 | str (area)     |                |
+| DP_OP_208J4_133_4916                  |                    |                |
+|                    | DP_OP_208J4_133_4916 | str (area)     |                |
+| DP_OP_209J4_134_4915                  |                    |                |
+|                    | DP_OP_209J4_134_4915 | str (area)     |                |
+| DP_OP_210J4_135_4915                  |                    |                |
+|                    | DP_OP_210J4_135_4915 | str (area)     |                |
+| DP_OP_211J4_136_4915                  |                    |                |
+|                    | DP_OP_211J4_136_4915 | str (area)     |                |
+| DP_OP_212J4_137_4915                  |                    |                |
+|                    | DP_OP_212J4_137_4915 | str (area)     |                |
+===============================================================================
+
+
+No resource sharing information to report.
+ 
+****************************************
+Design : COMPARATOR_SIMD4_multithreaded_accl_en0_ACCL_NUM1_FU_NUM1_SIMD_Width128
+****************************************
+
+No implementations to report
+ 
+****************************************
+Design : SHIFTER_multithreaded_accl_en0_SIMD4_ACCL_NUM1_FU_NUM1_SIMD_Width128
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Shifter_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| ashr_1         | DW_rightsh     | A_width=32 | srl_84 (RTL-Shifter_syn.vhd:84) |
+            |                | SH_width=5 |                            |
+| ashr_2         | DW_rightsh     | A_width=32 | srl_84_I2_I1 (RTL-Shifter_syn.vhd:84) |
+      |                | SH_width=5 |                            |
+| ashr_3         | DW_rightsh     | A_width=32 | srl_84_I3_I1 (RTL-Shifter_syn.vhd:84) |
+      |                | SH_width=5 |                            |
+| ashr_4         | DW_rightsh     | A_width=32 | srl_84_I4_I1 (RTL-Shifter_syn.vhd:84) |
+      |                | SH_width=5 |                            |
+| lte_x_25       | DW_cmp         | width=6    | lte_173_I2_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_26       | DW_cmp         | width=6    | lte_173_I3_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_27       | DW_cmp         | width=6    | lte_173_I4_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_28       | DW_cmp         | width=6    | lte_173_I5_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_29       | DW_cmp         | width=6    | lte_173_I6_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_30       | DW_cmp         | width=6    | lte_173_I7_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_31       | DW_cmp         | width=6    | lte_173_I8_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_33       | DW_cmp         | width=6    | lte_173_I10_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_34       | DW_cmp         | width=6    | lte_173_I11_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_35       | DW_cmp         | width=6    | lte_173_I12_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_36       | DW_cmp         | width=6    | lte_173_I13_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_37       | DW_cmp         | width=6    | lte_173_I14_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_38       | DW_cmp         | width=6    | lte_173_I15_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_39       | DW_cmp         | width=6    | lte_173_I16_I1 (RTL-Shifter_syn.vhd:173) |
+| lte_x_42       | DW_cmp         | width=5    | lte_183_I2_I1 (RTL-Shifter_syn.vhd:183) |
+| lte_x_43       | DW_cmp         | width=5    | lte_183_I3_I1 (RTL-Shifter_syn.vhd:183) |
+| lte_x_44       | DW_cmp         | width=5    | lte_183_I4_I1 (RTL-Shifter_syn.vhd:183) |
+| lte_x_46       | DW_cmp         | width=5    | lte_183_I6_I1 (RTL-Shifter_syn.vhd:183) |
+| lte_x_47       | DW_cmp         | width=5    | lte_183_I7_I1 (RTL-Shifter_syn.vhd:183) |
+| lte_x_48       | DW_cmp         | width=5    | lte_183_I8_I1 (RTL-Shifter_syn.vhd:183) |
+| sub_x_49       | DW01_sub       | width=7    | sub_196 (RTL-Shifter_syn.vhd:196) |
+          |                |            | sub_196_I10_I1_I1 (RTL-Shifter_syn.vhd:196) |
+|                |            | sub_196_I2_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I3_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I4_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I5_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I6_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I7_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I8_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | sub_196_I9_I1_I1 (RTL-Shifter_syn.vhd:196) |
+| sub_x_23       | DW01_sub       | width=6    | sub_173 (RTL-Shifter_syn.vhd:173) |
+          |                |            | sub_210 (RTL-Shifter_syn.vhd:210) |
+          |                |            | sub_210_I2_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | sub_210_I3_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | sub_210_I4_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | sub_210_I5_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | sub_210_I6_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | sub_210_I7_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | sub_210_I8_I1_I1 (RTL-Shifter_syn.vhd:210) |
+| sub_x_40       | DW01_sub       | width=5    | sub_183 (RTL-Shifter_syn.vhd:183) |
+          |                |            | sub_224 (RTL-Shifter_syn.vhd:224) |
+          |                |            | sub_224_I2_I1_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | sub_224_I3_I1_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | sub_224_I4_I1_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | sub_224_I5_I1_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | sub_224_I6_I1_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | sub_224_I7_I1_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_446       | DW_cmp         | width=6    | eq_210 (RTL-Shifter_syn.vhd:210) |
+           |                |            | eq_210_I2_I1 (RTL-Shifter_syn.vhd:210) |
+     |                |            | eq_210_I3_I1 (RTL-Shifter_syn.vhd:210) |
+     |                |            | eq_210_I4_I1 (RTL-Shifter_syn.vhd:210) |
+     |                |            | eq_210_I5_I1 (RTL-Shifter_syn.vhd:210) |
+     |                |            | eq_210_I6_I1 (RTL-Shifter_syn.vhd:210) |
+     |                |            | eq_210_I7_I1 (RTL-Shifter_syn.vhd:210) |
+     |                |            | eq_210_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_447       | DW_cmp         | width=6    | eq_210_I2_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I2_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_448       | DW_cmp         | width=6    | eq_210_I3_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I3_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_449       | DW_cmp         | width=6    | eq_210_I4_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I4_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_450       | DW_cmp         | width=6    | eq_210_I5_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I5_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_451       | DW_cmp         | width=6    | eq_210_I6_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I6_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_452       | DW_cmp         | width=6    | eq_210_I7_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I7_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_453       | DW_cmp         | width=6    | eq_210_I8_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I8_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_454       | DW_cmp         | width=6    | eq_210_I9_I1_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I2_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I3_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I4_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I5_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I6_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I7_I1 (RTL-Shifter_syn.vhd:210) |
+  |                |            | eq_210_I9_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_455       | DW_cmp         | width=6    | eq_210_I10_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I10_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_456       | DW_cmp         | width=6    | eq_210_I11_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I11_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_457       | DW_cmp         | width=6    | eq_210_I12_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I12_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_458       | DW_cmp         | width=6    | eq_210_I13_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I13_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_459       | DW_cmp         | width=6    | eq_210_I14_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I14_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_460       | DW_cmp         | width=6    | eq_210_I15_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I15_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_461       | DW_cmp         | width=6    | eq_210_I16_I1_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I2_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I3_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I4_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I5_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I6_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I7_I1 (RTL-Shifter_syn.vhd:210) |
+ |                |            | eq_210_I16_I8_I1 (RTL-Shifter_syn.vhd:210) |
+| eq_x_462       | DW_cmp         | width=5    | eq_224 (RTL-Shifter_syn.vhd:224) |
+           |                |            | eq_224_I10_I1 (RTL-Shifter_syn.vhd:224) |
+    |                |            | eq_224_I13_I1 (RTL-Shifter_syn.vhd:224) |
+    |                |            | eq_224_I2_I1 (RTL-Shifter_syn.vhd:224) |
+     |                |            | eq_224_I3_I1 (RTL-Shifter_syn.vhd:224) |
+     |                |            | eq_224_I6_I1 (RTL-Shifter_syn.vhd:224) |
+     |                |            | eq_224_I8_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_463       | DW_cmp         | width=5    | eq_224_I2_I10_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I2_I15_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I2_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I2_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I2_I3_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I2_I5_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I2_I8_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_464       | DW_cmp         | width=5    | eq_224_I3_I12_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I3_I15_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I3_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I3_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I3_I3_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I3_I5_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I3_I8_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_465       | DW_cmp         | width=5    | eq_224_I4_I10_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I4_I12_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I4_I15_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I4_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I4_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I4_I3_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I4_I5_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_466       | DW_cmp         | width=5    | eq_224_I5_I10_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I5_I12_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I5_I15_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I5_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I5_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I5_I3_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I5_I7_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_467       | DW_cmp         | width=5    | eq_224_I6_I10_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I6_I12_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I6_I14_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I6_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I6_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I6_I5_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I6_I7_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_468       | DW_cmp         | width=5    | eq_224_I7_I10_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I7_I12_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I7_I14_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I7_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I7_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I7_I5_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I7_I7_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_469       | DW_cmp         | width=5    | eq_224_I8_I12_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I8_I14_I1 (RTL-Shifter_syn.vhd:224) |
+ |                |            | eq_224_I8_I1_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I8_I2_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I8_I5_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I8_I7_I1 (RTL-Shifter_syn.vhd:224) |
+  |                |            | eq_224_I8_I9_I1 (RTL-Shifter_syn.vhd:224) |
+| eq_x_470       | DW_cmp         | width=7    | eq_196 (RTL-Shifter_syn.vhd:196) |
+           |                |            | eq_196_I2_I1 (RTL-Shifter_syn.vhd:196) |
+     |                |            | eq_196_I3_I1 (RTL-Shifter_syn.vhd:196) |
+     |                |            | eq_196_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_471       | DW_cmp         | width=7    | eq_196_I2_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I2_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I2_I3_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I2_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_472       | DW_cmp         | width=7    | eq_196_I3_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I3_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I3_I3_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_473       | DW_cmp         | width=7    | eq_196_I4_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I4_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I4_I3_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I4_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_474       | DW_cmp         | width=7    | eq_196_I5_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I5_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I5_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_475       | DW_cmp         | width=7    | eq_196_I6_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I6_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I6_I3_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I6_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_476       | DW_cmp         | width=7    | eq_196_I7_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I7_I3_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I7_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_477       | DW_cmp         | width=7    | eq_196_I8_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I8_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I8_I3_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I8_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_478       | DW_cmp         | width=7    | eq_196_I9_I1_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I9_I2_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I9_I3_I1 (RTL-Shifter_syn.vhd:196) |
+  |                |            | eq_196_I9_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_479       | DW_cmp         | width=7    | eq_196_I10_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I10_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I10_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I10_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_480       | DW_cmp         | width=7    | eq_196_I11_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I11_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I11_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I11_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_481       | DW_cmp         | width=7    | eq_196_I12_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I12_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I12_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I12_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_482       | DW_cmp         | width=7    | eq_196_I13_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I13_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I13_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I13_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_483       | DW_cmp         | width=7    | eq_196_I14_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I14_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I14_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I14_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_484       | DW_cmp         | width=7    | eq_196_I15_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I15_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I15_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I15_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_485       | DW_cmp         | width=7    | eq_196_I16_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I16_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I16_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I16_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_486       | DW_cmp         | width=7    | eq_196_I17_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I17_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I17_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I17_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_487       | DW_cmp         | width=7    | eq_196_I18_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I18_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I18_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I18_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_488       | DW_cmp         | width=7    | eq_196_I19_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I19_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I19_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I19_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_489       | DW_cmp         | width=7    | eq_196_I20_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I20_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I20_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I20_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_490       | DW_cmp         | width=7    | eq_196_I21_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I21_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I21_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I21_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_491       | DW_cmp         | width=7    | eq_196_I22_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I22_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I22_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I22_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_492       | DW_cmp         | width=7    | eq_196_I23_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I23_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I23_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I23_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_493       | DW_cmp         | width=7    | eq_196_I24_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I24_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I24_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I24_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_494       | DW_cmp         | width=7    | eq_196_I25_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I25_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I25_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I25_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_495       | DW_cmp         | width=7    | eq_196_I26_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I26_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I26_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I26_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_496       | DW_cmp         | width=7    | eq_196_I27_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I27_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I27_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I27_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_497       | DW_cmp         | width=7    | eq_196_I28_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I28_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I28_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I28_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_498       | DW_cmp         | width=7    | eq_196_I29_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I29_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I29_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I29_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_499       | DW_cmp         | width=7    | eq_196_I30_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I30_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I30_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I30_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_500       | DW_cmp         | width=7    | eq_196_I31_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I31_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I31_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I31_I4_I1 (RTL-Shifter_syn.vhd:196) |
+| eq_x_501       | DW_cmp         | width=7    | eq_196_I32_I1_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I32_I2_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I32_I3_I1 (RTL-Shifter_syn.vhd:196) |
+ |                |            | eq_196_I32_I4_I1 (RTL-Shifter_syn.vhd:196) |
+=============================================================================
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| ashr_1             | DW_rightsh       | astr (area)        |                |
+| ashr_2             | DW_rightsh       | astr (area)        |                |
+| ashr_3             | DW_rightsh       | astr (area)        |                |
+| ashr_4             | DW_rightsh       | astr (area)        |                |
+| lte_x_25           | DW_cmp           | apparch (area)     |                |
+| lte_x_26           | DW_cmp           | apparch (area)     |                |
+| lte_x_27           | DW_cmp           | apparch (area)     |                |
+| lte_x_28           | DW_cmp           | apparch (area)     |                |
+| lte_x_29           | DW_cmp           | apparch (area)     |                |
+| lte_x_30           | DW_cmp           | apparch (area)     |                |
+| lte_x_31           | DW_cmp           | apparch (area)     |                |
+| lte_x_33           | DW_cmp           | apparch (area)     |                |
+| lte_x_34           | DW_cmp           | apparch (area)     |                |
+| lte_x_35           | DW_cmp           | apparch (area)     |                |
+| lte_x_36           | DW_cmp           | apparch (area)     |                |
+| lte_x_37           | DW_cmp           | apparch (area)     |                |
+| lte_x_38           | DW_cmp           | apparch (area)     |                |
+| lte_x_39           | DW_cmp           | apparch (area)     |                |
+| lte_x_42           | DW_cmp           | apparch (area)     |                |
+| lte_x_43           | DW_cmp           | apparch (area)     |                |
+| lte_x_44           | DW_cmp           | apparch (area)     |                |
+| lte_x_46           | DW_cmp           | apparch (area)     |                |
+| lte_x_47           | DW_cmp           | apparch (area)     |                |
+| lte_x_48           | DW_cmp           | apparch (area)     |                |
+| sub_x_49           | DW01_sub         | apparch (area)     |                |
+| sub_x_23           | DW01_sub         | apparch (area)     |                |
+| sub_x_40           | DW01_sub         | apparch (area)     |                |
+| eq_x_446           | DW_cmp           | apparch (area)     |                |
+| eq_x_447           | DW_cmp           | apparch (area)     |                |
+| eq_x_448           | DW_cmp           | apparch (area)     |                |
+| eq_x_449           | DW_cmp           | apparch (area)     |                |
+| eq_x_450           | DW_cmp           | apparch (area)     |                |
+| eq_x_451           | DW_cmp           | apparch (area)     |                |
+| eq_x_452           | DW_cmp           | apparch (area)     |                |
+| eq_x_453           | DW_cmp           | apparch (area)     |                |
+| eq_x_454           | DW_cmp           | apparch (area)     |                |
+| eq_x_455           | DW_cmp           | apparch (area)     |                |
+| eq_x_456           | DW_cmp           | apparch (area)     |                |
+| eq_x_457           | DW_cmp           | apparch (area)     |                |
+| eq_x_458           | DW_cmp           | apparch (area)     |                |
+| eq_x_459           | DW_cmp           | apparch (area)     |                |
+| eq_x_460           | DW_cmp           | apparch (area)     |                |
+| eq_x_461           | DW_cmp           | apparch (area)     |                |
+| eq_x_462           | DW_cmp           | apparch (area)     |                |
+| eq_x_463           | DW_cmp           | apparch (area)     |                |
+| eq_x_464           | DW_cmp           | apparch (area)     |                |
+| eq_x_465           | DW_cmp           | apparch (area)     |                |
+| eq_x_466           | DW_cmp           | apparch (area)     |                |
+| eq_x_467           | DW_cmp           | apparch (area)     |                |
+| eq_x_468           | DW_cmp           | apparch (area)     |                |
+| eq_x_469           | DW_cmp           | apparch (area)     |                |
+| eq_x_470           | DW_cmp           | apparch (area)     |                |
+| eq_x_471           | DW_cmp           | apparch (area)     |                |
+| eq_x_472           | DW_cmp           | apparch (area)     |                |
+| eq_x_473           | DW_cmp           | apparch (area)     |                |
+| eq_x_474           | DW_cmp           | apparch (area)     |                |
+| eq_x_475           | DW_cmp           | apparch (area)     |                |
+| eq_x_476           | DW_cmp           | apparch (area)     |                |
+| eq_x_477           | DW_cmp           | apparch (area)     |                |
+| eq_x_478           | DW_cmp           | apparch (area)     |                |
+| eq_x_479           | DW_cmp           | apparch (area)     |                |
+| eq_x_480           | DW_cmp           | apparch (area)     |                |
+| eq_x_481           | DW_cmp           | apparch (area)     |                |
+| eq_x_482           | DW_cmp           | apparch (area)     |                |
+| eq_x_483           | DW_cmp           | apparch (area)     |                |
+| eq_x_484           | DW_cmp           | apparch (area)     |                |
+| eq_x_485           | DW_cmp           | apparch (area)     |                |
+| eq_x_486           | DW_cmp           | apparch (area)     |                |
+| eq_x_487           | DW_cmp           | apparch (area)     |                |
+| eq_x_488           | DW_cmp           | apparch (area)     |                |
+| eq_x_489           | DW_cmp           | apparch (area)     |                |
+| eq_x_490           | DW_cmp           | apparch (area)     |                |
+| eq_x_491           | DW_cmp           | apparch (area)     |                |
+| eq_x_492           | DW_cmp           | apparch (area)     |                |
+| eq_x_493           | DW_cmp           | apparch (area)     |                |
+| eq_x_494           | DW_cmp           | apparch (area)     |                |
+| eq_x_495           | DW_cmp           | apparch (area)     |                |
+| eq_x_496           | DW_cmp           | apparch (area)     |                |
+| eq_x_497           | DW_cmp           | apparch (area)     |                |
+| eq_x_498           | DW_cmp           | apparch (area)     |                |
+| eq_x_499           | DW_cmp           | apparch (area)     |                |
+| eq_x_500           | DW_cmp           | apparch (area)     |                |
+| eq_x_501           | DW_cmp           | apparch (area)     |                |
+===============================================================================
+
+ 
+****************************************
+Design : EXCPT_HANDLING_ACCL_NUM1_SPM_ADDR_WID3_THREAD_POOL_SIZE3_Addr_Width14_SPM_NUM4
+****************************************
+
+Resource Report for this hierarchy in file
+        /home/g.vilarde/Klessydra/pulpino-klessydra/ips/FU_breakdown/DSP/RTL-Excpt_Handling_syn.vhd
+=============================================================================
+| Cell           | Module         | Parameters | Contained Operations       |
+=============================================================================
+| add_x_1        | DW01_add       | width=4    | add_80 (RTL-Excpt_Handling_syn.vhd:80) |
+| add_x_2        | DW01_inc       | width=4    | add_83 (RTL-Excpt_Handling_syn.vhd:83) |
+| eq_x_3         | DW_cmp         | width=3    | eq_136 (RTL-Excpt_Handling_syn.vhd:136) |
+| lt_x_4         | DW_cmp         | width=4    | lt_158 (RTL-Excpt_Handling_syn.vhd:158) |
+| ne_x_5         | DW_cmp         | width=3    | ne_164_2 (RTL-Excpt_Handling_syn.vhd:164) |
+| lt_x_6         | DW_cmp         | width=4    | lt_165 (RTL-Excpt_Handling_syn.vhd:165) |
+| DP_OP_146J6_122_8599            |            |                            |
+|                | DP_OP_146J6_122_8599 |      |                            |
+| DP_OP_147J6_123_7887            |            |                            |
+|                | DP_OP_147J6_123_7887 |      |                            |
+=============================================================================
+
+Datapath Report for DP_OP_146J6_122_8599
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_146J6_122_8599 | mult_83 (RTL-Excpt_Handling_syn.vhd:83)             |
+|                      | sub_83 (RTL-Excpt_Handling_syn.vhd:83)              |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Unsigned | 3     |                                          |
+| T2    | IFO  | Unsigned | 6     | I1 * $unsigned(4'b1111) (RTL-Excpt_Handling_syn.vhd:83) |
+| O1    | PO   | Signed   | 6     | T2 - $unsigned(1'b1) (RTL-Excpt_Handling_syn.vhd:83) |
+==============================================================================
+
+Datapath Report for DP_OP_147J6_123_7887
+==============================================================================
+| Cell                 | Contained Operations                                |
+==============================================================================
+| DP_OP_147J6_123_7887 | add_116 (RTL-Excpt_Handling_syn.vhd:116)            |
+|                      | sub_116 (RTL-Excpt_Handling_syn.vhd:116)            |
+|                      | add_117 (RTL-Excpt_Handling_syn.vhd:117)            |
+|                      | sub_117 (RTL-Excpt_Handling_syn.vhd:117)            |
+|                      | add_118 (RTL-Excpt_Handling_syn.vhd:118)            |
+|                      | sub_118 (RTL-Excpt_Handling_syn.vhd:118)            |
+==============================================================================
+
+==============================================================================
+|       |      | Data     |       |                                          |
+| Var   | Type | Class    | Width | Expression                               |
+==============================================================================
+| I1    | PI   | Signed   | 15    |                                          |
+| I2    | PI   | Unsigned | 14    |                                          |
+| I3    | PI   | Unsigned | 14    |                                          |
+| I4    | PI   | Unsigned | 14    |                                          |
+| T145  | IFO  | Signed   | 15    | -$unsigned(1'b1) + I1 ( RTL-Excpt_Handling_syn.vhd:116 RTL-Excpt_Handling_syn.vhd:117 RTL-Excpt_Handling_syn.vhd:118 ) |
+| O1    | PO   | Unsigned | 15    | I2 + T145 (RTL-Excpt_Handling_syn.vhd:116) |
+| O2    | PO   | Unsigned | 15    | I3 + T145 (RTL-Excpt_Handling_syn.vhd:117) |
+| O3    | PO   | Unsigned | 15    | I4 + T145 (RTL-Excpt_Handling_syn.vhd:118) |
+==============================================================================
+
+
+Datapath Extraction Report
+
+Information: Operator associated with resources 'mult_83 (RTL-Excpt_Handling_syn.vhd:83)' in design 'EXCPT_HANDLING_ACCL_NUM1_SPM_ADDR_WID3_THREAD_POOL_SIZE3_Addr_Width14_SPM_NUM4' breaks the datapath extraction because there is leakage due to truncation on the fanout of its driver 'add_83 (RTL-Excpt_Handling_syn.vhd:83)'.  (HDL-120)
+
+
+Implementation Report
+===============================================================================
+|                    |                  | Current            | Set            |
+| Cell               | Module           | Implementation     | Implementation |
+===============================================================================
+| add_x_1            | DW01_add         | apparch (area)     |                |
+| add_x_2            | DW01_inc         | apparch (area)     |                |
+| eq_x_3             | DW_cmp           | apparch (area)     |                |
+| lt_x_4             | DW_cmp           | apparch (area)     |                |
+| ne_x_5             | DW_cmp           | apparch (area)     |                |
+| lt_x_6             | DW_cmp           | apparch (area)     |                |
+| DP_OP_146J6_122_8599                  |                    |                |
+|                    | DP_OP_146J6_122_8599 | str (area)     |                |
+| DP_OP_147J6_123_7887                  |                    |                |
+|                    | DP_OP_147J6_123_7887 | str (area)     |                |
+===============================================================================
+
+1

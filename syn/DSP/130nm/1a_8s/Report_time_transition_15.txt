@@ -1,0 +1,213 @@
+Information: Updating design information... (UID-85)
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -nets
+        -max_paths 1
+        -transition_time
+Design : DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256
+Version: W-2024.09-SP2
+Date   : Fri Mar 27 11:23:31 2026
+****************************************
+
+Operating Conditions: sg13g2_stdcell_typ_1p20V_25C   Library: sg13g2_stdcell_typ_1p20V_25C
+Wire Load Model Mode: top
+
+  Startpoint: decoded_instruction_DSP_lat_reg[3]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: ACCUM_STG/accum_results_reg[31]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Des/Clust/Port     Wire Load Model       Library
+  ------------------------------------------------
+  DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256 200k sg13g2_stdcell_typ_1p20V_25C
+
+Attributes:
+    d - dont_touch
+    u - dont_use
+   mo - map_only
+   so - size_only
+    i - ideal_net or ideal_network
+  inf - infeasible path
+
+  Point                                                                                                        Fanout     Trans      Incr       Path      Attributes
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                                                                                            0.00       0.00
+  clock network delay (ideal)                                                                                                        0.00       0.00
+  decoded_instruction_DSP_lat_reg[3]/CLK (sg13g2_dfrbpq_2)                                                                 0.00      0.00       0.00 r
+  decoded_instruction_DSP_lat_reg[3]/Q (sg13g2_dfrbpq_2)                                                                   0.65      0.60       0.60 r
+  decoded_instruction_DSP_lat[3] (net)                                                                           2                   0.00       0.60 r
+  ACCUM_STG/decoded_instruction_DSP_lat[3] (ACCUMULATOR_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256)                0.00       0.60 r
+  ACCUM_STG/decoded_instruction_DSP_lat[3] (net)                                                                                     0.00       0.60 r    d 
+  ACCUM_STG/U478/Y (sg13g2_nor3_1)                                                                                         1.40      2.15       2.76 f    d 
+  ACCUM_STG/n2046 (net)                                                                                          3                   0.00       2.76 f    d 
+  ACCUM_STG/U486/Y (sg13g2_nor3_1)                                                                                        10.74      8.96      11.72 r    d 
+  ACCUM_STG/n2036 (net)                                                                                          6                   0.00      11.72 r    d 
+  ACCUM_STG/U437/Y (sg13g2_inv_1)                                                                                          6.09     10.87      22.59 f    d 
+  ACCUM_STG/n402 (net)                                                                                           5                   0.00      22.59 f    d 
+  ACCUM_STG/U2254/Y (sg13g2_nor2_1)                                                                                        6.87      9.22      31.81 r    d 
+  ACCUM_STG/n2714 (net)                                                                                          6                   0.00      31.81 r    d 
+  ACCUM_STG/U2259/Y (sg13g2_inv_1)                                                                                         5.32      9.07      40.88 f    d 
+  ACCUM_STG/n2594 (net)                                                                                          8                   0.00      40.88 f    d 
+  ACCUM_STG/U2255/Y (sg13g2_inv_1)                                                                                         4.75      7.67      48.55 r    d 
+  ACCUM_STG/n2849 (net)                                                                                          7                   0.00      48.55 r    d 
+  ACCUM_STG/U3114/X (sg13g2_buf_1)                                                                                         3.82      3.67      52.22 r    d 
+  ACCUM_STG/n2855 (net)                                                                                          7                   0.00      52.22 r    d 
+  ACCUM_STG/U2350/Y (sg13g2_a22oi_1)                                                                                       1.61      2.39      54.62 f    d 
+  ACCUM_STG/n2101 (net)                                                                                          1                   0.00      54.62 f    d 
+  ACCUM_STG/U2351/Y (sg13g2_inv_1)                                                                                         1.49      2.26      56.87 r    d 
+  ACCUM_STG/n2110 (net)                                                                                          2                   0.00      56.87 r    d 
+  ACCUM_STG/U2352/X (sg13g2_and2_1)                                                                                        1.27      1.84      58.72 r    d 
+  ACCUM_STG/n2108 (net)                                                                                          2                   0.00      58.72 r    d 
+  ACCUM_STG/U2358/X (sg13g2_xor2_1)                                                                                        2.72      3.04      61.75 r    d 
+  ACCUM_STG/n2119 (net)                                                                                          2                   0.00      61.75 r    d 
+  ACCUM_STG/U2359/X (sg13g2_xor2_1)                                                                                        2.74      3.54      65.30 r    d 
+  ACCUM_STG/n2789 (net)                                                                                          2                   0.00      65.30 r    d 
+  ACCUM_STG/U2373/Y (sg13g2_a22oi_1)                                                                                       1.31      2.35      67.65 f    d 
+  ACCUM_STG/n2121 (net)                                                                                          1                   0.00      67.65 f    d 
+  ACCUM_STG/U2374/Y (sg13g2_inv_1)                                                                                         1.42      2.13      69.78 r    d 
+  ACCUM_STG/n2787 (net)                                                                                          2                   0.00      69.78 r    d 
+  ACCUM_STG/U3052/X (sg13g2_xor2_1)                                                                                        2.74      3.09      72.87 r    d 
+  ACCUM_STG/n2788 (net)                                                                                          2                   0.00      72.87 r    d 
+  ACCUM_STG/U3053/X (sg13g2_xor2_1)                                                                                        2.74      3.55      76.42 r    d 
+  ACCUM_STG/n3002 (net)                                                                                          2                   0.00      76.42 r    d 
+  ACCUM_STG/U3060/Y (sg13g2_a22oi_1)                                                                                       1.31      2.35      78.78 f    d 
+  ACCUM_STG/n2795 (net)                                                                                          1                   0.00      78.78 f    d 
+  ACCUM_STG/U3061/Y (sg13g2_inv_1)                                                                                         1.42      2.13      80.90 r    d 
+  ACCUM_STG/n2999 (net)                                                                                          2                   0.00      80.90 r    d 
+  ACCUM_STG/U3064/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93      82.83 f    d 
+  ACCUM_STG/n2799 (net)                                                                                          1                   0.00      82.83 f    d 
+  ACCUM_STG/U3065/Y (sg13g2_inv_1)                                                                                         1.42      2.13      84.96 r    d 
+  ACCUM_STG/n2996 (net)                                                                                          2                   0.00      84.96 r    d 
+  ACCUM_STG/U3068/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93      86.89 f    d 
+  ACCUM_STG/n2803 (net)                                                                                          1                   0.00      86.89 f    d 
+  ACCUM_STG/U3069/Y (sg13g2_inv_1)                                                                                         1.42      2.13      89.02 r    d 
+  ACCUM_STG/n2993 (net)                                                                                          2                   0.00      89.02 r    d 
+  ACCUM_STG/U3072/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93      90.95 f    d 
+  ACCUM_STG/n2807 (net)                                                                                          1                   0.00      90.95 f    d 
+  ACCUM_STG/U3073/Y (sg13g2_inv_1)                                                                                         1.42      2.13      93.08 r    d 
+  ACCUM_STG/n2990 (net)                                                                                          2                   0.00      93.08 r    d 
+  ACCUM_STG/U3076/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93      95.01 f    d 
+  ACCUM_STG/n2811 (net)                                                                                          1                   0.00      95.01 f    d 
+  ACCUM_STG/U3077/Y (sg13g2_inv_1)                                                                                         1.42      2.13      97.14 r    d 
+  ACCUM_STG/n2987 (net)                                                                                          2                   0.00      97.14 r    d 
+  ACCUM_STG/U3080/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93      99.07 f    d 
+  ACCUM_STG/n2815 (net)                                                                                          1                   0.00      99.07 f    d 
+  ACCUM_STG/U3081/Y (sg13g2_inv_1)                                                                                         1.42      2.13     101.20 r    d 
+  ACCUM_STG/n2982 (net)                                                                                          2                   0.00     101.20 r    d 
+  ACCUM_STG/U3084/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     103.13 f    d 
+  ACCUM_STG/n2819 (net)                                                                                          1                   0.00     103.13 f    d 
+  ACCUM_STG/U3085/Y (sg13g2_inv_1)                                                                                         1.42      2.13     105.26 r    d 
+  ACCUM_STG/n2979 (net)                                                                                          2                   0.00     105.26 r    d 
+  ACCUM_STG/U3088/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     107.19 f    d 
+  ACCUM_STG/n2823 (net)                                                                                          1                   0.00     107.19 f    d 
+  ACCUM_STG/U3089/Y (sg13g2_inv_1)                                                                                         1.42      2.13     109.32 r    d 
+  ACCUM_STG/n2976 (net)                                                                                          2                   0.00     109.32 r    d 
+  ACCUM_STG/U3091/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     111.25 f    d 
+  ACCUM_STG/n2826 (net)                                                                                          1                   0.00     111.25 f    d 
+  ACCUM_STG/U3092/Y (sg13g2_inv_1)                                                                                         1.42      2.13     113.38 r    d 
+  ACCUM_STG/n2973 (net)                                                                                          2                   0.00     113.38 r    d 
+  ACCUM_STG/U3095/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     115.31 f    d 
+  ACCUM_STG/n2830 (net)                                                                                          1                   0.00     115.31 f    d 
+  ACCUM_STG/U3096/Y (sg13g2_inv_1)                                                                                         1.42      2.13     117.44 r    d 
+  ACCUM_STG/n2970 (net)                                                                                          2                   0.00     117.44 r    d 
+  ACCUM_STG/U3099/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     119.37 f    d 
+  ACCUM_STG/n2834 (net)                                                                                          1                   0.00     119.37 f    d 
+  ACCUM_STG/U3100/Y (sg13g2_inv_1)                                                                                         1.42      2.13     121.50 r    d 
+  ACCUM_STG/n2967 (net)                                                                                          2                   0.00     121.50 r    d 
+  ACCUM_STG/U3103/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     123.43 f    d 
+  ACCUM_STG/n2838 (net)                                                                                          1                   0.00     123.43 f    d 
+  ACCUM_STG/U3104/Y (sg13g2_inv_1)                                                                                         1.42      2.13     125.56 r    d 
+  ACCUM_STG/n2964 (net)                                                                                          2                   0.00     125.56 r    d 
+  ACCUM_STG/U3107/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     127.49 f    d 
+  ACCUM_STG/n2842 (net)                                                                                          1                   0.00     127.49 f    d 
+  ACCUM_STG/U3108/Y (sg13g2_inv_1)                                                                                         1.42      2.13     129.62 r    d 
+  ACCUM_STG/n2961 (net)                                                                                          2                   0.00     129.62 r    d 
+  ACCUM_STG/U3111/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     131.55 f    d 
+  ACCUM_STG/n2846 (net)                                                                                          1                   0.00     131.55 f    d 
+  ACCUM_STG/U3112/Y (sg13g2_inv_1)                                                                                         1.42      2.13     133.68 r    d 
+  ACCUM_STG/n2957 (net)                                                                                          2                   0.00     133.68 r    d 
+  ACCUM_STG/U3117/Y (sg13g2_a22oi_1)                                                                                       1.16      1.93     135.60 f    d 
+  ACCUM_STG/n2852 (net)                                                                                          1                   0.00     135.60 f    d 
+  ACCUM_STG/U3118/Y (sg13g2_inv_1)                                                                                         1.38      2.05     137.66 r    d 
+  ACCUM_STG/n2954 (net)                                                                                          2                   0.00     137.66 r    d 
+  ACCUM_STG/U3122/Y (sg13g2_a22oi_1)                                                                                       1.16      1.92     139.57 f    d 
+  ACCUM_STG/n2858 (net)                                                                                          1                   0.00     139.57 f    d 
+  ACCUM_STG/U3123/Y (sg13g2_inv_1)                                                                                         1.38      2.05     141.62 r    d 
+  ACCUM_STG/n2951 (net)                                                                                          2                   0.00     141.62 r    d 
+  ACCUM_STG/U3126/Y (sg13g2_a22oi_1)                                                                                       1.32      1.92     143.54 f    d 
+  ACCUM_STG/n2862 (net)                                                                                          1                   0.00     143.54 f    d 
+  ACCUM_STG/U3127/Y (sg13g2_inv_1)                                                                                         1.42      2.13     145.67 r    d 
+  ACCUM_STG/n2948 (net)                                                                                          2                   0.00     145.67 r    d 
+  ACCUM_STG/U3130/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     147.60 f    d 
+  ACCUM_STG/n2866 (net)                                                                                          1                   0.00     147.60 f    d 
+  ACCUM_STG/U3131/Y (sg13g2_inv_1)                                                                                         1.42      2.13     149.73 r    d 
+  ACCUM_STG/n2945 (net)                                                                                          2                   0.00     149.73 r    d 
+  ACCUM_STG/U3134/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     151.66 f    d 
+  ACCUM_STG/n2870 (net)                                                                                          1                   0.00     151.66 f    d 
+  ACCUM_STG/U3135/Y (sg13g2_inv_1)                                                                                         1.42      2.13     153.79 r    d 
+  ACCUM_STG/n2942 (net)                                                                                          2                   0.00     153.79 r    d 
+  ACCUM_STG/U3138/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     155.72 f    d 
+  ACCUM_STG/n2874 (net)                                                                                          1                   0.00     155.72 f    d 
+  ACCUM_STG/U3139/Y (sg13g2_inv_1)                                                                                         1.42      2.13     157.85 r    d 
+  ACCUM_STG/n2939 (net)                                                                                          2                   0.00     157.85 r    d 
+  ACCUM_STG/U3142/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     159.78 f    d 
+  ACCUM_STG/n2878 (net)                                                                                          1                   0.00     159.78 f    d 
+  ACCUM_STG/U3143/Y (sg13g2_inv_1)                                                                                         1.42      2.13     161.91 r    d 
+  ACCUM_STG/n2936 (net)                                                                                          2                   0.00     161.91 r    d 
+  ACCUM_STG/U3146/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     163.84 f    d 
+  ACCUM_STG/n2882 (net)                                                                                          1                   0.00     163.84 f    d 
+  ACCUM_STG/U3147/Y (sg13g2_inv_1)                                                                                         1.42      2.13     165.97 r    d 
+  ACCUM_STG/n2932 (net)                                                                                          2                   0.00     165.97 r    d 
+  ACCUM_STG/U3150/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     167.90 f    d 
+  ACCUM_STG/n2886 (net)                                                                                          1                   0.00     167.90 f    d 
+  ACCUM_STG/U3151/Y (sg13g2_inv_1)                                                                                         1.42      2.13     170.03 r    d 
+  ACCUM_STG/n2929 (net)                                                                                          2                   0.00     170.03 r    d 
+  ACCUM_STG/U3154/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     171.96 f    d 
+  ACCUM_STG/n2890 (net)                                                                                          1                   0.00     171.96 f    d 
+  ACCUM_STG/U3155/Y (sg13g2_inv_1)                                                                                         1.42      2.13     174.09 r    d 
+  ACCUM_STG/n2926 (net)                                                                                          2                   0.00     174.09 r    d 
+  ACCUM_STG/U3158/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     176.02 f    d 
+  ACCUM_STG/n2894 (net)                                                                                          1                   0.00     176.02 f    d 
+  ACCUM_STG/U3159/Y (sg13g2_inv_1)                                                                                         1.42      2.13     178.15 r    d 
+  ACCUM_STG/n2923 (net)                                                                                          2                   0.00     178.15 r    d 
+  ACCUM_STG/U3162/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     180.08 f    d 
+  ACCUM_STG/n2898 (net)                                                                                          1                   0.00     180.08 f    d 
+  ACCUM_STG/U3163/Y (sg13g2_inv_1)                                                                                         1.42      2.13     182.21 r    d 
+  ACCUM_STG/n2920 (net)                                                                                          2                   0.00     182.21 r    d 
+  ACCUM_STG/U3166/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     184.14 f    d 
+  ACCUM_STG/n2902 (net)                                                                                          1                   0.00     184.14 f    d 
+  ACCUM_STG/U3167/Y (sg13g2_inv_1)                                                                                         1.42      2.13     186.27 r    d 
+  ACCUM_STG/n2917 (net)                                                                                          2                   0.00     186.27 r    d 
+  ACCUM_STG/U3170/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     188.20 f    d 
+  ACCUM_STG/n2906 (net)                                                                                          1                   0.00     188.20 f    d 
+  ACCUM_STG/U3171/Y (sg13g2_inv_1)                                                                                         1.42      2.13     190.33 r    d 
+  ACCUM_STG/n2914 (net)                                                                                          2                   0.00     190.33 r    d 
+  ACCUM_STG/U3174/Y (sg13g2_a22oi_1)                                                                                       1.32      1.93     192.26 f    d 
+  ACCUM_STG/n2910 (net)                                                                                          1                   0.00     192.26 f    d 
+  ACCUM_STG/U3175/Y (sg13g2_inv_1)                                                                                         0.82      1.54     193.80 r    d 
+  ACCUM_STG/n2911 (net)                                                                                          1                   0.00     193.80 r    d 
+  ACCUM_STG/U3176/X (sg13g2_xor2_1)                                                                                        1.24      1.69     195.49 r    d 
+  ACCUM_STG/n2913 (net)                                                                                          1                   0.00     195.49 r    d 
+  ACCUM_STG/U3177/X (sg13g2_and2_1)                                                                                        0.58      1.19     196.68 r    d 
+  ACCUM_STG/N869 (net)                                                                                           1                   0.00     196.68 r    d 
+  ACCUM_STG/accum_results_reg[31]/D (sg13g2_dfrbpq_1)                                                                      0.58      0.53     197.21 r    d 
+  data arrival time                                                                                                                           197.21
+
+  clock clk_i (rise edge)                                                                                                            2.00       2.00
+  clock network delay (ideal)                                                                                                        0.00       2.00
+  ACCUM_STG/accum_results_reg[31]/CLK (sg13g2_dfrbpq_1)                                                                              0.00       2.00 r
+  library setup time                                                                                                                -0.29       1.71
+  data required time                                                                                                                            1.71
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                                            1.71
+  data arrival time                                                                                                                          -197.21
+  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+  slack (VIOLATED)                                                                                                                           -195.49
+
+
+1

@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : area
+Design : DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD2_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Wed Sep 24 12:50:12 2025
+****************************************
+
+Library(s) Used:
+
+    NanGate_15nm_OCL (File: /home/g.vilarde/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db)
+
+Number of ports:                         8681
+Number of nets:                         79718
+Number of cells:                        67515
+Number of combinational cells:          61043
+Number of sequential cells:              6463
+Number of macros/black boxes:               0
+Number of buf/inv:                      11714
+Number of references:                      33
+
+Combinational area:              20474.315197
+Buf/Inv area:                     1728.872509
+Noncombinational area:            8259.403490
+Macro/Black Box area:                0.000000
+Net Interconnect area:      undefined  (No wire load specified)
+
+Total cell area:                 28733.718688
+Total area:                 undefined
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area            Local cell area
+                                  -------------------  ----------------------------- 
+Hierarchical cell                 Absolute    Percent  Combi-      Noncombi-  Black-
+                                  Total       Total    national    national   boxes   Design
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------------------------------------------------------------------------------
+DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD2_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS1_Data_Width32_SIMD_Width64 28733.7187   100.0  5513.7732 3078.5863 0.0000 DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD2_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS1_Data_Width32_SIMD_Width64
+ACCUM_STG                          1711.3743      6.0   1220.6408   490.7336  0.0000  ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64
+ADD_STG                            2601.6153      9.1   1231.6508  1369.9645  0.0000  ADDER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64
+COMP_STG                            884.1462      3.1    324.4032   559.7430  0.0000  COMPARATOR_SIMD2_multithreaded_accl_en0_ACCL_NUM6_FU_NUM6_SIMD_Width64
+EXCP_STG                            250.8227      0.9    250.8227     0.0000  0.0000  EXCPT_HANDLING_ACCL_NUM6_SPM_ADDR_WID3_THREAD_POOL_SIZE6_Addr_Width14_SPM_NUM4
+MULT_STG                          12470.2558     43.4  10752.6884  1717.5674  0.0000  MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_Data_Width32_SIMD_Width64
+SHIF_STG                           2223.1449      7.7   1180.3361  1042.8088  0.0000  SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64
+--------------------------------  ----------  -------  ----------  ---------  ------  -----------------------------------------------------------------------------------
+Total                                                  20474.3152  8259.4035  0.0000
+
+1

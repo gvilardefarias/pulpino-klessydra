@@ -1,0 +1,239 @@
+ 
+****************************************
+Report : reference
+Design : DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256
+Version: W-2024.09-SP2
+Date   : Fri Mar 27 11:23:31 2026
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+ACCUMULATOR_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256 34534.798018       1 34534.798018 d, h, n
+ADDER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256 65560.244312       1 65560.244312 d, h, n
+COMPARATOR_SIMD8_multithreaded_accl_en0_ACCL_NUM1_FU_NUM1_SIMD_Width256 23491.339304       1 23491.339304 d, h, n
+EXCPT_HANDLING_ACCL_NUM1_SPM_ADDR_WID3_THREAD_POOL_SIZE3_Addr_Width14_SPM_NUM4  2957.660934       1  2957.660934 d, h
+MULTIPLIER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width256 354642.922603       1 354642.922603 d, h, n
+SHIFTER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256 53993.066628       1 53993.066628 d, h, n
+sg13g2_a21o_1      sg13g2_stdcell_typ_1p20V_25C    12.700800     239  3035.491186
+sg13g2_a21o_2      sg13g2_stdcell_typ_1p20V_25C    14.515200      73  1059.609575
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     770  6985.439653
+sg13g2_a21oi_2     sg13g2_stdcell_typ_1p20V_25C    14.515200     216  3135.283127
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600      27   292.912210
+sg13g2_and2_1      sg13g2_stdcell_typ_1p20V_25C     9.072000     368  3338.495834
+sg13g2_and2_2      sg13g2_stdcell_typ_1p20V_25C    10.886400     478  5203.699306
+sg13g2_and3_1      sg13g2_stdcell_typ_1p20V_25C    12.700800      22   279.417599
+sg13g2_and3_2      sg13g2_stdcell_typ_1p20V_25C    12.700800      85  1079.567995
+sg13g2_and4_1      sg13g2_stdcell_typ_1p20V_25C    14.515200      65   943.487978
+sg13g2_and4_2      sg13g2_stdcell_typ_1p20V_25C    16.329599       7   114.307196
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600     286  2075.673552
+sg13g2_buf_2       sg13g2_stdcell_typ_1p20V_25C     9.072000     594  5388.767733
+sg13g2_buf_4       sg13g2_stdcell_typ_1p20V_25C    14.515200     205  2975.615931
+sg13g2_buf_8       sg13g2_stdcell_typ_1p20V_25C    23.587200     337  7948.886456
+sg13g2_buf_16      sg13g2_stdcell_typ_1p20V_25C    45.360001     219  9933.840134
+sg13g2_dfrbp_2     sg13g2_stdcell_typ_1p20V_25C    54.431999       4   217.727997 n
+sg13g2_dfrbpq_1    sg13g2_stdcell_typ_1p20V_25C    48.988800     394 19301.587219 n
+sg13g2_dfrbpq_2    sg13g2_stdcell_typ_1p20V_25C    50.803200     365 18543.167915 n
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200    1880 10233.216209
+sg13g2_inv_2       sg13g2_stdcell_typ_1p20V_25C     7.257600     428  3106.252728
+sg13g2_inv_4       sg13g2_stdcell_typ_1p20V_25C    10.886400     255  2776.032057
+sg13g2_inv_8       sg13g2_stdcell_typ_1p20V_25C    18.143999     600 10886.399460
+sg13g2_inv_16      sg13g2_stdcell_typ_1p20V_25C    34.473598     112  3861.043030
+sg13g2_mux2_1      sg13g2_stdcell_typ_1p20V_25C    18.143999     106  1923.263905
+sg13g2_mux2_2      sg13g2_stdcell_typ_1p20V_25C    19.958401     642 12813.293266
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600    1967 14275.698867
+sg13g2_nand2_2     sg13g2_stdcell_typ_1p20V_25C    10.886400    1528 16634.419540
+sg13g2_nand2b_1    sg13g2_stdcell_typ_1p20V_25C     9.072000     797  7230.383641
+sg13g2_nand2b_2    sg13g2_stdcell_typ_1p20V_25C    14.515200     153  2220.825548
+sg13g2_nand3_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      33   299.375985
+sg13g2_nand3b_1    sg13g2_stdcell_typ_1p20V_25C    12.700800      45   571.535997
+sg13g2_nand4_1     sg13g2_stdcell_typ_1p20V_25C    10.886400       4    43.545601
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600     834  6052.838259
+sg13g2_nor2_2      sg13g2_stdcell_typ_1p20V_25C    10.886400     141  1534.982431
+sg13g2_nor2b_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     487  4418.063781
+sg13g2_nor2b_2     sg13g2_stdcell_typ_1p20V_25C    12.700800     311  3949.948782
+sg13g2_nor3_1      sg13g2_stdcell_typ_1p20V_25C     9.072000       4    36.287998
+sg13g2_nor3_2      sg13g2_stdcell_typ_1p20V_25C    16.329599       1    16.329599
+sg13g2_nor4_1      sg13g2_stdcell_typ_1p20V_25C    10.886400       2    21.772800
+sg13g2_nor4_2      sg13g2_stdcell_typ_1p20V_25C    21.772800       1    21.772800
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      30   272.159986
+sg13g2_or2_1       sg13g2_stdcell_typ_1p20V_25C     9.072000     372  3374.783833
+sg13g2_or2_2       sg13g2_stdcell_typ_1p20V_25C    10.886400    1681 18300.038774
+sg13g2_or3_1       sg13g2_stdcell_typ_1p20V_25C    12.700800       2    25.401600
+sg13g2_or3_2       sg13g2_stdcell_typ_1p20V_25C    14.515200      23   333.849592
+sg13g2_or4_2       sg13g2_stdcell_typ_1p20V_25C    16.329599       5    81.647997
+sg13g2_tiehi       sg13g2_stdcell_typ_1p20V_25C     7.257600       1     7.257600
+sg13g2_tielo       sg13g2_stdcell_typ_1p20V_25C     7.257600       1     7.257600
+sg13g2_xnor2_1     sg13g2_stdcell_typ_1p20V_25C    14.515200      16   232.243195
+sg13g2_xor2_1      sg13g2_stdcell_typ_1p20V_25C    14.515200      76  1103.155174
+-----------------------------------------------------------------------------
+Total 57 references                                 753698.088032
+
+****************************************
+Design: ACCUMULATOR_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+sg13g2_a21o_1      sg13g2_stdcell_typ_1p20V_25C    12.700800      56   711.244797
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000       8    72.575996
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600     637  6910.558447
+sg13g2_a221oi_1    sg13g2_stdcell_typ_1p20V_25C    14.515200       7   101.606398
+sg13g2_and2_1      sg13g2_stdcell_typ_1p20V_25C     9.072000     102   925.343954
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600      70   508.031988
+sg13g2_dfrbpq_1    sg13g2_stdcell_typ_1p20V_25C    48.988800     160  7838.208008 n
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200     691  3761.251277
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600      96   696.729584
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600      83   602.380786
+sg13g2_nor2b_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      72   653.183968
+sg13g2_nor3_1      sg13g2_stdcell_typ_1p20V_25C     9.072000       3    27.215999
+sg13g2_nor4_1      sg13g2_stdcell_typ_1p20V_25C    10.886400       1    10.886400
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     460  4173.119793
+sg13g2_or2_1       sg13g2_stdcell_typ_1p20V_25C     9.072000       1     9.072000
+sg13g2_xnor2_1     sg13g2_stdcell_typ_1p20V_25C    14.515200     131  1901.491156
+sg13g2_xor2_1      sg13g2_stdcell_typ_1p20V_25C    14.515200     388  5631.897469
+-----------------------------------------------------------------------------
+Total 17 references                                 34534.798018
+
+****************************************
+Design: ADDER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     184  1669.247917
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600     802  8700.577511
+sg13g2_a221oi_1    sg13g2_stdcell_typ_1p20V_25C    14.515200       8   116.121597
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600     307  2228.083148
+sg13g2_dfrbpq_1    sg13g2_stdcell_typ_1p20V_25C    48.988800     712 34880.025635 n
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200    1053  5731.689717
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600     297  2155.507150
+sg13g2_nand2b_1    sg13g2_stdcell_typ_1p20V_25C     9.072000      19   172.367991
+sg13g2_nand3_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      49   444.527978
+sg13g2_nand3b_1    sg13g2_stdcell_typ_1p20V_25C    12.700800      15   190.511999
+sg13g2_nand4_1     sg13g2_stdcell_typ_1p20V_25C    10.886400       8    87.091202
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600     223  1618.444762
+sg13g2_nor2b_1     sg13g2_stdcell_typ_1p20V_25C     9.072000       8    72.575996
+sg13g2_nor3_1      sg13g2_stdcell_typ_1p20V_25C     9.072000       1     9.072000
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     470  4263.839788
+sg13g2_or2_1       sg13g2_stdcell_typ_1p20V_25C     9.072000      19   172.367991
+sg13g2_xnor2_1     sg13g2_stdcell_typ_1p20V_25C    14.515200     137  1988.582354
+sg13g2_xor2_1      sg13g2_stdcell_typ_1p20V_25C    14.515200      73  1059.609575
+-----------------------------------------------------------------------------
+Total 18 references                                 65560.244312
+
+****************************************
+Design: COMPARATOR_SIMD8_multithreaded_accl_en0_ACCL_NUM1_FU_NUM1_SIMD_Width256 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+sg13g2_a21o_1      sg13g2_stdcell_typ_1p20V_25C    12.700800      16   203.212799
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000       1     9.072000
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600     328  3558.340927
+sg13g2_a221oi_1    sg13g2_stdcell_typ_1p20V_25C    14.515200       8   116.121597
+sg13g2_and2_1      sg13g2_stdcell_typ_1p20V_25C     9.072000       2    18.143999
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600      95   689.471984
+sg13g2_dfrbpq_1    sg13g2_stdcell_typ_1p20V_25C    48.988800     312 15284.505615 n
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200     396  2155.507244
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600      43   312.076793
+sg13g2_nand2b_1    sg13g2_stdcell_typ_1p20V_25C     9.072000       9    81.647996
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600      13    94.348798
+sg13g2_nor2b_1     sg13g2_stdcell_typ_1p20V_25C     9.072000       1     9.072000
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     105   952.559953
+sg13g2_tielo       sg13g2_stdcell_typ_1p20V_25C     7.257600       1     7.257600
+-----------------------------------------------------------------------------
+Total 14 references                                 23491.339304
+
+****************************************
+Design: EXCPT_HANDLING_ACCL_NUM1_SPM_ADDR_WID3_THREAD_POOL_SIZE3_Addr_Width14_SPM_NUM4 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+sg13g2_a21o_1      sg13g2_stdcell_typ_1p20V_25C    12.700800       2    25.401600
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      16   145.151993
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600      43   466.489817
+sg13g2_a221oi_1    sg13g2_stdcell_typ_1p20V_25C    14.515200       2    29.030399
+sg13g2_and2_1      sg13g2_stdcell_typ_1p20V_25C     9.072000       9    81.647996
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600       7    50.803199
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200      50   272.160006
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600      27   195.955195
+sg13g2_nand2b_1    sg13g2_stdcell_typ_1p20V_25C     9.072000       8    72.575996
+sg13g2_nand3_1     sg13g2_stdcell_typ_1p20V_25C     9.072000       4    36.287998
+sg13g2_nand4_1     sg13g2_stdcell_typ_1p20V_25C    10.886400       1    10.886400
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600      45   326.591992
+sg13g2_nor2b_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      46   417.311979
+sg13g2_nor3_1      sg13g2_stdcell_typ_1p20V_25C     9.072000      11    99.791995
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      22   199.583990
+sg13g2_or2_1       sg13g2_stdcell_typ_1p20V_25C     9.072000      39   353.807982
+sg13g2_xnor2_1     sg13g2_stdcell_typ_1p20V_25C    14.515200       6    87.091198
+sg13g2_xor2_1      sg13g2_stdcell_typ_1p20V_25C    14.515200       6    87.091198
+-----------------------------------------------------------------------------
+Total 18 references                                  2957.660934
+
+****************************************
+Design: MULTIPLIER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width256 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+sg13g2_a21o_1      sg13g2_stdcell_typ_1p20V_25C    12.700800      16   203.212799
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     680  6168.959694
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600    5224 56673.088425
+sg13g2_a221oi_1    sg13g2_stdcell_typ_1p20V_25C    14.515200       8   116.121597
+sg13g2_and2_1      sg13g2_stdcell_typ_1p20V_25C     9.072000      22   199.583990
+sg13g2_and3_1      sg13g2_stdcell_typ_1p20V_25C    12.700800      16   203.212799
+sg13g2_and4_1      sg13g2_stdcell_typ_1p20V_25C    14.515200      16   232.243195
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600     688  4993.228683
+sg13g2_buf_2       sg13g2_stdcell_typ_1p20V_25C     9.072000       5    45.359998
+sg13g2_dfrbpq_1    sg13g2_stdcell_typ_1p20V_25C    48.988800     896 43893.964844 n
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200    5080 27651.456566
+sg13g2_inv_2       sg13g2_stdcell_typ_1p20V_25C     7.257600       3    21.772799
+sg13g2_mux2_1      sg13g2_stdcell_typ_1p20V_25C    18.143999       1    18.143999
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600    4575 33203.519225
+sg13g2_nand2b_1    sg13g2_stdcell_typ_1p20V_25C     9.072000    1218 11049.695452
+sg13g2_nand3_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     200  1814.399910
+sg13g2_nand4_1     sg13g2_stdcell_typ_1p20V_25C    10.886400     160  1741.824036
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600    1395 10124.351764
+sg13g2_nor2b_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     129  1170.287942
+sg13g2_nor3_1      sg13g2_stdcell_typ_1p20V_25C     9.072000      80   725.759964
+sg13g2_nor4_1      sg13g2_stdcell_typ_1p20V_25C    10.886400      48   522.547211
+sg13g2_nor4_2      sg13g2_stdcell_typ_1p20V_25C    21.772800     119  2590.963253
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     825  7484.399629
+sg13g2_or2_1       sg13g2_stdcell_typ_1p20V_25C     9.072000    2575 23360.398841
+sg13g2_or4_1       sg13g2_stdcell_typ_1p20V_25C    14.515200      40   580.607986
+sg13g2_or4_2       sg13g2_stdcell_typ_1p20V_25C    16.329599       1    16.329599
+sg13g2_xnor2_1     sg13g2_stdcell_typ_1p20V_25C    14.515200    4111 59671.985807
+sg13g2_xor2_1      sg13g2_stdcell_typ_1p20V_25C    14.515200    4145 60165.502596
+-----------------------------------------------------------------------------
+Total 28 references                                 354642.922603
+
+****************************************
+Design: SHIFTER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+sg13g2_a21o_1      sg13g2_stdcell_typ_1p20V_25C    12.700800       7    88.905600
+sg13g2_a21oi_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      89   807.407960
+sg13g2_a22oi_1     sg13g2_stdcell_typ_1p20V_25C    10.848600    1244 13495.658882
+sg13g2_a221oi_1    sg13g2_stdcell_typ_1p20V_25C    14.515200       8   116.121597
+sg13g2_and2_1      sg13g2_stdcell_typ_1p20V_25C     9.072000      19   172.367991
+sg13g2_buf_1       sg13g2_stdcell_typ_1p20V_25C     7.257600     266  1930.521555
+sg13g2_dfrbpq_1    sg13g2_stdcell_typ_1p20V_25C    48.988800     548 26845.862427 n
+sg13g2_inv_1       sg13g2_stdcell_typ_1p20V_25C     5.443200     775  4218.480086
+sg13g2_nand2_1     sg13g2_stdcell_typ_1p20V_25C     7.257600     194  1407.974367
+sg13g2_nand2b_1    sg13g2_stdcell_typ_1p20V_25C     9.072000       1     9.072000
+sg13g2_nand3_1     sg13g2_stdcell_typ_1p20V_25C     9.072000      23   208.655990
+sg13g2_nor2_1      sg13g2_stdcell_typ_1p20V_25C     7.257600      34   246.758394
+sg13g2_nor3_1      sg13g2_stdcell_typ_1p20V_25C     9.072000       3    27.215999
+sg13g2_o21ai_1     sg13g2_stdcell_typ_1p20V_25C     9.072000     468  4245.695789
+sg13g2_or2_1       sg13g2_stdcell_typ_1p20V_25C     9.072000      19   172.367991
+-----------------------------------------------------------------------------
+Total 15 references                                 53993.066628
+1

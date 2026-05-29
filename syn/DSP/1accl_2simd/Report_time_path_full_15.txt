@@ -1,0 +1,93 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD2_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Wed Sep 24 16:59:53 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: state_DSP_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: MULT_STG/dsp_mul_d_var_reg[30]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                                                                                                      Incr       Path
+  ---------------------------------------------------------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                                                                                    0.00       0.00
+  clock network delay (ideal)                                                                                                0.00       0.00
+  state_DSP_out_reg[1]/CLK (DFFRNQ_X1)                                                                                       0.00 #     0.00 r
+  state_DSP_out_reg[1]/Q (DFFRNQ_X1)                                                                                        18.58      18.58 r
+  U3562/Z (AND2_X1)                                                                                                         13.07      31.65 r
+  U3606/ZN (INV_X1)                                                                                                         14.79      46.45 f
+  U3706/ZN (NOR2_X1)                                                                                                         9.42      55.86 r
+  U4770/ZN (OAI21_X1)                                                                                                        8.02      63.89 f
+  U5291/ZN (NOR2_X1)                                                                                                        24.78      88.67 r
+  U5292/ZN (NAND2_X1)                                                                                                       59.62     148.29 f
+  U7082/ZN (INV_X1)                                                                                                         42.60     190.89 r
+  U7165/ZN (NAND2_X1)                                                                                                        7.94     198.83 f
+  U7212/ZN (AOI21_X1)                                                                                                       32.53     231.36 r
+  MULT_STG/dsp_in_mul_operands[9] (MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width64)      0.00     231.36 r
+  MULT_STG/U2371/ZN (INV_X1)                                                                                                31.37     262.74 f
+  MULT_STG/U4397/ZN (OAI22_X1)                                                                                              30.84     293.58 r
+  MULT_STG/U4416/ZN (INV_X1)                                                                                                 7.66     301.24 f
+  MULT_STG/U4417/ZN (NAND2_X1)                                                                                               5.12     306.36 r
+  MULT_STG/U4418/ZN (INV_X1)                                                                                                12.44     318.80 f
+  MULT_STG/U4420/ZN (OAI21_X1)                                                                                               6.18     324.97 r
+  MULT_STG/U4459/S (FA_X1)                                                                                                  16.48     341.45 f
+  MULT_STG/U4444/S (FA_X1)                                                                                                  15.11     356.56 r
+  MULT_STG/U4443/S (FA_X1)                                                                                                  12.66     369.23 r
+  MULT_STG/U4441/ZN (NAND2_X1)                                                                                               3.43     372.65 f
+  MULT_STG/U4442/ZN (OAI21_X1)                                                                                               3.73     376.39 r
+  MULT_STG/U4464/CO (FA_X1)                                                                                                 10.05     386.43 r
+  MULT_STG/U4496/CO (FA_X1)                                                                                                  9.75     396.19 r
+  MULT_STG/U4558/CO (FA_X1)                                                                                                 10.87     407.06 r
+  MULT_STG/U4559/ZN (NAND2_X1)                                                                                               4.26     411.31 f
+  MULT_STG/U4565/ZN (AOI21_X1)                                                                                               4.60     415.91 r
+  MULT_STG/U4589/CO (FA_X1)                                                                                                 10.02     425.93 r
+  MULT_STG/U4617/CO (FA_X1)                                                                                                  9.75     435.69 r
+  MULT_STG/U4647/CO (FA_X1)                                                                                                 11.82     447.51 r
+  MULT_STG/U4678/Z (AND2_X1)                                                                                                 5.17     452.68 r
+  MULT_STG/U4679/ZN (OAI22_X1)                                                                                               3.99     456.67 f
+  MULT_STG/U4704/CO (FA_X1)                                                                                                  8.85     465.52 f
+  MULT_STG/U4729/CO (FA_X1)                                                                                                  8.40     473.92 f
+  MULT_STG/U4769/CO (FA_X1)                                                                                                 10.00     483.92 f
+  MULT_STG/U4775/Z (OR2_X1)                                                                                                  5.29     489.20 f
+  MULT_STG/U4776/ZN (AOI22_X1)                                                                                               5.07     494.27 r
+  MULT_STG/U4810/CO (FA_X1)                                                                                                 11.21     505.48 r
+  MULT_STG/U4813/ZN (NAND2_X1)                                                                                               4.35     509.83 f
+  MULT_STG/U4831/ZN (AOI22_X1)                                                                                               8.51     518.34 r
+  MULT_STG/U4835/ZN (NOR2_X1)                                                                                                3.55     521.89 f
+  MULT_STG/U4837/ZN (OAI21_X1)                                                                                               4.56     526.44 r
+  MULT_STG/U4854/CO (FA_X1)                                                                                                 11.90     538.34 r
+  MULT_STG/U4868/Z (AND2_X1)                                                                                                 5.21     543.55 r
+  MULT_STG/U4869/ZN (OAI22_X1)                                                                                               4.55     548.10 f
+  MULT_STG/U4879/CO (FA_X1)                                                                                                  8.81     556.92 f
+  MULT_STG/U4886/S (FA_X1)                                                                                                  13.69     570.60 r
+  MULT_STG/U4884/ZN (AOI22_X1)                                                                                               3.25     573.85 f
+  MULT_STG/U4885/ZN (INV_X1)                                                                                                 3.48     577.33 r
+  MULT_STG/dsp_mul_d_var_reg[30]/D (DFFRNQ_X1)                                                                               0.00     577.33 r
+  data arrival time                                                                                                                   577.33
+
+  clock clk_i (rise edge)                                                                                                 2000.00    2000.00
+  clock network delay (ideal)                                                                                                0.00    2000.00
+  MULT_STG/dsp_mul_d_var_reg[30]/CLK (DFFRNQ_X1)                                                                             0.00    2000.00 r
+  library setup time                                                                                                        -8.11    1991.89
+  data required time                                                                                                                 1991.89
+  ---------------------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                                 1991.89
+  data arrival time                                                                                                                  -577.33
+  ---------------------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                                                        1414.56
+
+
+1

@@ -1,0 +1,41 @@
+ 
+****************************************
+Report : power
+        -hier
+        -analysis_effort low
+Design : DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256
+Version: V-2023.12
+Date   : Wed Sep 24 16:47:51 2025
+****************************************
+
+
+Library(s) Used:
+
+    NanGate_15nm_OCL (File: /home/g.vilarde/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db)
+
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+
+Global Operating Voltage = 0.8  
+Power-specific unit information :
+    Voltage Units = 1V
+    Capacitance Units = 1.000000ff
+    Time Units = 1ps
+    Dynamic Power Units = 1mW    (derived from V,C,T units)
+    Leakage Power Units = 1pW
+
+
+--------------------------------------------------------------------------------
+                                       Switch   Int      Leak     Total
+Hierarchy                              Power    Power    Power    Power    %
+--------------------------------------------------------------------------------
+DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256    1.838   20.933 2.90e+09   25.673 100.0
+  ACCUM_STG (ACCUMULATOR_multithreaded_accl_en0_SIMD8_ACCL_NUM6_FU_NUM6_SIMD_Width256) 2.77e-02    0.937 1.69e+08    1.134   4.4
+  MULT_STG (MULTIPLIER_multithreaded_accl_en0_SIMD8_ACCL_NUM6_FU_NUM6_Data_Width32_SIMD_Width256)    0.720    5.863 1.37e+09    7.951  31.0
+  ADD_STG (ADDER_multithreaded_accl_en0_SIMD8_ACCL_NUM6_FU_NUM6_SIMD_Width256)    0.217    4.304 3.35e+08    4.856  18.9
+  COMP_STG (COMPARATOR_SIMD8_multithreaded_accl_en0_ACCL_NUM6_FU_NUM6_SIMD_Width256) 4.75e-03    1.645 1.06e+08    1.756   6.8
+  SHIF_STG (SHIFTER_multithreaded_accl_en0_SIMD8_ACCL_NUM6_FU_NUM6_SIMD_Width256) 4.99e-02    3.186 2.57e+08    3.493  13.6
+  EXCP_STG (EXCPT_HANDLING_ACCL_NUM6_SPM_ADDR_WID3_THREAD_POOL_SIZE6_Addr_Width14_SPM_NUM4) 4.04e-02 2.83e-02 1.04e+07 7.92e-02   0.3
+1

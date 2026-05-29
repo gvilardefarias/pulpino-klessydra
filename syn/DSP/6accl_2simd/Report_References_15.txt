@@ -1,0 +1,199 @@
+ 
+****************************************
+Report : reference
+Design : DSP_Unit_THREAD_POOL_SIZE6_accl_en1_replicate_accl_en1_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD2_ACCL_NUM6_FU_NUM6_TPS_CEIL3_TPS_BUF_CEIL3_SPM_ADDR_WID3_SIMD_BITS1_Data_Width32_SIMD_Width64
+Version: V-2023.12
+Date   : Wed Sep 24 12:50:14 2025
+****************************************
+
+Attributes:
+    b - black box (unknown)
+   bo - allows boundary optimization
+    d - dont_touch
+   mo - map_only
+    h - hierarchical
+    n - noncombinational
+    r - removable
+    s - synthetic operator
+    u - contains unmapped logic
+
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64  1711.374344       1  1711.374344 d, h, n
+ADDER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64  2601.615336       1  2601.615336 d, h, n
+AND2_X1            NanGate_15nm_OCL     0.294912     138    40.697857
+AND3_X1            NanGate_15nm_OCL     0.393216       5     1.966080
+AND4_X1            NanGate_15nm_OCL     0.442368      65    28.753920
+AOI21_X1           NanGate_15nm_OCL     0.294912     991   292.257802
+AOI22_X1           NanGate_15nm_OCL     0.344064    3565  1226.588150
+BUF_X1             NanGate_15nm_OCL     0.245760       5     1.228800
+CLKBUF_X2          NanGate_15nm_OCL     0.245760       1     0.245760
+COMPARATOR_SIMD2_multithreaded_accl_en0_ACCL_NUM6_FU_NUM6_SIMD_Width64   884.146161       1   884.146161 d, h, n
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952    2403  3070.918550 n
+DFFSNQ_X1          NanGate_15nm_OCL     1.277952       6     7.667712 n
+EXCPT_HANDLING_ACCL_NUM6_SPM_ADDR_WID3_THREAD_POOL_SIZE6_Addr_Width14_SPM_NUM4   250.822662       1   250.822662 d, h
+FA_X1              NanGate_15nm_OCL     1.179648      18    21.233665 r
+HA_X1              NanGate_15nm_OCL     0.638976     324   207.028217 r
+INV_X1             NanGate_15nm_OCL     0.147456    4332   638.779415
+INV_X2             NanGate_15nm_OCL     0.196608       5     0.983040
+INV_X8             NanGate_15nm_OCL     0.491520       1     0.491520
+MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_Data_Width32_SIMD_Width64 12470.255834       1 12470.255834 d, h, n
+NAND2_X1           NanGate_15nm_OCL     0.196608    3611   709.951513
+NAND3_X1           NanGate_15nm_OCL     0.294912     436   128.581637
+NAND4_X1           NanGate_15nm_OCL     0.344064     295   101.498879
+NOR2_X1            NanGate_15nm_OCL     0.196608    1830   359.792653
+NOR3_X1            NanGate_15nm_OCL     0.294912      84    24.772609
+NOR4_X1            NanGate_15nm_OCL     0.344064      75    25.804800
+OAI21_X1           NanGate_15nm_OCL     0.294912    3709  1093.828647
+OAI22_X1           NanGate_15nm_OCL     0.344064    1428   491.323388
+OR2_X1             NanGate_15nm_OCL     0.294912     187    55.148546
+OR3_X1             NanGate_15nm_OCL     0.393216      27    10.616832
+OR4_X1             NanGate_15nm_OCL     0.442368      10     4.423680
+SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64  2223.144936       1  2223.144936 d, h, n
+XNOR2_X1           NanGate_15nm_OCL     0.442368      84    37.158912
+XOR2_X1            NanGate_15nm_OCL     0.442368      24    10.616832
+-----------------------------------------------------------------------------
+Total 33 references                                 28733.718688
+
+****************************************
+Design: ACCUMULATOR_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912     204    60.162050
+AOI21_X1           NanGate_15nm_OCL     0.294912     198    58.392578
+AOI22_X1           NanGate_15nm_OCL     0.344064     390   134.184959
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952     384   490.733551 n
+FA_X1              NanGate_15nm_OCL     1.179648     186   219.414536 r
+HA_X1              NanGate_15nm_OCL     0.638976       6     3.833856 r
+INV_X1             NanGate_15nm_OCL     0.147456    1026   151.289861
+NAND2_X1           NanGate_15nm_OCL     0.196608     426    83.755011
+NAND3_X1           NanGate_15nm_OCL     0.294912      12     3.538944
+NOR2_X1            NanGate_15nm_OCL     0.196608     498    97.910787
+NOR3_X1            NanGate_15nm_OCL     0.294912       6     1.769472
+OAI21_X1           NanGate_15nm_OCL     0.294912     288    84.934659
+OAI22_X1           NanGate_15nm_OCL     0.344064     600   206.438398
+OR2_X1             NanGate_15nm_OCL     0.294912      48    14.155777
+OR4_X1             NanGate_15nm_OCL     0.442368       6     2.654208
+XNOR2_X1           NanGate_15nm_OCL     0.442368     150    66.355200
+XOR2_X1            NanGate_15nm_OCL     0.442368      72    31.850496
+-----------------------------------------------------------------------------
+Total 17 references                                  1711.374344
+
+****************************************
+Design: ADDER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912     110    32.440321
+AND3_X1            NanGate_15nm_OCL     0.393216       4     1.572864
+AOI21_X1           NanGate_15nm_OCL     0.294912     106    31.260673
+AOI22_X1           NanGate_15nm_OCL     0.344064    1040   357.826557
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952    1072  1369.964497 n
+FA_X1              NanGate_15nm_OCL     1.179648     188   221.773832 r
+INV_X1             NanGate_15nm_OCL     0.147456    1220   179.896326
+NAND2_X1           NanGate_15nm_OCL     0.196608     380    74.711043
+NAND3_X1           NanGate_15nm_OCL     0.294912      84    24.772609
+NAND4_X1           NanGate_15nm_OCL     0.344064      12     4.128768
+NOR2_X1            NanGate_15nm_OCL     0.196608     370    72.744963
+NOR3_X1            NanGate_15nm_OCL     0.294912       2     0.589824
+OAI21_X1           NanGate_15nm_OCL     0.294912     288    84.934659
+OAI22_X1           NanGate_15nm_OCL     0.344064      82    28.213248
+OR2_X1             NanGate_15nm_OCL     0.294912      72    21.233665
+XNOR2_X1           NanGate_15nm_OCL     0.442368     100    44.236800
+XOR2_X1            NanGate_15nm_OCL     0.442368     116    51.314688
+-----------------------------------------------------------------------------
+Total 17 references                                  2601.615336
+
+****************************************
+Design: COMPARATOR_SIMD2_multithreaded_accl_en0_ACCL_NUM6_FU_NUM6_SIMD_Width64 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912      11     3.244032
+AOI21_X1           NanGate_15nm_OCL     0.294912      18     5.308416
+AOI22_X1           NanGate_15nm_OCL     0.344064     405   139.345919
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952     438   559.742957 n
+INV_X1             NanGate_15nm_OCL     0.147456     499    73.580547
+NAND2_X1           NanGate_15nm_OCL     0.196608     127    24.969217
+NOR2_X1            NanGate_15nm_OCL     0.196608      71    13.959168
+OAI21_X1           NanGate_15nm_OCL     0.294912      98    28.901377
+OAI22_X1           NanGate_15nm_OCL     0.344064     102    35.094528
+-----------------------------------------------------------------------------
+Total 9 references                                    884.146161
+
+****************************************
+Design: EXCPT_HANDLING_ACCL_NUM6_SPM_ADDR_WID3_THREAD_POOL_SIZE6_Addr_Width14_SPM_NUM4 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912     210    61.931522
+AND3_X1            NanGate_15nm_OCL     0.393216       1     0.393216
+AND4_X1            NanGate_15nm_OCL     0.442368       1     0.442368
+AOI21_X1           NanGate_15nm_OCL     0.294912      22     6.488064
+AOI22_X1           NanGate_15nm_OCL     0.344064      68    23.396352
+INV_X1             NanGate_15nm_OCL     0.147456     115    16.957441
+NAND2_X1           NanGate_15nm_OCL     0.196608      78    15.335425
+NAND3_X1           NanGate_15nm_OCL     0.294912      12     3.538944
+NAND4_X1           NanGate_15nm_OCL     0.344064       2     0.688128
+NOR2_X1            NanGate_15nm_OCL     0.196608     297    58.392578
+NOR3_X1            NanGate_15nm_OCL     0.294912       2     0.589824
+NOR4_X1            NanGate_15nm_OCL     0.344064       1     0.344064
+OAI21_X1           NanGate_15nm_OCL     0.294912      36    10.616832
+OAI22_X1           NanGate_15nm_OCL     0.344064      66    22.708224
+OR2_X1             NanGate_15nm_OCL     0.294912      34    10.027008
+OR3_X1             NanGate_15nm_OCL     0.393216       1     0.393216
+XNOR2_X1           NanGate_15nm_OCL     0.442368      19     8.404992
+XOR2_X1            NanGate_15nm_OCL     0.442368      23    10.174464
+-----------------------------------------------------------------------------
+Total 18 references                                   250.822662
+
+****************************************
+Design: MULTIPLIER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_Data_Width32_SIMD_Width64 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912     336    99.090436
+AND3_X1            NanGate_15nm_OCL     0.393216      12     4.718592
+AND4_X1            NanGate_15nm_OCL     0.442368      24    10.616832
+AOI21_X1           NanGate_15nm_OCL     0.294912    1116   329.121804
+AOI22_X1           NanGate_15nm_OCL     0.344064    3588  1234.501622
+BUF_X1             NanGate_15nm_OCL     0.245760       4     0.983040
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952    1344  1717.567429 n
+FA_X1              NanGate_15nm_OCL     1.179648    4692  5534.908612 r
+INV_X1             NanGate_15nm_OCL     0.147456    3762   554.729492
+NAND2_X1           NanGate_15nm_OCL     0.196608    2586   508.428306
+NAND3_X1           NanGate_15nm_OCL     0.294912      12     3.538944
+NAND4_X1           NanGate_15nm_OCL     0.344064      12     4.128768
+NOR2_X1            NanGate_15nm_OCL     0.196608    4764   936.640545
+NOR3_X1            NanGate_15nm_OCL     0.294912     108    31.850497
+NOR4_X1            NanGate_15nm_OCL     0.344064     480   165.150719
+OAI21_X1           NanGate_15nm_OCL     0.294912     648   191.102983
+OAI22_X1           NanGate_15nm_OCL     0.344064    1008   346.816509
+OR2_X1             NanGate_15nm_OCL     0.294912      34    10.027008
+OR2_X2             NanGate_15nm_OCL     0.344064       2     0.688128
+XNOR2_X1           NanGate_15nm_OCL     0.442368     420   185.794560
+XOR2_X1            NanGate_15nm_OCL     0.442368    1356   599.851009
+-----------------------------------------------------------------------------
+Total 21 references                                 12470.255834
+
+****************************************
+Design: SHIFTER_multithreaded_accl_en0_SIMD2_ACCL_NUM6_FU_NUM6_SIMD_Width64 
+****************************************
+Reference          Library       Unit Area   Count    Total Area   Attributes
+-----------------------------------------------------------------------------
+AND2_X1            NanGate_15nm_OCL     0.294912       5     1.474560
+AOI21_X1           NanGate_15nm_OCL     0.294912     295    86.999043
+AOI22_X1           NanGate_15nm_OCL     0.344064    1705   586.629115
+DFFRNQ_X1          NanGate_15nm_OCL     1.277952     816  1042.808796 n
+INV_X1             NanGate_15nm_OCL     0.147456     744   109.707268
+NAND2_X1           NanGate_15nm_OCL     0.196608     333    65.470466
+NAND4_X1           NanGate_15nm_OCL     0.344064       2     0.688128
+NOR2_X1            NanGate_15nm_OCL     0.196608     212    41.680897
+NOR3_X1            NanGate_15nm_OCL     0.294912       6     1.769472
+OAI21_X1           NanGate_15nm_OCL     0.294912     604   178.126854
+OAI22_X1           NanGate_15nm_OCL     0.344064     309   106.315775
+OR2_X1             NanGate_15nm_OCL     0.294912       5     1.474560
+-----------------------------------------------------------------------------
+Total 12 references                                  2223.144936
+1

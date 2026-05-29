@@ -1,0 +1,49 @@
+ 
+****************************************
+Report : area
+Design : DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256
+Version: W-2024.09-SP2
+Date   : Fri Mar 27 11:23:31 2026
+****************************************
+
+Library(s) Used:
+
+    sg13g2_stdcell_typ_1p20V_25C (File: /home/g.vilarde/syn_libraries/tessent/ihp-sg13g2_stdcell.db)
+
+Number of ports:                         4578
+Number of nets:                         66318
+Number of cells:                        62297
+Number of combinational cells:          58900
+Number of sequential cells:              3391
+Number of macros/black boxes:               0
+Number of buf/inv:                      14402
+Number of references:                      57
+
+Combinational area:             586893.038372
+Buf/Inv area:                   113443.545538
+Noncombinational area:          166805.049660
+Macro/Black Box area:                0.000000
+Net Interconnect area:         5023777.858578
+
+Total cell area:                753698.088032
+Total area:                    5777475.946609
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area              Local cell area
+                                  --------------------  -------------------------------- 
+Hierarchical cell                 Absolute     Percent  Combi-       Noncombi-    Black-
+                                  Total        Total    national     national     boxes   Design
+--------------------------------  -----------  -------  -----------  -----------  ------  ------------------------------------------------------------------------------------
+DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256 753698.0880   100.0 180455.5731  38062.4831 0.0000 DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256
+ACCUM_STG                          34534.7980      4.6   26696.5900    7838.2080  0.0000  ACCUMULATOR_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256
+ADD_STG                            65560.2443      8.7   30680.2187   34880.0256  0.0000  ADDER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256
+COMP_STG                           23491.3393      3.1    8206.8337   15284.5056  0.0000  COMPARATOR_SIMD8_multithreaded_accl_en0_ACCL_NUM1_FU_NUM1_SIMD_Width256
+EXCP_STG                            2957.6609      0.4    2957.6609       0.0000  0.0000  EXCPT_HANDLING_ACCL_NUM1_SPM_ADDR_WID3_THREAD_POOL_SIZE3_Addr_Width14_SPM_NUM4
+MULT_STG                          354642.9226     47.1  310748.9578   43893.9648  0.0000  MULTIPLIER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_Data_Width32_SIMD_Width256
+SHIF_STG                           53993.0666      7.2   27147.2042   26845.8624  0.0000  SHIFTER_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256
+--------------------------------  -----------  -------  -----------  -----------  ------  ------------------------------------------------------------------------------------
+Total                                                   586893.0384  166805.0497  0.0000
+
+1

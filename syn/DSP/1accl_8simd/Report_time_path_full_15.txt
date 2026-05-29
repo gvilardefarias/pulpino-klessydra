@@ -1,0 +1,109 @@
+ 
+****************************************
+Report : timing
+        -path full
+        -delay max
+        -max_paths 1
+Design : DSP_Unit_THREAD_POOL_SIZE3_accl_en1_replicate_accl_en0_multithreaded_accl_en0_SPM_NUM4_Addr_Width14_SIMD8_ACCL_NUM1_FU_NUM1_TPS_CEIL2_TPS_BUF_CEIL1_SPM_ADDR_WID3_SIMD_BITS3_Data_Width32_SIMD_Width256
+Version: V-2023.12
+Date   : Wed Sep 24 17:19:44 2025
+****************************************
+
+ # A fanout number of 1000 was used for high fanout net computations.
+
+Operating Conditions: typical   Library: NanGate_15nm_OCL
+Wire Load Model Mode: top
+
+  Startpoint: state_DSP_out_reg[1]
+              (rising edge-triggered flip-flop clocked by clk_i)
+  Endpoint: ACCUM_STG/accum_partial_results_stg_1_reg[31]
+            (rising edge-triggered flip-flop clocked by clk_i)
+  Path Group: clk_i
+  Path Type: max
+
+  Point                                                                                                               Incr       Path
+  --------------------------------------------------------------------------------------------------------------------------------------
+  clock clk_i (rise edge)                                                                                             0.00       0.00
+  clock network delay (ideal)                                                                                         0.00       0.00
+  state_DSP_out_reg[1]/CLK (DFFRNQ_X1)                                                                                0.00 #     0.00 r
+  state_DSP_out_reg[1]/Q (DFFRNQ_X1)                                                                                 17.79      17.79 r
+  U9751/ZN (INV_X1)                                                                                                   3.10      20.89 f
+  U9718/Z (BUF_X2)                                                                                                   10.73      31.62 f
+  U9719/ZN (NOR2_X1)                                                                                                 39.04      70.66 r
+  U9788/ZN (INV_X1)                                                                                                  41.37     112.02 f
+  U9802/ZN (NOR2_X1)                                                                                                 16.00     128.02 r
+  U9803/ZN (NAND2_X1)                                                                                                 8.25     136.28 f
+  U9716/ZN (NOR3_X1)                                                                                                166.16     302.44 r
+  U9717/ZN (INV_X1)                                                                                                 107.53     409.96 f
+  U15637/ZN (INV_X1)                                                                                                106.26     516.23 r
+  U17634/ZN (AOI22_X1)                                                                                                5.92     522.14 f
+  U17635/ZN (NAND2_X1)                                                                                               10.94     533.09 r
+  ACCUM_STG/dsp_in_accum_operands[32] (ACCUMULATOR_multithreaded_accl_en0_SIMD8_ACCL_NUM1_FU_NUM1_SIMD_Width256)      0.00     533.09 r
+  ACCUM_STG/U2003/ZN (NAND3_X1)                                                                                       7.36     540.45 f
+  ACCUM_STG/U2004/ZN (OAI21_X1)                                                                                       5.95     546.40 r
+  ACCUM_STG/U2005/ZN (OAI22_X1)                                                                                       6.89     553.29 f
+  ACCUM_STG/U2008/ZN (OAI21_X1)                                                                                       6.89     560.18 r
+  ACCUM_STG/U2009/ZN (OAI22_X1)                                                                                       6.99     567.17 f
+  ACCUM_STG/U2012/ZN (OAI21_X1)                                                                                       6.89     574.06 r
+  ACCUM_STG/U2013/ZN (OAI22_X1)                                                                                       6.99     581.05 f
+  ACCUM_STG/U2016/ZN (OAI21_X1)                                                                                       6.82     587.87 r
+  ACCUM_STG/U2017/ZN (OAI22_X1)                                                                                       6.97     594.84 f
+  ACCUM_STG/U2020/ZN (OAI21_X1)                                                                                       7.58     602.43 r
+  ACCUM_STG/U2021/ZN (OAI22_X1)                                                                                       7.14     609.57 f
+  ACCUM_STG/U2024/ZN (OAI21_X1)                                                                                       7.58     617.15 r
+  ACCUM_STG/U2025/ZN (OAI22_X1)                                                                                       7.14     624.29 f
+  ACCUM_STG/U2028/ZN (OAI21_X1)                                                                                       7.57     631.86 r
+  ACCUM_STG/U2029/ZN (OAI22_X1)                                                                                       6.14     638.01 f
+  ACCUM_STG/U2031/ZN (INV_X1)                                                                                         5.13     643.13 r
+  ACCUM_STG/U2032/ZN (OAI21_X1)                                                                                       3.81     646.95 f
+  ACCUM_STG/U2033/ZN (OAI21_X1)                                                                                       4.36     651.31 r
+  ACCUM_STG/U2281/CO (FA_X1)                                                                                         10.16     661.47 r
+  ACCUM_STG/U2036/ZN (NAND2_X1)                                                                                       4.15     665.61 f
+  ACCUM_STG/U2037/ZN (OAI21_X1)                                                                                       4.76     670.37 r
+  ACCUM_STG/U2040/ZN (NAND2_X1)                                                                                       4.33     674.70 f
+  ACCUM_STG/U2041/ZN (OAI21_X1)                                                                                       4.76     679.47 r
+  ACCUM_STG/U2044/ZN (NAND2_X1)                                                                                       4.34     683.80 f
+  ACCUM_STG/U2045/ZN (OAI21_X1)                                                                                       4.76     688.57 r
+  ACCUM_STG/U2048/ZN (NAND2_X1)                                                                                       4.33     692.89 f
+  ACCUM_STG/U2049/ZN (OAI21_X1)                                                                                       4.76     697.66 r
+  ACCUM_STG/U2052/ZN (NAND2_X1)                                                                                       4.34     701.99 f
+  ACCUM_STG/U2053/ZN (OAI21_X1)                                                                                       4.76     706.76 r
+  ACCUM_STG/U2056/ZN (NAND2_X1)                                                                                       4.33     711.08 f
+  ACCUM_STG/U2057/ZN (OAI21_X1)                                                                                       4.76     715.85 r
+  ACCUM_STG/U2060/ZN (NAND2_X1)                                                                                       4.34     720.18 f
+  ACCUM_STG/U2061/ZN (OAI21_X1)                                                                                       4.76     724.95 r
+  ACCUM_STG/U2064/ZN (NAND2_X1)                                                                                       4.33     729.27 f
+  ACCUM_STG/U2065/ZN (OAI21_X1)                                                                                       5.30     734.57 r
+  ACCUM_STG/U2068/ZN (NAND2_X1)                                                                                       4.43     739.00 f
+  ACCUM_STG/U2069/ZN (OAI21_X1)                                                                                       5.30     744.30 r
+  ACCUM_STG/U2072/ZN (NAND2_X1)                                                                                       4.43     748.73 f
+  ACCUM_STG/U2073/ZN (OAI21_X1)                                                                                       5.30     754.03 r
+  ACCUM_STG/U2076/ZN (NAND2_X1)                                                                                       4.43     758.46 f
+  ACCUM_STG/U2077/ZN (OAI21_X1)                                                                                       5.30     763.76 r
+  ACCUM_STG/U2080/ZN (NAND2_X1)                                                                                       4.45     768.20 f
+  ACCUM_STG/U2081/ZN (OAI21_X1)                                                                                       5.31     773.51 r
+  ACCUM_STG/U2084/ZN (NAND2_X1)                                                                                       4.43     777.93 f
+  ACCUM_STG/U2085/ZN (OAI21_X1)                                                                                       5.30     783.23 r
+  ACCUM_STG/U2088/ZN (NAND2_X1)                                                                                       4.43     787.66 f
+  ACCUM_STG/U2089/ZN (OAI21_X1)                                                                                       5.17     792.83 r
+  ACCUM_STG/U2090/Z (XOR2_X1)                                                                                         4.60     797.43 f
+  ACCUM_STG/U2129/ZN (AOI22_X1)                                                                                       5.80     803.23 r
+  ACCUM_STG/U2131/ZN (OAI22_X1)                                                                                       6.24     809.47 f
+  ACCUM_STG/U2132/ZN (AOI21_X1)                                                                                       6.72     816.19 r
+  ACCUM_STG/U2133/ZN (INV_X1)                                                                                         2.09     818.28 f
+  ACCUM_STG/accum_partial_results_stg_1_reg[31]/D (DFFRNQ_X1)                                                         0.00     818.28 f
+  data arrival time                                                                                                            818.28
+
+  clock clk_i (rise edge)                                                                                          2000.00    2000.00
+  clock network delay (ideal)                                                                                         0.00    2000.00
+  ACCUM_STG/accum_partial_results_stg_1_reg[31]/CLK (DFFRNQ_X1)                                                       0.00    2000.00 r
+  library setup time                                                                                                 -7.52    1992.48
+  data required time                                                                                                          1992.48
+  --------------------------------------------------------------------------------------------------------------------------------------
+  data required time                                                                                                          1992.48
+  data arrival time                                                                                                           -818.28
+  --------------------------------------------------------------------------------------------------------------------------------------
+  slack (MET)                                                                                                                 1174.20
+
+
+1
