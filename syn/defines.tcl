@@ -1,3 +1,10 @@
+#set SYNTHESIS_PATH "~/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db"
+#set SYNTHESIS_PATH "~/syn_libraries/45nm/tech_lib/NangateOpenCellLibrary.db"
+#set SYNTHESIS_PATH "~/syn_libraries/130nm/db/sg13g2_stdcell_typ_1p20V_25C.db"
+set SYNTHESIS_PATH "~/syn_libraries/tessent/ihp-sg13g2_stdcell.db"
+
+set RESTRICT_CELLS 0
+
 set MODULES_ROOT "$ROOT/ips/FU_breakdown/DSP"
 set PACKAGES_ROOT "$ROOT/ips/T13x/klessydra-t1-3th"
 
@@ -151,12 +158,14 @@ set allowed_cells { \
 #set DESIGN_PARAM "multithreaded_accl_en = 0, SIMD = 2, ACCL_NUM = 1, FU_NUM = 1, Data_Width = 32, SIMD_Width = 64"
 
 # SIMD variation
+# 1
+#set DESIGN_PARAM "THREAD_POOL_SIZE = 3, accl_en = 1, replicate_accl_en = 0, multithreaded_accl_en = 0, SPM_NUM = 4, Addr_Width = 14, SIMD = 1, ACCL_NUM = 1, FU_NUM = 1, TPS_CEIL = 2, TPS_BUF_CEIL = 1, SPM_ADDR_WID = 3, SIMD_BITS = 1, Data_Width = 32, SIMD_Width = 32"
 # 2
 set DESIGN_PARAM "THREAD_POOL_SIZE = 3, accl_en = 1, replicate_accl_en = 0, multithreaded_accl_en = 0, SPM_NUM = 4, Addr_Width = 14, SIMD = 2, ACCL_NUM = 1, FU_NUM = 1, TPS_CEIL = 2, TPS_BUF_CEIL = 1, SPM_ADDR_WID = 3, SIMD_BITS = 1, Data_Width = 32, SIMD_Width = 64"
 # 4
 #set DESIGN_PARAM "THREAD_POOL_SIZE = 3, accl_en = 1, replicate_accl_en = 0, multithreaded_accl_en = 0, SPM_NUM = 4, Addr_Width = 14, SIMD = 4, ACCL_NUM = 1, FU_NUM = 1, TPS_CEIL = 2, TPS_BUF_CEIL = 1, SPM_ADDR_WID = 3, SIMD_BITS = 2, Data_Width = 32, SIMD_Width = 128"
 # 8
-#set DESIGN_PARAM "THREAD_POOL_SIZE = 3, accl_en = 1, replicate_accl_en = 0, multithreaded_accl_en = 0, SPM_NUM = 4, Addr_Width = 14, SIMD = 8, ACCL_NUM = 1, FU_NUM = 1, TPS_CEIL = 2, TPS_BUF_CEIL = 1, SPM_ADDR_WID = 3, SIMD_BITS = 3, Data_Width = 32, SIMD_Width = 256"
+set DESIGN_PARAM "THREAD_POOL_SIZE = 3, accl_en = 1, replicate_accl_en = 0, multithreaded_accl_en = 0, SPM_NUM = 4, Addr_Width = 14, SIMD = 8, ACCL_NUM = 1, FU_NUM = 1, TPS_CEIL = 2, TPS_BUF_CEIL = 1, SPM_ADDR_WID = 3, SIMD_BITS = 3, Data_Width = 32, SIMD_Width = 256"
 # 16
 #set DESIGN_PARAM "THREAD_POOL_SIZE = 3, accl_en = 1, replicate_accl_en = 0, multithreaded_accl_en = 0, SPM_NUM = 4, Addr_Width = 14, SIMD = 16, ACCL_NUM = 1, FU_NUM = 1, TPS_CEIL = 2, TPS_BUF_CEIL = 1, SPM_ADDR_WID = 3, SIMD_BITS = 4, Data_Width = 32, SIMD_Width = 512"
 

@@ -4,11 +4,6 @@
 # in the folder of the script and only: source xxxx.tcl
 
 set ROOT "../.."
-#set SYNTHESIS_PATH "$ROOT/synthesis/PDK/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db"
-#set SYNTHESIS_PATH "~/syn_libraries/15nm/CCS/NanGate_15nm_OCL_typical_conditional_ccs.db"
-
-set SYNTHESIS_PATH "~/syn_libraries/45nm/tech_lib/NangateOpenCellLibrary.db"
-
 
 source $ROOT/syn/defines.tcl
 
@@ -46,10 +41,10 @@ check_design
 
 
 #Target clock frequency 500MHz. for 45nm tech lib (timeunit in ns)
-#create_clock -name clk -period 2 clk 
+create_clock -name clk_i -period 2 clk_i
 
 # Target clock frequency 500MHz. for 15nm tech lib (timeunit in ps)
-create_clock -name clk_i -period 2000 clk_i
+#create_clock -name clk_i -period 2000 clk_i
 
 
 # ###########COMPILE
@@ -74,18 +69,24 @@ if {$TOP_DESIGN eq "DSP_Unit"} {
 	compile_ultra -retime
 	set_dont_touch ADDER*
 
-	set_dont_use [get_lib_cells */*]
-	foreach cell $allowed_cells {
-	    if {[sizeof_collection [get_lib_cells */$cell]] > 0} {
-	        remove_attribute [get_lib_cells */$cell] dont_use
-	    } else {
-	        echo "Cell $cell not found in the library."
-	    }
+	if $RESTRICT_CELLS {
+		set_dont_use [get_lib_cells */*]
+		foreach cell $allowed_cells {
+		    if {[sizeof_collection [get_lib_cells */$cell]] > 0} {
+		        remove_attribute [get_lib_cells */$cell] dont_use
+		    } else {
+		        echo "Cell $cell not found in the library."
+		    }
+		}
 	}
+
 	current_design MULTIPLIER*
 	compile_ultra -retime
 	set_dont_touch MULTIPLIER*
-	remove_attribute [get_lib_cells */*] dont_use
+
+	if $RESTRICT_CELLS {
+		remove_attribute [get_lib_cells */*] dont_use
+	}
 
 	current_design EXCP*
 	compile_ultra -retime
