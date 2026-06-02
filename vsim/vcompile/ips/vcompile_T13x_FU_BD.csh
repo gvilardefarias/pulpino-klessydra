@@ -69,6 +69,7 @@ vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/kless/RTL-IF_STA
 #vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-DSP_Unit_syn_0.vhd || goto error
 
 #vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-Adder_syn.vhd || goto error
+#vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-Excpt_Handling_syn.vhd || goto error
 #vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-Comparator_syn.vhd || goto error
 #vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-Shifter_syn.vhd || goto error
 #vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-Accumulator_syn.vhd || goto error

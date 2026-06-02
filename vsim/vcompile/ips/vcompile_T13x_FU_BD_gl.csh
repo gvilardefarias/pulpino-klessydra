@@ -27,7 +27,7 @@ set LIB_PATH="${MSIM_LIBS_PATH}/${LIB_NAME}"
 set IP_PATH="${IPS_PATH}/FU_breakdown"
 set RTL_PATH="${RTL_PATH}"
 set GL_PATH="${IPS_PATH}/../GL"
-set PDK_PATH="/home/g.vilarde/syn_libraries/15nm/verilog"
+set PDK_PATH="/home/g.vilarde/syn_libraries"
 
 ##############################################################################
 # Preparing library
@@ -59,10 +59,23 @@ vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/kless/RTL-IE_STA
 vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/kless/STR-Klessydra_top.vhd || goto error
 vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/kless/RTL-IF_STAGE.vhd || goto error
 
-vlog -quiet -work ${LIB_PATH}   ${PDK_PATH}/NanGate_15nm_OCL_functional.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${PDK_PATH}/45nm/NangateOpenCellLibrary.v || goto error
+
+#vlog -quiet -work ${LIB_PATH}   ${PDK_PATH}/15nm/verilog/NanGate_15nm_OCL_functional.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${PDK_PATH}/45nm/NangateOpenCellLibrary_withoutDelay.v || goto error
+vlog -quiet -work ${LIB_PATH}   ${PDK_PATH}/130nm/verilog/sg13g2_stdcell.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_3a_8s.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_3a_4s.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_3a_2s.v || goto error
+
 #vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_8s.v || goto error
-vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_4s.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_4s.v || goto error
 #vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_2s.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_8s_45nm.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_2s_45nm.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_1s_45nm.v || goto error
+#vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_2s_130nm.v || goto error
+vlog -quiet -work ${LIB_PATH}   ${GL_PATH}/DSP_1a_8s_130nm.v || goto error
 vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/kless/RTL-Processing_Pipeline_gl.vhd || goto error
 
 #vcom -2008 -quiet -suppress 2583 -work ${LIB_PATH}   ${IP_PATH}/DSP/RTL-DSP_Unit_gl.vhd || goto error
