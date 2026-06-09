@@ -8,10 +8,10 @@
 #include "dataset.h"
 #include "ref.h"
 
-#define SIMD 2
-#define MARKER 1
+//#define SIMD 8
+#define MARKER 0
 #define CHECK 0
-#define PERF 0
+#define PERF 1
 
 #define RELU 1
 
@@ -116,9 +116,6 @@ int main(){
 	sync_barrier_reset();
 	sync_barrier_thread_registration();
 
-#if PERF == 1
-	start_count();
-#endif
 
 	int th_id = Klessydra_get_coreID();
 	if (th_id == 0) {
@@ -155,6 +152,9 @@ int main(){
 		#if MARKER == 1
 		add_marker();
 		#endif
+#if PERF == 1
+	start_count();
+#endif
 		for(int i=0; i<NUM_KERNELS; i++){
 			convolution2D_SPM_off_NOB((void*)(	(int*)spmaddrC), (void*)(	(int*)spmaddrA), (void*)(	(int*)spmaddrB + i*B_ORDER*B_ORDER), (void*)(	(int*)spmaddrD ), A_ORDER);
 
@@ -173,10 +173,10 @@ int main(){
 	}
 	
 	sync_barrier();
-	sync_barrier_thread_registration();
 #if PERF == 1
 		finish_count();
 #endif
+	sync_barrier_thread_registration();
 
 #if CHECK == 1
 shift_pre = 0;

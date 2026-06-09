@@ -8,12 +8,12 @@
 #include "dataset.h"
 #include "ref.h"
 
-#define SIMD 2
+#define SIMD 8
+#define CHECK 1
 #define MARKER 0
-#define CHECK 0
-#define PERF 1
+#define PERF 0
 
-#define DATA_TYPE 2 // 0:int8 1:int16 2:int32
+#define RELU 1
 
 #define SIZE_OF_INT 4
 
@@ -48,6 +48,36 @@ void convolution2D_Scaling(int size, int (*matrix)[size], int *kernel_tmp, int *
 void convolution2D_SPM_off_NOB(void* spm_dest, void* spm_fm, void* spm_krn, void* spm_temp, int size);
 void matrix_check( int* mat1, int* mat2, int size );
 void relu_test(int size, int* mat);
+  
+// code add data
+int dt_sz = SIMD*2;
+unsigned int sub_out[N_ROW_1][N_COL_2];
+unsigned int shf_data[SIMD*2] = {0x7FFFFFFF, 0x7FFFFFFF, 0x80000000, 0x80000000};
+unsigned int shft_out0[SIMD*6];
+unsigned int shft_out1[SIMD*6];
+unsigned int relu_data[SIMD] = {0x7FFFFFFF, 0x7FFFFFFF};
+unsigned int relu_out[SIMD];
+unsigned int cmp_data0[SIMD*2] = {0x80808080, 0xFFFFFFFF, 0x7F7F7F7F, 0x00000000};
+unsigned int cmp_data1[SIMD*2] = {0xFFFFFFFF, 0x80808080, 0x00000000, 0x7F7F7F7F};
+unsigned int cmp_out0[SIMD*2];
+unsigned int cmp_out1[SIMD*2];
+
+// add after GL simulations
+unsigned int shf_out32[2][N_ROW_1][N_COL_2];
+unsigned int shf_out16[2][N_ROW_1][N_COL_2];
+unsigned int shf_out8 [2][N_ROW_1][N_COL_2];
+unsigned int m_out8[N_ROW_1][N_COL_2];
+int d_size;
+int idx_i, idx_j;
+int v_size;
+
+// add after paper
+unsigned int ops_out32[15][N_ROW_1][N_COL_2];
+unsigned int ops_out16[15][N_ROW_1][N_COL_2];
+unsigned int ops_out8 [15][N_ROW_1][N_COL_2];
+unsigned int ops_mem[5][SPM_MAX][SPM_MAX];
+//unsigned int a_out16[N_ROW_1][N_ROW_1*N_COL_2];
+
 
 int performance = 0;
 int perf[3] = {0, 0, 0};
@@ -115,41 +145,107 @@ int main(){
 	__asm__("csrw 0x300, 0x8;" );// each thread enables it's own interrupt
   __asm__("csrrw zero, mcycle, zero");
 
-		int *addrA = (int *)spmaddrA;
-		int *addrB = (int *)spmaddrB;
-		int *addrC = (int *)spmaddrC;
-		int *addrD = (int *)spmaddrD;
+		int offset = A_ORDER*A_ORDER;
+
+		if(A_ORDER == 64){
+			offset = 0;
+		}
+
+		int *addrA = (int *)spmaddrA + offset;
+		int *addrB = (int *)spmaddrB + offset;
+		int *addrC = (int *)spmaddrC + offset;
+		int *addrD = (int *)spmaddrD + offset;
 
 	int v_max = SPM_MAX*SPM_MAX*SIZE_OF_INT;
 	sync_barrier_reset();
 	sync_barrier_thread_registration();
 
+#if PERF == 1
+	start_count();
+#endif
 
 	int th_id = Klessydra_get_coreID();
 	if (th_id == 0) {
+		CSR_MVTYPE(0x00000002);
+
+#if CHECK == 1
+		for (int i = 0; i < A_ORDER; i++)
+		{
+			for (int j = 0; j < A_ORDER; j++)
+			{
+				mat_second_A[0][i][j] = image[i * A_ORDER + j];
+			}
+		}
+#endif
+
+		CSR_MVSIZE(v_max);
 		kmemld((void*)spmaddrA,(void*)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
 		kmemld((void*)spmaddrB,(void*)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
 		kmemld((void*)spmaddrC,(void*)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
 		kmemld((void*)spmaddrD,(void*)azzero, SPM_MAX*SPM_MAX*SIZE_OF_INT);
+
+		//so i just use a quick function that do the trick
+		CSR_MVSIZE(2*SIZE_OF_INT);
+		kdotpps_v3((void*)spmaddrA,	(void*)spmaddrA,	(void*)spmaddrB, (void*) conv2D_out_scal);
+		CSR_MVSIZE(dimension_A);
+	
+	    //--------------------------------------LOADING & PRESCALING--------------------------------------------------
+		kmemld((void*)((int*)spmaddrB), (void*)kernels, dimension_B);
+		kmemld((void*)((int*)spmaddrA), (void*)image, dimension_A);
+	}
  		n=N_ROW_1;
  		m=N_COL_1;
  		u=N_COL_2;
 
+		d_size = u*m/4;
+
+	sync_barrier();
+	sync_barrier_thread_registration();
+
+	#if MARKER == 1
+	add_marker();
+	#endif
+
+	if(th_id == 0){
+		//------------------------------------------CONVOLUTION-------------------------------------------------------
+		ksrav((void*)((int*)spmaddrB),(void*)((int*)spmaddrB),	(int*)shift_pre);
+		ksrav((void*)((int*)spmaddrA),(void*)((int*)spmaddrA),	(int*)shift_pre);
+
+		for(int i=0; i<NUM_KERNELS; i++){
+			convolution2D_SPM_off_NOB((void*)(	(int*)spmaddrC), (void*)(	(int*)spmaddrA), (void*)(	(int*)spmaddrB + i*B_ORDER*B_ORDER), (void*)(	(int*)spmaddrD ), A_ORDER);
+
+			#if RELU == 1
+				CSR_MVSIZE(dimension_A);
+				krelu((void*)((int*)spmaddrC), (void*)((int*)spmaddrC));
+			#endif
+
+			kmemstr((void*)((int*)output_compare_s0 + i*A_ORDER*A_ORDER 				),
+			 				(void*)((int*)spmaddrC ),
+							SIZE_OF_INT*(	A_ORDER*A_ORDER));
+		}
+	}
+	if(A_ORDER == 64){
+		sync_barrier();
+		sync_barrier_thread_registration();
+	}
+	#if MARKER == 1
+	add_marker();
+	#endif
+
+	if(th_id == 1){
 #if CHECK == 1
 		CSR_MVTYPE(0x00000002);
 #else
-		CSR_MVTYPE(DATA_TYPE);
+		CSR_MVTYPE(0x00000001);
 #endif
 
 		CSR_MVSIZE(m*SIZE_OF_INT);
 
+
 		kmemld((void *)((int *)addrA), &m2[0][0], SIZE_OF_INT * u * m);
-#if PERF == 1
-	start_count();
-#endif
-		#if MARKER == 1
-		add_marker();
-		#endif
+	#if MARKER == 1
+	add_marker();
+	#endif
 		for (int i = 0; i < n; i++){
 			for (int j = 0; j < m; j++){
 				ksvmulrf((void *)((int *)addrC), (void *)((int *)addrA + j*u), m1[i][j]);
@@ -158,22 +254,257 @@ int main(){
 			kmemstr(&m_out32[i][0], (void *)((int *)addrD), u * SIZE_OF_INT);
 			kmemld((void *)((int *)addrD), (void *)azzero, m * SIZE_OF_INT);
 		}
-		#if MARKER == 1
-		add_marker();
-		#endif
+	#if MARKER == 1
+	add_marker();
+	#endif
 	}
 
-
 	sync_barrier();
+	sync_barrier_thread_registration();
+ 		n=16;
+ 		m=16;
+ 		u=16;
+
+	if(th_id == 2){
+		// -------- Test another structures -----------
+		// ----------- Subtrac ------------
+
+		kmemld((void *)((int *)addrB), &m1[0][0], SIZE_OF_INT * u * m);
+
+	#if MARKER == 1
+	add_marker();
+	#endif
+	
+		CSR_MVTYPE(0x00000001);
+		CSR_MVSIZE(u*SIZE_OF_INT);
+		CSR_MPSCLFAC(0x00000005);
+
+		for(int i = 0;i < u;i++){
+			ksubv((void *)((int *)addrC), (void *)((int *)addrA + (u-i-1)*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out16[0][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kaddv((void *)((int *)addrC), (void *)((int *)addrA + (u-i-1)*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out16[1][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kvred((void *)((int *)addrC), (void *)((int *)addrA + i*m));
+			kmemstr((void *)((int *) &ops_out16[2][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			krelu((void *)((int *)addrC), (void *)((int *)addrA + i*m));
+			kmemstr((void *)((int *) &ops_out16[3][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kvslt((void *)((int *)addrC), (void *)((int *)addrA + (u-i-1)*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out16[4][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			ksvslt((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out16[5][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+
+
+			kdotp((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out16[13][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+		}
+
+		CSR_MVTYPE(0x00000002);
+		CSR_MPSCLFAC(0x00000000);
+		m = m/2;
+		u = u/2;
+		CSR_MVSIZE(u*SIZE_OF_INT);
+		for(int i = 0;i < u;i++){
+			ksubv((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out32[0][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kaddv((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out32[1][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kvred((void *)((int *)addrC), (void *)((int *)addrA + i*m));
+			kmemstr((void *)((int *) &ops_out32[2][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kvslt((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out32[4][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			ksvslt((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out32[5][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+
+			kdotpps((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out32[12][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+		}
+		CSR_MPSCLFAC(0x0000000F);
+		for(int i = 0;i < u;i++){
+			kdotpps((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + m*(u-1) - i*m));
+			kmemstr((void *)((int *) &ops_out32[13][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+		}
+
+		CSR_MVTYPE(0x00000000);
+		CSR_MPSCLFAC(0x00000002);
+		//u = u/2;
+		//m = m/2;
+		CSR_MVSIZE(u*SIZE_OF_INT);
+		for(int i = 0;i < u;i++){
+			//ksubv((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			//kmemstr((void *)((int *) &ops_out8[0][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kaddv((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out8[1][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kvred((void *)((int *)addrC), (void *)((int *)addrA + i*m));
+			kmemstr((void *)((int *) &ops_out8[2][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			krelu((void *)((int *)addrC), (void *)((int *)addrA + i*m));
+			kmemstr((void *)((int *) &ops_out8[3][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			kvslt((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out8[4][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+			ksvslt((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + i*m));
+			kmemstr((void *)((int *) &ops_out8[5][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+
+			kdotpps((void *)((int *)addrC), (void *)((int *)addrA + i*m), (void *)((int *)addrB + 1 + i*m));
+			kmemstr((void *)((int *) &ops_out8[14][i]), (void *)((int *)addrC), SIZE_OF_INT * m);
+		}
+
+		u = N_COL_1;
+		m = N_COL_1;
+		
+		// test with addresses and mvsize
+		int *spmD_max = (int *)spmaddrD + SPM_MAX*SPM_MAX;
+		CSR_MVSIZE(0);
+		ksubv((void *)((int *) spmD_max - 1), (void *)((int *)spmD_max-2), (void *)((int *)spmaddrA + SPM_MAX*SPM_MAX -1));
+//		kmemstr((void *)((int *) &ops_mem[0][0]), (void *)((int *)addrC), SIZE_OF_INT * 1);
+		CSR_MVSIZE(1);
+		kaddv((void *)((int *) spmD_max - 1), (void *)((int *)spmD_max-2), (void *)((int *)spmaddrA));
+		kmemstr((void *)((int *) &ops_mem[0][0]), (void *)((int *)spmD_max - 1), SIZE_OF_INT * 1);
+		// can be improved by adding randing adress access and vector size
+		CSR_MVSIZE(v_max);
+		ksubv((void *)((int *)spmaddrD), (void *)((int *)spmaddrA), (void *)((int *)spmaddrB));
+		kmemstr((void *)((int *) &ops_mem[1][0]), (void *)((int *)spmaddrD), v_max);
+
+		//CSR_MVTYPE(0x00000000);
+
+		CSR_MVSIZE(u/2*SIZE_OF_INT);
+
+		for(int i = 0;i < u/2;i++){
+			ksrav((void *)((int *)addrC + i*m), (void *)((int *)addrA + i*m), m1[0][i]);
+		}
+		kmemstr((void *)((int *)shf_out8[0]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
+		for(int i = 0;i < u/2;i++){
+			ksrlv((void *)((int *)addrC + i*m), (void *)((int *)addrA + i*m), m2[0][i]);
+		}
+		kmemstr((void *)((int *)shf_out8[1]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
+		CSR_MVTYPE(0x00000001);
+		for(int i = 0;i < u/2;i++){
+			ksrav((void *)((int *)addrC + i*m), (void *)((int *)addrA + i*m), m1[1][i]);
+		}
+		kmemstr((void *)((int *)shf_out16[0]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
+		for(int i = 0;i < u/2;i++){
+			ksrlv((void *)((int *)addrC + i*m), (void *)((int *)addrA + i*m), m2[1][i]);
+		}
+		kmemstr((void *)((int *)shf_out16[1]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
+		CSR_MVTYPE(0x00000002);
+		for(int i = 0;i < u/2;i++){
+			ksrav((void *)((int *)addrC + i*m), (void *)((int *)addrA + i*m), m1[2][i]);
+		}
+		kmemstr((void *)((int *)shf_out32[0]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
+		for(int i = 0;i < u/2;i++){
+			ksrlv((void *)((int *)addrC + i*m), (void *)((int *)addrA + i*m), m2[2][i]);
+		}
+		kmemstr((void *)((int *)shf_out32[1]), (void *)((int *)addrC), SIZE_OF_INT * u/2 * m);
+
+		for(int i=0;i<SIMD;i++){
+			shf_data[i]      = 0x7FFFFFFF;
+			shf_data[i+SIMD] = 0x80000000;
+			relu_data[i]     = 0x7FFFFFFF;
+		}
+		for(int i=0;i<SIMD/2;i++){
+			cmp_data0[i*4]   = 0x80808080;
+			cmp_data0[i*4+1] = 0xFFFFFFFF;
+			cmp_data0[i*4+2] = 0x7F7F7F7F;
+			cmp_data0[i*4+3] = 0x00000000;
+			cmp_data1[i*4]   = 0xFFFFFFFF;
+			cmp_data1[i*4+1] = 0x80808080;
+			cmp_data1[i*4+2] = 0x00000000;
+			cmp_data1[i*4+3] = 0x7F7F7F7F;
+		}
+
+		CSR_MVTYPE(0x00000000);
+		CSR_MVSIZE(m*u/4*SIZE_OF_INT);
+
+		kdotp((void *)((int *)addrC ),(void *)((int *)addrB),(void *)((int *)addrA));
+		kmemstr(&m_out8[0][0],  (void *)((int *)addrC),  d_size);
+		// ----------- Shifter ------------
+		CSR_MVTYPE(0x00000002);
+		CSR_MVSIZE(dt_sz * SIZE_OF_INT);
+
+		kmemld((void *)((int *)addrA), &shf_data[0], SIZE_OF_INT * dt_sz);
+
+		ksrav((void *)((int *)addrB), (void *)((int *)addrA), (int *)shift_pre);
+		ksrlv((void *)((int *)addrC), (void *)((int *)addrA), (int *)shift_pre);
+
+		kmemstr((void *)((int *)shft_out0), (void *)((int *)addrB), SIZE_OF_INT * dt_sz);
+		kmemstr((void *)((int *)shft_out1), (void *)((int *)addrC), SIZE_OF_INT * dt_sz);
+
+		CSR_MVTYPE(0x00000001);
+
+		shift_pre = 0;
+
+		ksrav((void *)((int *)addrB), (void *)((int *)addrA), (int *)shift_pre);
+		ksrlv((void *)((int *)addrC), (void *)((int *)addrA), (int *)shift_pre);
+
+		kmemstr((void *)((int *)shft_out0 + dt_sz), (void *)((int *)addrB), SIZE_OF_INT * dt_sz);
+		kmemstr((void *)((int *)shft_out1 + dt_sz), (void *)((int *)addrC), SIZE_OF_INT * dt_sz);
+
+		shift_pre = 15;
+
+		ksrav((void *)((int *)addrB), (void *)((int *)addrA), (int *)shift_pre);
+		ksrlv((void *)((int *)addrC), (void *)((int *)addrA), (int *)shift_pre);
+
+		kmemstr((void *)((int *)shft_out0 + 2*dt_sz), (void *)((int *)addrB), SIZE_OF_INT * dt_sz);
+		kmemstr((void *)((int *)shft_out1 + 2*dt_sz), (void *)((int *)addrC), SIZE_OF_INT * dt_sz);
+
+
+		// --------- Comparator ---------
+		CSR_MVTYPE(0x00000002);
+		CSR_MVSIZE(SIZE_OF_INT * SIMD);
+
+		kmemld((void *)((int *)addrC), (void *)(&relu_data[0]), SIZE_OF_INT * SIMD);
+		krelu((void *)((int *)addrC), (void *)((int *)addrC));
+		kmemstr((void *)((int *)relu_out), (void *)((int *)addrC), SIZE_OF_INT * SIMD);
+
+
+		CSR_MVTYPE(0x00000000);
+		CSR_MVSIZE(SIZE_OF_INT * SIMD * 2);
+
+		kmemld((void *)((int *)addrA), (void *)(&cmp_data0[0]), SIZE_OF_INT * SIMD * 2);
+		kmemld((void *)((int *)addrB), (void *)(&cmp_data1[0]), SIZE_OF_INT * SIMD * 2);
+
+		kvslt((void *)((int *)addrC), (void *)((int *)addrA), (void *)((int *)addrB));
+		kmemstr((void *)((int *)cmp_out0), (void *)((int *)addrC), SIZE_OF_INT * SIMD * 2);
+
+		kvslt((void *)((int *)addrC), (void *)((int *)addrB), (void *)((int *)addrA));
+		kmemstr((void *)((int *)cmp_out1), (void *)((int *)addrC), SIZE_OF_INT * SIMD * 2);
+
+	#if MARKER == 1
+	add_marker();
+	#endif
+
+	} 
+	
+	sync_barrier();
+	sync_barrier_thread_registration();
 #if PERF == 1
 		finish_count();
 #endif
-	sync_barrier_thread_registration();
 
+#if CHECK == 1
+shift_pre = 0;
+    if(th_id == 2) {
+		for(int i=0; i<NUM_KERNELS; i++){
+			convolution2D_Scaling(A_ORDER, mat_second_A[0],(int*)kernels + i*B_ORDER*B_ORDER, (int*)output_compare0 + i*A_ORDER*A_ORDER);
+			//convolution2D_Scaling(A_ORDER, mat_second_A[0],(int*)matB + i*B_ORDER*B_ORDER, (int*)output_compare0 + i*A_ORDER*A_ORDER);
+
+			#if RELU == 1
+				relu_test(A_ORDER, output_compare0[i]);
+			#endif
+		}
+    }
+#endif
+
+	sync_barrier();
 
 
 #if CHECK == 1
+	sync_barrier_thread_registration();
+
    if(th_id == 0) {
+		for(int i=0; i<NUM_KERNELS; i++){
+			matrix_check(output_compare_s0[i],output_compare0[i], A_ORDER);
+		}
+
+	} else if(th_id == 1) {
 		int pass = 1;
 		for (int i = 0; i < n; i++){
 			for (int j = 0; j < u; j++){

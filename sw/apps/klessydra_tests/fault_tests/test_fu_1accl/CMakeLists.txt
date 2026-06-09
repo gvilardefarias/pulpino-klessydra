@@ -1,0 +1,1 @@
+add_application(test_fu_1accl test_fu_1accl.c LABELS "klessydra_tests")

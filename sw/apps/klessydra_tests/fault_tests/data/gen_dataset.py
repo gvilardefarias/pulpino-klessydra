@@ -6,11 +6,11 @@ FU = 3 # Number of functional units
 
 file_name = "dataset.h"
 
-N_ROW_1 = 1*16
-N_COL_1 = 1*16
-N_COL_2 = 1*16
-N_COL_3 = 1*16
-N_COL_4 = 1*16
+N_ROW_1 = 4*16
+N_COL_1 = 4*16
+N_COL_2 = 4*16
+N_COL_3 = 4*16
+N_COL_4 = 4*16
 
 def gen_mat(rows, cols):
     mat = []

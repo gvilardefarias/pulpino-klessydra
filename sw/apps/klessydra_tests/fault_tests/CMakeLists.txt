@@ -12,6 +12,7 @@ add_subdirectory(adhoc_1accl)
 add_subdirectory(conv_1accl)
 
 add_subdirectory(test_1accl)
+add_subdirectory(test_fu_1accl)
 add_subdirectory(test_maccl)
 
 #add_subdirectory(conv_mul_2th_1accl)

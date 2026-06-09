@@ -4,13 +4,9 @@
 #include "dsp_functions.h"
 #include "functions.h"
 #include "klessydra_defs.h"
-#include "data_def.h"
-#include "pattern_def.h"
-
-#define SIMD 8
-#define PATTERN_TYPE gab50
 #include "data.h"
 
+#define SIMD 2
 #define MARKER 1
 #define CHECK 0
 #define PERF 0
@@ -102,20 +98,12 @@ int main(){
 	if (th_id == 0) {
 		kmemld((void *)((int *)addrA), &A[0], SIZE_OF_INT * V_SIZE);
 		kmemld((void *)((int *)addrB), &B[0], SIZE_OF_INT * V_SIZE);
-	}
 
-#if PERF == 1
-	start_count();
-#endif
-	sync_barrier_reset();
-	sync_barrier_thread_registration();
-
-	if (th_id == 0) {
 		#if MARKER == 1
 			add_marker();
 		#endif
 
-		for(int i = 0; i < SIMD * 2 + 1; i++){
+		for(int i = 0; i < 5; i++){
 			kvmul((void *)((int *)addrC), (void *)((int *)addrA), (void *)((int *)addrB));
 		}
 
@@ -126,9 +114,6 @@ int main(){
 
 	sync_barrier();
 	sync_barrier_thread_registration();
-#if PERF == 1
-		finish_count();
-#endif
 
 	if (th_id == 0) {
 		#if CHECK == 1
@@ -139,21 +124,6 @@ int main(){
 			}
 		#endif
 	}
-#if PERF == 1
-	if (th_id == 0){
-		printf("\n");
-		for (int i = 0; i < 1; i++){
-			printf("Num_cycles (Mean):%d\n", (perf_results[0][i] + perf_results[1][i] + perf_results[2][i]) / 3);
-			printf("Num_cycles 0:%d\n", perf_results[0][i]);
-			printf("Num_cycles 1:%d\n", perf_results[1][i]);
-			printf("Num_cycles 2:%d\n", perf_results[2][i]);
-			// perf_results[i]=0;
-		}
-		printf("Num_instr 0:%d\n", perf_results[0][1]);
-		printf("Num_instr 1:%d\n", perf_results[1][1]);
-		printf("Num_instr 2:%d\n", perf_results[2][1]);
-	}
-#endif
 
 	sync_barrier();
 	sync_barrier_thread_registration();

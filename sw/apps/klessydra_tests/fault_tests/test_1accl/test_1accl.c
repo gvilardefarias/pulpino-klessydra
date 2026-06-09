@@ -8,8 +8,8 @@
 #include "dataset.h"
 #include "ref.h"
 
-#define SIMD 2
-#define CHECK 1
+#define SIMD 8
+#define CHECK 0
 #define MARKER 0
 #define PERF 0
 
@@ -703,7 +703,6 @@ shift_pre = 0;
 		}
 
 	} else if(th_id == 1) {
-		/*
 		int pass = 1;
 		for (int i = 0; i < n; i++){
 			for (int j = 0; j < u; j++){
@@ -720,7 +719,6 @@ shift_pre = 0;
 		else{
 			printf("Mult test failed\n");
 		}
-		*/
 	}
 
 	sync_barrier();
