@@ -58,12 +58,14 @@ def write_tmax_file(fault_dict, filename='tmax_faults.txt'):
                     for fault in fault_dict[f_type][sta]:
                         f.write(f"{sta.replace('t', '')} AN {'/'.join(fault.split('.')[1:])}\n")
 
-def write_tessent_file(fault_dict, filename='SAF_coverage.fs'):
+def write_tessent_file(fault_dict, filename='SAF_coverage.fs', only_cntrl=False):
     with open(filename, 'w') as f:
         for f_type in fault_dict.keys():
             if not f_type in ['DD']:
                 for sta in fault_dict[f_type].keys():
                     for fault in fault_dict[f_type][sta]:
+                        if only_cntrl and "_STG" in fault:
+                            continue
                         f.write(f"{sta.replace('sta', '')} UC {'/'.join(fault.split('.')[1:])}\n")
 
 if __name__ == "__main__":
@@ -84,7 +86,7 @@ if __name__ == "__main__":
     print("Filtered Fault Summary (after removing safe faults):")
     print(gen_fault_summary(fault_dict))
     write_tmax_file(fault_dict, out_dir + "tmax_faults.txt")
-    write_tessent_file(fault_dict, out_dir + "SAF_coverage.fs")
+    write_tessent_file(fault_dict, out_dir + "SAF_coverage_cntrl.fs", only_cntrl=True)
 
     fault_dict = remove_safe_faults(mu_fault_dict, safe_dict)
     print("MULT_STG Fault Summary:")
