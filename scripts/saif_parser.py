@@ -1,10 +1,17 @@
 import re
-import sys
+import argparse
 import os
 
 clk_p = 10
-t_start = 73355000
-t_end = 125455000
+T_START = 73355000
+T_END = 125455000
+
+parser = argparse.ArgumentParser(description="SAIF Parser")
+parser.add_argument("file_name", help="Path to the SAIF file or VCD file")
+parser.add_argument("-t_file", help="Path to the file where start and end times are recorded")
+parser.add_argument("-t_start", help="Start time for SAIF analysis", default=str(T_START))
+parser.add_argument("-t_end", help="End time for SAIF analysis", default=str(T_END))
+args = parser.parse_args()
 
 def analyze_saif(file_path):
     total_toggles = 0
@@ -51,11 +58,20 @@ def analyze_saif(file_path):
     print("-" * 50)
 
 if __name__ == "__main__":
-    if len(sys.argv) < 2:
-        print("python calc_saif.py <file.[vcd/saif]>")
-    else:
-        file_name = sys.argv[1]
-        name, ext = file_name.rsplit(".", 1)
-        if ext == "vcd":
-            os.system(f"vcd2saif -input {file_name} -output {name}.saif -time {t_start} {t_end}")
-        analyze_saif(name + ".saif")
+    file_name = args.file_name
+    t_start = int(args.t_start)
+    t_end = int(args.t_end)
+
+    if args.t_file:
+        with open(args.t_file, "r") as t_file:
+            lines = t_file.readlines()
+            for line in lines:
+                if line.startswith("start"):
+                    t_start = int(line.split()[1])
+                elif line.startswith("end"):
+                    t_end = int(line.split()[1])
+
+    name, ext = file_name.rsplit(".", 1)
+    if ext == "vcd":
+        os.system(f"vcd2saif -input {file_name} -output {name}.saif -time {t_start} {t_end}")
+    analyze_saif(name + ".saif")
